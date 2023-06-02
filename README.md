@@ -1,4 +1,4 @@
-# PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance
+# PIXIU (貔貅): A Instruction Dataset, Large Language Model and Comprehensive Evaluation Benchmark for Finance
 
 This repository introduces PIXIU, an open-source resource featuring the first financial large language models (LLMs), instruction tuning data, and evaluation benchmarks to holistically assess financial LLMs. Our goal is to continually push forward the open-source development of financial artificial intelligence (AI).
 
@@ -10,8 +10,8 @@ Despite prior efforts, there is a lack of open-source financial LLMs and benchma
 
 To address these gaps, we introduce PIXIU, providing:
 
-1. Open-source LLMs tailored for finance, FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
-2. Large-scale, high-quality financial instruction data.
+1. Open-source LLMs tailored for finance FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
+2. Large-scale, high-quality multi-task and multi-modal financial instruction tuning data.
 3. Holistic financial evaluation benchmarks FLUPE for assessing financial LLMs.
 
 ## Key Features
@@ -36,25 +36,23 @@ We built the Financial Language Understanding and Prediction Evaluation Benchmar
 
 The repository is organized as follows:
 
-1. **Models**: Contains the FinMA model trained on our dataset.
+1. **Models**: Contains the FinMA model fine-tuned on our dataset.
 2. **Instruction Tuning Data**: Multi-task and multi-modal instruction data for financial tasks.
 3. **Evaluation Benchmark**: FLUPE for evaluating financial LLMs.
 
-## Finma v0.1: Financial Fine-tuned Model
+## FinMA v0.1: Financial Large Language Model
 
-We are pleased to introduce the first version of Finma, a specialized model fine-tuned on Llama 7B. 
+We are pleased to introduce the first version of Finma, a specialized model fine-tuned on LLaMA 7B. 
 
-Finma v0.1 has been trained specifically on our NLP instruction dataset. This dataset is drawn from diverse and respected financial resources, ensuring that the model has a comprehensive understanding of financial language and scenarios.
+FinMA v0.1 has been trained specifically on our financial NLP instruction dataset. This dataset is drawn from diverse and respected financial resources, ensuring that the model has a comprehensive understanding of financial language and scenarios. This version is particularly designed to enhance the performance on financial NLP tasks compared to the base LLaMa 7B model, BloombergGPT, ChatGPT and GPT-4.
 
-This version is particularly designed to enhance the performance on financial tasks compared to the base Llama 7B model. We utilized the original data sources and trained Finma v0.1 with a significant number of examples, covering a wide range of financial topics.
-
-Finma v0.1 is now available on Huggingface for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
+FinMa v0.1 is now available on Huggingface for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
 
 ## Instruction Dataset
 
-Our instruction dataset is uniquely tailored for the domain-specific LLM, FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features multi-task and multi-modal data derived from the same large-scale financial corpus used to train BloombergGPT.
+Our instruction dataset is uniquely tailored for the domain-specific LLM, FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the same large-scale financial corpus used to evaluate BloombergGPT.
 
-The dataset is multi-faceted, featuring tasks such as sentiment analysis, news headline classification, named entity recognition, question answering, stock movement prediction, and portfolio management. It covers both textual and time-series data modalities, offering a rich variety of financial data.
+The dataset is multi-faceted, featuring tasks including sentiment analysis, news headline classification, named entity recognition, question answering, stock movement prediction, and portfolio management. It covers both textual and time-series data modalities, offering a rich variety of financial data.
 
 The table below summarizes the different tasks, their corresponding modalities, text types, and examples of the instructions used for each task:
 
@@ -67,7 +65,7 @@ The table below summarizes the different tasks, their corresponding modalities, 
 | Stock Movement Prediction | Text, Time-Series | Reports, News, Stock Prices | "Predict the stock movement based on the given historical prices and news." |
 | Portfolio Management | Text, Time-Series | Reports, News, Stock Prices | "Suggest a portfolio adjustment based on the given market information." |
 
-The dataset contains a vast amount of data samples for each task, allowing FinMA to capture the nuances of the diverse financial tasks. The table below provides the statistical details of the instruction dataset of NLP tasks:
+The dataset contains a vast amount of instruction data samples for each task, allowing FinMA to capture the nuances of the diverse financial tasks. The table below provides the statistical details of the instruction dataset of NLP tasks:
 
 
 | Task            | Data Source                | Example Number (Train) | Example Number (Test) | Original Paper                               |
@@ -99,4 +97,3 @@ PIXIU is licensed under [LICENSE NAME]. For more details, please see the [LICENS
 
 ## Contributions
 
-We welcome contributions to the PIXIU project. Please refer to our [CONTRIBUTING](CONTRIBUTING.md) guide for more details.
