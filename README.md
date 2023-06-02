@@ -1,6 +1,6 @@
 # PIXIU (貔貅): A Large Language Model, Instruction Data and Evaluation Benchmark for Finance
 
-This repository introduces PIXIU, an open-source resource featuring the first financial large language models (LLMs), instruction tuning data, and evaluation benchmarks to holistically assess financial LLMs. Our goal is to continually push forward the open-source development of financial artificial intelligence (AI).
+This repository introduces PIXIU, an open-source resource featuring the first financial large language models (LLMs), instruction tuning data, and evaluation benchmarks to holistically assess financial LLMs. Our goal is to continually push forward the open-source development of financial artificial intelligence (AI). This project is developed by Qianqian Xie, Weiguang Han, Xiao Zhang, Yanzhao Lai, Min Peng, Alejandro Lopez-Lira, and Jimin Huang.
 
 ## Overview
 
@@ -78,6 +78,41 @@ The dataset contains a vast amount of instruction data samples for each task, al
 
 
 This dataset, along with the model and evaluation benchmark, is available in an open-source format to support future research in the financial AI sector. More details about the dataset and its usage can be found in the README in the "Instruction Tuning Data" directory.
+
+
+Absolutely. Here is a refined version of the benchmark section with metrics and their explanations following the table:
+
+## Benchmark
+
+In this section, we provide a detailed performance analysis of Finma compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing. 
+
+| Dataset    | Metric    | FinMA v0.1 | ChatGPT | GPT-4 | BloombergGPT |
+|------------|-----------|-----------------|---------|-------|--------------|
+| NER        | Entity F1 | 0.69            | 0.77    | **0.83**  | 0.61         |
+| Headlines  | Avg F1    | **0.98**            | 0.76    | 0.86  | 0.82         |
+| FPB        | ACC       | **0.87**            | 0.78    | 0.76  | -            |
+| FPB        | F1        | **0.87**            | 0.78    | 0.78  | 0.51         |
+| FIQASA     | ACC       | **0.84**            | -       | -     | -            |
+| FIQASA     | F1        | **0.84**            | -       | -     | 0.75         |
+| FinQA      | EM ACC    | 0.07            | 0.58    | **0.63**  | -            |
+| ConvFinQA  | EM ACC    | 0.31            | 0.60    | **0.76**  | 0.43         |
+
+The metrics used for evaluation are:
+
+- **Entity F1 (NER):** This metric evaluates the quality of Named Entity Recognition by calculating the harmonic mean of precision and recall.
+  
+- **Avg F1 (Headlines):** This metric averages the F1 scores across different categories in the headlines task. 
+
+- **ACC (FPB & FIQASA):** Accuracy (ACC) measures the fraction of predictions our model got right.
+
+- **F1 (FPB & FIQASA):** F1 score is the harmonic mean of precision and recall. It is a good way to show that a classifier has a good value for both recall and precision.
+
+- **EM ACC (FinQA & ConvFinQA):** Exact Match Accuracy (EM ACC) is the percentage of predictions that exactly match the true answer. 
+
+Note that while Finma displays competitive performance in many of the tasks, it underperforms in tasks such as FinQA and ConvFinQA. This underperformance is attributable to the fact that the Llama 7B model, which Finma is based upon, has not been pre-trained on tasks involving mathematical reasoning. The ability to parse and respond to numerical inputs is critical for financial tasks and is a key area for potential improvement in future iterations of Finma.
+
+In subsequent versions, we plan to address these limitations by incorporating larger backbone models such as Llama 13B or pre-training on tasks involving mathematical reasoning. We believe that this addition will significantly enhance Finma's performance on finance-specific tasks that require numerical understanding.
+
 
 ## Usage
 
