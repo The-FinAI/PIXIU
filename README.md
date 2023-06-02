@@ -10,7 +10,7 @@ Despite prior efforts, there is a lack of open-source financial LLMs and benchma
 
 To address these gaps, we introduce PIXIU, providing:
 
-1. Open-source LLMs tailored for finance FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
+1. Open-source LLMs tailored for finance called FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
 2. Large-scale, high-quality multi-task and multi-modal financial instruction tuning data.
 3. Holistic financial evaluation benchmarks FLUPE for assessing financial LLMs.
 
@@ -50,9 +50,9 @@ FinMa v0.1 is now available on Huggingface for public use. We look forward to th
 
 ## Instruction Dataset
 
-Our instruction dataset is uniquely tailored for the domain-specific LLM, FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the same large-scale financial corpus used to evaluate BloombergGPT.
+Our instruction dataset is uniquely tailored for the domain-specific LLM,FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the same large-scale financial corpus used to evaluate BloombergGPT.
 
-The dataset is multi-faceted, featuring tasks including sentiment analysis, news headline classification, named entity recognition, question answering, stock movement prediction, and portfolio management. It covers both textual and time-series data modalities, offering a rich variety of financial data.
+The dataset is multi-faceted, featuring tasks including sentiment analysis, news headline classification, named entity recognition, question answering, stock movement prediction, and portfolio management. It covers both textual and time-series data modalities, offering a rich variety of financial data. The task specific instruction prompts for each task have been carefully degined by one domain expert.
 
 The table below summarizes the different tasks, their corresponding modalities, text types, and examples of the instructions used for each task:
 
