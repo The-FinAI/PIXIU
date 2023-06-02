@@ -42,11 +42,11 @@ The repository is organized as follows:
 
 ## FinMA v0.1: Financial Large Language Model
 
-We are pleased to introduce the first version of Finma, a specialized model fine-tuned on LLaMA 7B. 
+We are pleased to introduce the first version of FinMA, a specialized model fine-tuned on LLaMA 7B. 
 
 FinMA v0.1 has been trained specifically on our financial NLP instruction dataset. This dataset is drawn from diverse and respected financial resources, ensuring that the model has a comprehensive understanding of financial language and scenarios. This version is particularly designed to enhance the performance on financial NLP tasks compared to the base LLaMa 7B model, BloombergGPT, ChatGPT and GPT-4.
 
-FinMa v0.1 is now available on Huggingface for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
+FinMA v0.1 is now available on Huggingface for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
 
 ## Instruction Dataset
 
