@@ -80,8 +80,6 @@ The dataset contains a vast amount of instruction data samples for each task, al
 This dataset, along with the model and evaluation benchmark, is available in an open-source format to support future research in the financial AI sector. More details about the dataset and its usage can be found in the README in the "Instruction Tuning Data" directory.
 
 
-Absolutely. Here is a refined version of the benchmark section with metrics and their explanations following the table:
-
 ## Benchmark
 
 In this section, we provide a detailed performance analysis of Finma compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing. 
