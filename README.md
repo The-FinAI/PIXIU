@@ -1,4 +1,4 @@
-# PIXIU (貔貅): A Instruction Dataset, Large Language Model and Comprehensive Evaluation Benchmark for Finance
+# PIXIU (貔貅): A Large Language Model, Instruction Data and Evaluation Benchmark for Finance
 
 This repository introduces PIXIU, an open-source resource featuring the first financial large language models (LLMs), instruction tuning data, and evaluation benchmarks to holistically assess financial LLMs. Our goal is to continually push forward the open-source development of financial artificial intelligence (AI).
 
