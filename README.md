@@ -1,4 +1,4 @@
-# PIXIU: A Comprehensive Release for Advancing Financial AI
+# PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance
 
 This repository introduces PIXIU, an open-source resource featuring the first financial large language models (LLMs), instruction tuning data, and evaluation benchmarks to holistically assess financial LLMs. Our goal is to continually push forward the open-source development of financial artificial intelligence (AI).
 
@@ -10,11 +10,9 @@ Despite prior efforts, there is a lack of open-source financial LLMs and benchma
 
 To address these gaps, we introduce PIXIU, providing:
 
-1. Open-source LLMs tailored for finance.
+1. Open-source LLMs tailored for finance, FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
 2. Large-scale, high-quality financial instruction data.
-3. Holistic financial evaluation benchmarks for assessing financial LLMs.
-
-We have also created a financial LLM, FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
+3. Holistic financial evaluation benchmarks FLUPE for assessing financial LLMs.
 
 ## Key Features
 
