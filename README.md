@@ -11,16 +11,16 @@ Despite prior efforts, there is a lack of open-source financial LLMs and benchma
 To address these gaps, we introduce PIXIU, providing:
 
 1. Open-source LLMs tailored for finance called FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
-2. Large-scale, high-quality multi-task and multi-modal financial instruction tuning data.
-3. Holistic financial evaluation benchmarks FLUPE for assessing financial LLMs.
+2. Large-scale, high-quality multi-task and multi-modal financial instruction tuning data FIT.
+3. Holistic financial evaluation benchmarks FLARE for assessing financial LLMs.
 
 ## Key Features
 
 - **Open resources**: PIXIU openly provides the financial LLM, instruction tuning data, and datasets included in the evaluation benchmark to encourage open research and transparency.
   
-- **Multi-task**: The instruction tuning data in PIXIU cover a diverse set of financial tasks, including four financial NLP tasks and two financial prediction tasks.
+- **Multi-task**: The instruction tuning data in PIXIU cover a diverse set of financial tasks, including four financial NLP tasks and one financial prediction task.
 
-- **Multi-modality**: PIXIU's instruction tuning data consist of multi-modality financial data, including time series data from stock movement predictions and portfolio management tasks. It covers various types of financial texts, including reports, news articles, tweets, and regulatory filings.
+- **Multi-modality**: PIXIU's instruction tuning data consist of multi-modality financial data, including time series data from the stock movement prediction task. It covers various types of financial texts, including reports, news articles, tweets, and regulatory filings.
   
 - **Diversity**: Unlike previous benchmarks focusing mainly on financial NLP tasks, PIXIU's evaluation benchmark includes critical financial prediction tasks aligned with real-world scenarios, making it more challenging.
 
@@ -30,29 +30,27 @@ To construct the multi-task and multi-modal instruction data, we collected publi
 
 Using this dataset, we conducted multi-task instruction tuning on LLaMA to create FinMA, a domain-specific LLM.
 
-We built the Financial Language Understanding and Prediction Evaluation Benchmark (FLUPE), covering 4 financial NLP tasks with 5 datasets, and 1 financial prediction tasks with 3 datasets. This benchmark allows us to compare the performance of our model with BloombergGPT and general domain LLMs such as ChatGPT and GPT-4.
+We built the Financial Language Understanding and Prediction Evaluation Benchmark (FLARE), covering 4 financial NLP tasks with 6 datasets, and 1 financial prediction tasks with 3 datasets. This benchmark allows us to compare the performance of our model with BloombergGPT and general domain LLMs such as ChatGPT and GPT-4.
 
 ## Structure of Repository
 
 The repository is organized as follows:
 
 1. **Models**: Contains the FinMA model fine-tuned on our dataset.
-2. **Instruction Tuning Data**: Multi-task and multi-modal instruction data for financial tasks.
-3. **Evaluation Benchmark**: FLUPE for evaluating financial LLMs.
+2. **Instruction Tuning Data**: Multi-task and multi-modal instruction data FIT for financial tasks.
+3. **Evaluation Benchmark**: FLARE for evaluating financial LLMs.
 
 ## FinMA v0.1: Financial Large Language Model
 
-We are pleased to introduce the first version of FinMA, a specialized model fine-tuned on LLaMA 7B. 
-
-FinMA v0.1 has been trained specifically on our financial NLP instruction dataset. This dataset is drawn from diverse and respected financial resources, ensuring that the model has a comprehensive understanding of financial language and scenarios. This version is particularly designed to enhance the performance on financial NLP tasks compared to the base LLaMa 7B model, BloombergGPT, ChatGPT and GPT-4.
+We are pleased to introduce the first version of FinMA, including three models FinMA-7B, FinMA-7B-full, FinMA-30B, fine-tuned on LLaMA 7B and LLaMA-30B. FinMA-7B and FinMA-30B are trained with the NLP instruction data, while FinMA-7B-full is trained with the full instruction data from FIT covering both NLP and prediction tasks. 
 
 FinMA v0.1 is now available on [Huggingface](https://huggingface.co/ChanceFocus/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
 
 ## Instruction Dataset
 
-Our instruction dataset is uniquely tailored for the domain-specific LLM,FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the same large-scale financial corpus used to evaluate BloombergGPT.
+Our instruction dataset is uniquely tailored for the domain-specific LLM, FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the multiple open released financial datasets.
 
-The dataset is multi-faceted, featuring tasks including sentiment analysis, news headline classification, named entity recognition, question answering, and stock movement prediction. It covers both textual and time-series data modalities, offering a rich variety of financial data. The task specific instruction prompts for each task have been carefully degined by one domain expert.
+The dataset is multi-faceted, featuring tasks including sentiment analysis, news headline classification, named entity recognition, question answering, and stock movement prediction. It covers both textual and time-series data modalities, offering a rich variety of financial data. The task specific instruction prompts for each task have been carefully degined by domain experts.
 
 The table below summarizes the different tasks, their corresponding modalities, text types, and examples of the instructions used for each task:
 
@@ -64,7 +62,7 @@ The table below summarizes the different tasks, their corresponding modalities, 
 | Question Answering | Text | All Text Types | "In the context of this series of interconnected finance-related queries and the additional information provided by the pretext, table data, and post text from a company's financial filings, please provide a response to the final question. This may require extracting information from the context and performing mathematical calculations. Please take into account the information provided in the preceding questions and their answers when formulating your response:" |
 | Stock Movement Prediction | Text, Time-Series | Reports, News, Stock Prices | "Analyze the information and social media posts to determine if the closing price of *\{tid\}* will ascend or descend at *\{point\}*. Please respond with either Rise or Fall." |
 
-The dataset contains a vast amount of instruction data samples for each task, allowing FinMA to capture the nuances of the diverse financial tasks. The table below provides the statistical details of the instruction dataset of NLP tasks:
+The dataset contains a vast amount of instruction data samples (136K), allowing FinMA to capture the nuances of the diverse financial tasks. The table below provides the statistical details of the instruction dataset:
 
 | Data | Task | Raw | Instruction | Data Types | Modalities | License |
 |---|---|---|---|---|---|---|
@@ -102,16 +100,9 @@ The dataset contains a vast amount of instruction data samples for each task, al
 9. Huizhe Wu, Wei Zhang, Weiwei Shen, and Jun Wang. 2018. Hybrid deep sequential modeling for social text-driven stock prediction. In Proceedings of the 27th ACM international conference on information and knowledge management. 1627–1630.
 
 
-
-
-
-
-This dataset, along with the model and evaluation benchmark, is available in an open-source format to support future research in the financial AI sector. More details about the dataset and its usage can be found in the README in the "Instruction Tuning Data" directory.
-
-
 ## Benchmark
 
-In this section, we provide a detailed performance analysis of Finma compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing. 
+In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. 
 
 | Dataset | Metrics | GPT NeoX | OPT 66B | BLOOM | Chat GPT | GPT 4 | Bloomberg GPT | FinMA 7B | FinMA 30B | FinMA 7B-full |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -141,10 +132,11 @@ The metrics used for evaluation are:
 - **F1 (FPB & FIQASA):** F1 score is the harmonic mean of precision and recall. It is a good way to show that a classifier has a good value for both recall and precision.
 
 - **EM ACC (FinQA & ConvFinQA):** Exact Match Accuracy (EM ACC) is the percentage of predictions that exactly match the true answer. 
+- **Matthews correlation coefficient (MCC) (BigData22, ACL18& CIKM18):** A more robust evaluation metric for binary classification tasks than ACC, especially when classes are imbalanced.
 
-Note that while Finma displays competitive performance in many of the tasks, it underperforms in tasks such as FinQA and ConvFinQA. This underperformance is attributable to the fact that the Llama 7B model, which Finma is based upon, has not been pre-trained on tasks involving mathematical reasoning. The ability to parse and respond to numerical inputs is critical for financial tasks and is a key area for potential improvement in future iterations of Finma.
+Note that while FinMA displays competitive performance in many of the tasks, it underperforms in tasks such as FinQA and ConvFinQA. This underperformance is attributable to the fact that the LLaMA model, which FinMA is based upon, has not been pre-trained on tasks involving mathematical reasoning. The ability to parse and respond to numerical inputs is critical for financial tasks and is a key area for potential improvement in future iterations of FinMA.
 
-In subsequent versions, we plan to address these limitations by incorporating larger backbone models such as Llama 13B or pre-training on tasks involving mathematical reasoning. We believe that this addition will significantly enhance Finma's performance on finance-specific tasks that require numerical understanding.
+In subsequent versions, we plan to address these limitations by incorporating larger backbone models such as LLaMA 65B or pre-training on tasks involving mathematical reasoning and domain-specific datasets. We believe that this addition will significantly enhance FinMA's performance on finance-specific tasks that require numerical understanding.
 
 
 ## Usage
@@ -156,12 +148,15 @@ Please refer to the individual README files in the respective directories for us
 If you use PIXIU in your work, please cite our paper.
 
 ```
-(Bibtex format of the paper will go here)
+@article{xie2023pixiu,
+  title={PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance},
+  author={Xie, Qianqian and Han, Weiguang and Zhang, Xiao and Lai, Yanzhao and Peng, Min and Lopez-Lira Alejandro and Huang, Jimin},
+  journal={arXiv},
+  year={2023}
+}
 ```
 
 ## License
 
-PIXIU is licensed under [LICENSE NAME]. For more details, please see the [LICENSE](LICENSE) file.
-
-## Contributions
+PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) file.
 
