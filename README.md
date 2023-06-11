@@ -1,7 +1,47 @@
-# PIXIU (貔貅): A Large Language Model, Instruction Data and Evaluation Benchmark for Finance
 
-This repository introduces PIXIU, an open-source resource featuring the first financial large language models (LLMs), instruction tuning data, and evaluation benchmarks to holistically assess financial LLMs. Our goal is to continually push forward the open-source development of financial artificial intelligence (AI). This project is developed by Qianqian Xie, Weiguang Han, Xiao Zhang, Yanzhao Lai, Min Peng, Alejandro Lopez-Lira, and Jimin Huang.
+<p align="center" width="100%">
+<img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="80%" height="80%">
+</p>
 
+
+<div>
+<div align="center">
+    <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
+    <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
+    <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>3</sup></a>&emsp;
+    <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
+    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>4</sup></a>&emsp;
+    </br>
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,5</sup></a>
+</div>
+<div>
+<div align="center">
+    <sup>1</sup>School of Computer Science, Wuhan University&emsp;
+    <sup>2</sup>Sun Yat-Sen University&emsp;
+    <sup>3</sup>School of Economics and Management, Southwest Jiaotong University&emsp;
+    <sup>4</sup>University of Florida&emsp;
+  <sup>5</sup>ChanceFocus AMC.
+</div>
+  
+  
+-----------------
+
+![](https://img.shields.io/badge/pixiu-v0.1-gold)
+![](https://black.readthedocs.io/en/stable/_static/license.svg)
+
+[Pixiu Paper](https://arxiv.org/abs/xxxxx) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
+  
+**Checkpoints:** 
+- [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
+
+## Update
+
+**[2023-06-11]**
+1. Check our arxiv paper [](https://arxiv.org/abs/xxxxx) !
+2. Publicly release FinMA v0.1 (NLP 7B version)
+3. All model results of FLARE can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)!
+  
 ## Overview
 
 The advancement of Natural Language Processing (NLP) and machine learning (ML) techniques in financial technology (FinTech) has enabled a diverse set of capabilities from predicting stock price movements to advanced financial analytics. However, to effectively understand the complex financial language and concepts, domain-specific LLMs are necessary.
@@ -10,9 +50,9 @@ Despite prior efforts, there is a lack of open-source financial LLMs and benchma
 
 To address these gaps, we introduce PIXIU, providing:
 
-1. Open-source LLMs tailored for finance called FinMA, by fine-tuning LLaMA with the dataset constructed in PIXIU.
-2. Large-scale, high-quality multi-task and multi-modal financial instruction tuning data FIT.
-3. Holistic financial evaluation benchmarks FLARE for assessing financial LLMs.
+1. Open-source LLMs tailored for finance called **FinMA**, by fine-tuning LLaMA with the dataset constructed in PIXIU.
+2. Large-scale, high-quality multi-task and multi-modal financial instruction tuning data **FIT**.
+3. Holistic financial evaluation benchmarks **FLARE** for assessing financial LLMs.
 
 ## Key Features
 
