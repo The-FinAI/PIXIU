@@ -183,6 +183,17 @@ In subsequent versions, we plan to address these limitations by incorporating la
 
 Please refer to the individual README files in the respective directories for usage instructions for the models, datasets, and benchmark.
 
+Run inference backend:
+```bash
+bash scripts/run_interface.sh
+```
+Please modify `run_interface.sh` according with your environments.
+
+Evaluation:
+```bash
+python data/*/evaluate.py
+```
+
 ## Citation
 
 If you use PIXIU in your work, please cite our paper.
