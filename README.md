@@ -30,7 +30,7 @@
 ![](https://img.shields.io/badge/pixiu-v0.1-gold)
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
-[Pixiu Paper](https://arxiv.org/abs/xxxxx) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
   
 **Checkpoints:** 
 - [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
@@ -188,11 +188,13 @@ Please refer to the individual README files in the respective directories for us
 If you use PIXIU in your work, please cite our paper.
 
 ```
-@article{xie2023pixiu,
-  title={PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance},
-  author={Xie, Qianqian and Han, Weiguang and Zhang, Xiao and Lai, Yanzhao and Peng, Min and Lopez-Lira Alejandro and Huang, Jimin},
-  journal={arXiv},
-  year={2023}
+@misc{xie2023pixiu,
+      title={PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance}, 
+      author={Qianqian Xie and Weiguang Han and Xiao Zhang and Yanzhao Lai and Min Peng and Alejandro Lopez-Lira and Jimin Huang},
+      year={2023},
+      eprint={2306.05443},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
