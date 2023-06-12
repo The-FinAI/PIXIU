@@ -38,7 +38,7 @@
 ## Update
 
 **[2023-06-11]**
-1. Check our arxiv paper [](https://arxiv.org/abs/xxxxx) !
+1. Check our arxiv [paper](https://arxiv.org/abs/2306.05443)!
 2. Publicly release FinMA v0.1 (NLP 7B version)
 3. All model results of FLARE can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)!
   
