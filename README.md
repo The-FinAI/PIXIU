@@ -37,6 +37,11 @@
 
 ## Update
 
+**[2023-06-19]**
+1. Publicly release [FinMA-7B-full](https://huggingface.co/ChanceFocus/finma-7b-full) (full version).
+2. Added Falcon-7B fine-tuned results on FLARE.
+3. Updated usage instructions in both the README and the Hugging Face model card.
+
 **[2023-06-11]**
 1. Check our arxiv [paper](https://arxiv.org/abs/2306.05443)!
 2. Publicly release FinMA v0.1 (NLP 7B version)
