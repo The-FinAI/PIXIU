@@ -218,3 +218,8 @@ If you use PIXIU in your work, please cite our paper.
 
 PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) file.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
+
+
