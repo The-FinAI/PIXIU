@@ -40,7 +40,6 @@
 ## Update
 **[2023-06-26]**
 1. Introduced a new automated evaluation for FLARE based on the [lm_eval framework](https://github.com/EleutherAI/lm-evaluation-harness).
-2. Uploaded new performance results for models such as LLama-7b, bloomz-7b, and baichuan-7b.
 3. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
 
 
