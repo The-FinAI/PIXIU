@@ -11,6 +11,7 @@ TASK_REGISTRY = {
     "flare_fiqasa": flare.FIQASA,
     "flare_ner": flare.NER,
     "flare_finqa": flare.FinQA,
+    "flare_headlines": flare.Headlines,
     **flare.SM_TASKS,
 }
 

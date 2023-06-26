@@ -36,15 +36,18 @@ def process_text(entity_string, text):
             end = start + len(entity) - 1
 
             # Find the words included in this occurrence
-            start_word = next(i for i, ind in enumerate(word_indices) if ind >= start)
-            end_word = next(i for i, ind in enumerate(word_indices) if ind > end)
+            try:
+                start_word = next(i for i, ind in enumerate(word_indices) if ind >= start)
+                end_word = next(i for i, ind in enumerate(word_indices) if ind > end)
 
-            # Label the words
-            labels[start_word] = 'B-' + entity_type
-            for i in range(start_word+1, end_word):
-                labels[i] = 'I-' + entity_type
+                # Label the words
+                labels[start_word] = 'B-' + entity_type
+                for i in range(start_word+1, end_word):
+                    labels[i] = 'I-' + entity_type
 
-            # Move to the next character after the occurrence
+                # Move to the next character after the occurrence
+            except Exception:
+                pass
             start = end + 1
 
     return labels
