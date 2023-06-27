@@ -6,6 +6,7 @@ import lm_eval.metrics
 import lm_eval.models
 import tasks as ta
 import lm_eval.base
+from chatlm import ChatLM
 from lm_eval.utils import positional_deprecated, run_task_tests
 
 
@@ -69,9 +70,12 @@ def simple_evaluate(
     if isinstance(model, str):
         if model_args is None:
             model_args = ""
-        lm = lm_eval.models.get_model(model).create_from_arg_string(
-            model_args, {"batch_size": batch_size, "max_batch_size": max_batch_size, "device": device}
-        )
+        if model not in ["gpt-4", "gpt-3.5-turbo"]:
+            lm = lm_eval.models.get_model(model).create_from_arg_string(
+                model_args, {"batch_size": batch_size, "max_batch_size": max_batch_size, "device": device}
+            )
+        else:
+            lm = ChatLM(model)
     else:
         assert isinstance(model, lm_eval.base.LM)
         lm = model

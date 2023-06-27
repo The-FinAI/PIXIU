@@ -231,8 +231,8 @@ Please note, for tasks such as NER, the automated evaluation is based on a speci
 
 ```bash
 export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
-python main.py \
-    --model gpt4 \
+python eval.py \
+    --model gpt-4 \
     --tasks flare_ner,flare_sm_acl,flare_fpb
 ```
 
