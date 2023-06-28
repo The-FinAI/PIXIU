@@ -34,8 +34,14 @@
   
 **Checkpoints:** 
 - [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
+- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
+
 
 ## Update
+**[2023-06-26]**
+1. Introduced a new automated evaluation for FLARE based on the [lm_eval framework](https://github.com/EleutherAI/lm-evaluation-harness).
+3. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
+
 
 **[2023-06-19]**
 1. Publicly release [FinMA-7B-full](https://huggingface.co/ChanceFocus/finma-7b-full) (full version).
@@ -184,20 +190,66 @@ Note that while FinMA displays competitive performance in many of the tasks, it 
 In subsequent versions, we plan to address these limitations by incorporating larger backbone models such as LLaMA 65B or pre-training on tasks involving mathematical reasoning and domain-specific datasets. We believe that this addition will significantly enhance FinMA's performance on finance-specific tasks that require numerical understanding.
 
 
-## Usage
+## Assessment Instructions
 
-Please refer to the individual README files in the respective directories for usage instructions for the models, datasets, and benchmark.
+### Automated Task Assessment
 
-Run inference backend:
+Using the task evaluation framework from [EleutherAI's lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness), we've compiled Huggingface datasets for the following tasks:
+
+- [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
+- [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
+- [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
+- [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
+- [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
+- [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
+- [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
+
+For automated evaluation, please follow these instructions:
+1. Install the `lm_eval` framework
+```bash
+git clone https://github.com/EleutherAI/lm-evaluation-harness
+cd lm-evaluation-harness
+pip install -e .
+```
+
+2. Huggingface Transformer
+To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7B-nlp), use this command:
+```bash
+python eval.py \
+    --model hf-causal \
+    --model_args pretrained=chancefocus/finma-7B-nlp \
+    --tasks flare_ner,flare_sm_acl,flare_fpb
+```
+
+More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-evaluation-harness) documentation.
+
+3. Commercial APIs
+
+
+Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
+
+```bash
+export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
+python eval.py \
+    --model gpt-4 \
+    --tasks flare_ner,flare_sm_acl,flare_fpb
+```
+
+### Self-Hosted Evaluation
+
+To run inference backend:
 ```bash
 bash scripts/run_interface.sh
 ```
-Please modify `run_interface.sh` according with your environments.
 
-Evaluation:
+Please adjust run_interface.sh according to your environment requirements.
+
+To evaluate:
+
 ```bash
 python data/*/evaluate.py
 ```
+
 
 ## Citation
 

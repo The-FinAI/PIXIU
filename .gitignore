@@ -1,1 +1,5 @@
 .DS_Store
+__pycache__/
+lm_cache/
+*_results
+*.json
