@@ -57,6 +57,9 @@ def main():
         with open(args.description_dict_path, "r") as f:
             description_dict = json.load(f)
 
+    # import pudb
+    # pudb.set_trace()
+
     results = evaluator.simple_evaluate(
         model=args.model,
         model_args=args.model_args,
