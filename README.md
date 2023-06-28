@@ -205,16 +205,10 @@ Using the task evaluation framework from [EleutherAI's lm-evaluation-harness](ht
 - [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
 
 For automated evaluation, please follow these instructions:
-1. Install the `lm_eval` framework
-```bash
-git clone https://github.com/EleutherAI/lm-evaluation-harness
-cd lm-evaluation-harness
-pip install -e .
-```
-
-2. Huggingface Transformer
+1. Huggingface Transformer (We are still working on llama-based models)
 To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7B-nlp), use this command:
 ```bash
+export PYTHONPATH='{abs_path}/PIXIU/src:{abs_path}/PIXIU/src/lm-evaluation-harness'
 python eval.py \
     --model hf-causal \
     --model_args pretrained=chancefocus/finma-7B-nlp \
@@ -223,12 +217,13 @@ python eval.py \
 
 More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-evaluation-harness) documentation.
 
-3. Commercial APIs
+2. Commercial APIs
 
 
 Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
 
 ```bash
+export PYTHONPATH='{abs_path}/PIXIU/src:{abs_path}/PIXIU/src/lm-evaluation-harness'
 export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
 python eval.py \
     --model gpt-4 \
