@@ -40,7 +40,7 @@
 ## Update
 **[2023-06-26]**
 1. Introduced a new automated evaluation for FLARE based on the [lm_eval framework](https://github.com/EleutherAI/lm-evaluation-harness).
-3. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
+3. Added new Hugging Face datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
 
 
 **[2023-06-19]**
@@ -95,7 +95,7 @@ The repository is organized as follows:
 
 We are pleased to introduce the first version of FinMA, including three models FinMA-7B, FinMA-7B-full, FinMA-30B, fine-tuned on LLaMA 7B and LLaMA-30B. FinMA-7B and FinMA-30B are trained with the NLP instruction data, while FinMA-7B-full is trained with the full instruction data from FIT covering both NLP and prediction tasks. 
 
-FinMA v0.1 is now available on [Huggingface](https://huggingface.co/ChanceFocus/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
+FinMA v0.1 is now available on [Hugging Face](https://huggingface.co/ChanceFocus/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
 
 ## Instruction Dataset
 
@@ -191,9 +191,9 @@ In subsequent versions, we plan to address these limitations by incorporating la
 
 ## Creating new tasks for FLARE
 
-Creating a new task for FLARE involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new classification task using the FLARE framework
+Creating a new task for FLARE involves creating a Hugging Face dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new classification task using the FLARE framework
 
-### Creating your dataset in Huggingface
+### Creating your dataset in Hugging Face
 Your dataset should be created in the following format:
 
 ```python
@@ -331,7 +331,7 @@ The first turn in the "conversations" list should always be from "human", and co
 
 ### Automated Task Assessment
 
-Using the task evaluation framework from [EleutherAI's lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness), we've compiled Huggingface datasets for the following tasks:
+Using the task evaluation framework from [EleutherAI's lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness), we've compiled Hugging Face datasets for the following tasks:
 
 - [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
 - [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
@@ -349,8 +349,8 @@ cd lm-evaluation-harness
 pip install -e .
 ```
 
-2. Huggingface Transformer
-To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7B-nlp), use this command:
+2. Hugging Face Transformer
+To evaluate a model hosted on the Hugging Face Hub (for instance, finma-7B-nlp), use this command:
 ```bash
 python eval.py \
     --model hf-causal \
