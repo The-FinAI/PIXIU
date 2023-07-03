@@ -1,4 +1,4 @@
-export PYTHONPATH='/data/hanweiguang/Projects/PIXIU/src:/data/hanweiguang/Projects/PIXIU/src/lm-evaluation-harness'
+export PYTHONPATH='/path/to/PIXIU/src:/path/to/Projects/PIXIU/src/lm-evaluation-harness'
 
 python src/eval.py \
     --model hf-causal-experimental \
