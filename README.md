@@ -189,6 +189,143 @@ Note that while FinMA displays competitive performance in many of the tasks, it 
 
 In subsequent versions, we plan to address these limitations by incorporating larger backbone models such as LLaMA 65B or pre-training on tasks involving mathematical reasoning and domain-specific datasets. We believe that this addition will significantly enhance FinMA's performance on finance-specific tasks that require numerical understanding.
 
+## Creating new tasks for FLARE
+
+Creating a new task for FLARE involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new classification task using the FLARE framework
+
+### Creating your dataset in Huggingface
+Your dataset should be created in the following format:
+
+```python
+{
+    "query": "...",
+    "answer": "...",
+    "choices": ["xx", "xxx"],
+    "gold": 1,
+    "text": "..."
+}
+```
+In this format:
+
+- `query`: Combination of your prompt and text
+- `answer`: Your label
+- `choices`: Set of labels
+- `gold`: Index of the correct label in choices
+
+### Implementing the task
+Once your dataset is ready, you can start implementing your task. Your task should be defined within a new class in flare.py or any other Python file located within the tasks directory.
+
+Here is an example task using the FLARE-FPB dataset:
+
+
+```python
+from lm_eval.base import Task, rf
+from lm_eval.metrics import mean
+from best_download import download_file
+import os
+import json
+
+class FlareFPB(Task):
+
+    DATASET_PATH = "flare-fpb"
+    DATASET_NAME = "none"
+
+    def has_training_docs(self):
+        return True
+
+    def has_validation_docs(self):
+        return True
+
+    def has_test_docs(self):
+        return True
+
+    def training_docs(self):
+        return self.load_dataset('flare-fpb', split='train')
+
+    def validation_docs(self):
+        return self.load_dataset('flare-fpb', split='validation')
+
+    def test_docs(self):
+        return self.load_dataset('flare-fpb', split='test')
+
+    def doc_to_text(self, doc):
+        return doc["query"]
+
+    def doc_to_target(self, doc):
+        return " " + doc["answer"]
+
+    def construct_requests(self, doc, ctx):
+        return [rf.greedy_until(ctx + choice) for choice in doc["choices"]]
+
+    def process_results(self, doc, results):
+        # Get the first word of the result
+        choice = results[0].split()[0]
+
+        if choice not in doc["choices"]:
+            choice = "missing"
+
+        # Return whether the model chose the correct choice
+        return {
+            'acc': int(choice == doc["choices"][doc["gold"]])
+        }
+
+    def aggregation(self):
+        return {
+            'acc': mean
+        }
+
+    def higher_is_better(self):
+        return {
+            'acc': True
+        }
+```
+After creating your task class, you need to register it in the `tasks/__init__.py` file. Add a new line with the format "task_name": module.ClassName, like this:
+```python
+TASK_REGISTRY = {
+    "flare_fpb": flare.FPB,
+    "flare_fiqasa": flare.FIQASA,
+    "flare_ner": flare.NER,
+    "flare_finqa": flare.FinQA,
+    "flare_headlines": flare.Headlines,
+    "your_new_task": your_module.YourTask,  # This is where you add your task
+    **flare.SM_TASKS,
+}
+```
+
+## Generating Datasets for FIT (Financial Instruction Dataset)
+
+When you are working with the Financial Instruction Dataset (FIT), it's crucial to follow the prescribed format for training and testing models.
+
+### Dataset Format
+The format should look like this:
+
+```json
+{
+    "id": "unique id",
+    "conversations": [
+        {
+            "from": "human",
+            "value": "Your prompt and text"
+        },
+        {
+            "from": "agent",
+            "value": "Your answer"
+        }
+    ],
+    "text": "Text to be classified",
+    "label": "Your label"
+}
+```
+Here's what each field means:
+
+- "id": a unique identifier for each example in your dataset.
+- "conversations": a list of conversation turns. Each turn is represented as a dictionary, with "from" representing the speaker, and "value" representing the text spoken in the turn.
+- "text": the text to be classified.
+- "label": the ground truth label for the text.
+
+
+The first turn in the "conversations" list should always be from "human", and contain your prompt and the text. The second turn should be from "agent", and contain your answer.
+
 
 ## Assessment Instructions
 
