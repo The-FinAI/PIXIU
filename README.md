@@ -38,9 +38,14 @@
 
 
 ## Update
+**[2023-07-04]**
+1. Enhanced our Financial tasks portfolio by incorporating tasks from the [GT Fintech Lab Zero-shot Finance dataset](https://github.com/gtfintechlab/zero-shot-finance) (FOMC and Finer Ord) and adding credit scoring benchmark datasets (German and Australian).
+2. Updated our leaderboard, featuring the latest benchmarks and models such as GPT-4, Llama-7B, Bloomz-7B, and Falcon-7B.
+
+
 **[2023-06-26]**
 1. Introduced a new automated evaluation for FLARE based on the [lm_eval framework](https://github.com/EleutherAI/lm-evaluation-harness).
-3. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
+2. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
 
 
 **[2023-06-19]**
