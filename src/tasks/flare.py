@@ -23,6 +23,8 @@ _CITATION = """
 
 
 class Classification(Task):
+    CALCULATE_FCC = False
+
     def has_training_docs(self):
         return True
 
@@ -80,20 +82,27 @@ class Classification(Task):
             choice = -1
         acc = 1.0 if gold == choice else 0.0
 
-        return {
+        results = {
             "acc": acc,
             "missing": int(result == "missing"),
             "f1": (result, gold),
-             "mcc": (choice, gold),
         }
 
+        if self.CALCULATE_FCC:
+            results["mcc"] = (choice, gold)
+
+        return results
+
+
     def higher_is_better(self):
-        return {
+        metrics = {
             "acc": True,
             "f1": True,
             "missing": False,
-            "mcc": True,
         }
+        if self.CALCULATE_FCC:
+            metrics["mcc"] = True
+        return metrics
 
     def weighted_f1(cls, items):
         preds, golds = zip(*items)
@@ -104,12 +113,14 @@ class Classification(Task):
         return f1
 
     def aggregation(self):
-        return {
+        metrics = {
             "acc": mean,
             "missing": mean,
             "f1": self.weighted_f1,
-            "mcc": matthews_corrcoef,
         }
+        if self.CALCULATE_MCC:
+            metrics["mcc"] = matthews_corrcoef
+        return metrics
 
 class FPB(Classification):
     VERSION = 1
@@ -270,6 +281,7 @@ class FinQA(Task):
 class StockMovement(Classification):
     VERSION = 1
     DATASET_NAME = None
+    CALCULATE_MCC = True
 
 
 class StockMovementBigData(StockMovement):
