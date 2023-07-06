@@ -38,9 +38,14 @@
 
 
 ## Update
+**[2023-07-04]**
+1. Enhanced our Financial tasks portfolio by incorporating tasks from the [GT Fintech Lab Zero-shot Finance dataset](https://github.com/gtfintechlab/zero-shot-finance) (FOMC and Finer Ord) and adding credit scoring benchmark datasets (German and Australian).
+2. Updated our leaderboard, featuring the latest benchmarks and models such as GPT-4, Llama-7B, Bloomz-7B, and Falcon-7B.
+
+
 **[2023-06-26]**
 1. Introduced a new automated evaluation for FLARE based on the [lm_eval framework](https://github.com/EleutherAI/lm-evaluation-harness).
-3. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
+2. Added new Huggingface datasets for FLARE, such as [flare_ner](https://huggingface.co/datasets/ChanceFocus/flare-ner).
 
 
 **[2023-06-19]**
@@ -215,71 +220,16 @@ In this format:
 ### Implementing the task
 Once your dataset is ready, you can start implementing your task. Your task should be defined within a new class in flare.py or any other Python file located within the tasks directory.
 
-Here is an example task using the FLARE-FPB dataset:
-
+For a classification task, we provide a convenient base class called `Classification`. You can directly use this class to build your task. Let's illustrate this with an example of implementing a task named FLARE-FPB:
 
 ```python
-from lm_eval.base import Task, rf
-from lm_eval.metrics import mean
-from best_download import download_file
-import os
-import json
-
-class FlareFPB(Task):
-
+class FlareFPB(Classification):
     DATASET_PATH = "flare-fpb"
     DATASET_NAME = "none"
-
-    def has_training_docs(self):
-        return True
-
-    def has_validation_docs(self):
-        return True
-
-    def has_test_docs(self):
-        return True
-
-    def training_docs(self):
-        return self.load_dataset('flare-fpb', split='train')
-
-    def validation_docs(self):
-        return self.load_dataset('flare-fpb', split='validation')
-
-    def test_docs(self):
-        return self.load_dataset('flare-fpb', split='test')
-
-    def doc_to_text(self, doc):
-        return doc["query"]
-
-    def doc_to_target(self, doc):
-        return " " + doc["answer"]
-
-    def construct_requests(self, doc, ctx):
-        return [rf.greedy_until(ctx + choice) for choice in doc["choices"]]
-
-    def process_results(self, doc, results):
-        # Get the first word of the result
-        choice = results[0].split()[0]
-
-        if choice not in doc["choices"]:
-            choice = "missing"
-
-        # Return whether the model chose the correct choice
-        return {
-            'acc': int(choice == doc["choices"][doc["gold"]])
-        }
-
-    def aggregation(self):
-        return {
-            'acc': mean
-        }
-
-    def higher_is_better(self):
-        return {
-            'acc': True
-        }
 ```
-After creating your task class, you need to register it in the `tasks/__init__.py` file. Add a new line with the format "task_name": module.ClassName, like this:
+
+And that's it! Once you've created your task class, the next step is to register it in the `src/tasks/__init__.py` file. To do this, add a new line following the format `"task_name": module.ClassName`. Here is how it's done:
+
 ```python
 TASK_REGISTRY = {
     "flare_fpb": flare.FPB,
@@ -291,6 +241,15 @@ TASK_REGISTRY = {
     **flare.SM_TASKS,
 }
 ```
+
+Please note, the Classification base class provides three default metrics:
+
+- **Accuracy**: This metric represents the ratio of correctly predicted observations to total observations. It is calculated as (True Positives + True Negatives) / Total Observations.
+- **F1 Score**: The F1 Score is the harmonic mean of precision and recall, providing a balance between these two metrics. It's useful in cases where one measure is more important than the other. The F1 score is at its best at 1 (perfect precision and recall) and worst at 0.
+- **Missing Ratio**: This metric calculates the proportion of responses where no options from the given choices in the task are returned.
+Moreover, you can specify `CALCULATE_MCC` in your class definition to include the Matthews Correlation Coefficient (MCC). The MCC is a measure of the quality of binary classifications. It returns a value between -1 and +1. A coefficient of +1 represents a perfect prediction, 0 an average random prediction and -1 an inverse prediction.
+
+For more custom metrics or requests, you may refer to `flare.NER` or `flare.FinQA` for examples.
 
 ## Generating Datasets for FIT (Financial Instruction Dataset)
 
@@ -337,6 +296,10 @@ Using the task evaluation framework from [EleutherAI's lm-evaluation-harness](ht
 - [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
 - [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
 - [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
+- [FOMC (flare_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
+- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
+- [German (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
+- [Australian (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
 - [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
 - [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
 - [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
