@@ -1,37 +1,48 @@
-
 <p align="center" width="100%">
-<img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="80%" height="80%">
+<img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="100%" height="100%">
 </p>
 
 
+
 <div>
-<div align="center">
+<div align="left">
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
     <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
     <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
-    <a target='_blank'>Yanzhao Lai<sup>3</sup></a>&emsp;
+    <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
+    <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
-    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>4</sup></a>&emsp;
-    </br>
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,5</sup></a>
+    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,6</sup></a>
 </div>
 <div>
-<div align="center">
-    <sup>1</sup>School of Computer Science, Wuhan University&emsp;
+<div align="left">
+    <sup>1</sup>Wuhan University&emsp;
     <sup>2</sup>Sun Yat-Sen University&emsp;
-    <sup>3</sup>School of Economics and Management, Southwest Jiaotong University&emsp;
-    <sup>4</sup>University of Florida&emsp;
-  <sup>5</sup>ChanceFocus AMC.
+    <sup>3</sup>Sichuan University&emsp;
+    <sup>4</sup>Southwest Jiaotong University&emsp;
+    <sup>5</sup>University of Florida&emsp;
+  <sup>6</sup>ChanceFocus AMC.
 </div>
+<div align="left">
+    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
+    <img src='https://i.postimg.cc/C1XnZNK1/Sun-Yat-sen-University-Logo.png' alt='Sun Yat-Sen University Logo' height='100px'>&emsp;
+    <img src='https://i.postimg.cc/NjKhDkGY/DFAF986-CCD6529-E52-D7830-F180-D-C37-C7-DEE-4340.png' alt='Sichuan University Logo' height='100px'>&emsp;
+    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='100px'>&emsp;
+    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='100px'>&emsp;
+    <img src='https://i.postimg.cc/xTsgsrqN/logo11.png' alt='ChanceFocus AMC Logo' height='100px'>
+</div>
+
   
-  
+
 -----------------
 
 ![](https://img.shields.io/badge/pixiu-v0.1-gold)
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 
 [Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
-  
+
 **Checkpoints:** 
 - [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
 - [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
@@ -57,7 +68,7 @@
 1. Check our arxiv [paper](https://arxiv.org/abs/2306.05443)!
 2. Publicly release FinMA v0.1 (NLP 7B version)
 3. All model results of FLARE can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)!
-  
+
 ## Overview
 
 The advancement of Natural Language Processing (NLP) and machine learning (ML) techniques in financial technology (FinTech) has enabled a diverse set of capabilities from predicting stock price movements to advanced financial analytics. However, to effectively understand the complex financial language and concepts, domain-specific LLMs are necessary.
@@ -368,5 +379,4 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
-
 
