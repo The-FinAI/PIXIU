@@ -23,7 +23,7 @@ _CITATION = """
 
 
 class Classification(Task):
-    CALCULATE_FCC = False
+    CALCULATE_MCC = False
 
     def has_training_docs(self):
         return True
@@ -88,7 +88,7 @@ class Classification(Task):
             "f1": (result, gold),
         }
 
-        if self.CALCULATE_FCC:
+        if self.CALCULATE_MCC:
             results["mcc"] = (choice, gold)
 
         return results
@@ -100,7 +100,7 @@ class Classification(Task):
             "f1": True,
             "missing": False,
         }
-        if self.CALCULATE_FCC:
+        if self.CALCULATE_MCC:
             metrics["mcc"] = True
         return metrics
 
