@@ -1,7 +1,8 @@
-transformer
+transformers
 peft
 gradio
 tqdm
 sklearn
 pandas
+seqeval
 numpy
