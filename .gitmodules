@@ -1,0 +1,3 @@
+[submodule "src/financial-evaluation"]
+	path = src/financial-evaluation
+	url = https://github.com/chancefocus/financial-evaluation.git
