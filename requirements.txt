@@ -2,7 +2,8 @@ transformers
 peft
 gradio
 tqdm
-sklearn
+scikit-learn
+sentencepiece
 pandas
 seqeval
 numpy
