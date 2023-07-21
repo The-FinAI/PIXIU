@@ -5,3 +5,6 @@ lm_cache/
 *.json
 .hypothesis
 *_private.*
+*_private
+.vscode
+*.code-workspace
