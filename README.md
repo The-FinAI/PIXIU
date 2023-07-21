@@ -100,7 +100,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 ### Evaluation
 
 #### Preparation
-
+##### Locally install
 ```bash
 git clone https://github.com/chancefocus/PIXIU.git --recursive
 cd PIXIU
@@ -108,16 +108,44 @@ pip install -r requirements.txt
 cd PIXIU/src/financial-evaluation
 pip install -e .[multilingual]
 ```
+##### Docker image
+```bash
+sudo bash scripts/docker_run.sh
+```
+Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:20230721`
+
+```bash
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
+    --network host \
+    --env https_proxy=$https_proxy \
+    --env http_proxy=$http_proxy \
+    --env all_proxy=$all_proxy \
+    --env HF_HOME=$hf_home \
+    -it [--rm] \
+    --name pixiu \
+    -v $pixiu_path:$pixiu_path \
+    -v $hf_home:$hf_home \
+    -v $ssh_pub_key:/root/.ssh/authorized_keys \
+    -w $workdir \
+    $docker_user/pixiu:$tag \
+    [--sshd_port 2201 --cmd "echo 'Hello, world!' && /bin/bash"]
+```
+Arguments explain:
+- `[]` means ignoreable arguments
+- `HF_HOME`: huggingface cache dir
+- `sshd_port`: sshd port of the container, you can run `ssh -i private_key -p $sshd_port root@$ip` to connect to the container, default to 22001
+- `--rm`: remove the container when exit container (ie.`CTRL + D`)
 
 #### Automated Task Assessment
 
 For automated evaluation, please follow these instructions:
 
-1. Huggingface Transformer (We are still working on llama-based models)
+1. Huggingface Transformer
+
    To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7B-nlp), use this command:
 
 ```bash
-export PYTHONPATH='{abs_path}/PIXIU/src:{abs_path}/PIXIU/src/lm-evaluation-harness'
+export PYTHONPATH='$abs_path/PIXIU/src:$abs_path/PIXIU/src/financial-evaluation'
 python eval.py \
     --model hf-causal \
     --model_args pretrained=chancefocus/finma-7B-nlp \
@@ -132,7 +160,7 @@ More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-eval
 Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
 
 ```bash
-export PYTHONPATH='{abs_path}/PIXIU/src:{abs_path}/PIXIU/src/lm-evaluation-harness'
+export PYTHONPATH='$abs_path/PIXIU/src:$abs_path/PIXIU/src/lm-evaluation-harness'
 export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
 python eval.py \
     --model gpt-4 \
