@@ -1,14 +1,3 @@
-def parse_entity_string(entity_string):
-    entities = {}
-    entities_strings = entity_string.split("\n")
-    entities = [entity_string[2:-2].split(",") for entity_string in entities_strings]
-    for line in lines:
-        if line:
-            entity_type, entity_values = line.split(':', 1)
-            entities[entity_type.strip()] = entity_values.strip().split(",") if entity_values.strip().split(",")[0] else []
-    return entities
-
-
 def process_text(entity_string, text):
     # Initialize
     entity_list = [(", ".join(val.split(", ")[:-1]), val.split(", ")[-1]) for val in entity_string.split("\n")]

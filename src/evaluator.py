@@ -242,6 +242,8 @@ def evaluate(
             ctx = task.fewshot_context(
                 doc=doc, num_fewshot=num_fewshot, rnd=rnd, description=description
             )
+            ctx = f'Human: \n{ctx}\n\nAssistant: \n'
+            
             reqs = task.construct_requests(doc, ctx)
 
             if write_out:

@@ -142,14 +142,14 @@ For automated evaluation, please follow these instructions:
 
 1. Huggingface Transformer
 
-   To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7B-nlp), use this command:
+   To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7b-full), use this command:
 
 ```bash
 export PYTHONPATH='$abs_path/PIXIU/src:$abs_path/PIXIU/src/financial-evaluation'
 python eval.py \
-    --model hf-causal \
-    --model_args pretrained=chancefocus/finma-7B-nlp \
-    --tasks flare_ner,flare_sm_acl,flare_fpb
+    --model "hf-causal-experimental" \
+    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
+    --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```
 
 More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-evaluation-harness) documentation.
