@@ -3,3 +3,8 @@ __pycache__/
 lm_cache/
 *_results
 *.json
+.hypothesis
+*_private.*
+*_private
+.vscode
+*.code-workspace

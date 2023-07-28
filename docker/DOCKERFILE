@@ -1,0 +1,8 @@
+FROM tothemoon/belle:20230721
+
+RUN python3 -m pip install -U --no-cache-dir sqlitedict
+RUN python3 -m pip install -U --no-cache-dir omegaconf
+RUN python3 -m pip install -U --no-cache-dir pycountry
+RUN python3 -m pip install -U --no-cache-dir seqeval
+RUN python3 -m pip install -U --no-cache-dir ipywidgets
+RUN python3 -m pip install -U --no-cache-dir pytablewriter
