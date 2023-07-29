@@ -3,7 +3,6 @@
 </p>
 
 
-
 <div>
 <div align="left">
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
@@ -11,6 +10,7 @@
     <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
     <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
     <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
+    <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
     <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
     <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
@@ -36,6 +36,7 @@
 
 
 
+
 -----------------
 
 ![](https://img.shields.io/badge/pixiu-v0.1-gold)
@@ -48,23 +49,52 @@
 - [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
 - [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
 
-**Evaluations**:
+**Evaluations** (More details on FLARE section):
 
-> Financial NLP tasks
+> Sentiment Analysis
 
-- [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
 - [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
 - [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
-- [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
 - [FOMC (flare_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
+- [SemEval-2017 Task5 (flare_tsa)](https://huggingface.co/datasets/ChanceFocus/flare-tsa)
 
-> Financial Credit Scoring tasks
+> Classification
+
+- [Headlines (flare_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
+- [FinArg ECC Task1 (flare_finarg_ecc_auc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-auc)
+- [FinArg ECC Task2 (flare_finarg_ecc_arc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-arc)
+- [CFA (flare_cfa)](https://huggingface.co/datasets/ChanceFocus/flare-cfa)
+- [MultiFin EN (flare_multifin_en)](https://huggingface.co/datasets/ChanceFocus/flare-multifin-en)
+- [M&A (flare_ma)](https://huggingface.co/datasets/ChanceFocus/flare-ma)
+- [MLESG EN (flare_mlesg)](https://huggingface.co/datasets/ChanceFocus/flare-mlesg)
+
+> Knowledge Extraction
+
+- [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
+
+- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
+- [FinRED (flare_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)
+- [FinCausal20 Task1 (flare_causal20_sc)](https://huggingface.co/datasets/ChanceFocus/flare-causal20_sc)
+- [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)
+
+> Number Understanding
+
+- [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
+- [TATQA (flare_tatqa)](https://huggingface.co/datasets/ChanceFocus/flare-tatqa)
+- [FNXL (flare_fnxl)](https://huggingface.co/datasets/ChanceFocus/flare-fnxl)
+- [FSRL (flare_fsrl)](https://huggingface.co/datasets/ChanceFocus/flare-fsrl)
+
+> Text Summarization
+
+- [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
+- [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
+
+> Credit Scoring
 
 - [German (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
 - [Australian (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
 
-> Financial Forecasting tasks
+> Forecasting
 
 - [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
 - [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
@@ -93,9 +123,63 @@ The repository is organized into several key components, each serving a unique p
 
 ---
 
-## FLARE: Financial Language Understanding and Prediction Evaluation Benchmark
+## FLARE 2.0: Financial Language Understanding and Prediction Evaluation Benchmark
 
 In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FLARE can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)!
+
+### Tasks
+
+| Data                  | Task                             | Raw    | Data Types                | Modalities        | License         | Paper |
+| --------------------- | -------------------------------- | ------ | ------------------------- | ----------------- | --------------- | ----- |
+| FPB                   | sentiment analysis               | 4,845  | news                      | text              | CC BY-SA 3.0    | [1]   |
+| FiQA-SA               | sentiment analysis               | 1,173  | news headlines, tweets    | text              | Public          | [2]   |
+| FOMC                  | hawkish-dovish classification    | 496    | FOMC transcripts          | text              | CC BY-NC 4.0    | [3]   |
+| TSA                   | sentiment analysis               | 561    | news headlines            | text              | CC BY-NC-SA 4.0 | [4]   |
+| Headlines             | news headline classification     | 11,412 | news headlines            | text              | CC BY-SA 3.0    | [5]   |
+| FinArg-ECC-Task1      | argument unit classification     | 969    | earnings conference call  | text              | CC BY-NC-SA 4.0 |       |
+| FinArg-ECC-Task2      | argument relation classification | 690    | earnings conference call  | text              | CC BY-NC-SA 4.0 |       |
+| CFA                   |                                  | 1,030  |                           | text              |                 |       |
+| Multifin EN           | multi-class classification       | 546    | article headlines         | text              | Public          | [6]   |
+| M&A                   | deal completeness classification | 500    | news articles, tweets     | text              | Public          | [7]   |
+| MLESG EN              | ESG Issue Identification         | 300    | news articles             | text              | CC BY-NC-ND     | [8]   |
+| NER                   | named entity recognition         | 1,366  | financial agreements      | text              | CC BY-SA 3.0    | [9]   |
+| Finer Ord             | named entity recognition         | 1,080  | news articles             | text              | CC BY-NC 4.0    | [10]  |
+| FinRED                | relation extraction              | 1,070  | earning call transcipts   | text              | Public          | [11]  |
+| FinCausual 2020 Task1 | causal classification            | 8,630  | news articles, SEC        | text              | CC BY 4.0       | [12]  |
+| FinCausual 2020 Task2 | causal detection                 | 226    | news articles, SEC        | text              | CC BY 4.0       | [12]  |
+| FinQA                 | question answering               | 8,281  | earnings reports          | text, table       | MIT License     | [13]  |
+| TatQA                 | question answering               | 1,670  | financial reports         | text, table       | MIT License     | [14]  |
+| FNXL                  | numeric labeling                 | 318    | SEC                       | text              | Public          | [15]  |
+| FSRL                  | token classification             | 97     | news articles             | text              | MIT License     | [16]  |
+| ECTSUM                | text summarization               | 495    | earning call transcipts   | text              | Public          | [17]  |
+| EDTSUM                | text summarization               | 2000   | news articles             | text              | Public          | [18]  |
+| German                | credit scoring                   | 1000   | credit records            | table             | CC BY 4.0       | [19]  |
+| Australian            | credit scoring                   | 690    | credit records            | table             | CC BY 4.0       | [20]  |
+| BigData22             | stock movement prediction        | 7,164  | tweets, historical prices | text, time series | Public          | [21]  |
+| ACL18                 | stock movement prediction        | 27,053 | tweets, historical prices | text, time series | MIT License     | [22]  |
+| CIKM18                | stock movement prediction        | 4,967  | tweets, historical prices | text, time series | Public          | [23]  |
+
+1. Pekka Malo, Ankur Sinha, Pekka Korhonen, Jyrki Wallenius, and Pyry Takala. 2014. Good debt or bad debt: Detecting semantic orientations in economic texts. Journal of the Association for Information Science and Technology 65, 4 (2014), 782–796.
+2. Macedo Maia, Siegfried Handschuh, André Freitas, Brian Davis, Ross McDermott, Manel Zarrouk, and Alexandra Balahur. 2018. Www’18 open challenge: financial opinion mining and question answering. In Companion proceedings of the the web conference 2018. 1941–1942
+3. Agam Shah, Suvan Paturi, and Sudheer Chava. 2023. [Trillion Dollar Words: A New Financial Dataset, Task & Market Analysis](https://aclanthology.org/2023.acl-long.368). In *Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pages 6664–6679, Toronto, Canada. Association for Computational Linguistics.
+4. Keith Cortis, André Freitas, Tobias Daudert, Manuela Huerlimann, Manel Zarrouk, Siegfried Handschuh, and Brian Davis. 2017. [SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News](https://aclanthology.org/S17-2089). In *Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017)*, pages 519–535, Vancouver, Canada. Association for Computational Linguistics.
+5. Ankur Sinha and Tanmay Khandait. 2021. Impact of news on the commodity market: Dataset and results. In Advances in Information and Communication: Proceedings of the 2021 Future of Information and Communication Conference (FICC), Volume 2. Springer, 589–601
+6. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. [MultiFin: A Dataset for Multilingual Financial NLP](https://aclanthology.org/2023.findings-eacl.66). In *Findings of the Association for Computational Linguistics: EACL 2023*, pages 894–909, Dubrovnik, Croatia. Association for Computational Linguistics.
+7. Yang, L., Kenny, E.M., Ng, T.L., Yang, Y., Smyth, B., & Dong, R. (2020). Generating Plausible Counterfactual Explanations for Deep Transformers in Financial Text Classification. *International Conference on Computational Linguistics*.
+8. Chung-Chi Chen, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023. Multi-lingual esg issue identification. In *Proceedings of the Fifth Workshop on Financial Tech- nology and Natural Language Processing (FinNLP) and the Second Multimodal AI For Financial Fore- casting (Muffin)*.
+9. Julio Cesar Salinas Alvarado, Karin Verspoor, and Timothy Baldwin. 2015. Domain adaption of named entity recognition to support credit risk assessment. In Proceedings of the Australasian Language Technology Association Workshop 2015. 84–90.
+10. Shah A, Vithani R, Gullapalli A, et al. Finer: Financial named entity recognition dataset and weak-supervision model[J]. arXiv preprint arXiv:2302.11157, 2023.
+11. Sharma, Soumya et al. “FinRED: A Dataset for Relation Extraction in Financial Domain.” *Companion Proceedings of the Web Conference 2022* (2022): n. pag.
+12. Dominique Mariko, Hanna Abi-Akl, Estelle Labidurie, Stephane Durfort, Hugues De Mazancourt, and Mahmoud El-Haj. 2020. [The Financial Document Causality Detection Shared Task (FinCausal 2020)](https://aclanthology.org/2020.fnp-1.3). In *Proceedings of the 1st Joint Workshop on Financial Narrative Processing and MultiLing Financial Summarisation*, pages 23–32, Barcelona, Spain (Online). COLING.
+13. Zhiyu Chen, Wenhu Chen, Charese Smiley, Sameena Shah, Iana Borova, Dylan Langdon, Reema Moussa, Matt Beane, Ting-Hao Huang, Bryan R Routledge, et al . 2021. FinQA: A Dataset of Numerical Reasoning over Financial Data. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. 3697–3711.
+14. Zhu, Fengbin, Wenqiang Lei, Youcheng Huang, Chao Wang, Shuo Zhang, Jiancheng Lv, Fuli Feng and Tat-Seng Chua. “TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance.” *ArXiv* abs/2105.07624 (2021): n. pag.
+15. Soumya Sharma, Subhendu Khatuya, Manjunath Hegde, Afreen Shaikh, Koustuv Dasgupta, Pawan Goyal, and Niloy Ganguly. 2023. [Financial Numeric Extreme Labelling: A dataset and benchmarking](https://aclanthology.org/2023.findings-acl.219). In *Findings of the Association for Computational Linguistics: ACL 2023*, pages 3550–3561, Toronto, Canada. Association for Computational Linguistics.
+16. Matthew Lamm, Arun Chaganty, Christopher D. Manning, Dan Jurafsky, and Percy Liang. 2018. [Textual Analogy Parsing: What’s Shared and What’s Compared among Analogous Facts](https://aclanthology.org/D18-1008). In *Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing*, pages 82–92, Brussels, Belgium. Association for Computational Linguistics.
+17. Rajdeep Mukherjee, Abhinav Bohra, Akash Banerjee, Soumya Sharma, Manjunath Hegde, Afreen Shaikh, Shivani Shrivastava, Koustuv Dasgupta, Niloy Ganguly, Saptarshi Ghosh, and Pawan Goyal. 2022. [ECTSum: A New Benchmark Dataset For Bullet Point Summarization of Long Earnings Call Transcripts](https://aclanthology.org/2022.emnlp-main.748). In *Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing*, pages 10893–10906, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
+18. Zhihan Zhou, Liqian Ma, and Han Liu. 2021. [Trade the Event: Corporate Events Detection for News-Based Event-Driven Trading](https://aclanthology.org/2021.findings-acl.186). In *Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021*, pages 2114–2124, Online. Association for Computational Linguistics.
+19. Yejun Soun, Jaemin Yoo, Minyong Cho, Jihyeong Jeon, and U Kang. 2022. Accurate Stock Movement Prediction with Self-supervised Learning from Sparse Noisy Tweets. In 2022 IEEE International Conference on Big Data (Big Data). IEEE, 1691–1700.
+20. Yumo Xu and Shay B Cohen. 2018. Stock movement prediction from tweets and historical prices. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 1970–1979.
+21. Huizhe Wu, Wei Zhang, Weiwei Shen, and Jun Wang. 2018. Hybrid deep sequential modeling for social text-driven stock prediction. In Proceedings of the 27th ACM international conference on information and knowledge management. 1627–1630.
 
 ### Evaluation
 
@@ -145,7 +229,6 @@ For automated evaluation, please follow these instructions:
    To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7b-full), use this command:
 
 ```bash
-export PYTHONPATH='$abs_path/PIXIU/src:$abs_path/PIXIU/src/financial-evaluation'
 python eval.py \
     --model "hf-causal-experimental" \
     --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
@@ -160,7 +243,6 @@ More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-eval
 Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
 
 ```bash
-export PYTHONPATH='$abs_path/PIXIU/src:$abs_path/PIXIU/src/lm-evaluation-harness'
 export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
 python eval.py \
     --model gpt-4 \
@@ -185,7 +267,7 @@ python data/*/evaluate.py
 
 ### Create new tasks
 
-Creating a new task for FLARE involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new classification task using the FLARE framework
+Creating a new task for FLARE involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new task using the FLARE framework.
 
 #### Creating your dataset in Huggingface
 
@@ -204,21 +286,38 @@ In this format:
 - `query`: Combination of your prompt and text
 - `answer`: Your label
 
-For classification tasks, additional keys should be defined:
+For **Classification** tasks (such as [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)), additional keys should be defined:
 
 - `choices`: Set of labels
 - `gold`: Index of the correct label in choices (Start from 0)
+
+For **Sequential Labeling** tasks (such as [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)), additional keys should be defined:
+
+- `label`: List of token labels
+
+- `token`: List of tokens
+
+For **Relation Extraction** tasks (such as [FinRED (flare_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)), additional keys should be defined:
+
+- `label`: List of relation triples
+
+For **Extractive Summarization** tasks (such as [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
+
+- `label`: List of sentence labels
+
+For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)), no additional keys should be defined
 
 #### Implementing the task
 
 Once your dataset is ready, you can start implementing your task. Your task should be defined within a new class in flare.py or any other Python file located within the tasks directory.
 
-For a classification task, we provide a convenient base class called `Classification`. You can directly use this class to build your task. Let's illustrate this with an example of implementing a task named FLARE-FPB:
+To cater to a range of tasks, we offer several specialized base classes, including `Classification`, `SequentialLabeling`, `RelationExtraction`, `ExtractiveSummarization`, `AbstractiveSummarization` and `QA`.
+
+For instance, if you are embarking on a classification task, you can directly leverage our `Classification` base class. This class allows for efficient and intuitive task creation. To better demonstrate this, let's delve into an example of crafting a task named FLARE-FPB using the `Classification` base class:
 
 ```python
 class FlareFPB(Classification):
     DATASET_PATH = "flare-fpb"
-    DATASET_NAME = "none"
 ```
 
 And that's it! Once you've created your task class, the next step is to register it in the `src/tasks/__init__.py` file. To do this, add a new line following the format `"task_name": module.ClassName`. Here is how it's done:
@@ -230,14 +329,24 @@ TASK_REGISTRY = {
 }
 ```
 
-Please note, the Classification base class provides three default metrics:
+#### Predefined task metrics
 
-- **Accuracy**: This metric represents the ratio of correctly predicted observations to total observations. It is calculated as (True Positives + True Negatives) / Total Observations.
-- **F1 Score**: The F1 Score is the harmonic mean of precision and recall, providing a balance between these two metrics. It's useful in cases where one measure is more important than the other. The F1 score is at its best at 1 (perfect precision and recall) and worst at 0.
-- **Missing Ratio**: This metric calculates the proportion of responses where no options from the given choices in the task are returned.
-  Moreover, you can specify `CALCULATE_MCC` in your class definition to include the Matthews Correlation Coefficient (MCC). The MCC is a measure of the quality of binary classifications. It returns a value between -1 and +1. A coefficient of +1 represents a perfect prediction, 0 an average random prediction and -1 an inverse prediction.
+| Task                                     | Metric                                 | Illustration                                                 |
+| ---------------------------------------- | -------------------------------------- | ------------------------------------------------------------ |
+| Classification                           | Accuracy                               | This metric represents the ratio of correctly predicted observations to total observations. It is calculated as (True Positives + True Negatives) / Total Observations. |
+| Classification                           | F1 Score                               | The F1 Score represents the harmonic mean of precision and recall, thereby creating an equilibrium between these two factors. It proves particularly useful in scenarios where one factor bears more significance than the other. The score ranges from 0 to 1, with 1 signifying perfect precision and recall, and 0 indicating the worst case. Furthermore, we provide both 'weighted' and 'macro' versions of the F1 score. |
+| Classification                           | Missing Ratio                          | This metric calculates the proportion of responses where no options from the given choices in the task are returned. |
+| Classification                           | Matthews Correlation Coefficient (MCC) | The MCC is a metric that assesses the quality of binary classifications, producing a score ranging from -1 to +1. A score of +1 signifies perfect prediction, 0 denotes a prediction no better than random chance, and -1 indicates a completely inverse prediction. |
+| Sequential Labeling                      | F1 score                               | In the context of Sequential Labeling tasks, we utilize the F1 Score as computed by the `seqeval` library, a robust entity-level evaluation metric. This metric mandates an exact match of both the entity's span and type between the predicted and ground truth entities for a correct evaluation. True Positives (TP) represent correctly predicted entities, False Positives (FP) denote incorrectly predicted entities or entities with mismatched spans/types, and False Negatives (FN) signify missed entities from the ground truth. Precision, recall, and F1-score are then computed using these quantities, with the F1 Score representing the harmonic mean of precision and recall. |
+| Sequential Labeling                      | Label F1 score                         | This metric evaluates model performance based solely on the correctness of the labels predicted, without considering entity spans. |
+| Relation Extraction                      | Precision                              | Precision measures the proportion of correctly predicted relations out of all predicted relations. It is calculated as the number of True Positives (TP) divided by the sum of True Positives and False Positives (FP). |
+| Relation Extraction                      | Recall                                 | Recall measures the proportion of correctly predicted relations out of all actual relations. It is calculated as the number of True Positives (TP) divided by the sum of True Positives and False Negatives (FN). |
+| Relation Extraction                      | F1 score                               | The F1 Score is the harmonic mean of precision and recall, and it provides a balance between these two metrics. The F1 Score is at its best at 1 (perfect precision and recall) and worst at 0. |
+| Extractive and Abstractive Summarization | Rouge-N                                | This measures the overlap of N-grams (a contiguous sequence of N items from a given sample of text) between the system-generated summary and the reference summary. 'N' can be 1, 2, or more, with ROUGE-1 and ROUGE-2 being commonly used to assess unigram and bigram overlaps respectively. |
+| Extractive and Abstractive Summarization | Rouge-L                                | This metric evaluates the longest common subsequence (LCS) between the system and the reference summaries. LCS takes into account sentence level structure similarity naturally and identifies longest co-occurring in-sequence n-grams automatically. |
+| Question Answering                       | EmACC                                  | EMACC assesses the exact match between the model-generated response and the reference answer. In other words, the model-generated response is considered correct only if it matches the reference answer exactly, word-for-word. |
 
-> For more custom metrics or requests, you may refer to `flare.NER` or `flare.FinQA` for examples.
+>  Additionally, you can determine if the labels should be lowercased during the matching process by specifying `LOWER_CASE` in your class definition. This is pertinent since labels are matched based on their appearance in the generated output. For tasks like examinations where the labels are a specific set of capitalized letters such as 'A', 'B', 'C', this should typically be set to False.
 
 ---
 
