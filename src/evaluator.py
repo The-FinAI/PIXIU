@@ -314,6 +314,7 @@ def evaluate(
 t in range(turn)], turn)
                 filtered_reqs.append([req, (i, task_name, doc, doc_id, diag_id, turn)]
 
+            resps = getattr(lm, reqtype)([req.args for req in reqs])
             resps = [
                 x if req[0].index is None else x[req[0].index] for x, req in zip(resps, filtered_reqs
 )
