@@ -26,6 +26,10 @@ class Classification(Task):
     CALCULATE_MCC = False
     LOWER_CASE = True
     VERSION = 1
+    EVAL_LAST_TURN = True
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
     def has_training_docs(self):
         return True
@@ -142,6 +146,10 @@ class SequentialLabeling(Task):
     VERSION = 1
     DATASET_NAME = None
     LMAP = {'O': 0}
+    EVAL_LAST_TURN = True
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
     def has_training_docs(self):
         return False
@@ -244,6 +252,10 @@ class SequentialLabeling(Task):
 class AbstractiveSummarization(Task):
     VERSION = 1
     DATASET_NAME = None
+    EVAL_LAST_TURN = True
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
     def has_training_docs(self):
         return False
@@ -328,6 +340,10 @@ class AbstractiveSummarization(Task):
 class ExtractiveSummarization(Task):
     VERSION = 1
     DATASET_NAME = None
+    EVAL_LAST_TURN = True
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
     def has_training_docs(self):
         return False
@@ -422,6 +438,10 @@ class ExtractiveSummarization(Task):
 class RelationExtraction(Task):
     VERSION = 1
     DATASET_NAME = None
+    EVAL_LAST_TURN = True
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
     def has_training_docs(self):
         return False
@@ -519,6 +539,10 @@ class RelationExtraction(Task):
 class QA(Task):
     VERSION = 1
     DATASET_NAME = None
+    EVAL_LAST_TURN = True
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
     def has_training_docs(self):
         return True
@@ -905,5 +929,21 @@ class FinRED(RelationExtraction):
 class ECTSUM(ExtractiveSummarization):
     DATASET_PATH = "chancefocus/flare-ectsum"
 
+
 class EDTSUM(AbstractiveSummarization):
     DATASET_PATH = "chancefocus/flare-edtsum"
+
+
+class ConvFinQA(QA):
+    DATASET_PATH = "chancefocus/flare-convfinqa"
+
+    def reformulate_turn_req(self, req, turn_request, turn):
+        if turn == 0:
+            return req
+        pre_answers = {
+            f"answer{i}": turn_request[i][0]
+            for i in range(turn)
+        }
+        if pre_answers:
+            req.args = [req.args[0].format(**pre_answers)]
+        return req
