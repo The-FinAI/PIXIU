@@ -56,33 +56,17 @@
 - [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
 - [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
 - [FOMC (flare_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [SemEval-2017 Task5 (flare_tsa)](https://huggingface.co/datasets/ChanceFocus/flare-tsa)
-
-> Classification
-
 - [Headlines (flare_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
-- [FinArg ECC Task1 (flare_finarg_ecc_auc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-auc)
-- [FinArg ECC Task2 (flare_finarg_ecc_arc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-arc)
-- [CFA (flare_cfa)](https://huggingface.co/datasets/ChanceFocus/flare-cfa)
-- [MultiFin EN (flare_multifin_en)](https://huggingface.co/datasets/ChanceFocus/flare-multifin-en)
-- [M&A (flare_ma)](https://huggingface.co/datasets/ChanceFocus/flare-ma)
-- [MLESG EN (flare_mlesg)](https://huggingface.co/datasets/ChanceFocus/flare-mlesg)
 
 > Knowledge Extraction
 
 - [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
-
 - [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
-- [FinRED (flare_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)
-- [FinCausal20 Task1 (flare_causal20_sc)](https://huggingface.co/datasets/ChanceFocus/flare-causal20_sc)
-- [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)
 
 > Number Understanding
 
 - [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
-- [TATQA (flare_tatqa)](https://huggingface.co/datasets/ChanceFocus/flare-tatqa)
-- [FNXL (flare_fnxl)](https://huggingface.co/datasets/ChanceFocus/flare-fnxl)
-- [FSRL (flare_fsrl)](https://huggingface.co/datasets/ChanceFocus/flare-fsrl)
+- [ConvFinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-convfinqa)
 
 > Text Summarization
 
@@ -134,58 +118,34 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | FPB                   | sentiment analysis               | 4,845  | news                      | text              | CC BY-SA 3.0    | [1]   |
 | FiQA-SA               | sentiment analysis               | 1,173  | news headlines, tweets    | text              | Public          | [2]   |
 | FOMC                  | hawkish-dovish classification    | 496    | FOMC transcripts          | text              | CC BY-NC 4.0    | [3]   |
-| TSA                   | sentiment analysis               | 561    | news headlines            | text              | CC BY-NC-SA 4.0 | [4]   |
-| Headlines             | news headline classification     | 11,412 | news headlines            | text              | CC BY-SA 3.0    | [5]   |
-| FinArg-ECC-Task1      | argument unit classification     | 969    | earnings conference call  | text              | CC BY-NC-SA 4.0 | [6]   |
-| FinArg-ECC-Task2      | argument relation classification | 690    | earnings conference call  | text              | CC BY-NC-SA 4.0 | [6]   |
-| CFA                   |                                  | 1,030  |                           | text              |                 | [7]   |
-| Multifin EN           | multi-class classification       | 546    | article headlines         | text              | Public          | [8]   |
-| M&A                   | deal completeness classification | 500    | news articles, tweets     | text              | Public          | [9]   |
-| MLESG EN              | ESG Issue Identification         | 300    | news articles             | text              | CC BY-NC-ND     | [10]  |
-| NER                   | named entity recognition         | 1,366  | financial agreements      | text              | CC BY-SA 3.0    | [11]  |
-| Finer Ord             | named entity recognition         | 1,080  | news articles             | text              | CC BY-NC 4.0    | [12]  |
-| FinRED                | relation extraction              | 1,070  | earning call transcipts   | text              | Public          | [13]  |
-| FinCausual 2020 Task1 | causal classification            | 8,630  | news articles, SEC        | text              | CC BY 4.0       | [14]  |
-| FinCausual 2020 Task2 | causal detection                 | 226    | news articles, SEC        | text              | CC BY 4.0       | [14]  |
-| FinQA                 | question answering               | 8,281  | earnings reports          | text, table       | MIT License     | [15]  |
-| TatQA                 | question answering               | 1,670  | financial reports         | text, table       | MIT License     | [16]  |
-| FNXL                  | numeric labeling                 | 318    | SEC                       | text              | Public          | [17]  |
-| FSRL                  | token classification             | 97     | news articles             | text              | MIT License     | [18]  |
-| ECTSUM                | text summarization               | 495    | earning call transcipts   | text              | Public          | [19]  |
-| EDTSUM                | text summarization               | 2000   | news articles             | text              | Public          | [20]  |
-| German                | credit scoring                   | 1000   | credit records            | table             | CC BY 4.0       | [21]  |
-| Australian            | credit scoring                   | 690    | credit records            | table             | CC BY 4.0       | [22]  |
-| BigData22             | stock movement prediction        | 7,164  | tweets, historical prices | text, time series | Public          | [23]  |
-| ACL18                 | stock movement prediction        | 27,053 | tweets, historical prices | text, time series | MIT License     | [24]  |
-| CIKM18                | stock movement prediction        | 4,967  | tweets, historical prices | text, time series | Public          | [25]  |
-| ConvFinQA             | multi-turn question answering    | 1,490  | earnings reports          | text, table       | MIT License     | [26]  |
+| Headlines             | news headline classification     | 11,412 | news headlines            | text              | CC BY-SA 3.0    | [4]   |
+| NER                   | named entity recognition         | 1,366  | financial agreements      | text              | CC BY-SA 3.0    | [5]  |
+| Finer Ord             | named entity recognition         | 1,080  | news articles             | text              | CC BY-NC 4.0    | [6]  |
+| FinQA                 | question answering               | 8,281  | earnings reports          | text, table       | MIT License     | [7]  |
+| ConvFinQA             | multi-turn question answering    | 1,490  | earnings reports          | text, table       | MIT License     | [8]  |
+| ECTSUM                | text summarization               | 495    | earning call transcipts   | text              | Public          | [9]  |
+| EDTSUM                | text summarization               | 2000   | news articles             | text              | Public          | [10]  |
+| German                | credit scoring                   | 1000   | credit records            | table             | CC BY 4.0       | [11]  |
+| Australian            | credit scoring                   | 690    | credit records            | table             | CC BY 4.0       | [12]  |
+| BigData22             | stock movement prediction        | 7,164  | tweets, historical prices | text, time series | Public          | [13]  |
+| ACL18                 | stock movement prediction        | 27,053 | tweets, historical prices | text, time series | MIT License     | [14]  |
+| CIKM18                | stock movement prediction        | 4,967  | tweets, historical prices | text, time series | Public          | [15]  |
 
 1. Pekka Malo, Ankur Sinha, Pekka Korhonen, Jyrki Wallenius, and Pyry Takala. 2014. Good debt or bad debt: Detecting semantic orientations in economic texts. Journal of the Association for Information Science and Technology 65, 4 (2014), 782–796.
 2. Macedo Maia, Siegfried Handschuh, André Freitas, Brian Davis, Ross McDermott, Manel Zarrouk, and Alexandra Balahur. 2018. Www’18 open challenge: financial opinion mining and question answering. In Companion proceedings of the the web conference 2018. 1941–1942
 3. Agam Shah, Suvan Paturi, and Sudheer Chava. 2023. [Trillion Dollar Words: A New Financial Dataset, Task & Market Analysis](https://aclanthology.org/2023.acl-long.368). In *Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pages 6664–6679, Toronto, Canada. Association for Computational Linguistics.
-4. Keith Cortis, André Freitas, Tobias Daudert, Manuela Huerlimann, Manel Zarrouk, Siegfried Handschuh, and Brian Davis. 2017. [SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News](https://aclanthology.org/S17-2089). In *Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017)*, pages 519–535, Vancouver, Canada. Association for Computational Linguistics.
-5. Ankur Sinha and Tanmay Khandait. 2021. Impact of news on the commodity market: Dataset and results. In Advances in Information and Communication: Proceedings of the 2021 Future of Information and Communication Conference (FICC), Volume 2. Springer, 589–601
-6. Chung-Chi Chen, Chin-Yi Lin, Hen-Hsen Huang, Hsin-Hsi Chen, Hiroya Takamura, Yu-Lieh Huang, and Alaa Alhamzeh. 2023. Fine-grained Argument Understanding in Financial Analysis. In *Proceedings of the Seventeenth NTCIR conference (NTCIR-17)*.
-7. 
-8. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. [MultiFin: A Dataset for Multilingual Financial NLP](https://aclanthology.org/2023.findings-eacl.66). In *Findings of the Association for Computational Linguistics: EACL 2023*, pages 894–909, Dubrovnik, Croatia. Association for Computational Linguistics.
-9. Yang, L., Kenny, E.M., Ng, T.L., Yang, Y., Smyth, B., & Dong, R. (2020). Generating Plausible Counterfactual Explanations for Deep Transformers in Financial Text Classification. *International Conference on Computational Linguistics*.
-10. Chung-Chi Chen, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023. Multi-lingual esg issue identification. In *Proceedings of the Fifth Workshop on Financial Tech- nology and Natural Language Processing (FinNLP) and the Second Multimodal AI For Financial Fore- casting (Muffin)*.
-11. Julio Cesar Salinas Alvarado, Karin Verspoor, and Timothy Baldwin. 2015. Domain adaption of named entity recognition to support credit risk assessment. In Proceedings of the Australasian Language Technology Association Workshop 2015. 84–90.
-12. Shah A, Vithani R, Gullapalli A, et al. Finer: Financial named entity recognition dataset and weak-supervision model[J]. arXiv preprint arXiv:2302.11157, 2023.
-13. Sharma, Soumya et al. “FinRED: A Dataset for Relation Extraction in Financial Domain.” *Companion Proceedings of the Web Conference 2022* (2022): n. pag.
-14. Dominique Mariko, Hanna Abi-Akl, Estelle Labidurie, Stephane Durfort, Hugues De Mazancourt, and Mahmoud El-Haj. 2020. [The Financial Document Causality Detection Shared Task (FinCausal 2020)](https://aclanthology.org/2020.fnp-1.3). In *Proceedings of the 1st Joint Workshop on Financial Narrative Processing and MultiLing Financial Summarisation*, pages 23–32, Barcelona, Spain (Online). COLING.
-15. Zhiyu Chen, Wenhu Chen, Charese Smiley, Sameena Shah, Iana Borova, Dylan Langdon, Reema Moussa, Matt Beane, Ting-Hao Huang, Bryan R Routledge, et al . 2021. FinQA: A Dataset of Numerical Reasoning over Financial Data. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. 3697–3711.
-16. Zhu, Fengbin, Wenqiang Lei, Youcheng Huang, Chao Wang, Shuo Zhang, Jiancheng Lv, Fuli Feng and Tat-Seng Chua. “TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance.” *ArXiv* abs/2105.07624 (2021): n. pag.
-17. Soumya Sharma, Subhendu Khatuya, Manjunath Hegde, Afreen Shaikh, Koustuv Dasgupta, Pawan Goyal, and Niloy Ganguly. 2023. [Financial Numeric Extreme Labelling: A dataset and benchmarking](https://aclanthology.org/2023.findings-acl.219). In *Findings of the Association for Computational Linguistics: ACL 2023*, pages 3550–3561, Toronto, Canada. Association for Computational Linguistics.
-18. Matthew Lamm, Arun Chaganty, Christopher D. Manning, Dan Jurafsky, and Percy Liang. 2018. [Textual Analogy Parsing: What’s Shared and What’s Compared among Analogous Facts](https://aclanthology.org/D18-1008). In *Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing*, pages 82–92, Brussels, Belgium. Association for Computational Linguistics.
-19. Rajdeep Mukherjee, Abhinav Bohra, Akash Banerjee, Soumya Sharma, Manjunath Hegde, Afreen Shaikh, Shivani Shrivastava, Koustuv Dasgupta, Niloy Ganguly, Saptarshi Ghosh, and Pawan Goyal. 2022. [ECTSum: A New Benchmark Dataset For Bullet Point Summarization of Long Earnings Call Transcripts](https://aclanthology.org/2022.emnlp-main.748). In *Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing*, pages 10893–10906, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
-20. Zhihan Zhou, Liqian Ma, and Han Liu. 2021. [Trade the Event: Corporate Events Detection for News-Based Event-Driven Trading](https://aclanthology.org/2021.findings-acl.186). In *Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021*, pages 2114–2124, Online. Association for Computational Linguistics.
-21. Hofmann,Hans. (1994). Statlog (German Credit Data). UCI Machine Learning Repository. https://doi.org/10.24432/C5NC77.
-22. Quinlan,Ross. Statlog (Australian Credit Approval). UCI Machine Learning Repository. https://doi.org/10.24432/C59012.
-23. Yejun Soun, Jaemin Yoo, Minyong Cho, Jihyeong Jeon, and U Kang. 2022. Accurate Stock Movement Prediction with Self-supervised Learning from Sparse Noisy Tweets. In 2022 IEEE International Conference on Big Data (Big Data). IEEE, 1691–1700.
-24. Yumo Xu and Shay B Cohen. 2018. Stock movement prediction from tweets and historical prices. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 1970–1979.
-25. Huizhe Wu, Wei Zhang, Weiwei Shen, and Jun Wang. 2018. Hybrid deep sequential modeling for social text-driven stock prediction. In Proceedings of the 27th ACM international conference on information and knowledge management. 1627–1630.
-26. 
+4. Ankur Sinha and Tanmay Khandait. 2021. Impact of news on the commodity market: Dataset and results. In Advances in Information and Communication: Proceedings of the 2021 Future of Information and Communication Conference (FICC), Volume 2. Springer, 589–601
+5. Julio Cesar Salinas Alvarado, Karin Verspoor, and Timothy Baldwin. 2015. Domain adaption of named entity recognition to support credit risk assessment. In Proceedings of the Australasian Language Technology Association Workshop 2015. 84–90.
+6. Shah A, Vithani R, Gullapalli A, et al. Finer: Financial named entity recognition dataset and weak-supervision model[J]. arXiv preprint arXiv:2302.11157, 2023.
+7. Zhiyu Chen, Wenhu Chen, Charese Smiley, Sameena Shah, Iana Borova, Dylan Langdon, Reema Moussa, Matt Beane, Ting-Hao Huang, Bryan R Routledge, et al . 2021. FinQA: A Dataset of Numerical Reasoning over Financial Data. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. 3697–3711.
+8. Zhiyu Chen, Shiyang Li, Charese Smiley, Zhiqiang Ma, Sameena Shah, and William Yang Wang. 2022. ConvFinQA: Exploring the Chain of Numerical Reasoning in Conversational Finance Question Answering. In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 6279–6292, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
+9. Rajdeep Mukherjee, Abhinav Bohra, Akash Banerjee, Soumya Sharma, Manjunath Hegde, Afreen Shaikh, Shivani Shrivastava, Koustuv Dasgupta, Niloy Ganguly, Saptarshi Ghosh, and Pawan Goyal. 2022. [ECTSum: A New Benchmark Dataset For Bullet Point Summarization of Long Earnings Call Transcripts](https://aclanthology.org/2022.emnlp-main.748). In *Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing*, pages 10893–10906, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
+10. Zhihan Zhou, Liqian Ma, and Han Liu. 2021. [Trade the Event: Corporate Events Detection for News-Based Event-Driven Trading](https://aclanthology.org/2021.findings-acl.186). In *Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021*, pages 2114–2124, Online. Association for Computational Linguistics.
+11. Hofmann,Hans. (1994). Statlog (German Credit Data). UCI Machine Learning Repository. https://doi.org/10.24432/C5NC77.
+12. Quinlan,Ross. Statlog (Australian Credit Approval). UCI Machine Learning Repository. https://doi.org/10.24432/C59012.
+13. Yejun Soun, Jaemin Yoo, Minyong Cho, Jihyeong Jeon, and U Kang. 2022. Accurate Stock Movement Prediction with Self-supervised Learning from Sparse Noisy Tweets. In 2022 IEEE International Conference on Big Data (Big Data). IEEE, 1691–1700.
+14. Yumo Xu and Shay B Cohen. 2018. Stock movement prediction from tweets and historical prices. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 1970–1979.
+15. Huizhe Wu, Wei Zhang, Weiwei Shen, and Jun Wang. 2018. Hybrid deep sequential modeling for social text-driven stock prediction. In Proceedings of the 27th ACM international conference on information and knowledge management. 1627–1630.
 
 ### Evaluation
 
@@ -299,15 +259,11 @@ For **Classification** tasks (such as [FPB (flare_fpb)](https://huggingface.co/d
 - `choices`: Set of labels
 - `gold`: Index of the correct label in choices (Start from 0)
 
-For **Sequential Labeling** tasks (such as [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)), additional keys should be defined:
+For **Sequential Labeling** tasks (such as [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)), additional keys should be defined:
 
 - `label`: List of token labels
 
 - `token`: List of tokens
-
-For **Relation Extraction** tasks (such as [FinRED (flare_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)), additional keys should be defined:
-
-- `label`: List of relation triples
 
 For **Extractive Summarization** tasks (such as [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
 
@@ -355,10 +311,6 @@ TASK_REGISTRY = {
 | Question Answering                       | EmACC                                  | EMACC assesses the exact match between the model-generated response and the reference answer. In other words, the model-generated response is considered correct only if it matches the reference answer exactly, word-for-word. |
 
 >  Additionally, you can determine if the labels should be lowercased during the matching process by specifying `LOWER_CASE` in your class definition. This is pertinent since labels are matched based on their appearance in the generated output. For tasks like examinations where the labels are a specific set of capitalized letters such as 'A', 'B', 'C', this should typically be set to False.
-
-#### Multi-turn task
-
-
 
 ---
 
