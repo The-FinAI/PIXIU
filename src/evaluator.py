@@ -312,7 +312,7 @@ def evaluate(
                 task = task_dict[task_name]
                 req = task.reformulate_turn_req(req, [(turn_requests.get((diag_id, t), None), t) for
 t in range(turn)], turn)
-                filtered_reqs.append([req, (i, task_name, doc, doc_id, diag_id, turn)]
+                filtered_reqs.append([req, (i, task_name, doc, doc_id, diag_id, turn)])
 
             resps = getattr(lm, reqtype)([req.args for req in reqs])
             resps = [
