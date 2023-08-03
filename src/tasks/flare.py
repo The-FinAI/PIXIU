@@ -88,6 +88,10 @@ class Classification(Task):
             if ch in ini_result:
                 result = choice
                 break
+        else:
+            choice = -1
+            result = "missing"
+
         acc = 1.0 if gold == choice else 0.0
 
         results = {
