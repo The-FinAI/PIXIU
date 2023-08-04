@@ -116,12 +116,12 @@ class ChatLM(BaseLM):
 
         def sameuntil_chunks(xs, size):
             ret = []
-            lastuntil = xs[0][1]
+            lastuntil = "</s>"
             for x in xs:
-                if len(ret) >= size or x[1] != lastuntil:
+                if len(ret) >= size:
                     yield ret, lastuntil
                     ret = []
-                    lastuntil = x[1]
+                    lastuntil = "</s>"
                 ret.append(x)
 
             if ret:
@@ -132,11 +132,8 @@ class ChatLM(BaseLM):
             list(sameuntil_chunks(re_ord.get_reordered(), self.REQ_CHUNK_SIZE))
         ):
             inps = []
-            for context, _ in chunk:
-                context_enc = self.tok_encode(context)
-                inp = context_enc[-(self.max_length - self.max_gen_toks) :]
-                inp = self.tok_decode(inp)
-                inps.append(inp)
+            for context in chunk:
+                inps.append(context[0])
 
             responses = asyncio.run(oa_completion(
                 url="https://api.openai.com/v1/chat/completions",
@@ -148,13 +145,11 @@ class ChatLM(BaseLM):
                 # stop=until,
             ))
 
-            for resp, (context, until_) in zip(responses, chunk):
+            for resp, context in zip(responses, chunk):
                 s = resp
-                for term in until_:
-                    s = s.split(term)[0]
 
                 # partial caching
-                self.cache_hook.add_partial("greedy_until", (context, until_), s)
+                self.cache_hook.add_partial("greedy_until", (context, "</s>"), s)
 
                 res.append(s)
 

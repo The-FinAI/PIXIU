@@ -7,3 +7,4 @@ sentencepiece
 pandas
 seqeval
 numpy
+evaluate

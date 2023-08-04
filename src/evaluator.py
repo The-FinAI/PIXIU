@@ -21,7 +21,7 @@ def simple_evaluate(
     device=None,
     no_cache=False,
     limit=None,
-    bootstrap_iters=100000,
+    bootstrap_iters=100,
     description_dict=None,
     check_integrity=False,
     decontamination_ngrams_path=None,
@@ -70,7 +70,7 @@ def simple_evaluate(
     if isinstance(model, str):
         if model_args is None:
             model_args = ""
-        if model not in ["gpt-4", "gpt-3.5-turbo"]:
+        if model[:3] != "gpt":
             lm = lm_eval.models.get_model(model).create_from_arg_string(
                 model_args, {"batch_size": batch_size, "max_batch_size": max_batch_size, "device": device}
             )
@@ -185,6 +185,7 @@ def evaluate(
     versions = collections.defaultdict(dict)
 
     requests = collections.defaultdict(list)
+    turn_requests = collections.defaultdict(dict)
     requests_origin = collections.defaultdict(list)
 
     overlaps = collections.defaultdict(list)  # {task_name: contaminated_docs}
@@ -262,7 +263,10 @@ def evaluate(
                 requests[req.request_type].append(req)
                 # i: index in requests for a single task instance
                 # doc_id: unique id that we can get back to a doc using `docs`
-                requests_origin[req.request_type].append((i, task_name, doc, doc_id))
+                diag_id = doc.get("dialogue_id", doc_id)
+                turn = doc.get("turn", 0)
+                turn_requests[(diag_id, turn)] = (task_name, doc, doc_id, req)
+                requests_origin[req.request_type].append((i, task_name, doc, doc_id, diag_id, turn))
 
                 if write_out:
                     prompt_details[-1][f"prompt_{i}"] = "".join(
@@ -291,27 +295,49 @@ def evaluate(
         #       solution. we could also implement some kind of auto-grouping here;
         #       they should end up next to each other.
 
+        max_turns = max([val[-1] for val in requests_origin[reqtype]])
         print("Running", reqtype, "requests")
-        resps = getattr(lm, reqtype)([req.args for req in reqs])
-        resps = [
-            x if req.index is None else x[req.index] for x, req in zip(resps, reqs)
-        ]
+        print(f"Maximum {max_turns} turns")
+        task_turns = {}
+        for cur_turn in range(max_turns+1):
+            print(f"Running {cur_turn}th turn")
 
-        for resp, (i, task_name, doc, doc_id) in zip(resps, requests_origin[reqtype]):
-            process_res_queue[(task_name, doc_id)].append((i, resp))
+            filtered_reqs = []
 
-            if write_out:
-                write_out_info[task_name][doc_id][f"logit_{i}"] = resp
+            for req, (i, task_name, doc, doc_id, diag_id, turn) in zip(reqs, requests_origin[reqtype]
+):
+                if turn != cur_turn:
+                    continue
+                task_turns[task_name] = max(turn, task_turns.get(task_name, -1))
                 task = task_dict[task_name]
-                if isinstance(task, lm_eval.base.MultipleChoiceTask):
-                    write_out_info[task_name][doc_id]["truth"] = doc["gold"]
-                elif isinstance(task, lm_eval.tasks.winogrande.Winogrande):
-                    write_out_info[task_name][doc_id]["truth"] = task.answer_to_num[
-                        doc["answer"]
-                    ]
-                else:
-                    write_out_info[task_name][doc_id]["truth"] = task.doc_to_target(doc)
+                req = task.reformulate_turn_req(req, [(turn_requests.get((diag_id, t), None), t) for
+t in range(turn)], turn)
+                filtered_reqs.append([req, (i, task_name, doc, doc_id, diag_id, turn)])
 
+            resps = getattr(lm, reqtype)([req.args for req in reqs])
+            resps = [
+                x if req[0].index is None else x[req[0].index] for x, req in zip(resps, filtered_reqs
+)
+            ]
+
+            for resp, req in zip(resps, filtered_reqs):
+                i, task_name, doc, doc_id, diag_id, turn = req[1]
+                task = task_dict[task_name]
+                if not task.EVAL_LAST_TURN or turn == task_turns[task_name]:
+                    process_res_queue[(task_name, doc_id)].append((i, resp))
+                turn_requests[(diag_id, turn)] = resp
+
+                if write_out:
+                    write_out_info[task_name][doc_id][f"logit_{i}"] = resp
+                    task = task_dict[task_name]
+                    if isinstance(task, lm_eval.base.MultipleChoiceTask):
+                        write_out_info[task_name][doc_id]["truth"] = doc["gold"]
+                    elif isinstance(task, lm_eval.tasks.winogrande.Winogrande):
+                        write_out_info[task_name][doc_id]["truth"] = task.answer_to_num[
+                            doc["answer"]
+                        ]
+                    else:
+                        write_out_info[task_name][doc_id]["truth"] = task.doc_to_target(doc)
     vals = collections.defaultdict(list)
 
     # unpack results and sort back in order and return control to Task

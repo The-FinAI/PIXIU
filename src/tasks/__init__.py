@@ -11,11 +11,14 @@ TASK_REGISTRY = {
     "flare_fiqasa": flare.FIQASA,
     "flare_ner": flare.NER,
     "flare_finqa": flare.FinQA,
+    "flare_convfinqa": flare.ConvFinQA,
     "flare_headlines": flare.Headlines,
     "flare_finer_ord": flare.FinerOrd,
     "flare_fomc": flare.FOMC,
     "flare_german": flare.German,
     "flare_australian": flare.Australian,
+    "flare_ectsum": flare.ECTSUM,
+    "flare_edtsum": flare.EDTSUM,
     **flare.SM_TASKS,
 }
 
