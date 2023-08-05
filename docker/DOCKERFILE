@@ -1,4 +1,4 @@
-FROM tothemoon/belle:20230721
+FROM tothemoon/belle:latest
 
 RUN python3 -m pip install -U --no-cache-dir sqlitedict
 RUN python3 -m pip install -U --no-cache-dir omegaconf
