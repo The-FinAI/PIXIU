@@ -61,7 +61,7 @@ class Classification(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def doc_to_decontamination_query(self, doc):
@@ -203,7 +203,7 @@ class SequentialLabeling(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def process_result(self, pred, gold, tokens):
@@ -287,8 +287,6 @@ class AbstractiveSummarization(Task):
         return doc["answer"]
 
     def process_results(self, doc, results):
-        import pudb
-        pudb.set_trace()
         return {
             "rouge1": (doc["answer"], results[0]),
             "rouge2": (doc["answer"], results[0]),
@@ -313,7 +311,7 @@ class AbstractiveSummarization(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def rouge_score(self, items):
@@ -401,7 +399,7 @@ class ExtractiveSummarization(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def get_sum(self, labels, texts):
@@ -499,7 +497,7 @@ class RelationExtraction(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def process(self, items):
@@ -589,7 +587,7 @@ class QA(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def doc_to_target(self, doc):
@@ -667,7 +665,7 @@ class NER(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def doc_to_target(self, doc):
@@ -767,7 +765,7 @@ class Headlines(Classification):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def aggregation(self):

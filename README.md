@@ -196,7 +196,7 @@ For automated evaluation, please follow these instructions:
 
 ```bash
 python eval.py \
-    --model "hf-causal-experimental" \
+    --model "hf-causal-llama" \
     --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
     --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```
