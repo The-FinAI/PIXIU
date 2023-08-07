@@ -8,7 +8,7 @@ import numpy as np
 from .utils import process_text
 from seqeval.metrics import f1_score as entity_score
 from sklearn.metrics import accuracy_score, f1_score
-
+import evaluate
 
 _CITATION = """
 @misc{xie2023pixiu,
@@ -287,6 +287,8 @@ class AbstractiveSummarization(Task):
         return doc["answer"]
 
     def process_results(self, doc, results):
+        import pudb
+        pudb.set_trace()
         return {
             "rouge1": (doc["answer"], results[0]),
             "rouge2": (doc["answer"], results[0]),

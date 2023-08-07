@@ -65,7 +65,7 @@ def simple_evaluate(
     random.seed(1234)
     np.random.seed(1234)
 
-    assert tasks != [], "No tasks specified"
+    assert len(tasks) != 0, "No tasks specified"
 
     if isinstance(model, str):
         if model_args is None:
