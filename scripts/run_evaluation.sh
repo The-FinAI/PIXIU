@@ -1,5 +1,5 @@
 pixiu_path='/path/to/PIXIU'
-export PYTHONPATH="$abspath/src:$abspath/src/financial-evaluation"
+export PYTHONPATH="$pixiu_path/src:$pixiu_path/src/financial-evaluation"
 echo $PYTHONPATH
 
 python src/eval.py \
