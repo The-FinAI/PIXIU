@@ -2,18 +2,26 @@ import argparse
 import json
 import logging
 import os
-
-from lm_eval import tasks, utils
+import tasks
+from lm_eval import utils
 import evaluator
 
 logging.getLogger("openai").setLevel(logging.WARNING)
 
+import pudb
+import traceback
+import sys
+# break on exception
+def debug_on_exception(exctype, value, tb):
+    traceback.print_exception(exctype, value, tb)
+    pudb.post_mortem(tb)
+sys.excepthook = debug_on_exception
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
     parser.add_argument("--model_args", default="")
-    parser.add_argument("--tasks", default=None)
+    parser.add_argument("--tasks", default=None, choices=utils.MultiChoice(tasks.ALL_TASKS))
     parser.add_argument("--provide_description", action="store_true")
     parser.add_argument("--num_fewshot", type=int, default=0)
     parser.add_argument("--batch_size", type=str, default=None)
@@ -48,7 +56,7 @@ def main():
     if args.tasks is None:
         task_names = tasks.ALL_TASKS
     else:
-        task_names = args.tasks.split(",")
+        task_names = utils.pattern_match(args.tasks.split(","), tasks.ALL_TASKS)
 
     print(f"Selected Tasks: {task_names}")
 
