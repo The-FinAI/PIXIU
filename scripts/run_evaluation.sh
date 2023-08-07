@@ -3,7 +3,7 @@ export PYTHONPATH="$abspath/src:$abspath/src/financial-evaluation"
 echo $PYTHONPATH
 
 python src/eval.py \
-    --model hf-causal-experimental \
+    --model hf-causal-llama \
     --tasks flare_fpb \
     --model_args use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False \
     --no_cache \
