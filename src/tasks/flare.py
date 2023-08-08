@@ -8,7 +8,7 @@ import numpy as np
 from .utils import process_text
 from seqeval.metrics import f1_score as entity_score
 from sklearn.metrics import accuracy_score, f1_score
-
+import evaluate
 
 _CITATION = """
 @misc{xie2023pixiu,
@@ -61,7 +61,7 @@ class Classification(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def doc_to_decontamination_query(self, doc):
@@ -203,7 +203,7 @@ class SequentialLabeling(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def process_result(self, pred, gold, tokens):
@@ -291,6 +291,7 @@ class AbstractiveSummarization(Task):
             "rouge1": (doc["answer"], results[0]),
             "rouge2": (doc["answer"], results[0]),
             "rougeL": (doc["answer"], results[0]),
+            "bert_score_f1": (doc["answer"], results[0]),
         }
 
     def higher_is_better(self):
@@ -298,6 +299,7 @@ class AbstractiveSummarization(Task):
             "rouge1": True,
             "rouge2": True,
             "rougeL": True,
+            "bert_score_f1": True
         }
 
     def construct_requests(self, doc, ctx):
@@ -311,7 +313,7 @@ class AbstractiveSummarization(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def rouge_score(self, items):
@@ -333,11 +335,25 @@ class AbstractiveSummarization(Task):
         results = self.rouge_score(items)
         return results['rougeL']
 
+    def bert_score(self, items):
+        if getattr(self, "_cache_bertscore", None) is None:
+            golds, preds = zip(*items)
+            bertscore = evaluate.load("evaluate-metric/bertscore")
+            self._cache_bertscore = bertscore.compute(predictions=preds, references=golds, model_type="bert-base-multilingual-cased")
+            return self._cache_bertscore
+        else:
+            return self._cache_bertscore
+        
+    def bert_score_f1(self, items):
+        res = self.bert_score(items)
+        return sum(res['f1']) / len(res['f1'])
+
     def aggregation(self):
         return {
             "rouge1": self.rouge1,
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
+            "bert_score_f1": self.bert_score_f1
         }
 
 
@@ -379,6 +395,7 @@ class ExtractiveSummarization(Task):
             "rouge1": (doc["label"], doc["text"], results[0]),
             "rouge2": (doc["label"], doc["text"], results[0]),
             "rougeL": (doc["label"], doc["text"], results[0]),
+            "bert_score_f1": (doc["label"], doc["text"], results[0]),
         }
 
     def higher_is_better(self):
@@ -386,6 +403,7 @@ class ExtractiveSummarization(Task):
             "rouge1": True,
             "rouge2": True,
             "rougeL": True,
+            "bert_score_f1": True
         }
 
     def construct_requests(self, doc, ctx):
@@ -399,7 +417,7 @@ class ExtractiveSummarization(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def get_sum(self, labels, texts):
@@ -431,11 +449,28 @@ class ExtractiveSummarization(Task):
         results = self.rouge_score(items)
         return results['rougeL']
 
+    def bert_score(self, items):
+        if getattr(self, "_cache_bertscore", None) is None:
+            golds, texts, preds = zip(*items)
+            golds = self.get_sum(golds, texts)
+            preds = self.get_sum([val.split("\n") for val in preds], texts)
+
+            bertscore = evaluate.load("evaluate-metric/bertscore")
+            self._cache_bertscore = bertscore.compute(predictions=preds, references=golds, model_type="bert-base-multilingual-cased")
+            return self._cache_bertscore
+        else:
+            return self._cache_bertscore
+        
+    def bert_score_f1(self, items):
+        res = self.bert_score(items)
+        return sum(res['f1']) / len(res['f1'])
+
     def aggregation(self):
         return {
             "rouge1": self.rouge1,
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
+            "bert_score_f1": self.bert_score_f1
         }
 
 
@@ -497,7 +532,7 @@ class RelationExtraction(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def process(self, items):
@@ -587,7 +622,7 @@ class QA(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def doc_to_target(self, doc):
@@ -665,7 +700,7 @@ class NER(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def doc_to_target(self, doc):
@@ -765,7 +800,7 @@ class Headlines(Classification):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
+        cont_request = rf.greedy_until(ctx, {"until": None})
         return cont_request
 
     def aggregation(self):

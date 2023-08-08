@@ -1,7 +1,7 @@
 from pprint import pprint
 from typing import List, Union
 
-import sacrebleu
+import json
 import lm_eval.base
 
 from . import flare

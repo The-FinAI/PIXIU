@@ -1,13 +1,14 @@
-pixiu_path='/path/to/PIXIU'
-export PYTHONPATH="$abspath/src:$abspath/src/financial-evaluation"
+pixiu_path='/root/PIXIU'
+export PYTHONPATH="$pixiu_path/src:$pixiu_path/src/financial-evaluation"
 echo $PYTHONPATH
+export CUDA_VISIBLE_DEVICES="0"
 
 python src/eval.py \
-    --model hf-causal-experimental \
-    --tasks flare_fpb \
-    --model_args use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False \
+    --model hf-causal-llama \
+    --tasks flare_edtsum,flare_ectsum \
+    --model_args use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False,max_gen_toks=1024,dtype=float16 \
     --no_cache \
-    --batch_size 20 \
+    --batch_size 4 \
+    --model_prompt 'finma_prompt' \
     --num_fewshot 0 \
-    --limit 100 \
-    --write_out
+    --write_out 

@@ -162,7 +162,7 @@ pip install -e .[multilingual]
 ```bash
 sudo bash scripts/docker_run.sh
 ```
-Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:20230721`
+Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:20230806`
 
 ```bash
 docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
@@ -196,7 +196,7 @@ For automated evaluation, please follow these instructions:
 
 ```bash
 python eval.py \
-    --model "hf-causal-experimental" \
+    --model "hf-causal-llama" \
     --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
     --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```

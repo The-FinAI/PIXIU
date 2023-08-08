@@ -2,9 +2,10 @@
 __pycache__/
 lm_cache/
 *_results
-*.json
+/*.json
 .hypothesis
 *_private.*
 *_private
+*_debug.*
 .vscode
 *.code-workspace
