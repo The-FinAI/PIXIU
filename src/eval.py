@@ -3,25 +3,20 @@ import json
 import logging
 import os
 import tasks
+
 from lm_eval import utils
 import evaluator
+from model_prompt import MODEL_PROMPT_MAP
+
 
 logging.getLogger("openai").setLevel(logging.WARNING)
-
-import pudb
-import traceback
-import sys
-# break on exception
-def debug_on_exception(exctype, value, tb):
-    traceback.print_exception(exctype, value, tb)
-    pudb.post_mortem(tb)
-sys.excepthook = debug_on_exception
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
     parser.add_argument("--model_args", default="")
     parser.add_argument("--tasks", default=None, choices=utils.MultiChoice(tasks.ALL_TASKS))
+    parser.add_argument("--model_prompt", default="no_prompt", choices=list(MODEL_PROMPT_MAP.keys()))
     parser.add_argument("--provide_description", action="store_true")
     parser.add_argument("--num_fewshot", type=int, default=0)
     parser.add_argument("--batch_size", type=str, default=None)
@@ -80,6 +75,7 @@ def main():
         check_integrity=args.check_integrity,
         write_out=args.write_out,
         output_base_path=args.output_base_path,
+        model_prompt=args.model_prompt
     )
 
     dumped = json.dumps(results, indent=2)

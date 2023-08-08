@@ -63,7 +63,6 @@ def evaluate(
         **kwargs,
     )
     with torch.no_grad():
-        # pudb.set_trace()
         generation_output = model.generate(
             input_ids=input_ids,
             generation_config=generation_config,

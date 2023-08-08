@@ -6,5 +6,6 @@ lm_cache/
 .hypothesis
 *_private.*
 *_private
+*_debug.*
 .vscode
 *.code-workspace
