@@ -1,13 +1,13 @@
 """
 FLARE
 """
-from itertools import zip_longest
-from lm_eval.base import MultipleChoiceTask, Task, rf
+from lm_eval.base import Task, rf
 from lm_eval.metrics import mean, matthews_corrcoef
 import numpy as np
 from .utils import process_text
 from seqeval.metrics import f1_score as entity_score
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.metrics import f1_score
+from bart_score import BARTScorer
 import evaluate
 
 _CITATION = """
@@ -292,6 +292,7 @@ class AbstractiveSummarization(Task):
             "rouge2": (doc["answer"], results[0]),
             "rougeL": (doc["answer"], results[0]),
             "bert_score_f1": (doc["answer"], results[0]),
+            "bart_score": (doc["answer"], results[0])
         }
 
     def higher_is_better(self):
@@ -299,7 +300,8 @@ class AbstractiveSummarization(Task):
             "rouge1": True,
             "rouge2": True,
             "rougeL": True,
-            "bert_score_f1": True
+            "bert_score_f1": True,
+            "bart_score": True
         }
 
     def construct_requests(self, doc, ctx):
@@ -347,13 +349,28 @@ class AbstractiveSummarization(Task):
     def bert_score_f1(self, items):
         res = self.bert_score(items)
         return sum(res['f1']) / len(res['f1'])
+    
+    def bart_score(self, items):
+        golds, preds = zip(*items)
+        bart_scorer = BARTScorer(
+            device='cuda:0', 
+            checkpoint='facebook/bart-large-cnn'
+        )
+        bart_scorer.load(path='src/metrics/BARTScore/bart_score.pth')
+        res = bart_scorer.score(
+            srcs=preds, 
+            tgts=golds, 
+            batch_size=8
+        )
+        return sum(res) / len(res)
 
     def aggregation(self):
         return {
             "rouge1": self.rouge1,
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
-            "bert_score_f1": self.bert_score_f1
+            "bert_score_f1": self.bert_score_f1,
+            "bart_score": self.bart_score
         }
 
 
@@ -396,6 +413,7 @@ class ExtractiveSummarization(Task):
             "rouge2": (doc["label"], doc["text"], results[0]),
             "rougeL": (doc["label"], doc["text"], results[0]),
             "bert_score_f1": (doc["label"], doc["text"], results[0]),
+            "bart_score": (doc["label"], doc["text"], results[0])
         }
 
     def higher_is_better(self):
@@ -403,7 +421,8 @@ class ExtractiveSummarization(Task):
             "rouge1": True,
             "rouge2": True,
             "rougeL": True,
-            "bert_score_f1": True
+            "bert_score_f1": True,
+            "bart_score": True
         }
 
     def construct_requests(self, doc, ctx):
@@ -464,13 +483,31 @@ class ExtractiveSummarization(Task):
     def bert_score_f1(self, items):
         res = self.bert_score(items)
         return sum(res['f1']) / len(res['f1'])
+    
+    def bart_score(self, items):
+        golds, texts, preds = zip(*items)
+        golds = self.get_sum(golds, texts)
+        preds = self.get_sum([val.split("\n") for val in preds], texts)
+        
+        bart_scorer = BARTScorer(
+            device='cuda:0', 
+            checkpoint='facebook/bart-large-cnn'
+        )
+        bart_scorer.load(path='src/metrics/BARTScore/bart_score.pth')
+        res = bart_scorer.score(
+            srcs=preds, 
+            tgts=golds, 
+            batch_size=8
+        )
+        return sum(res) / len(res)
 
     def aggregation(self):
         return {
             "rouge1": self.rouge1,
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
-            "bert_score_f1": self.bert_score_f1
+            "bert_score_f1": self.bert_score_f1,
+            "bart_score": self.bart_score
         }
 
 
