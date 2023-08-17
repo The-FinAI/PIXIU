@@ -698,6 +698,9 @@ class NER(Task):
     DATASET_PATH = "chancefocus/flare-ner"
     DATASET_NAME = None
 
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
+
     def has_training_docs(self):
         return True
 
