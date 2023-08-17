@@ -855,11 +855,11 @@ class FOMC(Classification):
     DATASET_PATH = "chancefocus/flare-fomc"
 
 
-class German(Classification):
+class German(StockMovement):
     DATASET_PATH = "chancefocus/flare-german"
 
 
-class Australian(Classification):
+class Australian(StockMovement):
     DATASET_PATH = "chancefocus/flare-australian"
 
 
