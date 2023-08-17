@@ -1,0 +1,10 @@
+{
+    "python.analysis.extraPaths": [
+        "src/financial-evaluation",
+        "src/metrics/BARTScore",
+    ],
+    "python.autoComplete.extraPaths": [
+        "src/financial-evaluation",
+        "src/metrics/BARTScore",
+    ]
+}
