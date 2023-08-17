@@ -187,6 +187,7 @@ Arguments explain:
 - `--rm`: remove the container when exit container (ie.`CTRL + D`)
 
 #### Automated Task Assessment
+Before evaluation, please download [BART checkpoint](https://drive.google.com/u/0/uc?id=1_7JfF7KOInb7ZrxKHIigTMR4ChVET01m&export=download) to `src/metrics/BARTScore/bart_score.pth`.
 
 For automated evaluation, please follow these instructions:
 
