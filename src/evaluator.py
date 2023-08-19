@@ -378,8 +378,11 @@ t in range(turn)], turn)
             real_metric = metric.replace(
                 decontaminate_suffix, ""
             )  # decontaminated still uses the same metric
-
-        results[task_name][metric] = task.aggregation()[real_metric](items)
+        try:
+            results[task_name][metric] = task.aggregation()[real_metric](items)
+        except Exception as e:
+            print(f"task_name: {task_name}, metric: {metric}, error:\n")
+            print(e)
 
         # hotfix: bleu, chrf, ter seem to be really expensive to bootstrap
         # so we run them less iterations. still looking for a cleaner way to do this
