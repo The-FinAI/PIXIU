@@ -2,11 +2,11 @@
 FLARE
 """
 from lm_eval.base import Task, rf
-from lm_eval.metrics import mean, matthews_corrcoef
+from lm_eval.metrics import mean
 import numpy as np
 from .utils import process_text
 from seqeval.metrics import f1_score as entity_score
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, matthews_corrcoef
 from bart_score import BARTScorer
 import evaluate
 
@@ -76,23 +76,24 @@ class Classification(Task):
         return doc["answer"]
 
     def process_results(self, doc, results):
-        gold = doc["choices"][doc["gold"]]
+        gold: str = doc["choices"][doc["gold"]]
+        if self.LOWER_CASE:
+            gold = gold.lower()
         ini_result = results[0].strip()
         if self.LOWER_CASE:
             ini_result = ini_result.lower()
 
+        result = None
         for choice in doc["choices"]:
-            ch = choice
             if self.LOWER_CASE:
-                ch = ch.lower()
-            if ch in ini_result:
+                choice = choice.lower()
+            if choice in ini_result:
                 result = choice
-                break
-        else:
-            choice = -1
+                break        
+        if result is None:
             result = "missing"
 
-        acc = 1.0 if gold == choice else 0.0
+        acc = 1.0 if gold == result else 0.0
 
         results = {
             "acc": acc,
@@ -100,9 +101,9 @@ class Classification(Task):
             "f1": (result, gold),
             "macro_f1": (result, gold),
         }
-
+        
         if self.CALCULATE_MCC:
-            results["mcc"] = (choice, gold)
+            results["mcc"] = (result, gold)
 
         return results
 
@@ -118,21 +119,31 @@ class Classification(Task):
             metrics["mcc"] = True
         return metrics
 
-    def weighted_f1(cls, items):
+    def weighted_f1(self, items):
         preds, golds = zip(*items)
         labels = list(set(golds))
         preds = np.array(preds)
         golds = np.array(golds)
-        f1 = f1_score(preds, golds, average='weighted', labels=labels)
+        f1 = f1_score(golds, preds, average='weighted', labels=labels)
         return f1
 
-    def macro_f1(cls, items):
+    def macro_f1(self, items):
         preds, golds = zip(*items)
         labels = list(set(golds))
         preds = np.array(preds)
         golds = np.array(golds)
-        f1 = f1_score(preds, golds, average='macro', labels=labels)
+        f1 = f1_score(golds, preds, average='macro', labels=labels)
         return f1
+    
+    def matthews_corrcoef(self, items):
+        preds, golds = zip(*items)
+        labels = {
+            label: i 
+            for i, label in enumerate(list(set(golds)))
+        }
+        preds = [labels.get(pred, -1) for pred in preds]
+        golds = [labels.get(gold, -1) for gold in golds]
+        return matthews_corrcoef(golds, preds)
 
     def aggregation(self):
         metrics = {
@@ -142,7 +153,7 @@ class Classification(Task):
             "macro_f1": self.macro_f1,
         }
         if self.CALCULATE_MCC:
-            metrics["mcc"] = matthews_corrcoef
+            metrics["mcc"] = self.matthews_corrcoef
         return metrics
 
 
@@ -222,7 +233,7 @@ class SequentialLabeling(Task):
 
         list_preds = [self.process_result(pred, gold, token)
             for pred, gold, token in zip(preds, golds, tokens)]
-        f1 = entity_score(list_preds, golds)
+        f1 = entity_score(golds, list_preds)
         return f1
 
     def process_label_result(self, pred, gold, tokens):
@@ -243,7 +254,7 @@ class SequentialLabeling(Task):
             for pred, gold, token in zip(preds, golds, tokens)]
         list_preds = [item for sublist in list_preds for item in sublist]
         golds = [self.LMAP[item] for sublist in golds for item in sublist]
-        f1 = f1_score(list_preds, golds, average="weighted")
+        f1 = f1_score(golds, list_preds, average="weighted")
         return f1
 
     def aggregation(self):
@@ -353,7 +364,7 @@ class AbstractiveSummarization(Task):
     def bart_score(self, items):
         golds, preds = zip(*items)
         bart_scorer = BARTScorer(
-            device='cuda:0', 
+            device='cuda', 
             checkpoint='facebook/bart-large-cnn'
         )
         bart_scorer.load(path='src/metrics/BARTScore/bart_score.pth')
@@ -698,6 +709,9 @@ class NER(Task):
     DATASET_PATH = "chancefocus/flare-ner"
     DATASET_NAME = None
 
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
+
     def has_training_docs(self):
         return True
 
@@ -822,7 +836,7 @@ class Headlines(Classification):
         for l in label_set:
             pds = preds[labels == l]
             gds = golds[labels == l]
-            f1 = f1_score(pds, gds, average='weighted', labels=[0, 1])
+            f1 = f1_score(gds, pds, average='weighted', labels=[0, 1])
             all_f1s.append(f1)
         return np.mean(all_f1s)
 
@@ -855,11 +869,11 @@ class FOMC(Classification):
     DATASET_PATH = "chancefocus/flare-fomc"
 
 
-class German(Classification):
+class German(StockMovement):
     DATASET_PATH = "chancefocus/flare-german"
 
 
-class Australian(Classification):
+class Australian(StockMovement):
     DATASET_PATH = "chancefocus/flare-australian"
 
 

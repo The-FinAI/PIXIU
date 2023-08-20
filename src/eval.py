@@ -8,7 +8,6 @@ from lm_eval import utils
 import evaluator
 from model_prompt import MODEL_PROMPT_MAP
 
-
 logging.getLogger("openai").setLevel(logging.WARNING)
 
 def parse_args():
