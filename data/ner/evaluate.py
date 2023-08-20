@@ -90,4 +90,4 @@ new_results = []
 for val, text in tqdm(zip(results, texts)):
     new_results.append(process_text(val, text))
 
-print('F1-score: {:.2f}'.format(f1_score(new_results, labels)))
+print('F1-score: {:.2f}'.format(f1_score(labels, new_results)))

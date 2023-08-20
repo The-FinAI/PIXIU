@@ -773,7 +773,7 @@ class NER(Task):
     @classmethod
     def entity_f1(cls, items):
         preds, golds, _ = zip(*items)
-        f1 = entity_score(preds, golds)
+        f1 = entity_score(golds, preds)
         return f1
 
     def aggregation(self):
