@@ -162,7 +162,7 @@ pip install -e .[multilingual]
 ```bash
 sudo bash scripts/docker_run.sh
 ```
-Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:20230806`
+Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:latest`
 
 ```bash
 docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
@@ -187,6 +187,7 @@ Arguments explain:
 - `--rm`: remove the container when exit container (ie.`CTRL + D`)
 
 #### Automated Task Assessment
+Before evaluation, please download [BART checkpoint](https://drive.google.com/u/0/uc?id=1_7JfF7KOInb7ZrxKHIigTMR4ChVET01m&export=download) to `src/metrics/BARTScore/bart_score.pth`.
 
 For automated evaluation, please follow these instructions:
 

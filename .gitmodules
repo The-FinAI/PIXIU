@@ -1,3 +1,6 @@
 [submodule "src/financial-evaluation"]
 	path = src/financial-evaluation
 	url = https://github.com/chancefocus/financial-evaluation.git
+[submodule "src/metrics/BARTScore"]
+	path = src/metrics/BARTScore
+	url = https://github.com/neulab/BARTScore.git

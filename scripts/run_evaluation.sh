@@ -1,5 +1,5 @@
 pixiu_path='/root/PIXIU'
-export PYTHONPATH="$pixiu_path/src:$pixiu_path/src/financial-evaluation"
+export PYTHONPATH="$pixiu_path/src:$pixiu_path/src/financial-evaluation:$pixiu_path/src/metrics/BARTScore"
 echo $PYTHONPATH
 export CUDA_VISIBLE_DEVICES="0"
 
