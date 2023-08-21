@@ -42,5 +42,5 @@ print("Accuracy: ", accuracy)
 
 # F1-Score
 # Note: labels should be provided for multi-class/multi-label classification
-f1 = f1_score(results, labels, average='weighted', labels=['Positive', 'Neutral', 'Negative'])
+f1 = f1_score(labels, results, average='weighted', labels=['Positive', 'Neutral', 'Negative'])
 print("F1-Score: ", f1)
