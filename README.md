@@ -216,7 +216,7 @@ python eval.py \
     --tasks flare_ner,flare_sm_acl,flare_fpb
 ```
 
-#### Self-Hosted Evaluation
+3. Self-Hosted Evaluation
 
 To run inference backend:
 
