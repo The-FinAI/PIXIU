@@ -49,7 +49,6 @@ class Classification(Task):
     def test_docs(self):
         return self.dataset["test"]
 
-
     def construct_requests(self, doc, ctx):
         """Uses RequestFactory to construct Requests and returns an iterable of
         Requests which will be sent to the LM.
@@ -65,7 +64,7 @@ class Classification(Task):
         return cont_request
 
     def doc_to_decontamination_query(self, doc):
-         return doc["text"]
+        return doc["text"]
 
     def doc_to_text(self, doc):
         # TODO: Format the query prompt portion of the document example.
@@ -89,7 +88,7 @@ class Classification(Task):
                 choice = choice.lower()
             if choice in ini_result:
                 result = choice
-                break        
+                break
         if result is None:
             result = "missing"
 
@@ -101,12 +100,11 @@ class Classification(Task):
             "f1": (result, gold),
             "macro_f1": (result, gold),
         }
-        
+
         if self.CALCULATE_MCC:
             results["mcc"] = (result, gold)
 
         return results
-
 
     def higher_is_better(self):
         metrics = {
@@ -124,7 +122,7 @@ class Classification(Task):
         labels = list(set(golds))
         preds = np.array(preds)
         golds = np.array(golds)
-        f1 = f1_score(golds, preds, average='weighted', labels=labels)
+        f1 = f1_score(golds, preds, average="weighted", labels=labels)
         return f1
 
     def macro_f1(self, items):
@@ -132,15 +130,12 @@ class Classification(Task):
         labels = list(set(golds))
         preds = np.array(preds)
         golds = np.array(golds)
-        f1 = f1_score(golds, preds, average='macro', labels=labels)
+        f1 = f1_score(golds, preds, average="macro", labels=labels)
         return f1
-    
+
     def matthews_corrcoef(self, items):
         preds, golds = zip(*items)
-        labels = {
-            label: i 
-            for i, label in enumerate(list(set(golds)))
-        }
+        labels = {label: i for i, label in enumerate(list(set(golds)))}
         preds = [labels.get(pred, -1) for pred in preds]
         golds = [labels.get(gold, -1) for gold in golds]
         return matthews_corrcoef(golds, preds)
@@ -160,7 +155,7 @@ class Classification(Task):
 class SequentialLabeling(Task):
     VERSION = 1
     DATASET_NAME = None
-    LMAP = {'O': 0}
+    LMAP = {"O": 0}
     EVAL_LAST_TURN = True
 
     def reformulate_turn_req(self, req, turn_request, turn):
@@ -219,7 +214,7 @@ class SequentialLabeling(Task):
 
     def process_result(self, pred, gold, tokens):
         format_pred = ["O"] * len(gold)
-        for index, pre in enumerate(pred.split("\n")[:len(tokens)]):
+        for index, pre in enumerate(pred.split("\n")[: len(tokens)]):
             try:
                 word, label = pre.split(":")
             except:
@@ -231,14 +226,16 @@ class SequentialLabeling(Task):
     def entity_f1(self, items):
         golds, preds, tokens = zip(*items)
 
-        list_preds = [self.process_result(pred, gold, token)
-            for pred, gold, token in zip(preds, golds, tokens)]
+        list_preds = [
+            self.process_result(pred, gold, token)
+            for pred, gold, token in zip(preds, golds, tokens)
+        ]
         f1 = entity_score(golds, list_preds)
         return f1
 
     def process_label_result(self, pred, gold, tokens):
         format_pred = [-1] * len(gold)
-        for index, pre in enumerate(pred.split("\n")[:len(tokens)]):
+        for index, pre in enumerate(pred.split("\n")[: len(tokens)]):
             try:
                 word, label = pre.split(":")
             except:
@@ -250,8 +247,10 @@ class SequentialLabeling(Task):
     def label_f1(self, items):
         golds, preds, tokens = zip(*items)
 
-        list_preds = [self.process_label_result(pred, gold, token)
-            for pred, gold, token in zip(preds, golds, tokens)]
+        list_preds = [
+            self.process_label_result(pred, gold, token)
+            for pred, gold, token in zip(preds, golds, tokens)
+        ]
         list_preds = [item for sublist in list_preds for item in sublist]
         golds = [self.LMAP[item] for sublist in golds for item in sublist]
         f1 = f1_score(golds, list_preds, average="weighted")
@@ -303,7 +302,7 @@ class AbstractiveSummarization(Task):
             "rouge2": (doc["answer"], results[0]),
             "rougeL": (doc["answer"], results[0]),
             "bert_score_f1": (doc["answer"], results[0]),
-            "bart_score": (doc["answer"], results[0])
+            "bart_score": (doc["answer"], results[0]),
         }
 
     def higher_is_better(self):
@@ -312,7 +311,7 @@ class AbstractiveSummarization(Task):
             "rouge2": True,
             "rougeL": True,
             "bert_score_f1": True,
-            "bart_score": True
+            "bart_score": True,
         }
 
     def construct_requests(self, doc, ctx):
@@ -331,48 +330,44 @@ class AbstractiveSummarization(Task):
 
     def rouge_score(self, items):
         golds, preds = zip(*items)
-        rouge = evaluate.load('rouge')
-        results = rouge.compute(predictions=preds,
-                                references=golds)
+        rouge = evaluate.load("rouge")
+        results = rouge.compute(predictions=preds, references=golds)
         return results
 
     def rouge1(self, items):
         results = self.rouge_score(items)
-        return results['rouge1']
+        return results["rouge1"]
 
     def rouge2(self, items):
         results = self.rouge_score(items)
-        return results['rouge2']
+        return results["rouge2"]
 
     def rougeL(self, items):
         results = self.rouge_score(items)
-        return results['rougeL']
+        return results["rougeL"]
 
     def bert_score(self, items):
         if getattr(self, "_cache_bertscore", None) is None:
             golds, preds = zip(*items)
             bertscore = evaluate.load("evaluate-metric/bertscore")
-            self._cache_bertscore = bertscore.compute(predictions=preds, references=golds, model_type="bert-base-multilingual-cased")
+            self._cache_bertscore = bertscore.compute(
+                predictions=preds,
+                references=golds,
+                model_type="bert-base-multilingual-cased",
+            )
             return self._cache_bertscore
         else:
             return self._cache_bertscore
-        
+
     def bert_score_f1(self, items):
         res = self.bert_score(items)
-        return sum(res['f1']) / len(res['f1'])
-    
+        return sum(res["f1"]) / len(res["f1"])
+
     def bart_score(self, items):
         golds, preds = zip(*items)
-        bart_scorer = BARTScorer(
-            device='cuda', 
-            checkpoint='facebook/bart-large-cnn'
-        )
-        bart_scorer.load(path='src/metrics/BARTScore/bart_score.pth')
-        res = bart_scorer.score(
-            srcs=preds, 
-            tgts=golds, 
-            batch_size=8
-        )
+        bart_scorer = BARTScorer(device="cuda", checkpoint="facebook/bart-large-cnn")
+        bart_scorer.load(path="src/metrics/BARTScore/bart_score.pth")
+        res = bart_scorer.score(srcs=preds, tgts=golds, batch_size=8)
         return sum(res) / len(res)
 
     def aggregation(self):
@@ -381,7 +376,7 @@ class AbstractiveSummarization(Task):
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
             "bert_score_f1": self.bert_score_f1,
-            "bart_score": self.bart_score
+            "bart_score": self.bart_score,
         }
 
 
@@ -424,7 +419,7 @@ class ExtractiveSummarization(Task):
             "rouge2": (doc["label"], doc["text"], results[0]),
             "rougeL": (doc["label"], doc["text"], results[0]),
             "bert_score_f1": (doc["label"], doc["text"], results[0]),
-            "bart_score": (doc["label"], doc["text"], results[0])
+            "bart_score": (doc["label"], doc["text"], results[0]),
         }
 
     def higher_is_better(self):
@@ -433,7 +428,7 @@ class ExtractiveSummarization(Task):
             "rouge2": True,
             "rougeL": True,
             "bert_score_f1": True,
-            "bart_score": True
+            "bart_score": True,
         }
 
     def construct_requests(self, doc, ctx):
@@ -454,7 +449,13 @@ class ExtractiveSummarization(Task):
         summ = []
         for label, text in zip(labels, texts):
             text = text.split("\n")
-            new_text = "\n".join([text[index] for index in range(len(text)) if index < len(label) and label[index] == 1])
+            new_text = "\n".join(
+                [
+                    text[index]
+                    for index in range(len(text))
+                    if index < len(label) and label[index] == 1
+                ]
+            )
             summ.append(new_text)
         return summ
 
@@ -462,22 +463,21 @@ class ExtractiveSummarization(Task):
         golds, texts, preds = zip(*items)
         golds = self.get_sum(golds, texts)
         preds = self.get_sum([val.split("\n") for val in preds], texts)
-        rouge = evaluate.load('rouge')
-        results = rouge.compute(predictions=preds,
-                                references=golds)
+        rouge = evaluate.load("rouge")
+        results = rouge.compute(predictions=preds, references=golds)
         return results
 
     def rouge1(self, items):
         results = self.rouge_score(items)
-        return results['rouge1']
+        return results["rouge1"]
 
     def rouge2(self, items):
         results = self.rouge_score(items)
-        return results['rouge2']
+        return results["rouge2"]
 
     def rougeL(self, items):
         results = self.rouge_score(items)
-        return results['rougeL']
+        return results["rougeL"]
 
     def bert_score(self, items):
         if getattr(self, "_cache_bertscore", None) is None:
@@ -486,30 +486,27 @@ class ExtractiveSummarization(Task):
             preds = self.get_sum([val.split("\n") for val in preds], texts)
 
             bertscore = evaluate.load("evaluate-metric/bertscore")
-            self._cache_bertscore = bertscore.compute(predictions=preds, references=golds, model_type="bert-base-multilingual-cased")
+            self._cache_bertscore = bertscore.compute(
+                predictions=preds,
+                references=golds,
+                model_type="bert-base-multilingual-cased",
+            )
             return self._cache_bertscore
         else:
             return self._cache_bertscore
-        
+
     def bert_score_f1(self, items):
         res = self.bert_score(items)
-        return sum(res['f1']) / len(res['f1'])
-    
+        return sum(res["f1"]) / len(res["f1"])
+
     def bart_score(self, items):
         golds, texts, preds = zip(*items)
         golds = self.get_sum(golds, texts)
         preds = self.get_sum([val.split("\n") for val in preds], texts)
-        
-        bart_scorer = BARTScorer(
-            device='cuda:0', 
-            checkpoint='facebook/bart-large-cnn'
-        )
-        bart_scorer.load(path='src/metrics/BARTScore/bart_score.pth')
-        res = bart_scorer.score(
-            srcs=preds, 
-            tgts=golds, 
-            batch_size=8
-        )
+
+        bart_scorer = BARTScorer(device="cuda:0", checkpoint="facebook/bart-large-cnn")
+        bart_scorer.load(path="src/metrics/BARTScore/bart_score.pth")
+        res = bart_scorer.score(srcs=preds, tgts=golds, batch_size=8)
         return sum(res) / len(res)
 
     def aggregation(self):
@@ -518,7 +515,7 @@ class ExtractiveSummarization(Task):
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
             "bert_score_f1": self.bert_score_f1,
-            "bart_score": self.bart_score
+            "bart_score": self.bart_score,
         }
 
 
@@ -613,7 +610,7 @@ class RelationExtraction(Task):
         rec = self.recall(items)
         if prec + rec == 0.0:
             return 0.0
-        return 2 * (prec * rec ) / (prec + rec)
+        return 2 * (prec * rec) / (prec + rec)
 
     def aggregation(self):
         return {
@@ -650,10 +647,10 @@ class QA(Task):
         return self.dataset["test"]
 
     def should_decontaminate(self):
-         return True
+        return True
 
     def doc_to_decontamination_query(self, doc):
-         return doc["text"]
+        return doc["text"]
 
     def doc_to_text(self, doc):
         # TODO: Format the query prompt portion of the document example.
@@ -731,10 +728,10 @@ class NER(Task):
         return self.dataset["test"]
 
     def should_decontaminate(self):
-         return True
+        return True
 
     def doc_to_decontamination_query(self, doc):
-         return doc["text"]
+        return doc["text"]
 
     def doc_to_text(self, doc):
         # TODO: Format the query prompt portion of the document example.
@@ -761,9 +758,7 @@ class NER(Task):
         text = doc["text"]
         pred = process_text(results[0], text)
 
-        return {
-            "entity_f1": (pred, doc["label"], results[0])
-        }
+        return {"entity_f1": (pred, doc["label"], results[0])}
 
     def higher_is_better(self):
         return {
@@ -789,6 +784,45 @@ class FinQA(QA):
 class StockMovement(Classification):
     DATASET_NAME = None
     CALCULATE_MCC = True
+    CHOICE_DICT = {
+        "rise": ["yes", "positive"],
+        "fall": ["no", "negative", "neutral"],
+    }
+    DEFAULT = "fall"
+
+    def process_results(self, doc, results):
+        gold: str = doc["choices"][doc["gold"]]
+        if self.LOWER_CASE:
+            gold = gold.lower()
+        ini_result = results[0].strip()
+        if self.LOWER_CASE:
+            ini_result = ini_result.lower()
+
+        result = None
+        for choice in doc["choices"]:
+            if self.LOWER_CASE:
+                choice = choice.lower()
+            if choice in ini_result or any(
+                [val in ini_result for val in self.CHOICE_DICT[choice]]
+            ):
+                result = choice
+                break
+        if result is None:
+            result = self.DEFAULT
+
+        acc = 1.0 if gold == result else 0.0
+
+        results = {
+            "acc": acc,
+            "missing": int(result == "missing"),
+            "f1": (result, gold),
+            "macro_f1": (result, gold),
+        }
+
+        if self.CALCULATE_MCC:
+            results["mcc"] = (result, gold)
+
+        return results
 
 
 class StockMovementBigData(StockMovement):
@@ -836,7 +870,7 @@ class Headlines(Classification):
         for l in label_set:
             pds = preds[labels == l]
             gds = golds[labels == l]
-            f1 = f1_score(gds, pds, average='weighted', labels=[0, 1])
+            f1 = f1_score(gds, pds, average="weighted", labels=[0, 1])
             all_f1s.append(f1)
         return np.mean(all_f1s)
 
@@ -862,7 +896,15 @@ class Headlines(Classification):
 
 class FinerOrd(SequentialLabeling):
     DATASET_PATH = "chancefocus/flare-finer-ord"
-    LMAP = {'O': 0, 'B-PER': 1, 'I-PER': 2, 'B-LOC': 3, 'I-LOC': 4, 'B-ORG': 5, 'I-ORG': 6}
+    LMAP = {
+        "O": 0,
+        "B-PER": 1,
+        "I-PER": 2,
+        "B-LOC": 3,
+        "I-LOC": 4,
+        "B-ORG": 5,
+        "I-ORG": 6,
+    }
 
 
 class FOMC(Classification):
@@ -871,10 +913,20 @@ class FOMC(Classification):
 
 class German(StockMovement):
     DATASET_PATH = "chancefocus/flare-german"
+    CHOICE_DICT = {
+        "good": ["yes", "positive"],
+        "bad": ["no", "negative", "neutral"],
+    }
+    DEFAULT = "good"
 
 
 class Australian(StockMovement):
     DATASET_PATH = "chancefocus/flare-australian"
+    CHOICE_DICT = {
+        "good": ["yes", "positive"],
+        "bad": ["no", "negative", "neutral"],
+    }
+    DEFAULT = "good"
 
 
 class ECTSUM(ExtractiveSummarization):
@@ -891,10 +943,7 @@ class ConvFinQA(QA):
     def reformulate_turn_req(self, req, turn_request, turn):
         if turn == 0:
             return req
-        pre_answers = {
-            f"answer{i}": turn_request[i][0]
-            for i in range(turn)
-        }
+        pre_answers = {f"answer{i}": turn_request[i][0] for i in range(turn)}
         if pre_answers:
             req.args = [req.args[0].format(**pre_answers)]
         return req
