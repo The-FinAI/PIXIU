@@ -8,6 +8,7 @@ GENERATION_CONFIG = [
     0.75,  # int | float (numeric value between 0 and 1) in 'Top p' Slider component
     40,  # int | float (numeric value between 0 and 100) in 'Top k' Slider component
     1,  # int | float (numeric value between 1 and 4) in 'Beams Number' Slider component
+    True, # do sample
     512,  # int | float (numeric value between 1 and 2000) in 'Max New Tokens' Slider component
     1,  # int | float (numeric value between 1 and 300) in 'Min New Tokens' Slider component
     1.2,  # int | float (numeric value between 1.0 and 2.0) in 'Repetition Penalty' Slider component
@@ -26,16 +27,12 @@ with open("data/bigdata22/test.jsonl") as f:
 
 results = []
 labels = []
-texts = []
 data = data
 results = clients.predict(
-    [[datum["conversations"][0]["value"]] + [GENERATION_CONFIG] for datum in data])
+    [[datum["conversations"][0]["value"]] + GENERATION_CONFIG for datum in data]
+)
 labels = [
     datum["label"] for datum in data
-]
-texts = [
-    datum["text"]
-    for datum in data
 ]
 
 y_true = [1 if i == "Rise" else 0 for i in labels]
