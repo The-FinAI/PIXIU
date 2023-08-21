@@ -7,5 +7,4 @@ lm_cache/
 *_private.*
 *_private
 *_debug.*
-.vscode
 *.code-workspace
