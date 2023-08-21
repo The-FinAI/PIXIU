@@ -52,7 +52,7 @@ for rel, lab, typ in zip(results, labels, types):
 all_f1s = []
 for key, val in label_results.items():
     print (key)
-    f1 = f1_score(val[0], val[1], average='weighted', labels=['Yes', 'No'])
+    f1 = f1_score(val[1], val[0], average='weighted', labels=['Yes', 'No'])
     all_f1s.append(f1)
     print("F1-Score: ", f1)
 
