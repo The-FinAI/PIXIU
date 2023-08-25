@@ -705,6 +705,7 @@ class NER(Task):
     VERSION = 1
     DATASET_PATH = "chancefocus/flare-ner"
     DATASET_NAME = None
+    EVAL_LAST_TURN = True
 
     def reformulate_turn_req(self, req, turn_request, turn):
         return req
