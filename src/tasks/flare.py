@@ -946,5 +946,5 @@ class ConvFinQA(QA):
             return req
         pre_answers = {f"answer{i}": turn_request[i][0] for i in range(turn)}
         if pre_answers:
-            req.args = [req.args[0].format(**pre_answers)]
+            req.args = tuple([req.args[0].format(**pre_answers)] + list(req.args[1:]))
         return req
