@@ -51,7 +51,9 @@ This repository and its contents are provided for **academic and educational pur
 
 **By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
 
+**📢 Update (Date: 09-22-2023)**
 
+🚀 We're thrilled to announce that our paper, "PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance", has been accepted by NeurIPS 2023 Track Datasets and Benchmarks!
 
 **Checkpoints:** 
 
