@@ -2,6 +2,7 @@
 <img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="100%" height="100%">
 </p>
 
+- [Spainish](README.es.md)
 
 <div>
 <div align="left">
