@@ -937,6 +937,26 @@ class ECTSUM(ExtractiveSummarization):
 class EDTSUM(AbstractiveSummarization):
     DATASET_PATH = "chancefocus/flare-edtsum"
 
+class ESMultiFin(Classification):
+    DATASET_PATH = "chancefocus/flare-es-multifin"
+
+
+class ESEFP(Classification):
+    DATASET_PATH = "chancefocus/flare-es-efp"
+
+
+class ESEFPA(Classification):
+    DATASET_PATH = "chancefocus/flare-es-efpa"
+
+class ESTSA(Classification):
+    DATASET_PATH = "chancefocus/flare-es-tsa"
+
+class ESFNS(AbstractiveSummarization):
+    DATASET_PATH = "chancefocus/flare-es-fns"
+
+class ESFinancees(Classification):
+    DATASET_PATH = "chancefocus/flare-es-financees"
+
 
 class ConvFinQA(QA):
     DATASET_PATH = "chancefocus/flare-convfinqa"
