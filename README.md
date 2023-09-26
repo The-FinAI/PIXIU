@@ -9,12 +9,12 @@
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
     <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
     <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
+    <a target='_blank'>Ruoyu Xiang<sup>6</sup></a>&emsp;
     <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
     <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
     <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
     <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
-    <a target='_blank'>Ruoyu Xiang</a>&emsp;
     <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
     <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,6</sup></a>
 </div>
@@ -25,7 +25,8 @@
     <sup>3</sup>Sichuan University&emsp;
     <sup>4</sup>Southwest Jiaotong University&emsp;
     <sup>5</sup>University of Florida&emsp;
-  <sup>6</sup>ChanceFocus AMC.
+    <sup>6</sup>New York Universitya&emsp;
+  <sup>7</sup>ChanceFocus AMC.
 </div>
 <div align="left">
     <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
