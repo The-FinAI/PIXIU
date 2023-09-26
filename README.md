@@ -16,7 +16,7 @@
     <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
     <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,6</sup></a>
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,7</sup></a>
 </div>
 <div>
 <div align="left">
