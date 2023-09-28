@@ -308,7 +308,6 @@ TASK_REGISTRY = {
 
 ---
 
-## FIT: Financial Instruction Dataset
 
 Our instruction dataset is uniquely tailored for the domain-specific LLM, FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the multiple open released financial datasets.
 
