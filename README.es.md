@@ -380,7 +380,6 @@ The first turn in the "conversations" list should always be from "human", and co
 
 ---
 
-## FinMA v0.1: Financial Large Language Model
 
 We are pleased to introduce the first version of FinMA, including three models FinMA-7B, FinMA-7B-full, FinMA-30B, fine-tuned on LLaMA 7B and LLaMA-30B. FinMA-7B and FinMA-30B are trained with the NLP instruction data, while FinMA-7B-full is trained with the full instruction data from FIT covering both NLP and prediction tasks. 
 
