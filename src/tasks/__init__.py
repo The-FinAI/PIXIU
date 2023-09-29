@@ -24,7 +24,7 @@ TASK_REGISTRY = {
     "flare_es_efpa": flare.ESEFPA,
     "flare_es_fns": flare.ESFNS,
     "flare_es_tsa": flare.ESTSA,
-    "flare_es_financees": flare.Financees,
+    "flare_es_financees": flare.ESFinancees,
     **flare.SM_TASKS,
 }
 
