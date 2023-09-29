@@ -58,70 +58,34 @@ This repository and its contents are provided for **academic and educational pur
 
 **Checkpoints:** 
 
-- [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
 - [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
 
 **Evaluations** (More details on FLARE section):
 
-> Sentiment Analysis
+- [FLARE (flare-es-financees)](https://huggingface.co/datasets/ChanceFocus/flare-es-financees)
+- [FLARE (flare-es-tsa)](https://huggingface.co/datasets/ChanceFocus/flare-es-tsa)
+- [FLARE (flare-es-fns)](https://huggingface.co/datasets/ChanceFocus/flare-es-fns)
+- [FLARE (flare-es-efpa)](https://huggingface.co/datasets/ChanceFocus/flare-es-efpa)
+- [FLARE (flare-es-efp)](https://huggingface.co/datasets/ChanceFocus/flare-es-efp)
+- [FLARE (flare-es-multifin)](https://huggingface.co/datasets/ChanceFocus/flare-es-multifin)
 
-- [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
-- [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
-- [FOMC (flare_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [Headlines (flare_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
-
-> Knowledge Extraction
-
-- [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
-- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
-
-> Number Understanding
-
-- [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
-- [ConvFinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-convfinqa)
-
-> Text Summarization
-
-- [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
-- [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
-
-> Credit Scoring
-
-- [German (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
-- [Australian (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
-
-> Forecasting
-
-- [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
-- [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
-- [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
 
 ## Overview
 
-Welcome to the **PIXIU** project! This project is designed to support the development, fine-tuning, and evaluation of Large Language Models (LLMs) in the financial domain. PIXIU is a significant step towards understanding and harnessing the power of LLMs in the financial domain.
-
-### Structure of the Repository
-
-The repository is organized into several key components, each serving a unique purpose in the financial NLP pipeline:
-
-- **FLARE**: Our Financial Language Understanding and Prediction Evaluation Benchmark. FLARE serves as the evaluation suite for financial LLMs, with a focus on understanding and prediction tasks across various financial contexts.
-- **FIT**: Our Financial Instruction Dataset. FIT is a multi-task and multi-modal instruction dataset specifically tailored for financial tasks. It serves as the training ground for fine-tuning LLMs for these tasks.
-
-- **FinMA**: Our Financial Large Language Model (LLM). FinMA is the core of our project, providing the learning and prediction power for our financial tasks.
+**FLARE_ES** is a cornerstone initiative focusing on the Spanish financial domain, FLARE_ES aims to bolster the progress, refinement, and assessment of Large Language Models (LLMs) tailored specifically for Spanish financial contexts. As a vital segment of the broader PIXIU endeavor, FLARE_ES stands as a testament to the commitment in harnessing the capabilities of LLMs, ensuring that financial professionals and enthusiasts in the Spanish-speaking world have top-tier linguistic tools at their disposal.
 
 ### Key Features
 
 - **Open resources**: PIXIU openly provides the financial LLM, instruction tuning data, and datasets included in the evaluation benchmark to encourage open research and transparency.
-  
 - **Multi-task**: The instruction tuning data and benchmark in PIXIU cover a diverse set of financial tasks, including four financial NLP tasks and one financial prediction task.
 - **Multi-modality**: PIXIU's instruction tuning data and benchmark consist of multi-modality financial data, including time series data from the stock movement prediction task. It covers various types of financial texts, including reports, news articles, tweets, and regulatory filings.
 - **Diversity**: Unlike previous benchmarks focusing mainly on financial NLP tasks, PIXIU's evaluation benchmark includes critical financial prediction tasks aligned with real-world scenarios, making it more challenging.
 
 ---
 
-## FLARE 2.0: Financial Language Understanding and Prediction Evaluation Benchmark
+## FLARE_ES: Financial Language Understanding and Prediction Evaluation Benchmark
 
-In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4,  et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction.
+In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, lince-zero et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction.
 
 ### Tasks
 
@@ -224,173 +188,6 @@ To evaluate:
 ```bash
 python data/*/evaluate.py
 ```
-
-### Create new tasks
-
-Creating a new task for FLARE involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new task using the FLARE framework.
-
-#### Creating your dataset in Huggingface
-
-Your dataset should be created in the following format:
-
-```python
-{
-    "query": "...",
-    "answer": "...",
-    "text": "..."
-}
-```
-
-In this format:
-
-- `query`: Combination of your prompt and text
-- `answer`: Your label
-
-For **Multi-turn** tasks (such as )
-
-For **Classification** tasks (such as [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)), additional keys should be defined:
-
-- `choices`: Set of labels
-- `gold`: Index of the correct label in choices (Start from 0)
-
-For **Sequential Labeling** tasks (such as [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)), additional keys should be defined:
-
-- `label`: List of token labels
-
-- `token`: List of tokens
-
-For **Extractive Summarization** tasks (such as [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
-
-- `label`: List of sentence labels
-
-For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)), no additional keys should be defined
-
-#### Implementing the task
-
-Once your dataset is ready, you can start implementing your task. Your task should be defined within a new class in flare.py or any other Python file located within the tasks directory.
-
-To cater to a range of tasks, we offer several specialized base classes, including `Classification`, `SequentialLabeling`, `RelationExtraction`, `ExtractiveSummarization`, `AbstractiveSummarization` and `QA`.
-
-For instance, if you are embarking on a classification task, you can directly leverage our `Classification` base class. This class allows for efficient and intuitive task creation. To better demonstrate this, let's delve into an example of crafting a task named FLARE-FPB using the `Classification` base class:
-
-```python
-class FlareFPB(Classification):
-    DATASET_PATH = "flare-fpb"
-```
-
-And that's it! Once you've created your task class, the next step is to register it in the `src/tasks/__init__.py` file. To do this, add a new line following the format `"task_name": module.ClassName`. Here is how it's done:
-
-```python
-TASK_REGISTRY = {
-    "flare_fpb": flare.FPB,
-    "your_new_task": your_module.YourTask,  # This is where you add your task
-}
-```
-
-#### Predefined task metrics
-
-| Task                                     | Metric                                 | Illustration                                                 |
-| ---------------------------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| Classification                           | Accuracy                               | This metric represents the ratio of correctly predicted observations to total observations. It is calculated as (True Positives + True Negatives) / Total Observations. |
-| Classification                           | F1 Score                               | The F1 Score represents the harmonic mean of precision and recall, thereby creating an equilibrium between these two factors. It proves particularly useful in scenarios where one factor bears more significance than the other. The score ranges from 0 to 1, with 1 signifying perfect precision and recall, and 0 indicating the worst case. Furthermore, we provide both 'weighted' and 'macro' versions of the F1 score. |
-| Classification                           | Missing Ratio                          | This metric calculates the proportion of responses where no options from the given choices in the task are returned. |
-| Classification                           | Matthews Correlation Coefficient (MCC) | The MCC is a metric that assesses the quality of binary classifications, producing a score ranging from -1 to +1. A score of +1 signifies perfect prediction, 0 denotes a prediction no better than random chance, and -1 indicates a completely inverse prediction. |
-| Sequential Labeling                      | F1 score                               | In the context of Sequential Labeling tasks, we utilize the F1 Score as computed by the `seqeval` library, a robust entity-level evaluation metric. This metric mandates an exact match of both the entity's span and type between the predicted and ground truth entities for a correct evaluation. True Positives (TP) represent correctly predicted entities, False Positives (FP) denote incorrectly predicted entities or entities with mismatched spans/types, and False Negatives (FN) signify missed entities from the ground truth. Precision, recall, and F1-score are then computed using these quantities, with the F1 Score representing the harmonic mean of precision and recall. |
-| Sequential Labeling                      | Label F1 score                         | This metric evaluates model performance based solely on the correctness of the labels predicted, without considering entity spans. |
-| Relation Extraction                      | Precision                              | Precision measures the proportion of correctly predicted relations out of all predicted relations. It is calculated as the number of True Positives (TP) divided by the sum of True Positives and False Positives (FP). |
-| Relation Extraction                      | Recall                                 | Recall measures the proportion of correctly predicted relations out of all actual relations. It is calculated as the number of True Positives (TP) divided by the sum of True Positives and False Negatives (FN). |
-| Relation Extraction                      | F1 score                               | The F1 Score is the harmonic mean of precision and recall, and it provides a balance between these two metrics. The F1 Score is at its best at 1 (perfect precision and recall) and worst at 0. |
-| Extractive and Abstractive Summarization | Rouge-N                                | This measures the overlap of N-grams (a contiguous sequence of N items from a given sample of text) between the system-generated summary and the reference summary. 'N' can be 1, 2, or more, with ROUGE-1 and ROUGE-2 being commonly used to assess unigram and bigram overlaps respectively. |
-| Extractive and Abstractive Summarization | Rouge-L                                | This metric evaluates the longest common subsequence (LCS) between the system and the reference summaries. LCS takes into account sentence level structure similarity naturally and identifies longest co-occurring in-sequence n-grams automatically. |
-| Question Answering                       | EmACC                                  | EMACC assesses the exact match between the model-generated response and the reference answer. In other words, the model-generated response is considered correct only if it matches the reference answer exactly, word-for-word. |
-
->  Additionally, you can determine if the labels should be lowercased during the matching process by specifying `LOWER_CASE` in your class definition. This is pertinent since labels are matched based on their appearance in the generated output. For tasks like examinations where the labels are a specific set of capitalized letters such as 'A', 'B', 'C', this should typically be set to False.
-
----
-
-
-Our instruction dataset is uniquely tailored for the domain-specific LLM, FinMA. This dataset has been meticulously assembled to fine-tune our model on a diverse range of financial tasks. It features publicly available multi-task and multi-modal data derived from the multiple open released financial datasets.
-
-The dataset is multi-faceted, featuring tasks including sentiment analysis, news headline classification, named entity recognition, question answering, and stock movement prediction. It covers both textual and time-series data modalities, offering a rich variety of financial data. The task specific instruction prompts for each task have been carefully degined by domain experts.
-
-### Modality and Prompts
-
-The table below summarizes the different tasks, their corresponding modalities, text types, and examples of the instructions used for each task:
-
-| **Task**                     | **Modalities**    | **Text Types**        | **Instructions Examples**                                    |
-| ---------------------------- | ----------------- | --------------------- | ------------------------------------------------------------ |
-| Sentiment Analysis           | Text              | news headlines,tweets | "Analyze the sentiment of this statement extracted from a financial news article.Provide your answer as either negative, positive or neutral. For instance, 'The company's stocks plummeted following the scandal.' would be classified as negative." |
-| News Headline Classification | Text              | News Headlines        | "Consider whether the headline mentions the price of gold. Is there a Price or Not in the gold commodity market indicated in the news headline? Please answer Yes or No." |
-| Named Entity Recognition     | Text              | financial agreements  | "In the sentences extracted from financial agreements in U.S. SEC filings, identify the named entities that represent a person ('PER'), an organization ('ORG'), or a location ('LOC'). The required answer format is: 'entity name, entity type'. For instance, in 'Elon Musk, CEO of SpaceX, announced the launch from Cape Canaveral.', the entities would be: 'Elon Musk, PER; SpaceX, ORG; Cape Canaveral, LOC'" |
-| Question Answering           | Text              | earnings reports      | "In the context of this series of interconnected finance-related queries and the additional information provided by the pretext, table data, and post text from a company's financial filings, please provide a response to the final question. This may require extracting information from the context and performing mathematical calculations. Please take into account the information provided in the preceding questions and their answers when formulating your response:" |
-| Stock Movement Prediction    | Text, Time-Series | tweets, Stock Prices  | "Analyze the information and social media posts to determine if the closing price of *\{tid\}* will ascend or descend at *\{point\}*. Please respond with either Rise or Fall." |
-
-### Dataset Statistics
-
-The dataset contains a vast amount of instruction data samples, allowing FinMA to capture the nuances of the diverse financial tasks. The table below provides the statistical details of the instruction dataset:
-
-| Data                  | Task                             | Raw    | Data Types                       | Modalities        | License         | Paper |
-| --------------------- | -------------------------------- | ------ | -------------------------------- | ----------------- | --------------- | ----- |
-| MultiFin              | news headline classification     | 230    | news headlines                   | text              | CC BY 4.0       | [1]   |
-| FNS                   | question answering               | 50     | earnings reports                 | text              | Public          | [2]   |
-| TSA                   | sentiment analysis               | 3,829  | news headlines                   | text              | CC BY 4.0       | [3]   |
-| Financees             | sentiment analysis               | 6,539  | news headlines                   | text              | Public          | [4]   |
-| EFP                   | question answering               | 37     | business assessment questions    | text              | Public          |       |
-| EFPA                  | question answering               | 228    | business assessment questions    | text              | Public          |       |
-
-
-1. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. MultiFin: A Dataset for Multilingual Financial NLP. In Findings of the Association for Computational Linguistics: EACL 2023, 894–909. Association for Computational Linguistics, Dubrovnik, Croatia.
-2. [FNS 2023. FNP 2023.](http://wp.lancs.ac.uk/cfie/fns2023/).
-3. Pan R, García-Díaz JA, Garcia-Sanchez F, and Valencia-García R. 2023. Evaluation of transformer models for financial targeted sentiment analysis in Spanish. In PeerJ Computer Science, 9:e1377. https://doi.org/10.7717/peerj-cs.1377.
-4. CodaLab. 2023. [Competition](https://codalab.lisn.upsaclay.fr/competitions/10052)
-
-### Generating Datasets for FIT
-
-When you are working with the Financial Instruction Dataset (FIT), it's crucial to follow the prescribed format for training and testing models.
-
-The format should look like this:
-
-```json
-{
-    "id": "unique id",
-    "conversations": [
-        {
-            "from": "human",
-            "value": "Your prompt and text"
-        },
-        {
-            "from": "agent",
-            "value": "Your answer"
-        }
-    ],
-    "text": "Text to be classified",
-    "label": "Your label"
-}
-```
-
-Here's what each field means:
-
-- "id": a unique identifier for each example in your dataset.
-- "conversations": a list of conversation turns. Each turn is represented as a dictionary, with "from" representing the speaker, and "value" representing the text spoken in the turn.
-- "text": the text to be classified.
-- "label": the ground truth label for the text.
-
-
-The first turn in the "conversations" list should always be from "human", and contain your prompt and the text. The second turn should be from "agent", and contain your answer.
-
----
-
-
-We are pleased to introduce the first version of FinMA, including three models FinMA-7B, FinMA-7B-full, FinMA-30B, fine-tuned on LLaMA 7B and LLaMA-30B. FinMA-7B and FinMA-30B are trained with the NLP instruction data, while FinMA-7B-full is trained with the full instruction data from FIT covering both NLP and prediction tasks. 
-
-FinMA v0.1 is now available on [Huggingface](https://huggingface.co/ChanceFocus/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
-
-### How to fine-tune a new large language model using PIXIU based on FIT?
-
-Coming soon.
-
----
-
 
 ## Citation
 
