@@ -66,6 +66,7 @@ This repository and its contents are provided for **academic and educational pur
 
 - [English](README.md)
 - [Spainish](README.es.md)
+- [Chinese](README.zh.md)
 
 **Evaluations** (More details on FLARE section):
 
