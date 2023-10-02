@@ -14,17 +14,20 @@
     <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
     <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,7</sup></a>
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,7</sup></a>;
+    <a target='_blank'>Gang Hu<sup>8</sup></a>&emsp;
+    <a target='_blank'>Ke Qin<sup>8</sup></a>&emsp;
 </div>
 <div>
 <div align="left">
-    <sup>1</sup>Universidad de Wuhany&emsp;
+    <sup>1</sup>Universidad de Wuhan&emsp;
     <sup>2</sup>Universidad Sun Yat-sen&emsp;
     <sup>3</sup>Universidad de Sichuan&emsp;
     <sup>4</sup>Universidad Southwest Jiaotong&emsp;
     <sup>5</sup>Universidad de Florida&emsp;
     <sup>6</sup>New York Universidad&emsp;
   <sup>7</sup>ChanceFocus AMC.
+  <sup>8</sup>Universidad de Yunnan&emsp;
 </div>
 <div align="left">
     <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
@@ -33,7 +36,8 @@
     <img src='https://i.postimg.cc/NjKhDkGY/DFAF986-CCD6529-E52-D7830-F180-D-C37-C7-DEE-4340.png' alt='Sichuan University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/xTsgsrqN/logo11.png' alt='ChanceFocus AMC Logo' height='100px'>
+    <img src='https://i.postimg.cc/xTsgsrqN/logo11.png' alt='ChanceFocus AMC Logo' height='100px'>;
+    <img src='https://i.postimg.cc/V60g3hps/beb8717c1e6d7b8697274d1e5633fdcc.jpg' alt='Yunnan University Logo' height='100px'>&emsp;
 </div>
 
 
@@ -100,7 +104,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | Data                  | Task                            | Raw     | Data Types                       | Modalities        | License           | Paper |
 | --------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ----------------- | ----- |
 | AFQMC                 | semantic matching               | 42,511  | question data, chat              | text              | Apache-2.0        | [1]   |
-| bqcorpus              | semantic matching               | 120,000 | question data, chat              | text              | Public            | [2]   |
+| corpus                | semantic matching               | 120,000 | question data, chat              | text              | Public            | [2]   |
 | stockA                | stock classification            | 40,963  | news, historical prices          | text, time series | Public            | [3]   |
 | Fineval               | multiple-choice                 | 4,661   | financial exam                   | text              | Apache-2.0        | [4]   |
 | NL                    | news classification             | 10,000  | news articles                    | text              | Public            | [5]   |
@@ -258,22 +262,24 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 
 | 数据                  | 任务类型                       | 原始数据| 数据类型                         | 模式              | 许可证            | 论文  |
 | --------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ----------------- | ----- |
-| AFQMC                 | 语义匹配                        | 42,511  | 提问数据, 对话                   | 文本               | Apache-2.0        |       |
-| bqcorpus              | 语义匹配                        | 120,000 | 提问数据, 对话                   | 文本               | Public            | [1]   |
-| stockA                | 股票分类                        | 40,963  | 新闻, 历史价格                   | 文本, 时间序列     | Public            | [2]   |
-| Fineval               | 多项选择                        | 4,661   | 金融考试                         | 文本               | Apache-2.0        | [3]   |
-| NL                    | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [4]   |
-| NL2                   | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [4]   |
-| NSP                   | 负面新闻判断                    | 6,000   | 新闻、社交媒体文本               | 文本               | Public            | [4]   |
-| RE                    | 关系识别                        | 12,670  | 新闻、实体对                     | 文本               | Public            | [4]   |
-| FE                    | 情感分析                        | 10,000  | 金融社交媒体文本                 | 文本               | Public            | [4]   |
-| stockB                | 情感分析                        | 270,601 | 金融社交媒体文本                 | 文本               | Apache-2.0        |       |
+| AFQMC                 | 语义匹配                        | 42,511  | 提问数据, 对话                   | 文本               | Apache-2.0        | [1]   |
+| corpus                | 语义匹配                        | 120,000 | 提问数据, 对话                   | 文本               | Public            | [2]   |
+| stockA                | 股票分类                        | 40,963  | 新闻, 历史价格                   | 文本, 时间序列     | Public            | [3]   |
+| Fineval               | 多项选择                        | 4,661   | 金融考试                         | 文本               | Apache-2.0        | [4]   |
+| NL                    | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [5]   |
+| NL2                   | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [5]   |
+| NSP                   | 负面新闻判断                    | 6,000   | 新闻、社交媒体文本               | 文本               | Public            | [5]   |
+| RE                    | 关系识别                        | 12,670  | 新闻、实体对                     | 文本               | Public            | [5]   |
+| FE                    | 情感分析                        | 10,000  | 金融社交媒体文本                 | 文本               | Public            | [5]   |
+| stockB                | 情感分析                        | 270,601 | 金融社交媒体文本                 | 文本               | Apache-2.0        | [6]   |
 
 
-1. Jing Chen, Qingcai Chen, Xin Liu, Haijun Yang, Daohe Lu, and Buzhou Tang. 2018. The BQ Corpus: A Large-scale Domain-specific Chinese Corpus For Sentence Semantic Equivalence Identification. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4946–4951, Brussels, Belgium. Association for Computational Linguistics.
-2. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
-3. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
-4. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
+1. https://www.modelscope.cn/datasets/modelscope/afqmc_small/summary
+2. Jing Chen, Qingcai Chen, Xin Liu, Haijun Yang, Daohe Lu, and Buzhou Tang. 2018. The BQ Corpus: A Large-scale Domain-specific Chinese Corpus For Sentence Semantic Equivalence Identification. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4946–4951, Brussels, Belgium. Association for Computational Linguistics.
+3. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
+4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
+5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
+6. https://huggingface.co/datasets/kuroneko5943/stock11
 
 ### 评估
 
