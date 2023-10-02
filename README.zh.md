@@ -99,22 +99,24 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 
 | Data                  | Task                            | Raw     | Data Types                       | Modalities        | License           | Paper |
 | --------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ----------------- | ----- |
-| AFQMC                 | semantic matching               | 42,511  | question data, chat              | text              | Apache-2.0        |       |
-| bqcorpus              | semantic matching               | 120,000 | question data, chat              | text              | Public            | [1]   |
-| stockA                | stock classification            | 40,963  | news, historical prices          | text, time series | Public            | [2]   |
-| Fineval               | multiple-choice                 | 4,661   | financial exam                   | text              | Apache-2.0        | [3]   |
-| NL                    | news classification             | 10,000  | news articles                    | text              | Public            | [4]   |
-| NL2                   | news classification             | 10,000  | news articles                    | text              | Public            | [4]   |
-| NSP                   | negative news judgment          | 6,000   | news, social media text          | text              | Public            | [4]   |
-| RE                    | relationship identification     | 12,670  | news, entity pair                | text              | Public            | [4]   |
-| FE                    | sentiment analysis              | 10,000  | financial social media text      | text              | Public            | [4]   |
-| stockB                | sentiment analysis              | 270,601 | financial social media text      | text              | Apache-2.0        |       |
+| AFQMC                 | semantic matching               | 42,511  | question data, chat              | text              | Apache-2.0        | [1]   |
+| bqcorpus              | semantic matching               | 120,000 | question data, chat              | text              | Public            | [2]   |
+| stockA                | stock classification            | 40,963  | news, historical prices          | text, time series | Public            | [3]   |
+| Fineval               | multiple-choice                 | 4,661   | financial exam                   | text              | Apache-2.0        | [4]   |
+| NL                    | news classification             | 10,000  | news articles                    | text              | Public            | [5]   |
+| NL2                   | news classification             | 10,000  | news articles                    | text              | Public            | [5]   |
+| NSP                   | negative news judgment          | 6,000   | news, social media text          | text              | Public            | [5]   |
+| RE                    | relationship identification     | 12,670  | news, entity pair                | text              | Public            | [5]   |
+| FE                    | sentiment analysis              | 10,000  | financial social media text      | text              | Public            | [5]   |
+| stockB                | sentiment analysis              | 270,601 | financial social media text      | text              | Apache-2.0        | [6]   |
 
 
-1. Jing Chen, Qingcai Chen, Xin Liu, Haijun Yang, Daohe Lu, and Buzhou Tang. 2018. The BQ Corpus: A Large-scale Domain-specific Chinese Corpus For Sentence Semantic Equivalence Identification. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4946–4951, Brussels, Belgium. Association for Computational Linguistics.
-2. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
-3. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
-4. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
+1. https://www.modelscope.cn/datasets/modelscope/afqmc_small/summary
+2. Jing Chen, Qingcai Chen, Xin Liu, Haijun Yang, Daohe Lu, and Buzhou Tang. 2018. The BQ Corpus: A Large-scale Domain-specific Chinese Corpus For Sentence Semantic Equivalence Identification. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4946–4951, Brussels, Belgium. Association for Computational Linguistics.
+3. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
+4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
+5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
+6. https://huggingface.co/datasets/kuroneko5943/stock11
 
 ### Evaluation
 
