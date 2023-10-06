@@ -7,15 +7,15 @@
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
     <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
     <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
-    <a target='_blank'>Ruoyu Xiang<sup>6</sup></a>&emsp;
-    <a target='_blank'>Gang Hu<sup>7</sup></a>&emsp;
-    <a target='_blank'>Ke Qin<sup>7</sup></a>&emsp;
+    <a target='_blank'>Ruoyu Xiang<sup>7</sup></a>&emsp;
+    <a target='_blank'>Gang Hu<sup>4</sup></a>&emsp;
+    <a target='_blank'>Ke Qin<sup>4</sup></a>&emsp;
     <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
     <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
     <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>5</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
-    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
+    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>6</sup></a>&emsp;
     <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,8</sup></a>;
 </div>
 <div>
