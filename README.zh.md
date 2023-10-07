@@ -8,32 +8,32 @@
     <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
     <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
     <a target='_blank'>Ruoyu Xiang<sup>7</sup></a>&emsp;
-    <a target='_blank'>Gang Hu<sup>4</sup></a>&emsp;
-    <a target='_blank'>Ke Qin<sup>4</sup></a>&emsp;
+    <a target='_blank'>Gang Hu<sup>5</sup></a>&emsp;
+    <a target='_blank'>Ke Qin<sup>5</sup></a>&emsp;
     <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
     <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
     <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yanzhao Lai<sup>5</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
     <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
     <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>6</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,8</sup></a>;
+    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,8</sup></a>
 </div>
 <div>
 <div align="left">
-    <sup>1</sup>Universidad de Wuhan&emsp;
-    <sup>2</sup>Universidad Sun Yat-sen&emsp;
-    <sup>3</sup>Universidad de Sichuan&emsp;
-    <sup>4</sup>Universidad de Yunnan&emsp;
-    <sup>5</sup>Universidad Southwest Jiaotong&emsp;
-    <sup>6</sup>Universidad de Florida&emsp;
-    <sup>7</sup>New York Universidad&emsp;
+    <sup>1</sup>Wuhan University&emsp;
+    <sup>2</sup>Sun Yat-Sen University&emsp;
+    <sup>3</sup>Sichuan University&emsp;
+    <sup>4</sup>Southwest Jiaotong University&emsp;
+    <sup>5</sup>Yunan University&emsp;
+    <sup>6</sup>University of Florida&emsp;
+    <sup>7</sup>New York Universitya&emsp;
   <sup>8</sup>ChanceFocus AMC.
 </div>
 <div align="left">
     <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/C1XnZNK1/Sun-Yat-sen-University-Logo.png' alt='Sun Yat-Sen University Logo' height='100px'>&emsp;
+    <img src='https://i.postimg.cc/DfB8jxV1/ynu.png' alt='Yunnan University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/vTHJdYxN/NYU-Logo.png' alt='New York University' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/V60g3hps/beb8717c1e6d7b8697274d1e5633fdcc.jpg' alt='Yunnan University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/NjKhDkGY/DFAF986-CCD6529-E52-D7830-F180-D-C37-C7-DEE-4340.png' alt='Sichuan University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='100px'>&emsp;
     <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='100px'>&emsp;
@@ -120,7 +120,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 3. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
 4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
 5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
-6. https://huggingface.co/datasets/kuroneko5943/stock11
+6. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
 
 ### Evaluation
 
@@ -279,7 +279,7 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 3. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
 4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
 5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
-6. https://huggingface.co/datasets/kuroneko5943/stock11
+6. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
 
 ### 评估
 
