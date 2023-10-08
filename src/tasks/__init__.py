@@ -25,6 +25,16 @@ TASK_REGISTRY = {
     "flare_es_fns": flare.ESFNS,
     "flare_es_tsa": flare.ESTSA,
     "flare_es_financees": flare.ESFinancees,
+    "flare_zh_fe": flare.ZHFinFE,
+    "flare_zh_nl": flare.ZHFinNL,
+    "flare_zh_nl2": flare.ZHFinNL2,
+    "flare_zh_re": flare.ZHFinRE,
+    "flare_zh_nsp": flare.ZHFinNSP,
+    "flare_zh_stocka": flare.ZHAstock,
+    "flare_zh_corpus": flare.ZHBQcourse,
+    "flare_zh_fineval": flare.ZHFinEval,
+    "flare_zh_afqmc": flare.ZHAFQMC,
+    "flare_zh_stockb": flare.ZHstock11,
     **flare.SM_TASKS,
 }
 

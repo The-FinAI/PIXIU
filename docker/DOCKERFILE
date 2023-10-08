@@ -1,4 +1,4 @@
-FROM roce
+FROM tothemoon/llm
 
 RUN python3 -m pip install -U --no-cache-dir sqlitedict
 RUN python3 -m pip install -U --no-cache-dir omegaconf

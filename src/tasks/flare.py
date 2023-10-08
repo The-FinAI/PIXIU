@@ -968,3 +968,43 @@ class ConvFinQA(QA):
         if pre_answers:
             req.args = tuple([req.args[0].format(**pre_answers)] + list(req.args[1:]))
         return req
+
+
+class ZHFinFE(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-fe"
+
+
+class ZHFinNL(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-nl"
+
+
+class ZHFinNL2(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-nl2"
+
+
+class ZHFinNSP(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-nsp"
+
+
+class ZHFinRE(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-re"
+
+
+class ZHAFQMC(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-afqmc"
+
+
+class ZHAstock(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-stocka"
+
+
+class ZHBQcourse(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-corpus"
+
+
+class ZHFinEval(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-fineval"
+
+
+class ZHstock11(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-stockb"
