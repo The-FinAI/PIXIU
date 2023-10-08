@@ -61,6 +61,10 @@ This repository and its contents are provided for **academic and educational pur
 
 🚀 We're thrilled to announce that our paper, "PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance", has been accepted by NeurIPS 2023 Track Datasets and Benchmarks!
 
+**📢 Update (Date: 10-08-2023)**
+
+🌏 We're proud to share that the enhanced versions of FLARE, which now support both Chinese and Spanish!
+
 **Checkpoints:** 
 
 - [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
