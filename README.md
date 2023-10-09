@@ -26,7 +26,7 @@
     <sup>4</sup>Southwest Jiaotong University&emsp;
     <sup>5</sup>Yunan University&emsp;
     <sup>6</sup>University of Florida&emsp;
-    <sup>7</sup>New York Universitya&emsp;
+    <sup>7</sup>New York University&emsp;
   <sup>8</sup>ChanceFocus AMC.
 </div>
 <div align="left">
