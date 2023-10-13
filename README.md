@@ -76,40 +76,11 @@ This repository and its contents are provided for **academic and educational pur
 - [Spainish](README.es.md)
 - [Chinese](README.zh.md)
 
-**Evaluations** (More details on FLARE section):
+**Evaluations**:
 
-> Sentiment Analysis
-
-- [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
-- [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
-- [FOMC (flare_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [Headlines (flare_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
-
-> Knowledge Extraction
-
-- [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
-- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
-
-> Number Understanding
-
-- [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
-- [ConvFinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-convfinqa)
-
-> Text Summarization
-
-- [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
-- [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
-
-> Credit Scoring
-
-- [German (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
-- [Australian (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
-
-> Forecasting
-
-- [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
-- [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
-- [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
+- [English Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-english-6529286a147d9119a64689c0) (More details on FLARE section)
+- [Spanish Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-spanish-652929c34f8fe1bea9cd5a66)
+- [Chinese Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evalution-datasets-chinese-65292963a8cd8847517204a2)
 
 ## Overview
 
