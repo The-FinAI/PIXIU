@@ -852,7 +852,7 @@ class Headlines(Classification):
         gold = doc["gold"]
 
         return {
-            "avg_f1": (doc["label_type"], int(results[0] != "Yes"), gold, results),
+            "avg_f1": (doc["label_type"], int(results[0].strip() != "Yes"), gold, results),
         }
 
     def higher_is_better(self):
