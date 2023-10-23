@@ -1058,7 +1058,7 @@ class ZH21CCKS(RelationExtraction):
 
         for gold_item in golds:
             for pred_item in preds:
-                if gold_item == pred_item:
+                if gold_item & pred_item:
                     count += 1
 
         print("count:", count)
@@ -1072,7 +1072,7 @@ class ZH21CCKS(RelationExtraction):
 
         for gold_item in golds:
             for pred_item in preds:
-                if gold_item == pred_item:
+                if gold_item & pred_item:
                     count += 1
 
         print("count:", count)
