@@ -34,7 +34,13 @@ TASK_REGISTRY = {
     "flare_zh_corpus": flare.ZHBQcourse,
     "flare_zh_fineval": flare.ZHFinEval,
     "flare_zh_afqmc": flare.ZHAFQMC,
-    "flare_zh_stockb": flare.ZHstock11,
+    "flare_zh_qa": flare.ZHFinQA,
+    "flare_zh_na": flare.ZHFinNA,
+    "flare_zh_21ccks": flare.ZH21CCKS,
+    "flare_zh_19ccks": flare.ZH19CCKS,
+    "flare_zh_20ccks": flare.ZH20CCKS,
+    "flare_zh_22ccks": flare.ZH22CCKS,
+    "flare_zh_ner": flare.NER,
     **flare.SM_TASKS,
 }
 
