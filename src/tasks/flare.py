@@ -5,6 +5,7 @@ from lm_eval.base import Task, rf
 from lm_eval.metrics import mean
 import numpy as np
 from .utils import process_text
+from .zhutils import process_zhtext
 from seqeval.metrics import f1_score as entity_score
 from sklearn.metrics import f1_score, matthews_corrcoef
 from bart_score import BARTScorer
@@ -1008,3 +1009,109 @@ class ZHFinEval(Classification):
 
 class ZHstock11(Classification):
     DATASET_PATH = "ChanceFocus/flare-zh-stockb"
+
+class ZHFinQA(QA):
+    DATASET_PATH = "ChanceFocus/flare-zh-qa"
+
+
+class ZHFinNA(AbstractiveSummarization):
+    DATASET_PATH = "ChanceFocus/flare-zh-na"
+
+
+class ZH21CCKS(RelationExtraction):
+    DATASET_PATH = "ChanceFocus/flare-zh-21ccks"
+
+    def process_results(self, doc, results):
+        return {
+            "precision": (doc["answer"], results),
+            "recall": (doc["answer"], results),
+            "f1": (doc["answer"], results),
+        }
+
+    def process_string_list(self, string_list):
+        processed_list = []
+
+        for item in string_list:
+            processed_item = item.strip()
+            processed_list.append(processed_item)
+
+        return processed_list
+
+    def process(self, items):
+        golds, preds = zip(*items)
+
+        all_golds = []
+        all_preds = []
+
+        for gold, pred in zip(golds, preds):
+            gold = str(gold).split("\n")
+            all_golds.extend(gold)
+            pred = self.process_string_list(pred)
+            all_preds.extend(pred)
+            
+        return set(all_golds), set(all_preds)
+
+    def precision(self, items):
+        golds, preds = self.process(items)
+        gold_len = len(golds)
+        count = 0
+
+        for gold_item in golds:
+            for pred_item in preds:
+                if gold_item == pred_item:
+                    count += 1
+
+        print("count:", count)
+        prec = count / gold_len
+        return prec
+
+    def recall(self, items):
+        golds, preds = self.process(items)
+        pred_len = len(preds)
+        count = 0
+
+        for gold_item in golds:
+            for pred_item in preds:
+                if gold_item == pred_item:
+                    count += 1
+
+        print("count:", count)
+        rec = count / pred_len
+        return rec
+
+    def cal_f1(self, items):
+        prec = self.precision(items)
+        rec = self.recall(items)
+        if prec + rec == 0.0:
+            return 0.0
+        return 2 * (prec * rec) / (prec + rec)
+
+
+class ZH19CCKS(RelationExtraction):
+    VERSION = 1
+    DATASET_PATH = "ChanceFocus/flare-zh-19ccks"
+
+    def process_results(self, doc, results):
+        return {
+            "precision": (doc["answer"], results[0]),
+            "recall": (doc["answer"], results[0]),
+            "f1": (doc["answer"], results[0]),
+        }
+
+
+class ZH20CCKS(ZH19CCKS):
+    DATASET_PATH = "ChanceFocus/flare-zh-20ccks"
+
+
+class ZH22CCKS(ZH19CCKS):
+    DATASET_PATH = "ChanceFocus/flare-zh-22ccks"
+
+
+class ZHNER(NER):
+    DATASET_PATH = "ChanceFocus/flare-zh-ner"
+
+    def process_results(self, doc, results):
+        text = doc["text"]
+        pred = process_zhtext(results[0], text)
+
+        return {"entity_f1": (pred, doc["label"], results[0])}
