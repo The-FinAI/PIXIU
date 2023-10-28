@@ -1051,41 +1051,6 @@ class ZH21CCKS(RelationExtraction):
             
         return set(all_golds), set(all_preds)
 
-    def precision(self, items):
-        golds, preds = self.process(items)
-        gold_len = len(golds)
-        count = 0
-
-        for gold_item in golds:
-            for pred_item in preds:
-                if gold_item & pred_item:
-                    count += 1
-
-        print("count:", count)
-        prec = count / gold_len
-        return prec
-
-    def recall(self, items):
-        golds, preds = self.process(items)
-        pred_len = len(preds)
-        count = 0
-
-        for gold_item in golds:
-            for pred_item in preds:
-                if gold_item & pred_item:
-                    count += 1
-
-        print("count:", count)
-        rec = count / pred_len
-        return rec
-
-    def cal_f1(self, items):
-        prec = self.precision(items)
-        rec = self.recall(items)
-        if prec + rec == 0.0:
-            return 0.0
-        return 2 * (prec * rec) / (prec + rec)
-
 
 class ZH19CCKS(RelationExtraction):
     VERSION = 1
