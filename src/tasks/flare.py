@@ -1104,28 +1104,18 @@ class ZHHeadlines(Headlines):
 class ZHBigData(StockMovement):
     DATASET_PATH = "ChanceFocus/flare-zh-bigdata"
     CHOICE_DICT = {
-        "上涨": ["yes", "positive"],
-        "下跌": ["no", "negative", "neutral"],
+        "上涨": ["是", "正面", "积极", "肯定的"],
+        "下跌": ["否", "负面", "消极"],
     }
     DEFAULT = "下跌"
 
 
-class ZHACL(StockMovement):
+class ZHACL(ZHBigData):
     DATASET_PATH = "ChanceFocus/flare-zh-acl"
-    CHOICE_DICT = {
-        "上涨": ["yes", "positive"],
-        "下跌": ["no", "negative", "neutral"],
-    }
-    DEFAULT = "下跌"
 
 
-class ZHCIKM(StockMovement):
+class ZHCIKM(ZHBigData):
     DATASET_PATH = "ChanceFocus/flare-zh-cikm"
-    CHOICE_DICT = {
-        "上涨": ["yes", "positive"],
-        "下跌": ["no", "negative", "neutral"],
-    }
-    DEFAULT = "下跌"
 
 
 class ZHFinQAE(QA):
