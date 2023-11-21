@@ -80,6 +80,13 @@ This repository and its contents are provided for **academic and educational pur
 - [FLARE (flare-zh-nsp)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nsp)
 - [FLARE (flare-zh-re)](https://huggingface.co/datasets/ChanceFocus/flare-zh-re)
 - [FLARE (flare-zh-stockb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stockb)
+- [FLARE (flare-zh-qa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-qa)
+- [FLARE (flare-zh-na)](https://huggingface.co/datasets/ChanceFocus/flare-zh-na)
+- [FLARE (flare-zh-19ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-19ccks)
+- [FLARE (flare-zh-20ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-20ccks)
+- [FLARE (flare-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
+- [FLARE (flare-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
+- [FLARE (flare-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
 
 
 ## Overview
@@ -113,6 +120,13 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | RE                    | relationship identification     | 12,670  | news, entity pair                | text              | Public            | [5]   |
 | FE                    | sentiment analysis              | 10,000  | financial social media text      | text              | Public            | [5]   |
 | stockB                | sentiment analysis              | 270,601 | financial social media text      | text              | Apache-2.0        | [6]   |
+| QA                    | question answering              | 20000   | financial news announcements     | text，table       | Public            | [5]   |
+| NA                    | text summarization              | 30000   | news articles, announcements     | text              | Public            | [5]   |
+| 19CCKS                | event subject extraction        | 156,834 | financial social media text      | text              | CC BY-SA 4.0      | [7]   |
+| 20CCKS                | event subject extraction        | 372,810 | news、reports                    | text              | CC BY-SA 4.0      | [8]   |
+| 21CCKS                | event causality extraction      | 8,000   | news、reports                    | text              | CC BY-SA 4.0      | [9]   |
+| 22CCKS                | event subject extraction        | 109,555 | news、reports                    | text              | CC BY-SA 4.0      | [10]  |
+| NER                   | named entity recognition        | 48,364  | financial reports                | text              | Public            | [11]  |
 
 
 1. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
@@ -121,6 +135,11 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
 5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
 6. https://huggingface.co/datasets/kuroneko5943/stock11
+7. https://www.biendata.xyz/competition/ccks_2019_4/
+8. https://www.biendata.xyz/competition/ccks_2020_4_1/
+9. https://www.biendata.xyz/competition/ccks_2021_task6_2/
+10. https://www.biendata.xyz/competition/ccks2022_eventext/
+11. Jia C, Shi Y, Yang Q, et al. Entity enhanced BERT pre-training for Chinese NER[C]//Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020: 6384-6396.
 
 ### Evaluation
 
@@ -240,6 +259,13 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 - [FLARE (flare-zh-nsp)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nsp)
 - [FLARE (flare-zh-re)](https://huggingface.co/datasets/ChanceFocus/flare-zh-re)
 - [FLARE (flare-zh-stockb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stockb)
+- [FLARE (flare-zh-qa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-qa)
+- [FLARE (flare-zh-na)](https://huggingface.co/datasets/ChanceFocus/flare-zh-na)
+- [FLARE (flare-zh-19ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-19ccks)
+- [FLARE (flare-zh-20ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-20ccks)
+- [FLARE (flare-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
+- [FLARE (flare-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
+- [FLARE (flare-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
 
 ## 概述
 
@@ -268,10 +294,17 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 | Fineval               | 多项选择                        | 4,661   | 金融考试                         | 文本               | Apache-2.0        | [4]   |
 | NL                    | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [5]   |
 | NL2                   | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [5]   |
-| NSP                   | 负面新闻判断                    | 6,000   | 新闻、社交媒体文本               | 文本               | Public            | [5]   |
+| NSP                   | 负面新闻判断                    | 6,000   | 新闻、社交媒体文本                | 文本               | Public            | [5]   |
 | RE                    | 关系识别                        | 12,670  | 新闻、实体对                     | 文本               | Public            | [5]   |
 | FE                    | 情感分析                        | 10,000  | 金融社交媒体文本                 | 文本               | Public            | [5]   |
 | stockB                | 情感分析                        | 270,601 | 金融社交媒体文本                 | 文本               | Apache-2.0        | [6]   |
+| QA                    | 金融问答                        | 20000   | 财经新闻公告                     | 文本，表格         | Public            | [5]   |
+| NA                    | 文本摘要                        | 30000   | 新闻文章、公告                   | 文本               | Public            | [5]   |
+| 19CCKS                | 事件主体提取                    | 156,834 | 新闻报道                         | 文本               | CC BY-SA 4.0      | [7]   |
+| 20CCKS                | 事件主体提取                    | 372,810 | 新闻报道                         | 文本               | CC BY-SA 4.0      | [8]   |
+| 21CCKS                | 事件因果关系抽取                | 8,000   | 新闻报道                         | 文本               | CC BY-SA 4.0      | [9]   |
+| 22CCKS                | 事件主体提取                    | 109,555 | 新闻报道                         | 文本               | CC BY-SA 4.0      | [10]  |
+| NER                   | 命名实体识别                    | 48,364  | 新闻报道                         | 文本               | Public            | [11]  |
 
 
 1. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
@@ -280,6 +313,11 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
 5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
 6. https://huggingface.co/datasets/kuroneko5943/stock11
+7. https://www.biendata.xyz/competition/ccks_2019_4/
+8. https://www.biendata.xyz/competition/ccks_2020_4_1/
+9. https://www.biendata.xyz/competition/ccks_2021_task6_2/
+10. https://www.biendata.xyz/competition/ccks2022_eventext/
+11. Jia C, Shi Y, Yang Q, et al. Entity enhanced BERT pre-training for Chinese NER[C]//Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020: 6384-6396.
 
 ### 评估
 
