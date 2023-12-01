@@ -2,16 +2,13 @@ import collections
 import itertools
 import numpy as np
 import random
-
-from lm_eval.utils import positional_deprecated, run_task_tests
 import lm_eval.metrics
 import lm_eval.models
-import lm_eval.tasks
-import lm_eval.base
-
-from model_prompt import MODEL_PROMPT_MAP
-from chatlm import ChatLM
 import tasks as ta
+import lm_eval.base
+from chatlm import ChatLM
+from lm_eval.utils import positional_deprecated, run_task_tests
+
 
 @positional_deprecated
 def simple_evaluate(
@@ -30,7 +27,6 @@ def simple_evaluate(
     decontamination_ngrams_path=None,
     write_out=False,
     output_base_path=None,
-    model_prompt=None
 ):
     """Instantiate and evaluate a model on a list of tasks.
 
@@ -69,7 +65,7 @@ def simple_evaluate(
     random.seed(1234)
     np.random.seed(1234)
 
-    assert len(tasks) != 0, "No tasks specified"
+    assert tasks != [], "No tasks specified"
 
     if isinstance(model, str):
         if model_args is None:
@@ -109,7 +105,6 @@ def simple_evaluate(
         decontamination_ngrams_path=decontamination_ngrams_path,
         write_out=write_out,
         output_base_path=output_base_path,
-        model_prompt=model_prompt
     )
 
     # add info about the model and few shot config
@@ -144,7 +139,6 @@ def evaluate(
     decontamination_ngrams_path=None,
     write_out=False,
     output_base_path=None,
-    model_prompt=None
 ):
     """Instantiate and evaluate a model on a list of tasks.
 
@@ -239,9 +233,6 @@ def evaluate(
         if limit is not None:
             limit = int(len(task_docs) * limit) if limit < 1.0 else int(limit)
 
-        if model_prompt is None:
-            model_prompt = 'no_prompt'
-
         for doc_id, doc in enumerate(itertools.islice(task_docs, 0, limit)):
             if decontaminate and task.should_decontaminate():
                 docs_for_decontamination[(task_name, task_set)].append(
@@ -252,8 +243,7 @@ def evaluate(
             ctx = task.fewshot_context(
                 doc=doc, num_fewshot=num_fewshot, rnd=rnd, description=description
             )
-
-            ctx = MODEL_PROMPT_MAP[model_prompt](ctx)
+            ctx = f'Human: \n{ctx}\n\nAssistant: \n'
             
             reqs = task.construct_requests(doc, ctx)
 
@@ -322,7 +312,7 @@ def evaluate(
                 task = task_dict[task_name]
                 req = task.reformulate_turn_req(req, [(turn_requests.get((diag_id, t), None), t) for
 t in range(turn)], turn)
-                filtered_reqs.append([req, (i, task_name, doc, doc_id, diag_id, turn)])
+                filtered_reqs.append([req, (i, task_name, doc, doc_id, diag_id, turn)]
 
             resps = getattr(lm, reqtype)([req.args for req in reqs])
             resps = [
@@ -378,14 +368,16 @@ t in range(turn)], turn)
             real_metric = metric.replace(
                 decontaminate_suffix, ""
             )  # decontaminated still uses the same metric
-        
         results[task_name][metric] = task.aggregation()[real_metric](items)
+
         # hotfix: bleu, chrf, ter seem to be really expensive to bootstrap
         # so we run them less iterations. still looking for a cleaner way to do this
 
         stderr = lm_eval.metrics.stderr_for_metric(
             metric=task.aggregation()[real_metric],
-            bootstrap_iters=min(bootstrap_iters, 1000) if metric in ["bleu", "chrf", "ter"] else bootstrap_iters,
+            bootstrap_iters=min(bootstrap_iters, 1000)
+            if metric in ["bleu", "chrf", "ter"]
+            else bootstrap_iters,
         )
 
         if stderr is not None:

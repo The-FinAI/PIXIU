@@ -1,15 +1,14 @@
 """
 FLARE
 """
-from lm_eval.base import Task, rf
-from lm_eval.metrics import mean
+from itertools import zip_longest
+from lm_eval.base import MultipleChoiceTask, Task, rf
+from lm_eval.metrics import mean, matthews_corrcoef
 import numpy as np
 from .utils import process_text
-from .zhutils import process_zhtext
 from seqeval.metrics import f1_score as entity_score
-from sklearn.metrics import f1_score, matthews_corrcoef
-from bart_score import BARTScorer
-import evaluate
+from sklearn.metrics import accuracy_score, f1_score
+
 
 _CITATION = """
 @misc{xie2023pixiu,
@@ -50,6 +49,7 @@ class Classification(Task):
     def test_docs(self):
         return self.dataset["test"]
 
+
     def construct_requests(self, doc, ctx):
         """Uses RequestFactory to construct Requests and returns an iterable of
         Requests which will be sent to the LM.
@@ -61,11 +61,11 @@ class Classification(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def doc_to_decontamination_query(self, doc):
-        return doc["text"]
+         return doc["text"]
 
     def doc_to_text(self, doc):
         # TODO: Format the query prompt portion of the document example.
@@ -76,24 +76,23 @@ class Classification(Task):
         return doc["answer"]
 
     def process_results(self, doc, results):
-        gold: str = doc["choices"][doc["gold"]]
-        if self.LOWER_CASE:
-            gold = gold.lower()
+        gold = doc["choices"][doc["gold"]]
         ini_result = results[0].strip()
         if self.LOWER_CASE:
             ini_result = ini_result.lower()
 
-        result = None
         for choice in doc["choices"]:
+            ch = choice
             if self.LOWER_CASE:
-                choice = choice.lower()
-            if choice in ini_result:
+                ch = ch.lower()
+            if ch in ini_result:
                 result = choice
                 break
-        if result is None:
+        else:
+            choice = -1
             result = "missing"
 
-        acc = 1.0 if gold == result else 0.0
+        acc = 1.0 if gold == choice else 0.0
 
         results = {
             "acc": acc,
@@ -103,9 +102,10 @@ class Classification(Task):
         }
 
         if self.CALCULATE_MCC:
-            results["mcc"] = (result, gold)
+            results["mcc"] = (choice, gold)
 
         return results
+
 
     def higher_is_better(self):
         metrics = {
@@ -118,28 +118,21 @@ class Classification(Task):
             metrics["mcc"] = True
         return metrics
 
-    def weighted_f1(self, items):
+    def weighted_f1(cls, items):
         preds, golds = zip(*items)
         labels = list(set(golds))
         preds = np.array(preds)
         golds = np.array(golds)
-        f1 = f1_score(golds, preds, average="weighted", labels=labels)
+        f1 = f1_score(preds, golds, average='weighted', labels=labels)
         return f1
 
-    def macro_f1(self, items):
+    def macro_f1(cls, items):
         preds, golds = zip(*items)
         labels = list(set(golds))
         preds = np.array(preds)
         golds = np.array(golds)
-        f1 = f1_score(golds, preds, average="macro", labels=labels)
+        f1 = f1_score(preds, golds, average='macro', labels=labels)
         return f1
-
-    def matthews_corrcoef(self, items):
-        preds, golds = zip(*items)
-        labels = {label: i for i, label in enumerate(list(set(golds)))}
-        preds = [labels.get(pred, -1) for pred in preds]
-        golds = [labels.get(gold, -1) for gold in golds]
-        return matthews_corrcoef(golds, preds)
 
     def aggregation(self):
         metrics = {
@@ -149,14 +142,14 @@ class Classification(Task):
             "macro_f1": self.macro_f1,
         }
         if self.CALCULATE_MCC:
-            metrics["mcc"] = self.matthews_corrcoef
+            metrics["mcc"] = matthews_corrcoef
         return metrics
 
 
 class SequentialLabeling(Task):
     VERSION = 1
     DATASET_NAME = None
-    LMAP = {"O": 0}
+    LMAP = {'O': 0}
     EVAL_LAST_TURN = True
 
     def reformulate_turn_req(self, req, turn_request, turn):
@@ -210,12 +203,12 @@ class SequentialLabeling(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def process_result(self, pred, gold, tokens):
         format_pred = ["O"] * len(gold)
-        for index, pre in enumerate(pred.split("\n")[: len(tokens)]):
+        for index, pre in enumerate(pred.split("\n")[:len(tokens)]):
             try:
                 word, label = pre.split(":")
             except:
@@ -227,16 +220,14 @@ class SequentialLabeling(Task):
     def entity_f1(self, items):
         golds, preds, tokens = zip(*items)
 
-        list_preds = [
-            self.process_result(pred, gold, token)
-            for pred, gold, token in zip(preds, golds, tokens)
-        ]
-        f1 = entity_score(golds, list_preds)
+        list_preds = [self.process_result(pred, gold, token)
+            for pred, gold, token in zip(preds, golds, tokens)]
+        f1 = entity_score(list_preds, golds)
         return f1
 
     def process_label_result(self, pred, gold, tokens):
         format_pred = [-1] * len(gold)
-        for index, pre in enumerate(pred.split("\n")[: len(tokens)]):
+        for index, pre in enumerate(pred.split("\n")[:len(tokens)]):
             try:
                 word, label = pre.split(":")
             except:
@@ -248,13 +239,11 @@ class SequentialLabeling(Task):
     def label_f1(self, items):
         golds, preds, tokens = zip(*items)
 
-        list_preds = [
-            self.process_label_result(pred, gold, token)
-            for pred, gold, token in zip(preds, golds, tokens)
-        ]
+        list_preds = [self.process_label_result(pred, gold, token)
+            for pred, gold, token in zip(preds, golds, tokens)]
         list_preds = [item for sublist in list_preds for item in sublist]
         golds = [self.LMAP[item] for sublist in golds for item in sublist]
-        f1 = f1_score(golds, list_preds, average="weighted")
+        f1 = f1_score(list_preds, golds, average="weighted")
         return f1
 
     def aggregation(self):
@@ -302,8 +291,6 @@ class AbstractiveSummarization(Task):
             "rouge1": (doc["answer"], results[0]),
             "rouge2": (doc["answer"], results[0]),
             "rougeL": (doc["answer"], results[0]),
-            "bert_score_f1": (doc["answer"], results[0]),
-            "bart_score": (doc["answer"], results[0]),
         }
 
     def higher_is_better(self):
@@ -311,8 +298,6 @@ class AbstractiveSummarization(Task):
             "rouge1": True,
             "rouge2": True,
             "rougeL": True,
-            "bert_score_f1": True,
-            "bart_score": True,
         }
 
     def construct_requests(self, doc, ctx):
@@ -326,58 +311,33 @@ class AbstractiveSummarization(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def rouge_score(self, items):
         golds, preds = zip(*items)
-        rouge = evaluate.load("rouge")
-        results = rouge.compute(predictions=preds, references=golds)
+        rouge = evaluate.load('rouge')
+        results = rouge.compute(predictions=preds,
+                                references=golds)
         return results
 
     def rouge1(self, items):
         results = self.rouge_score(items)
-        return results["rouge1"]
+        return results['rouge1']
 
     def rouge2(self, items):
         results = self.rouge_score(items)
-        return results["rouge2"]
+        return results['rouge2']
 
     def rougeL(self, items):
         results = self.rouge_score(items)
-        return results["rougeL"]
-
-    def bert_score(self, items):
-        if getattr(self, "_cache_bertscore", None) is None:
-            golds, preds = zip(*items)
-            bertscore = evaluate.load("evaluate-metric/bertscore")
-            self._cache_bertscore = bertscore.compute(
-                predictions=preds,
-                references=golds,
-                model_type="bert-base-multilingual-cased",
-            )
-            return self._cache_bertscore
-        else:
-            return self._cache_bertscore
-
-    def bert_score_f1(self, items):
-        res = self.bert_score(items)
-        return sum(res["f1"]) / len(res["f1"])
-
-    def bart_score(self, items):
-        golds, preds = zip(*items)
-        bart_scorer = BARTScorer(device="cuda", checkpoint="facebook/bart-large-cnn")
-        bart_scorer.load(path="src/metrics/BARTScore/bart_score.pth")
-        res = bart_scorer.score(srcs=preds, tgts=golds, batch_size=8)
-        return sum(res) / len(res)
+        return results['rougeL']
 
     def aggregation(self):
         return {
             "rouge1": self.rouge1,
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
-            "bert_score_f1": self.bert_score_f1,
-            "bart_score": self.bart_score,
         }
 
 
@@ -419,8 +379,6 @@ class ExtractiveSummarization(Task):
             "rouge1": (doc["label"], doc["text"], results[0]),
             "rouge2": (doc["label"], doc["text"], results[0]),
             "rougeL": (doc["label"], doc["text"], results[0]),
-            "bert_score_f1": (doc["label"], doc["text"], results[0]),
-            "bart_score": (doc["label"], doc["text"], results[0]),
         }
 
     def higher_is_better(self):
@@ -428,8 +386,6 @@ class ExtractiveSummarization(Task):
             "rouge1": True,
             "rouge2": True,
             "rougeL": True,
-            "bert_score_f1": True,
-            "bart_score": True,
         }
 
     def construct_requests(self, doc, ctx):
@@ -443,20 +399,14 @@ class ExtractiveSummarization(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def get_sum(self, labels, texts):
         summ = []
         for label, text in zip(labels, texts):
             text = text.split("\n")
-            new_text = "\n".join(
-                [
-                    text[index]
-                    for index in range(len(text))
-                    if index < len(label) and label[index] == 1
-                ]
-            )
+            new_text = "\n".join([text[index] for index in range(len(text)) if index < len(label) and label[index] == 1])
             summ.append(new_text)
         return summ
 
@@ -464,59 +414,28 @@ class ExtractiveSummarization(Task):
         golds, texts, preds = zip(*items)
         golds = self.get_sum(golds, texts)
         preds = self.get_sum([val.split("\n") for val in preds], texts)
-        rouge = evaluate.load("rouge")
-        results = rouge.compute(predictions=preds, references=golds)
+        rouge = evaluate.load('rouge')
+        results = rouge.compute(predictions=preds,
+                                references=golds)
         return results
 
     def rouge1(self, items):
         results = self.rouge_score(items)
-        return results["rouge1"]
+        return results['rouge1']
 
     def rouge2(self, items):
         results = self.rouge_score(items)
-        return results["rouge2"]
+        return results['rouge2']
 
     def rougeL(self, items):
         results = self.rouge_score(items)
-        return results["rougeL"]
-
-    def bert_score(self, items):
-        if getattr(self, "_cache_bertscore", None) is None:
-            golds, texts, preds = zip(*items)
-            golds = self.get_sum(golds, texts)
-            preds = self.get_sum([val.split("\n") for val in preds], texts)
-
-            bertscore = evaluate.load("evaluate-metric/bertscore")
-            self._cache_bertscore = bertscore.compute(
-                predictions=preds,
-                references=golds,
-                model_type="bert-base-multilingual-cased",
-            )
-            return self._cache_bertscore
-        else:
-            return self._cache_bertscore
-
-    def bert_score_f1(self, items):
-        res = self.bert_score(items)
-        return sum(res["f1"]) / len(res["f1"])
-
-    def bart_score(self, items):
-        golds, texts, preds = zip(*items)
-        golds = self.get_sum(golds, texts)
-        preds = self.get_sum([val.split("\n") for val in preds], texts)
-
-        bart_scorer = BARTScorer(device="cuda:0", checkpoint="facebook/bart-large-cnn")
-        bart_scorer.load(path="src/metrics/BARTScore/bart_score.pth")
-        res = bart_scorer.score(srcs=preds, tgts=golds, batch_size=8)
-        return sum(res) / len(res)
+        return results['rougeL']
 
     def aggregation(self):
         return {
             "rouge1": self.rouge1,
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
-            "bert_score_f1": self.bert_score_f1,
-            "bart_score": self.bart_score,
         }
 
 
@@ -578,7 +497,7 @@ class RelationExtraction(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def process(self, items):
@@ -611,7 +530,7 @@ class RelationExtraction(Task):
         rec = self.recall(items)
         if prec + rec == 0.0:
             return 0.0
-        return 2 * (prec * rec) / (prec + rec)
+        return 2 * (prec * rec ) / (prec + rec)
 
     def aggregation(self):
         return {
@@ -648,10 +567,10 @@ class QA(Task):
         return self.dataset["test"]
 
     def should_decontaminate(self):
-        return True
+         return True
 
     def doc_to_decontamination_query(self, doc):
-        return doc["text"]
+         return doc["text"]
 
     def doc_to_text(self, doc):
         # TODO: Format the query prompt portion of the document example.
@@ -668,7 +587,7 @@ class QA(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def doc_to_target(self, doc):
@@ -706,10 +625,6 @@ class NER(Task):
     VERSION = 1
     DATASET_PATH = "chancefocus/flare-ner"
     DATASET_NAME = None
-    EVAL_LAST_TURN = True
-
-    def reformulate_turn_req(self, req, turn_request, turn):
-        return req
 
     def has_training_docs(self):
         return True
@@ -730,10 +645,10 @@ class NER(Task):
         return self.dataset["test"]
 
     def should_decontaminate(self):
-        return True
+         return True
 
     def doc_to_decontamination_query(self, doc):
-        return doc["text"]
+         return doc["text"]
 
     def doc_to_text(self, doc):
         # TODO: Format the query prompt portion of the document example.
@@ -750,7 +665,7 @@ class NER(Task):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def doc_to_target(self, doc):
@@ -760,7 +675,9 @@ class NER(Task):
         text = doc["text"]
         pred = process_text(results[0], text)
 
-        return {"entity_f1": (pred, doc["label"], results[0])}
+        return {
+            "entity_f1": (pred, doc["label"], results[0])
+        }
 
     def higher_is_better(self):
         return {
@@ -770,7 +687,7 @@ class NER(Task):
     @classmethod
     def entity_f1(cls, items):
         preds, golds, _ = zip(*items)
-        f1 = entity_score(golds, preds)
+        f1 = entity_score(preds, golds)
         return f1
 
     def aggregation(self):
@@ -786,45 +703,6 @@ class FinQA(QA):
 class StockMovement(Classification):
     DATASET_NAME = None
     CALCULATE_MCC = True
-    CHOICE_DICT = {
-        "rise": ["yes", "positive"],
-        "fall": ["no", "negative", "neutral"],
-    }
-    DEFAULT = "fall"
-
-    def process_results(self, doc, results):
-        gold: str = doc["choices"][doc["gold"]]
-        if self.LOWER_CASE:
-            gold = gold.lower()
-        ini_result = results[0].strip()
-        if self.LOWER_CASE:
-            ini_result = ini_result.lower()
-
-        result = None
-        for choice in doc["choices"]:
-            if self.LOWER_CASE:
-                choice = choice.lower()
-            if choice in ini_result or any(
-                [val in ini_result for val in self.CHOICE_DICT[choice]]
-            ):
-                result = choice
-                break
-        if result is None:
-            result = self.DEFAULT
-
-        acc = 1.0 if gold == result else 0.0
-
-        results = {
-            "acc": acc,
-            "missing": int(result == "missing"),
-            "f1": (result, gold),
-            "macro_f1": (result, gold),
-        }
-
-        if self.CALCULATE_MCC:
-            results["mcc"] = (result, gold)
-
-        return results
 
 
 class StockMovementBigData(StockMovement):
@@ -853,7 +731,7 @@ class Headlines(Classification):
         gold = doc["gold"]
 
         return {
-            "avg_f1": (doc["label_type"], int(results[0].strip() != "Yes"), gold, results),
+            "avg_f1": (doc["label_type"], int(results[0] != "Yes"), gold, results),
         }
 
     def higher_is_better(self):
@@ -872,7 +750,7 @@ class Headlines(Classification):
         for l in label_set:
             pds = preds[labels == l]
             gds = golds[labels == l]
-            f1 = f1_score(gds, pds, average="weighted", labels=[0, 1])
+            f1 = f1_score(pds, gds, average='weighted', labels=[0, 1])
             all_f1s.append(f1)
         return np.mean(all_f1s)
 
@@ -887,7 +765,7 @@ class Headlines(Classification):
             language description, as well as the few shot examples, and the question
             part of the document for `doc`.
         """
-        cont_request = rf.greedy_until(ctx, {"until": None})
+        cont_request = rf.greedy_until(ctx, {"until": "Text:"})
         return cont_request
 
     def aggregation(self):
@@ -898,37 +776,157 @@ class Headlines(Classification):
 
 class FinerOrd(SequentialLabeling):
     DATASET_PATH = "chancefocus/flare-finer-ord"
-    LMAP = {
-        "O": 0,
-        "B-PER": 1,
-        "I-PER": 2,
-        "B-LOC": 3,
-        "I-LOC": 4,
-        "B-ORG": 5,
-        "I-ORG": 6,
-    }
+    LMAP = {'O': 0, 'B-PER': 1, 'I-PER': 2, 'B-LOC': 3, 'I-LOC': 4, 'B-ORG': 5, 'I-ORG': 6}
 
 
 class FOMC(Classification):
     DATASET_PATH = "chancefocus/flare-fomc"
 
 
-class German(StockMovement):
+class German(Classification):
     DATASET_PATH = "chancefocus/flare-german"
-    CHOICE_DICT = {
-        "good": ["yes", "positive"],
-        "bad": ["no", "negative", "neutral"],
-    }
-    DEFAULT = "good"
 
 
-class Australian(StockMovement):
+class Australian(Classification):
     DATASET_PATH = "chancefocus/flare-australian"
-    CHOICE_DICT = {
-        "good": ["yes", "positive"],
-        "bad": ["no", "negative", "neutral"],
-    }
-    DEFAULT = "good"
+
+class TSA(Task):
+     VERSION = 1
+     DATASET_PATH = "chancefocus/flare-tsa"
+     DATASET_NAME = None
+
+     def has_training_docs(self):
+         return False
+
+     def has_validation_docs(self):
+         return False
+
+     def has_test_docs(self):
+         return True
+
+     def training_docs(self):
+         return self.dataset["train"]
+
+     def validation_docs(self):
+         return self.dataset["validation"]
+
+     def test_docs(self):
+         return self.dataset["test"]
+
+     def doc_to_text(self, doc):
+         # TODO: Format the query prompt portion of the document example.
+         return doc["query"]
+
+     def doc_to_target(self, doc):
+         return "\nAnswer: " + str(doc["answer"])
+
+     def process_results(self, doc, results):
+         pred = results[0].split("\n")[0]
+         pred = re.findall(r'[0-9]+(?:\.[0-9]+)?', pred)
+         missing = 0
+         if not pred:
+             pred = -100.0
+             missing = 1
+         else:
+             pred = pred[0]
+         pred = float(pred)
+         return {
+                 "rmse": (doc["answer"], pred),
+                 "missing": missing
+         }
+
+     def higher_is_better(self):
+         return {
+             "rmse": False,
+         }
+
+     def construct_requests(self, doc, ctx):
+         """Uses RequestFactory to construct Requests and returns an iterable of
+         Requests which will be sent to the LM.
+
+         :param doc:
+             The document as returned from training_docs, validation_docs, or test_docs.
+         :param ctx: str
+             The context string, generated by fewshot_context. This includes the natural
+             language description, as well as the few shot examples, and the question
+             part of the document for `doc`.
+         """
+         cont_request = rf.greedy_until(ctx, {"until": "Answer:"})
+         return cont_request
+
+     def rmse(self, items):
+         golds, preds = zip(*items)
+         fgolds, fpreds = [], []
+         for gold, pred in zip(golds, preds):
+             if pred == -100.0:
+                 continue
+             fgolds.append(gold)
+             fpreds.append(max(min(pred, 1.0), -1.0))
+         rmse = mean_squared_error(fgolds, fpreds, squared=True)
+
+         return rmse
+
+     def aggregation(self):
+         return {
+             "rmse": self.rmse,
+             "missing": mean,
+         }
+
+
+
+ class CFA(Classification):
+     DATASET_PATH = "chancefocus/flare-cfa"
+     LOWER_CASE = False
+
+
+ class FINARGECCARC(Classification):
+     DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
+
+
+ class FINARGECCAUC(Classification):
+     DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+
+
+ class MLESG(Classification):
+     DATASET_PATH = "chancefocus/flare-mlesg"
+
+
+ class FSRL(SequentialLabeling):
+     DATASET_PATH = "chancefocus/flare-fsrl"
+     LMAP = {key: index for index, key in enumerate(['O', 'I-QUANT', 'B-QUANT', 'I-TIME', 'B-TIME', 'I-MANNER', 'B-MANNER', 'I-THEME', 'B-THEME', 'I-VALUE', 'B-VALUE', 'I-WHOLE', 'B-WHOLE', 'I-LOCATION', 'B-LOCATION', 'I-AGENT', 'B-AGENT', 'I-CAUSE', 'B-CAUSE', 'I-SOURCE', 'B-SOURCE', 'I-REF_TIME', 'B-REF_TIME', 'I-CONDITION', 'B-CONDITION'])}
+
+ class CFA(Classification):
+     DATASET_PATH = "chancefocus/flare-cfa"
+
+ class FinargECCAUC(Classification):
+     DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+
+ class FinargECCARC(Classification):
+     DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
+
+ class CD(SequentialLabeling):
+     DATASET_PATH = "chancefocus/flare-cd"
+     LMAP = {key: index for index, key in enumerate(['O', 'I-CAUSE', 'B-CAUSE', 'I-EFFECT', 'B-EFFECT'])}
+
+ class MultiFinEN(Classification):
+     DATASET_PATH = "chancefocus/flare-multifin-en"
+
+ class MA(Classification):
+     DATASET_PATH = "chancefocus/flare-ma"
+
+ class Causal20SC(Classification):
+     DATASET_PATH = "chancefocus/flare-causal20-sc"
+
+ class FNXL(SequentialLabeling):
+     DATASET_PATH = "chancefocus/flare-fnxl"
+     LMAP = {'B-BusinessCombinationContingentConsiderationArrangementsRangeOfOutcomesValueHigh': 140, 'B-VariableInterestEntityOwnershipPercentage': 646, 'B-GainLossOnDispositionOfAssets1': 119, 'B-IndefiniteLivedIntangibleAssetsExcludingGoodwill': 46, 'B-MarketingAndAdvertisingExpense': 269, 'B-ReportingUnitPercentageOfFairValueInExcessOfCarryingAmount': 142, 'B-CapitalizedComputerSoftwareNet': 91, 'B-BusinessCombinationConsiderationTransferredEquityInterestsIssuedAndIssuable': 183, 'B-LitigationSettlementExpense': 115, 'B-DefinedBenefitPlanExpectedAmortizationOfGainLossNextFiscalYear': 639, 'B-DeferredCompensationArrangementWithIndividualCompensationExpense': 15, 'B-ReclassificationFromAociCurrentPeriodTax': 152, 'B-OtherComprehensiveIncomeLossBeforeReclassificationsTax': 694, 'B-PreferredStockDividendsPerShareDeclared': 236, 'B-CapitalExpendituresIncurredButNotYetPaid': 344, 'B-DeferredCompensationArrangementWithIndividualContributionsByEmployer': 560, 'B-SeveranceCosts1': 311, 'B-InterestExpense': 784, 'B-SaleOfStockConsiderationReceivedOnTransaction': 76, 'B-LineOfCreditFacilityInterestRateAtPeriodEnd': 822, 'B-SharesIssuedPricePerShare': 137, 'B-EquityMethodInvestmentDifferenceBetweenCarryingAmountAndUnderlyingEquity': 63, 'B-EquitySecuritiesFvNi': 30, 'B-RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability': 118, 'B-DefinedBenefitPlanFundedStatusOfPlan': 547, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardPurchasePriceOfCommonStockPercent': 323, 'B-TaxCutsAndJobsActOf2017IncomeTaxExpenseBenefit': 256, 'B-LongtermDebtWeightedAverageInterestRate': 364, 'B-ImpairmentOfIntangibleAssetsFinitelived': 71, 'B-ProceedsFromLinesOfCredit': 496, 'B-LongTermPurchaseCommitmentAmount': 701, 'B-DebtInstrumentFairValue': 335, 'B-RestructuringAndRelatedCostCostIncurredToDate1': 52, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriod': 581, 'B-FiniteLivedIntangibleAssetsAccumulatedAmortization': 143, 'B-StockRepurchasedAndRetiredDuringPeriodValue': 330, 'B-BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual': 77, 'B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1': 361, 'B-BusinessAcquisitionPurchasePriceAllocationGoodwillExpectedTaxDeductibleAmount': 550, 'B-OperatingLossCarryforwardsValuationAllowance': 173, 'B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued': 32, 'B-DefinedContributionPlanMaximumAnnualContributionsPerEmployeePercent': 45, 'B-ContractWithCustomerLiabilityCurrent': 2, 'B-IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign': 474, 'B-FiniteLivedIntangibleAssetsAmortizationExpenseYearThree': 1306, 'B-DefinedBenefitPlanUltimateHealthCareCostTrendRate1': 62, 'B-DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1': 317, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesExpense': 448, 'B-ForeignCurrencyTransactionGainLossRealized': 132, 'B-DeferredTaxAssetsOperatingLossCarryforwardsSubjectToExpiration': 262, 'B-RetainedEarningsAccumulatedDeficit': 174, 'B-ProceedsFromIssuanceOfCommonStock': 209, 'B-EmployeeServiceShareBasedCompensationAllocationOfRecognizedPeriodCostsCapitalizedAmount': 29, 'B-OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansTax': 284, 'B-InventoryWriteDown': 465, 'B-RestructuringReserve': 234, 'B-LitigationSettlementAmountAwardedToOtherParty': 42, 'B-DerivativeGainLossOnDerivativeNet': 87, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardEquityInstrumentsOtherThanOptionsAggregateIntrinsicValueVested': 241, 'B-DerivativeFixedInterestRate': 589, 'B-CashAndCashEquivalentsAtCarryingValue': 257, 'B-ContractWithCustomerAssetNet': 245, 'B-RestructuringAndRelatedCostExpectedCost1': 107, 'B-IncomeTaxHolidayAggregateDollarAmount': 347, 'B-OperatingLeaseCost': 248, 'B-AllowanceForDoubtfulAccountsReceivable': 146, 'B-RepaymentsOfDebt': 416, 'B-InterestPaid': 110, 'B-DeferredFinanceCostsNet': 28, 'B-IncomeTaxExaminationPenaltiesAndInterestAccrued': 271, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber': 92, 'B-CapitalizedContractCostNet': 155, 'B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption': 17, 'B-IncomeTaxesPaid': 495, 'B-EquityMethodInvestmentOtherThanTemporaryImpairment': 22, 'B-InterestPaidNet': 225, 'B-EquitySecuritiesWithoutReadilyDeterminableFairValueAmount': 175, 'B-ImpairmentOfLongLivedAssetsHeldForUse': 313, 'B-GoodwillAcquiredDuringPeriod': 156, 'B-DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible': 363, 'B-RestructuringAndRelatedCostIncurredCost': 75, 'B-StockRepurchasedDuringPeriodValue': 254, 'B-IncomeTaxExaminationPenaltiesAndInterestExpense': 525, 'B-ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill': 55, 'B-PreferredStockLiquidationPreference': 157, 'B-ImpairmentOfIntangibleAssetsExcludingGoodwill': 158, 'B-IncomeTaxesPaidNet': 456, 'B-DefinedContributionPlanEmployerMatchingContributionPercent': 332, 'B-CostOfGoodsAndServicesSold': 274, 'B-DepreciationDepletionAndAmortization': 338, 'B-InterestExpenseDebt': 191, 'B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage': 442, 'B-DisposalGroupIncludingDiscontinuedOperationConsideration': 6, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued': 14, 'B-SaleOfStockPricePerShare': 278, 'B-DefinedContributionPlanEmployerMatchingContributionPercentOfMatch': 267, 'B-FinitelivedIntangibleAssetsAcquired1': 202, 'B-PaymentsForRepurchaseOfCommonStock': 486, 'B-BusinessCombinationContingentConsiderationLiability': 103, 'B-RelatedPartyTransactionAmountsOfTransaction': 180, 'O': 0}
+
+ class TATQA(QA):
+     DATASET_PATH = "chancefocus/flare-tatqa"
+
+
+ class FinRED(RelationExtraction):
+     DATASET_PATH = "chancefocus/flare-finred"
 
 
 class ECTSUM(ExtractiveSummarization):
@@ -938,26 +936,6 @@ class ECTSUM(ExtractiveSummarization):
 class EDTSUM(AbstractiveSummarization):
     DATASET_PATH = "chancefocus/flare-edtsum"
 
-class ESMultiFin(Classification):
-    DATASET_PATH = "chancefocus/flare-es-multifin"
-
-
-class ESEFP(Classification):
-    DATASET_PATH = "chancefocus/flare-es-efp"
-
-
-class ESEFPA(Classification):
-    DATASET_PATH = "chancefocus/flare-es-efpa"
-
-class ESTSA(Classification):
-    DATASET_PATH = "chancefocus/flare-es-tsa"
-
-class ESFNS(AbstractiveSummarization):
-    DATASET_PATH = "chancefocus/flare-es-fns"
-
-class ESFinancees(Classification):
-    DATASET_PATH = "chancefocus/flare-es-financees"
-
 
 class ConvFinQA(QA):
     DATASET_PATH = "chancefocus/flare-convfinqa"
@@ -965,118 +943,10 @@ class ConvFinQA(QA):
     def reformulate_turn_req(self, req, turn_request, turn):
         if turn == 0:
             return req
-        pre_answers = {f"answer{i}": turn_request[i][0] for i in range(turn)}
+        pre_answers = {
+            f"answer{i}": turn_request[i][0]
+            for i in range(turn)
+        }
         if pre_answers:
-            req.args = tuple([req.args[0].format(**pre_answers)] + list(req.args[1:]))
+            req.args = [req.args[0].format(**pre_answers)]
         return req
-
-
-class ZHFinFE(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-fe"
-
-
-class ZHFinNL(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-nl"
-
-
-class ZHFinNL2(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-nl2"
-
-
-class ZHFinNSP(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-nsp"
-
-
-class ZHFinRE(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-re"
-
-
-class ZHAFQMC(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-afqmc"
-
-
-class ZHAstock(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-stocka"
-
-
-class ZHBQcourse(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-corpus"
-
-
-class ZHFinEval(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-fineval"
-
-
-class ZHstock11(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-stockb"
-
-class ZHFinQA(QA):
-    DATASET_PATH = "ChanceFocus/flare-zh-qa"
-
-
-class ZHFinNA(AbstractiveSummarization):
-    DATASET_PATH = "ChanceFocus/flare-zh-na"
-
-
-class ZH21CCKS(RelationExtraction):
-    DATASET_PATH = "ChanceFocus/flare-zh-21ccks"
-
-    def process_results(self, doc, results):
-        return {
-            "precision": (doc["answer"], results),
-            "recall": (doc["answer"], results),
-            "f1": (doc["answer"], results),
-        }
-
-    def process_string_list(self, string_list):
-        processed_list = []
-
-        for item in string_list:
-            processed_item = item.strip()
-            processed_list.append(processed_item)
-
-        return processed_list
-
-    def process(self, items):
-        golds, preds = zip(*items)
-
-        all_golds = []
-        all_preds = []
-
-        for gold, pred in zip(golds, preds):
-            gold = str(gold).split("\n")
-            all_golds.extend(gold)
-            pred = self.process_string_list(pred)
-            all_preds.extend(pred)
-            
-        return set(all_golds), set(all_preds)
-
-
-class ZH19CCKS(RelationExtraction):
-    VERSION = 1
-    DATASET_PATH = "ChanceFocus/flare-zh-19ccks"
-
-    def process_results(self, doc, results):
-        return {
-            "precision": (doc["answer"], results[0]),
-            "recall": (doc["answer"], results[0]),
-            "f1": (doc["answer"], results[0]),
-        }
-
-
-class ZH20CCKS(ZH19CCKS):
-    DATASET_PATH = "ChanceFocus/flare-zh-20ccks"
-
-
-class ZH22CCKS(ZH19CCKS):
-    DATASET_PATH = "ChanceFocus/flare-zh-22ccks"
-
-
-class ZHNER(NER):
-    DATASET_PATH = "ChanceFocus/flare-zh-ner"
-
-    def process_results(self, doc, results):
-        text = doc["text"]
-        pred = process_zhtext(results[0], text)
-
-        return {"entity_f1": (pred, doc["label"], results[0])}

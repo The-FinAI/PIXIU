@@ -1,7 +1,7 @@
 from pprint import pprint
 from typing import List, Union
 
-import json
+import sacrebleu
 import lm_eval.base
 
 from . import flare
@@ -17,31 +17,24 @@ TASK_REGISTRY = {
     "flare_fomc": flare.FOMC,
     "flare_german": flare.German,
     "flare_australian": flare.Australian,
+    "flare_fomc": flare.FOMC,
     "flare_ectsum": flare.ECTSUM,
     "flare_edtsum": flare.EDTSUM,
-    "flare_es_multifin": flare.ESMultiFin,
-    "flare_es_efp": flare.ESEFP,
-    "flare_es_efpa": flare.ESEFPA,
-    "flare_es_fns": flare.ESFNS,
-    "flare_es_tsa": flare.ESTSA,
-    "flare_es_financees": flare.ESFinancees,
-    "flare_zh_fe": flare.ZHFinFE,
-    "flare_zh_nl": flare.ZHFinNL,
-    "flare_zh_nl2": flare.ZHFinNL2,
-    "flare_zh_re": flare.ZHFinRE,
-    "flare_zh_nsp": flare.ZHFinNSP,
-    "flare_zh_stocka": flare.ZHAstock,
-    "flare_zh_corpus": flare.ZHBQcourse,
-    "flare_zh_fineval": flare.ZHFinEval,
-    "flare_zh_afqmc": flare.ZHAFQMC,
-    "flare_zh_stockb": flare.ZHstock11,
-    "flare_zh_qa": flare.ZHFinQA,
-    "flare_zh_na": flare.ZHFinNA,
-    "flare_zh_21ccks": flare.ZH21CCKS,
-    "flare_zh_19ccks": flare.ZH19CCKS,
-    "flare_zh_20ccks": flare.ZH20CCKS,
-    "flare_zh_22ccks": flare.ZH22CCKS,
-    "flare_zh_ner": flare.NER,
+    "flare_finarg_ecc_auc": flare.FinargECCAUC,
+    "flare_finarg_ecc_arc": flare.FinargECCARC,
+    "flare_cd": flare.CD,
+    "flare_multifin_en": flare.MultiFinEN,
+    "flare_tsa": flare.TSA,
+    "flare_cfa": flare.CFA,
+    "flare_ma": flare.MA,
+    "flare_causal20_sc": flare.Causal20SC,
+    "flare_finarg_ecc_arc": flare.FINARGECCARC,
+    "flare_finarg_ecc_auc": flare.FINARGECCAUC,
+    "flare_mlesg": flare.MLESG,
+    "flare_fnxl": flare.FNXL,
+    "flare_fsrl": flare.FSRL,
+    "flare_tatqa": flare.TATQA,
+    "flare_finred": flare.FinRED,
     **flare.SM_TASKS,
 }
 

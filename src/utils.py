@@ -1,60 +1,53 @@
 import time
 from typing import Any, List
-import copy
 from gradio_client import Client
 from tqdm import tqdm
 
 
 class MultiClient(object):
-    def __init__(self, worker_addrs, synced_worker=False) -> None:
+    def __init__(self, worker_addrs) -> None:
         self.clients = [Client(addr) for addr in worker_addrs]
-        self.synced_worker = synced_worker
 
-    def predict(self, tasks: List[List], max_retries: int = 3) -> List[Any]:
-        assert len(tasks) >= 1, "No predict tasks!"
-        num_tasks = len(tasks)
-        if self.synced_worker and len(tasks) % len(self.clients) != 0:
-            num_dummy_tasks = len(self.clients) - len(tasks) % len(self.clients)            
-            tasks.extend([copy.deepcopy(tasks[-1]) for _ in range(num_dummy_tasks)])
-
+    def predict(self, tasks: List[List]) -> List[Any]:
         pbar = tqdm(total=len(tasks))
+        # Start the first batch of jobs
         jobs = {
             client: (i, client.submit(*(tasks[i]), api_name="/predict"))
             for i, client in enumerate(self.clients)
             if i < len(tasks)
         }
+
+        # Initialize a dict for results
         results = {}
-        retries = {i: 0 for i in range(len(tasks))}
 
         while jobs:
+            # Check each job's status
             for client, (i, job) in list(jobs.items()):
                 if job.done():
                     pbar.update(1)
+                    # If job is finished, remove it from the dict
                     del jobs[client]
+                    # Get the result (or handle the error)
                     try:
                         result = job.result()
+                        # Save the result at the right position
                         results[i] = result
                     except Exception as e:
                         print("Job failed with error:", e)
-                        if retries[i] < max_retries:
-                            print("Retrying job...")
-                            retries[i] += 1
+                    # Start a new job if there are still tasks left
+                    if tasks:
+                        new_i = len(results) + len(jobs)
+                        if new_i < len(tasks):
+                            new_task = tasks[new_i]
                             new_job = client.submit(
-                                *tasks[i], api_name="/predict")
-                            jobs[client] = (i, new_job)
-                            continue  # Skip the rest of the loop
-                        else:
-                            results[i] = None
+                                *new_task, api_name="/predict")
+                            jobs[client] = (new_i, new_job)
 
-                    new_i = len(results) + len(jobs)
-                    if new_i < len(tasks):
-                        new_task = tasks[new_i]
-                        new_job = client.submit(
-                            *new_task, api_name="/predict")
-                        jobs[client] = (new_i, new_job)
-            time.sleep(1)
+            # Sleep for a while to avoid busy waiting
+            time.sleep(0.1)
         pbar.close()
 
-        predicts = [results[i] for i in range(num_tasks)]
+        # Sort results by task index
+        predicts = [results[i] for i in sorted(results)]
 
         return predicts
