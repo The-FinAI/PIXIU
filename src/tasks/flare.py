@@ -1076,7 +1076,7 @@ class ZHNER(NER):
     DATASET_PATH = "ChanceFocus/flare-zh-ner"
 
     def process_results(self, doc, results):
-        text = doc["text"]
+        text = ' '.join(doc["text"])
         pred = process_zhtext(results[0], text)
 
         return {"entity_f1": (pred, doc["label"], results[0])}
