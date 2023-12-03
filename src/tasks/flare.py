@@ -1076,7 +1076,51 @@ class ZHNER(NER):
     DATASET_PATH = "ChanceFocus/flare-zh-ner"
 
     def process_results(self, doc, results):
-        text = doc["text"]
+        text = ' '.join(doc["text"])
         pred = process_zhtext(results[0], text)
 
         return {"entity_f1": (pred, doc["label"], results[0])}
+
+
+class ZHFPB(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-fpb"
+
+
+class ZHFIQASA(Classification):
+    DATASET_PATH = "ChanceFocus/flare-zh-fiqasa"
+
+
+class ZHHeadlines(Headlines):
+    DATASET_PATH = "ChanceFocus/flare-zh-headlines"
+
+    def process_results(self, doc, results):
+        gold = doc["gold"]
+
+        return {
+            "avg_f1": (doc["answer"], int(results[0] != "是"), gold, results),
+        }
+
+
+class ZHBigData(StockMovement):
+    DATASET_PATH = "ChanceFocus/flare-zh-bigdata"
+    CHOICE_DICT = {
+        "上涨": ["是", "正面", "积极", "肯定的"],
+        "下跌": ["否", "负面", "消极"],
+    }
+    DEFAULT = "下跌"
+
+
+class ZHACL(ZHBigData):
+    DATASET_PATH = "ChanceFocus/flare-zh-acl"
+
+
+class ZHCIKM(ZHBigData):
+    DATASET_PATH = "ChanceFocus/flare-zh-cikm"
+
+
+class ZHFinQAE(QA):
+    DATASET_PATH = "ChanceFocus/flare-zh-finqa"
+
+
+class ZHConvFinQA(ConvFinQA):
+    DATASET_PATH = "ChanceFocus/flare-zh-convfinqa"
