@@ -87,6 +87,14 @@ This repository and its contents are provided for **academic and educational pur
 - [FLARE (flare-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
 - [FLARE (flare-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
 - [FLARE (flare-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
+- [FLARE (flare-zh-fpb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fpb)
+- [FLARE (flare-zh-fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fiqasa)
+- [FLARE (flare-zh-headlines)](https://huggingface.co/datasets/ChanceFocus/flare-zh-headlines)
+- [FLARE (flare-zh-bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-zh-bigdata)
+- [FLARE (flare-zh-acl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-acl)
+- [FLARE (flare-zh-cikm)](https://huggingface.co/datasets/ChanceFocus/flare-zh-cikm)
+- [FLARE (flare-zh-finqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-finqa)
+- [FLARE (flare-zh-convfinqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-convfinqa)
 
 
 ## Overview
@@ -108,25 +116,33 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 
 ### Tasks
 
-| Data                  | Task                            | Raw     | Data Types                       | Modalities        | License           | Paper |
-| --------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ----------------- | ----- |
-| AFQMC                 | semantic matching               | 42,511  | question data, chat              | text              | Apache-2.0        | [1]   |
-| corpus                | semantic matching               | 120,000 | question data, chat              | text              | Public            | [2]   |
-| stockA                | stock classification            | 40,963  | news, historical prices          | text, time series | Public            | [3]   |
-| Fineval               | multiple-choice                 | 4,661   | financial exam                   | text              | Apache-2.0        | [4]   |
-| NL                    | news classification             | 10,000  | news articles                    | text              | Public            | [5]   |
-| NL2                   | news classification             | 10,000  | news articles                    | text              | Public            | [5]   |
-| NSP                   | negative news judgment          | 6,000   | news, social media text          | text              | Public            | [5]   |
-| RE                    | relationship identification     | 12,670  | news, entity pair                | text              | Public            | [5]   |
-| FE                    | sentiment analysis              | 10,000  | financial social media text      | text              | Public            | [5]   |
-| stockB                | sentiment analysis              | 270,601 | financial social media text      | text              | Apache-2.0        | [6]   |
-| QA                    | question answering              | 20000   | financial news announcements     | text，table       | Public            | [5]   |
-| NA                    | text summarization              | 30000   | news articles, announcements     | text              | Public            | [5]   |
-| 19CCKS                | event subject extraction        | 156,834 | financial social media text      | text              | CC BY-SA 4.0      | [7]   |
-| 20CCKS                | event subject extraction        | 372,810 | news、reports                    | text              | CC BY-SA 4.0      | [8]   |
-| 21CCKS                | event causality extraction      | 8,000   | news、reports                    | text              | CC BY-SA 4.0      | [9]   |
-| 22CCKS                | event subject extraction        | 109,555 | news、reports                    | text              | CC BY-SA 4.0      | [10]  |
-| NER                   | named entity recognition        | 48,364  | financial reports                | text              | Public            | [11]  |
+| Data                 | Task                            | Raw     | Data Types                       | Modalities        | License          | Paper |
+| -------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ---------------- | ----- |
+| AFQMC                | semantic matching               | 38,650  | question data, chat              | text              | Apache-2.0       | [1]   |
+| corpus               | semantic matching               | 120,000 | question data, chat              | text              | Public           | [2]   |
+| stockA               | stock classification            | 14,769  | news, historical prices          | text, time series | Public           | [3]   |
+| Fineval              | multiple-choice                 | 1,115   | financial exam                   | text              | Apache-2.0       | [4]   |
+| NL                   | news classification             | 7,955   | news articles                    | text              | Public           | [5]   |
+| NL2                  | news classification             | 7,955   | news articles                    | text              | Public           | [5]   |
+| NSP                  | negative news judgment          | 4,499   | news, social media text          | text              | Public           | [5]   |
+| RE                   | relationship identification     | 14,973  | news, entity pair                | text              | Public           | [5]   |
+| FE                   | sentiment analysis              | 18,177  | financial social media text      | text              | Public           | [5]   |
+| stockB               | sentiment analysis              | 9,812   | financial social media text      | text              | Apache-2.0       | [6]   |
+| QA                   | question answering              | 22,375  | financial news announcements     | text，table       | Public           | [5]   |
+| NA                   | text summarization              | 32,400  | news articles, announcements     | text              | Public           | [5]   |
+| 19CCKS               | event subject extraction        | 156,834 | financial social media text      | text              | CC BY-SA 4.0     | [7]   |
+| 20CCKS               | event subject extraction        | 372,810 | news、reports                    | text              | CC BY-SA 4.0     | [8]   |
+| 21CCKS               | event causality extraction      | 8,000   | news、reports                    | text              | CC BY-SA 4.0     | [9]   |
+| 22CCKS               | event subject extraction        | 109,555 | news、reports                    | text              | CC BY-SA 4.0     | [10]  |
+| NER                  | named entity recognition        | 1,685   | financial reports                | text              | Public           | [11]  |
+| FPB                  | sentiment analysis              | 4,845   | news                             | text              | MIT license      | [12]  |
+| FIQASA               | sentiment analysis              | 1,173   | news headlines, tweets           | text              | MIT license      | [12]  |
+| Headlines            | news headline classification    | 11,412  | news headlines                   | text              | MIT license      | [12]  |
+| BigData              | stock movement prediction       | 7,164   | tweets, historical prices        | text, time series | MIT license      | [12]  |
+| ACL                  | stock movement prediction       | 27,053  | tweets, historical prices        | text, time series | MIT license      | [12]  |
+| CIKM                 | stock movement prediction       | 4,967   | tweets, historical prices        | text, time series | MIT license      | [12]  |
+| FinQA                | question answering              | 14,900  | earnings reports                 | text, table       | MIT license      | [12]  |
+| ConvFinQA            | multi-turn question answering   | 48,364  | earnings reports                 | text, table       | MIT license      | [12]  |
 
 
 1. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
@@ -140,6 +156,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 9. https://www.biendata.xyz/competition/ccks_2021_task6_2/
 10. https://www.biendata.xyz/competition/ccks2022_eventext/
 11. Jia C, Shi Y, Yang Q, et al. Entity enhanced BERT pre-training for Chinese NER[C]//Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020: 6384-6396.
+12. Xie Q, Han W, Zhang X, et al. PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance[J]. arXiv preprint arXiv:2306.05443, 2023.
 
 ### Evaluation
 
@@ -266,6 +283,14 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 - [FLARE (flare-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
 - [FLARE (flare-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
 - [FLARE (flare-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
+- [FLARE (flare-zh-fpb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fpb)
+- [FLARE (flare-zh-fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fiqasa)
+- [FLARE (flare-zh-headlines)](https://huggingface.co/datasets/ChanceFocus/flare-zh-headlines)
+- [FLARE (flare-zh-bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-zh-bigdata)
+- [FLARE (flare-zh-acl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-acl)
+- [FLARE (flare-zh-cikm)](https://huggingface.co/datasets/ChanceFocus/flare-zh-cikm)
+- [FLARE (flare-zh-finqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-finqa)
+- [FLARE (flare-zh-convfinqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-convfinqa)
 
 ## 概述
 
@@ -286,25 +311,33 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 
 ### 任务
 
-| 数据                  | 任务类型                       | 原始数据| 数据类型                         | 模式              | 许可证            | 论文  |
-| --------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ----------------- | ----- |
-| AFQMC                 | 语义匹配                        | 42,511  | 提问数据, 对话                   | 文本               | Apache-2.0        | [1]   |
-| corpus                | 语义匹配                        | 120,000 | 提问数据, 对话                   | 文本               | Public            | [2]   |
-| stockA                | 股票分类                        | 40,963  | 新闻, 历史价格                   | 文本, 时间序列     | Public            | [3]   |
-| Fineval               | 多项选择                        | 4,661   | 金融考试                         | 文本               | Apache-2.0        | [4]   |
-| NL                    | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [5]   |
-| NL2                   | 新闻分类                        | 10,000  | 新闻报道                         | 文本               | Public            | [5]   |
-| NSP                   | 负面新闻判断                    | 6,000   | 新闻、社交媒体文本                | 文本               | Public            | [5]   |
-| RE                    | 关系识别                        | 12,670  | 新闻、实体对                     | 文本               | Public            | [5]   |
-| FE                    | 情感分析                        | 10,000  | 金融社交媒体文本                 | 文本               | Public            | [5]   |
-| stockB                | 情感分析                        | 270,601 | 金融社交媒体文本                 | 文本               | Apache-2.0        | [6]   |
-| QA                    | 金融问答                        | 20000   | 财经新闻公告                     | 文本，表格         | Public            | [5]   |
-| NA                    | 文本摘要                        | 30000   | 新闻文章、公告                   | 文本               | Public            | [5]   |
-| 19CCKS                | 事件主体提取                    | 156,834 | 新闻报道                         | 文本               | CC BY-SA 4.0      | [7]   |
-| 20CCKS                | 事件主体提取                    | 372,810 | 新闻报道                         | 文本               | CC BY-SA 4.0      | [8]   |
-| 21CCKS                | 事件因果关系抽取                | 8,000   | 新闻报道                         | 文本               | CC BY-SA 4.0      | [9]   |
-| 22CCKS                | 事件主体提取                    | 109,555 | 新闻报道                         | 文本               | CC BY-SA 4.0      | [10]  |
-| NER                   | 命名实体识别                    | 48,364  | 新闻报道                         | 文本               | Public            | [11]  |
+| 数据               | 任务类型                    | 原始数据| 数据类型                         | 模式              | 许可证            | 论文  |
+| ------------------ | --------------------------- | ------- | -------------------------------- | ----------------- | ----------------- | ----- |
+| AFQMC              | 语义匹配                     | 38,650  | 提问数据, 对话                   | 文本               | Apache-2.0        | [1]   |
+| corpus             | 语义匹配                     | 120,000 | 提问数据, 对话                   | 文本               | Public            | [2]   |
+| stockA             | 股票分类                     | 14,769  | 新闻, 历史价格                   | 文本, 时间序列     | Public            | [3]   |
+| Fineval            | 多项选择                     | 1,115   | 金融考试                         | 文本               | Apache-2.0        | [4]   |
+| NL                 | 新闻分类                     | 7,955   | 新闻报道                         | 文本               | Public            | [5]   |
+| NL2                | 新闻分类                     | 7,955   | 新闻报道                         | 文本               | Public            | [5]   |
+| NSP                | 负面新闻判断                 | 4,499   | 新闻、社交媒体文本                | 文本               | Public            | [5]   |
+| RE                 | 关系识别                     | 14,973  | 新闻、实体对                      | 文本               | Public            | [5]   |
+| FE                 | 情感分析                     | 18,177  | 金融社交媒体文本                  | 文本               | Public            | [5]   |
+| stockB             | 情感分析                     | 9,812   | 金融社交媒体文本                  | 文本               | Apache-2.0        | [6]   |
+| QA                 | 金融问答                     | 22,375  | 财经新闻公告                      | 文本, 表格         | Public            | [5]   |
+| NA                 | 文本摘要                     | 32,400  | 新闻文章、公告                    | 文本               | Public            | [5]   |
+| 19CCKS             | 事件主体提取                 | 156,834 | 新闻报道                          | 文本               | CC BY-SA 4.0      | [7]   |
+| 20CCKS             | 事件主体提取                 | 372,810 | 新闻报道                          | 文本               | CC BY-SA 4.0      | [8]   |
+| 21CCKS             | 事件因果关系抽取             | 8,000   | 新闻报道                          | 文本               | CC BY-SA 4.0      | [9]   |
+| 22CCKS             | 事件主体提取                 | 109,555 | 新闻报道                          | 文本               | CC BY-SA 4.0      | [10]  |
+| NER                | 命名实体识别                 | 1,685   | 新闻报道                          | 文本               | Public            | [11]  |
+| FPB                | 情感分析                     | 4,845   | 新闻                             | 文本               | MIT license       | [12]  |
+| FIQASA             | 情感分析                     | 1,173   | 新闻头条、推文                    | 文本               | MIT license       | [12]  |
+| Headlines          | 新闻标题分类                 | 11,412  | 新闻头条                          | 文本               | MIT license       | [12]  |
+| BigData            | 股票走势预测                 | 7,164   | 推文、历史价格                    | 文本, 时间序列      | MIT license       | [12]  |
+| ACL                | 股票走势预测                 | 27,053  | 推文、历史价格                    | 文本, 时间序列      | MIT license       | [12]  |
+| CIKM               | 股票走势预测                 | 4,967   | 推文、历史价格                    | 文本, 时间序列      | MIT license       | [12]  |
+| FinQA              | 金融问答                     | 14,900  | 收益报告                         | 文本, 表格          | MIT license       | [12]  |
+| ConvFinQA          | 多轮问答                     | 48,364  | 收益报告                         | 文本, 表格          | MIT license       | [12]  |
 
 
 1. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
@@ -318,6 +351,7 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 9. https://www.biendata.xyz/competition/ccks_2021_task6_2/
 10. https://www.biendata.xyz/competition/ccks2022_eventext/
 11. Jia C, Shi Y, Yang Q, et al. Entity enhanced BERT pre-training for Chinese NER[C]//Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020: 6384-6396.
+12. Xie Q, Han W, Zhang X, et al. PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance[J]. arXiv preprint arXiv:2306.05443, 2023.
 
 ### 评估
 
