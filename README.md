@@ -128,14 +128,13 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | BigData22             | stock movement prediction        | 7,164  | tweets, historical prices | text, time series | Public          | [13]  |
 | ACL18                 | stock movement prediction        | 27,053 | tweets, historical prices | text, time series | MIT License     | [14]  |
 | CIKM18                | stock movement prediction        | 4,967  | tweets, historical prices | text, time series | Public          | [15]  |
-| ConvFinQA             | multi-turn question answering    | 1,490  | earnings reports          | text, table       | MIT License     | [16]  |
-| Lending Club          | credit scoring                   | 1,3453 | financial information     | table             | CC0 1.0         | [17]  |
-| Credit Card Fraud     | Fraud Detection                  | 11,392 | financial information     | table             | (DbCL) v1.0     | [18]  |
-| ccFraud               | Fraud Detection                  | 10,485 | financial information     | table             | Public          | [19]  |
-| Polish                | Financial Distress Identification| 8,681  | financial status features | table             | CC BY 4.0       | [20]  |
-|Taiwan Economic Journal| Financial Distress Identification| 6,819  | financial status features | table             | CC BY 4.0       | [21]  |
-| PortoSeguro           | Claim Analysis                   | 11,904 | Claim information         | table             | Public          | [22]  |
-| Travel Insurance      | Claim Analysis                   | 12,665 | Claim information         | table             | (ODbL) v1.0     | [23]  |
+| Lending Club          | credit scoring                   | 1,3453 | financial information     | table             | CC0 1.0         | [16]  |
+| Credit Card Fraud     | Fraud Detection                  | 11,392 | financial information     | table             | (DbCL) v1.0     | [16]  |
+| ccFraud               | Fraud Detection                  | 10,485 | financial information     | table             | Public          | [16]  |
+| Polish                | Financial Distress Identification| 8,681  | financial status features | table             | CC BY 4.0       | [16]  |
+|Taiwan Economic Journal| Financial Distress Identification| 6,819  | financial status features | table             | CC BY 4.0       | [16]  |
+| PortoSeguro           | Claim Analysis                   | 11,904 | Claim information         | table             | Public          | [16]  |
+| Travel Insurance      | Claim Analysis                   | 12,665 | Claim information         | table             | (ODbL) v1.0     | [16]  |
 
 1. Pekka Malo, Ankur Sinha, Pekka Korhonen, Jyrki Wallenius, and Pyry Takala. 2014. Good debt or bad debt: Detecting semantic orientations in economic texts. Journal of the Association for Information Science and Technology 65, 4 (2014), 782–796.
 2. Macedo Maia, Siegfried Handschuh, André Freitas, Brian Davis, Ross McDermott, Manel Zarrouk, and Alexandra Balahur. 2018. Www’18 open challenge: financial opinion mining and question answering. In Companion proceedings of the the web conference 2018. 1941–1942
@@ -153,13 +152,6 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 14. Yumo Xu and Shay B Cohen. 2018. Stock movement prediction from tweets and historical prices. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 1970–1979.
 15. Huizhe Wu, Wei Zhang, Weiwei Shen, and Jun Wang. 2018. Hybrid deep sequential modeling for social text-driven stock prediction. In Proceedings of the 27th ACM international conference on information and knowledge management. 1627–1630.
 16. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-17. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-18. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-19. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-20. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-21. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-22. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
-23. Duanyu Feng, Yongfu Dai, Jimin Huang, Yifang Zhang, Qianqian Xie, Weiguang Han, Alejandro Lopez-Lira, Hao Wang. 2023. Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models. *ArXiv* abs/2310.00566 (2023): n. pag.
 
 ### Evaluation
 
