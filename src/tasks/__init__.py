@@ -50,6 +50,14 @@ TASK_REGISTRY = {
     "flare_zh_cikm": flare.ZHCIKM,
     "flare_zh_finqa": flare.ZHFinQAE,
     "flare_zh_convfinqa": flare.ZHConvFinQA,
+    "lengdingclub": flare.lendingclub,
+    "ccf": flare.ccf,
+    "ccfraud": flare.ccfraud,
+    "polish": flare.polish,
+    "taiwan": flare.taiwan,
+    "portoseguro": flare.portoseguro,
+    "travelinsurance": flare.travelinsurance,
+    "customs": flare.customs,
     **flare.SM_TASKS,
 }
 

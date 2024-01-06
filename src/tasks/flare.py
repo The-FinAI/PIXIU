@@ -1124,3 +1124,44 @@ class ZHFinQAE(QA):
 
 class ZHConvFinQA(ConvFinQA):
     DATASET_PATH = "ChanceFocus/flare-zh-convfinqa"
+
+
+class lendingclub(Classification):
+    DATASET_PATH = "daishen/cra-lendingclub"
+    CALCULATE_MCC = True
+
+
+class ccf(Classification):
+    DATASET_PATH = "daishen/cra-ccf"
+    CALCULATE_MCC = True
+
+
+class ccfraud(Classification):
+    DATASET_PATH = "daishen/cra-ccfraud"
+    CALCULATE_MCC = True
+
+
+class polish(Classification):
+    DATASET_PATH = "daishen/cra-polish"
+    CALCULATE_MCC = True
+
+
+class taiwan(Classification):
+    DATASET_PATH = "daishen/cra-taiwan"
+    CALCULATE_MCC = True
+
+
+class portoseguro(Classification):
+    DATASET_PATH = "daishen/cra-portoseguro"
+    CALCULATE_MCC = True
+
+
+class travelinsurance(Classification):
+    DATASET_PATH = "daishen/cra-travelinsurance"
+    CALCULATE_MCC = True
+
+
+class customs(Classification):
+    DATASET_PATH = "daishen/cra-customs"
+    CALCULATE_MCC = True
+
