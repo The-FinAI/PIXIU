@@ -128,6 +128,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | BigData22             | stock movement prediction        | 7,164  | tweets, historical prices | text, time series | Public          | [13]  |
 | ACL18                 | stock movement prediction        | 27,053 | tweets, historical prices | text, time series | MIT License     | [14]  |
 | CIKM18                | stock movement prediction        | 4,967  | tweets, historical prices | text, time series | Public          | [15]  |
+| FINTERM               | long form factuality question answering        | 158  | finanical terminologies | text | Public          | [16]  |
 
 1. Pekka Malo, Ankur Sinha, Pekka Korhonen, Jyrki Wallenius, and Pyry Takala. 2014. Good debt or bad debt: Detecting semantic orientations in economic texts. Journal of the Association for Information Science and Technology 65, 4 (2014), 782–796.
 2. Macedo Maia, Siegfried Handschuh, André Freitas, Brian Davis, Ross McDermott, Manel Zarrouk, and Alexandra Balahur. 2018. Www’18 open challenge: financial opinion mining and question answering. In Companion proceedings of the the web conference 2018. 1941–1942
@@ -144,7 +145,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 13. Yejun Soun, Jaemin Yoo, Minyong Cho, Jihyeong Jeon, and U Kang. 2022. Accurate Stock Movement Prediction with Self-supervised Learning from Sparse Noisy Tweets. In 2022 IEEE International Conference on Big Data (Big Data). IEEE, 1691–1700.
 14. Yumo Xu and Shay B Cohen. 2018. Stock movement prediction from tweets and historical prices. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 1970–1979.
 15. Huizhe Wu, Wei Zhang, Weiwei Shen, and Jun Wang. 2018. Hybrid deep sequential modeling for social text-driven stock prediction. In Proceedings of the 27th ACM international conference on information and knowledge management. 1627–1630.
-
+16. Haoqiang Kang and Xiao-Yang Liu. 2023. Deficiency of Large Language Models in Finance: An Empirical Examination of Hallucination. NeurIPS Workshop on I Can’t Believe It’s Not Better (ICBINB) 2023.
 ### Evaluation
 
 #### Preparation
