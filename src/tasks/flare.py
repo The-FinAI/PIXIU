@@ -11,6 +11,7 @@ from sklearn.metrics import f1_score, matthews_corrcoef
 from bart_score import BARTScorer
 import evaluate
 from factscore.factscorer import FactScorer
+import os
 
 _CITATION = """
 @misc{xie2023pixiu,
@@ -754,7 +755,7 @@ class LongFormFactuality(Task):
     def factscore(self, items):
         golds, texts, preds = zip(*items)
 
-        fs = FactScorer("retrieval+ChatGPT", openai_key="openai_key.txt")
+        fs = FactScorer("retrieval+ChatGPT", openai_key=os.environ["OPENAI_API_KEY"])
 
         fs.register_knowledge_source("finterms", data_path="./src/doc/finterms.jsonl", db_path="./src/doc/finterms.db")
 
