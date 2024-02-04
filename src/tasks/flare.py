@@ -730,7 +730,7 @@ class LongFormFactuality(Task):
 
     def process_results(self, doc, results):
         return {
-            "factscore": (doc["label"], doc["text"], results[0]),
+            "factscore": (doc["answer"], doc["text"], results[0]),
         }
 
     def higher_is_better(self):
