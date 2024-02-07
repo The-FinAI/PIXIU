@@ -12,8 +12,6 @@ from bart_score import BARTScorer
 import evaluate
 from factscore.factscorer import FactScorer
 import os
-from factscore.factscorer import FactScorer
-import os
 
 _CITATION = """
 @misc{xie2023pixiu,
