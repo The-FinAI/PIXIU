@@ -952,59 +952,59 @@ class ConvFinQA(QA):
 
 
 class TSA(Task):
-     VERSION = 1
-     DATASET_PATH = "chancefocus/flare-tsa"
-     DATASET_NAME = None
+    VERSION = 1
+    DATASET_PATH = "chancefocus/flare-tsa"
+    DATASET_NAME = None
     
     def reformulate_turn_req(self, req, turn_request, turn):
         return req
 
-     def has_training_docs(self):
-         return False
+    def has_training_docs(self):
+        return False
 
-     def has_validation_docs(self):
-         return False
+    def has_validation_docs(self):
+        return False
 
-     def has_test_docs(self):
-         return True
+    def has_test_docs(self):
+        return True
 
-     def training_docs(self):
-         return self.dataset["train"]
+    def training_docs(self):
+        return self.dataset["train"]
 
-     def validation_docs(self):
-         return self.dataset["validation"]
+    def validation_docs(self):
+        return self.dataset["validation"]
 
-     def test_docs(self):
-         return self.dataset["test"]
+    def test_docs(self):
+        return self.dataset["test"]
 
-     def doc_to_text(self, doc):
+    def doc_to_text(self, doc):
          # TODO: Format the query prompt portion of the document example.
-         return doc["query"]
+        return doc["query"]
 
-     def doc_to_target(self, doc):
-         return "\nAnswer: " + str(doc["answer"])
+    def doc_to_target(self, doc):
+        return "\nAnswer: " + str(doc["answer"])
 
-     def process_results(self, doc, results):
-         pred = results[0].split("\n")[0]
-         pred = re.findall(r'[0-9]+(?:\.[0-9]+)?', pred)
-         missing = 0
-         if not pred:
-             pred = -100.0
-             missing = 1
-         else:
-             pred = pred[0]
-         pred = float(pred)
-         return {
-                 "rmse": (doc["answer"], pred),
-                 "missing": missing
-         }
+    def process_results(self, doc, results):
+        pred = results[0].split("\n")[0]
+        pred = re.findall(r'[0-9]+(?:\.[0-9]+)?', pred)
+        missing = 0
+        if not pred:
+            pred = -100.0
+            missing = 1
+        else:
+            pred = pred[0]
+        pred = float(pred)
+        return {
+                "rmse": (doc["answer"], pred),
+                "missing": missing
+        }
 
-     def higher_is_better(self):
-         return {
-             "rmse": False,
-         }
+    def higher_is_better(self):
+        return {
+            "rmse": False,
+        }
 
-     def construct_requests(self, doc, ctx):
+    def construct_requests(self, doc, ctx):
          """Uses RequestFactory to construct Requests and returns an iterable of
          Requests which will be sent to the LM.
 
@@ -1015,25 +1015,25 @@ class TSA(Task):
              language description, as well as the few shot examples, and the question
              part of the document for `doc`.
          """
-         cont_request = rf.greedy_until(ctx, {"until": "Answer:"})
-         return cont_request
+        cont_request = rf.greedy_until(ctx, {"until": "Answer:"})
+        return cont_request
 
-     def rmse(self, items):
-         golds, preds = zip(*items)
-         fgolds, fpreds = [], []
-         for gold, pred in zip(golds, preds):
-             if pred == -100.0:
-                 continue
-             fgolds.append(gold)
-             fpreds.append(max(min(pred, 1.0), -1.0))
-         rmse = mean_squared_error(fgolds, fpreds, squared=True)
+    def rmse(self, items):
+        golds, preds = zip(*items)
+        fgolds, fpreds = [], []
+        for gold, pred in zip(golds, preds):
+            if pred == -100.0:
+                continue
+            fgolds.append(gold)
+            fpreds.append(max(min(pred, 1.0), -1.0))
+        rmse = mean_squared_error(fgolds, fpreds, squared=True)
 
-         return rmse
+        return rmse
 
-     def aggregation(self):
-         return {
-             "rmse": self.rmse,
-             "missing": mean,
+    def aggregation(self):
+        return {
+            "rmse": self.rmse,
+            "missing": mean,
          }
 
 

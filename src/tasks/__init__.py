@@ -35,7 +35,7 @@ TASK_REGISTRY = {
     "flare_fsrl": flare.FSRL,
     "flare_tatqa": flare.TATQA,
     "flare_finred": flare.FinRED,
-    "flare_cra_lengdingclub": flare.lendingclub,
+    "flare_cra_lendingclub": flare.lendingclub,
     "flare_cra_ccf": flare.ccf,
     "flare_cra_ccfraud": flare.ccfraud,
     "flare_cra_polish": flare.polish,
