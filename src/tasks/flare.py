@@ -1035,59 +1035,59 @@ class TSA(Task):
 
 
 
- class CFA(Classification):
-     DATASET_PATH = "chancefocus/flare-cfa"
-     LOWER_CASE = False
+class CFA(Classification):
+    DATASET_PATH = "chancefocus/flare-cfa"
+    LOWER_CASE = False
 
 
- class FINARGECCARC(Classification):
-     DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
+class FINARGECCARC(Classification):
+    DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
 
 
- class FINARGECCAUC(Classification):
-     DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+class FINARGECCAUC(Classification):
+    DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
 
 
- class MLESG(Classification):
-     DATASET_PATH = "chancefocus/flare-mlesg"
+class MLESG(Classification):
+    DATASET_PATH = "chancefocus/flare-mlesg"
 
 
- class FSRL(SequentialLabeling):
-     DATASET_PATH = "chancefocus/flare-fsrl"
-     LMAP = {key: index for index, key in enumerate(['O', 'I-QUANT', 'B-QUANT', 'I-TIME', 'B-TIME', 'I-MANNER', 'B-MANNER', 'I-THEME', 'B-THEME', 'I-VALUE', 'B-VALUE', 'I-WHOLE', 'B-WHOLE', 'I-LOCATION', 'B-LOCATION', 'I-AGENT', 'B-AGENT', 'I-CAUSE', 'B-CAUSE', 'I-SOURCE', 'B-SOURCE', 'I-REF_TIME', 'B-REF_TIME', 'I-CONDITION', 'B-CONDITION'])}
+class FSRL(SequentialLabeling):
+    DATASET_PATH = "chancefocus/flare-fsrl"
+    LMAP = {key: index for index, key in enumerate(['O', 'I-QUANT', 'B-QUANT', 'I-TIME', 'B-TIME', 'I-MANNER', 'B-MANNER', 'I-THEME', 'B-THEME', 'I-VALUE', 'B-VALUE', 'I-WHOLE', 'B-WHOLE', 'I-LOCATION', 'B-LOCATION', 'I-AGENT', 'B-AGENT', 'I-CAUSE', 'B-CAUSE', 'I-SOURCE', 'B-SOURCE', 'I-REF_TIME', 'B-REF_TIME', 'I-CONDITION', 'B-CONDITION'])}
 
- class CFA(Classification):
-     DATASET_PATH = "chancefocus/flare-cfa"
+class CFA(Classification):
+    DATASET_PATH = "chancefocus/flare-cfa"
 
- class FinargECCAUC(Classification):
-     DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+class FinargECCAUC(Classification):
+    DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
 
- class FinargECCARC(Classification):
-     DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
+class FinargECCARC(Classification):
+    DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
 
- class CD(SequentialLabeling):
-     DATASET_PATH = "chancefocus/flare-cd"
-     LMAP = {key: index for index, key in enumerate(['O', 'I-CAUSE', 'B-CAUSE', 'I-EFFECT', 'B-EFFECT'])}
+class CD(SequentialLabeling):
+    DATASET_PATH = "chancefocus/flare-cd"
+    LMAP = {key: index for index, key in enumerate(['O', 'I-CAUSE', 'B-CAUSE', 'I-EFFECT', 'B-EFFECT'])}
 
- class MultiFinEN(Classification):
-     DATASET_PATH = "chancefocus/flare-multifin-en"
+class MultiFinEN(Classification):
+    DATASET_PATH = "chancefocus/flare-multifin-en"
 
- class MA(Classification):
-     DATASET_PATH = "chancefocus/flare-ma"
+class MA(Classification):
+    DATASET_PATH = "chancefocus/flare-ma"
 
- class Causal20SC(Classification):
-     DATASET_PATH = "chancefocus/flare-causal20-sc"
+class Causal20SC(Classification):
+    DATASET_PATH = "chancefocus/flare-causal20-sc"
 
- class FNXL(SequentialLabeling):
-     DATASET_PATH = "chancefocus/flare-fnxl"
-     LMAP = {'B-BusinessCombinationContingentConsiderationArrangementsRangeOfOutcomesValueHigh': 140, 'B-VariableInterestEntityOwnershipPercentage': 646, 'B-GainLossOnDispositionOfAssets1': 119, 'B-IndefiniteLivedIntangibleAssetsExcludingGoodwill': 46, 'B-MarketingAndAdvertisingExpense': 269, 'B-ReportingUnitPercentageOfFairValueInExcessOfCarryingAmount': 142, 'B-CapitalizedComputerSoftwareNet': 91, 'B-BusinessCombinationConsiderationTransferredEquityInterestsIssuedAndIssuable': 183, 'B-LitigationSettlementExpense': 115, 'B-DefinedBenefitPlanExpectedAmortizationOfGainLossNextFiscalYear': 639, 'B-DeferredCompensationArrangementWithIndividualCompensationExpense': 15, 'B-ReclassificationFromAociCurrentPeriodTax': 152, 'B-OtherComprehensiveIncomeLossBeforeReclassificationsTax': 694, 'B-PreferredStockDividendsPerShareDeclared': 236, 'B-CapitalExpendituresIncurredButNotYetPaid': 344, 'B-DeferredCompensationArrangementWithIndividualContributionsByEmployer': 560, 'B-SeveranceCosts1': 311, 'B-InterestExpense': 784, 'B-SaleOfStockConsiderationReceivedOnTransaction': 76, 'B-LineOfCreditFacilityInterestRateAtPeriodEnd': 822, 'B-SharesIssuedPricePerShare': 137, 'B-EquityMethodInvestmentDifferenceBetweenCarryingAmountAndUnderlyingEquity': 63, 'B-EquitySecuritiesFvNi': 30, 'B-RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability': 118, 'B-DefinedBenefitPlanFundedStatusOfPlan': 547, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardPurchasePriceOfCommonStockPercent': 323, 'B-TaxCutsAndJobsActOf2017IncomeTaxExpenseBenefit': 256, 'B-LongtermDebtWeightedAverageInterestRate': 364, 'B-ImpairmentOfIntangibleAssetsFinitelived': 71, 'B-ProceedsFromLinesOfCredit': 496, 'B-LongTermPurchaseCommitmentAmount': 701, 'B-DebtInstrumentFairValue': 335, 'B-RestructuringAndRelatedCostCostIncurredToDate1': 52, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriod': 581, 'B-FiniteLivedIntangibleAssetsAccumulatedAmortization': 143, 'B-StockRepurchasedAndRetiredDuringPeriodValue': 330, 'B-BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual': 77, 'B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1': 361, 'B-BusinessAcquisitionPurchasePriceAllocationGoodwillExpectedTaxDeductibleAmount': 550, 'B-OperatingLossCarryforwardsValuationAllowance': 173, 'B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued': 32, 'B-DefinedContributionPlanMaximumAnnualContributionsPerEmployeePercent': 45, 'B-ContractWithCustomerLiabilityCurrent': 2, 'B-IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign': 474, 'B-FiniteLivedIntangibleAssetsAmortizationExpenseYearThree': 1306, 'B-DefinedBenefitPlanUltimateHealthCareCostTrendRate1': 62, 'B-DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1': 317, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesExpense': 448, 'B-ForeignCurrencyTransactionGainLossRealized': 132, 'B-DeferredTaxAssetsOperatingLossCarryforwardsSubjectToExpiration': 262, 'B-RetainedEarningsAccumulatedDeficit': 174, 'B-ProceedsFromIssuanceOfCommonStock': 209, 'B-EmployeeServiceShareBasedCompensationAllocationOfRecognizedPeriodCostsCapitalizedAmount': 29, 'B-OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansTax': 284, 'B-InventoryWriteDown': 465, 'B-RestructuringReserve': 234, 'B-LitigationSettlementAmountAwardedToOtherParty': 42, 'B-DerivativeGainLossOnDerivativeNet': 87, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardEquityInstrumentsOtherThanOptionsAggregateIntrinsicValueVested': 241, 'B-DerivativeFixedInterestRate': 589, 'B-CashAndCashEquivalentsAtCarryingValue': 257, 'B-ContractWithCustomerAssetNet': 245, 'B-RestructuringAndRelatedCostExpectedCost1': 107, 'B-IncomeTaxHolidayAggregateDollarAmount': 347, 'B-OperatingLeaseCost': 248, 'B-AllowanceForDoubtfulAccountsReceivable': 146, 'B-RepaymentsOfDebt': 416, 'B-InterestPaid': 110, 'B-DeferredFinanceCostsNet': 28, 'B-IncomeTaxExaminationPenaltiesAndInterestAccrued': 271, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber': 92, 'B-CapitalizedContractCostNet': 155, 'B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption': 17, 'B-IncomeTaxesPaid': 495, 'B-EquityMethodInvestmentOtherThanTemporaryImpairment': 22, 'B-InterestPaidNet': 225, 'B-EquitySecuritiesWithoutReadilyDeterminableFairValueAmount': 175, 'B-ImpairmentOfLongLivedAssetsHeldForUse': 313, 'B-GoodwillAcquiredDuringPeriod': 156, 'B-DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible': 363, 'B-RestructuringAndRelatedCostIncurredCost': 75, 'B-StockRepurchasedDuringPeriodValue': 254, 'B-IncomeTaxExaminationPenaltiesAndInterestExpense': 525, 'B-ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill': 55, 'B-PreferredStockLiquidationPreference': 157, 'B-ImpairmentOfIntangibleAssetsExcludingGoodwill': 158, 'B-IncomeTaxesPaidNet': 456, 'B-DefinedContributionPlanEmployerMatchingContributionPercent': 332, 'B-CostOfGoodsAndServicesSold': 274, 'B-DepreciationDepletionAndAmortization': 338, 'B-InterestExpenseDebt': 191, 'B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage': 442, 'B-DisposalGroupIncludingDiscontinuedOperationConsideration': 6, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued': 14, 'B-SaleOfStockPricePerShare': 278, 'B-DefinedContributionPlanEmployerMatchingContributionPercentOfMatch': 267, 'B-FinitelivedIntangibleAssetsAcquired1': 202, 'B-PaymentsForRepurchaseOfCommonStock': 486, 'B-BusinessCombinationContingentConsiderationLiability': 103, 'B-RelatedPartyTransactionAmountsOfTransaction': 180, 'O': 0}
+class FNXL(SequentialLabeling):
+    DATASET_PATH = "chancefocus/flare-fnxl"
+    LMAP = {'B-BusinessCombinationContingentConsiderationArrangementsRangeOfOutcomesValueHigh': 140, 'B-VariableInterestEntityOwnershipPercentage': 646, 'B-GainLossOnDispositionOfAssets1': 119, 'B-IndefiniteLivedIntangibleAssetsExcludingGoodwill': 46, 'B-MarketingAndAdvertisingExpense': 269, 'B-ReportingUnitPercentageOfFairValueInExcessOfCarryingAmount': 142, 'B-CapitalizedComputerSoftwareNet': 91, 'B-BusinessCombinationConsiderationTransferredEquityInterestsIssuedAndIssuable': 183, 'B-LitigationSettlementExpense': 115, 'B-DefinedBenefitPlanExpectedAmortizationOfGainLossNextFiscalYear': 639, 'B-DeferredCompensationArrangementWithIndividualCompensationExpense': 15, 'B-ReclassificationFromAociCurrentPeriodTax': 152, 'B-OtherComprehensiveIncomeLossBeforeReclassificationsTax': 694, 'B-PreferredStockDividendsPerShareDeclared': 236, 'B-CapitalExpendituresIncurredButNotYetPaid': 344, 'B-DeferredCompensationArrangementWithIndividualContributionsByEmployer': 560, 'B-SeveranceCosts1': 311, 'B-InterestExpense': 784, 'B-SaleOfStockConsiderationReceivedOnTransaction': 76, 'B-LineOfCreditFacilityInterestRateAtPeriodEnd': 822, 'B-SharesIssuedPricePerShare': 137, 'B-EquityMethodInvestmentDifferenceBetweenCarryingAmountAndUnderlyingEquity': 63, 'B-EquitySecuritiesFvNi': 30, 'B-RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability': 118, 'B-DefinedBenefitPlanFundedStatusOfPlan': 547, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardPurchasePriceOfCommonStockPercent': 323, 'B-TaxCutsAndJobsActOf2017IncomeTaxExpenseBenefit': 256, 'B-LongtermDebtWeightedAverageInterestRate': 364, 'B-ImpairmentOfIntangibleAssetsFinitelived': 71, 'B-ProceedsFromLinesOfCredit': 496, 'B-LongTermPurchaseCommitmentAmount': 701, 'B-DebtInstrumentFairValue': 335, 'B-RestructuringAndRelatedCostCostIncurredToDate1': 52, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriod': 581, 'B-FiniteLivedIntangibleAssetsAccumulatedAmortization': 143, 'B-StockRepurchasedAndRetiredDuringPeriodValue': 330, 'B-BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual': 77, 'B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1': 361, 'B-BusinessAcquisitionPurchasePriceAllocationGoodwillExpectedTaxDeductibleAmount': 550, 'B-OperatingLossCarryforwardsValuationAllowance': 173, 'B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued': 32, 'B-DefinedContributionPlanMaximumAnnualContributionsPerEmployeePercent': 45, 'B-ContractWithCustomerLiabilityCurrent': 2, 'B-IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign': 474, 'B-FiniteLivedIntangibleAssetsAmortizationExpenseYearThree': 1306, 'B-DefinedBenefitPlanUltimateHealthCareCostTrendRate1': 62, 'B-DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1': 317, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesExpense': 448, 'B-ForeignCurrencyTransactionGainLossRealized': 132, 'B-DeferredTaxAssetsOperatingLossCarryforwardsSubjectToExpiration': 262, 'B-RetainedEarningsAccumulatedDeficit': 174, 'B-ProceedsFromIssuanceOfCommonStock': 209, 'B-EmployeeServiceShareBasedCompensationAllocationOfRecognizedPeriodCostsCapitalizedAmount': 29, 'B-OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansTax': 284, 'B-InventoryWriteDown': 465, 'B-RestructuringReserve': 234, 'B-LitigationSettlementAmountAwardedToOtherParty': 42, 'B-DerivativeGainLossOnDerivativeNet': 87, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardEquityInstrumentsOtherThanOptionsAggregateIntrinsicValueVested': 241, 'B-DerivativeFixedInterestRate': 589, 'B-CashAndCashEquivalentsAtCarryingValue': 257, 'B-ContractWithCustomerAssetNet': 245, 'B-RestructuringAndRelatedCostExpectedCost1': 107, 'B-IncomeTaxHolidayAggregateDollarAmount': 347, 'B-OperatingLeaseCost': 248, 'B-AllowanceForDoubtfulAccountsReceivable': 146, 'B-RepaymentsOfDebt': 416, 'B-InterestPaid': 110, 'B-DeferredFinanceCostsNet': 28, 'B-IncomeTaxExaminationPenaltiesAndInterestAccrued': 271, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber': 92, 'B-CapitalizedContractCostNet': 155, 'B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption': 17, 'B-IncomeTaxesPaid': 495, 'B-EquityMethodInvestmentOtherThanTemporaryImpairment': 22, 'B-InterestPaidNet': 225, 'B-EquitySecuritiesWithoutReadilyDeterminableFairValueAmount': 175, 'B-ImpairmentOfLongLivedAssetsHeldForUse': 313, 'B-GoodwillAcquiredDuringPeriod': 156, 'B-DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible': 363, 'B-RestructuringAndRelatedCostIncurredCost': 75, 'B-StockRepurchasedDuringPeriodValue': 254, 'B-IncomeTaxExaminationPenaltiesAndInterestExpense': 525, 'B-ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill': 55, 'B-PreferredStockLiquidationPreference': 157, 'B-ImpairmentOfIntangibleAssetsExcludingGoodwill': 158, 'B-IncomeTaxesPaidNet': 456, 'B-DefinedContributionPlanEmployerMatchingContributionPercent': 332, 'B-CostOfGoodsAndServicesSold': 274, 'B-DepreciationDepletionAndAmortization': 338, 'B-InterestExpenseDebt': 191, 'B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage': 442, 'B-DisposalGroupIncludingDiscontinuedOperationConsideration': 6, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued': 14, 'B-SaleOfStockPricePerShare': 278, 'B-DefinedContributionPlanEmployerMatchingContributionPercentOfMatch': 267, 'B-FinitelivedIntangibleAssetsAcquired1': 202, 'B-PaymentsForRepurchaseOfCommonStock': 486, 'B-BusinessCombinationContingentConsiderationLiability': 103, 'B-RelatedPartyTransactionAmountsOfTransaction': 180, 'O': 0}
 
- class TATQA(QA):
-     DATASET_PATH = "chancefocus/flare-tatqa"
+class TATQA(QA):
+    DATASET_PATH = "chancefocus/flare-tatqa"
 
 
- class FinRED(RelationExtraction):
-     DATASET_PATH = "chancefocus/flare-finred"
+class FinRED(RelationExtraction):
+    DATASET_PATH = "chancefocus/flare-finred"
 
 
 class lendingclub(Classification):

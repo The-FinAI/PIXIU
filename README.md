@@ -79,6 +79,8 @@ This repository and its contents are provided for **academic and educational pur
 **Evaluations**:
 
 - [English Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-english-6529286a147d9119a64689c0) (More details on FLARE section)
+- [Spanish Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-spanish-652929c34f8fe1bea9cd5a66)
+- [Chinese Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evalution-datasets-chinese-65292963a8cd8847517204a2)
 
 > Sentiment Analysis
 
@@ -135,9 +137,6 @@ This repository and its contents are provided for **academic and educational pur
 - [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
 - [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
 - [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
-
-- [Spanish Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-spanish-652929c34f8fe1bea9cd5a66)
-- [Chinese Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evalution-datasets-chinese-65292963a8cd8847517204a2)
 
 ## Overview
 
