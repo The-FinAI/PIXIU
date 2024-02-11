@@ -24,7 +24,7 @@ _CITATION = """
 
 
 class Classification(Task):
-    CALCULATE_MCC = False
+    CALCULATE_MCC = True
     LOWER_CASE = True
     VERSION = 1
     EVAL_LAST_TURN = True
@@ -955,6 +955,9 @@ class TSA(Task):
      VERSION = 1
      DATASET_PATH = "chancefocus/flare-tsa"
      DATASET_NAME = None
+    
+    def reformulate_turn_req(self, req, turn_request, turn):
+        return req
 
      def has_training_docs(self):
          return False
@@ -1091,37 +1094,37 @@ class FinRED(RelationExtraction):
 
 
 class lendingclub(Classification):
-    DATASET_PATH = "daishen/cra-lendingclub"
+    DATASET_PATH = "chancefocus/cra-lendingclub"
     CALCULATE_MCC = True
 
 
 class ccf(Classification):
-    DATASET_PATH = "daishen/cra-ccf"
+    DATASET_PATH = "chancefocus/cra-ccf"
     CALCULATE_MCC = True
 
 
 class ccfraud(Classification):
-    DATASET_PATH = "daishen/cra-ccfraud"
+    DATASET_PATH = "chancefocus/cra-ccfraud"
     CALCULATE_MCC = True
 
 
 class polish(Classification):
-    DATASET_PATH = "daishen/cra-polish"
+    DATASET_PATH = "chancefocus/cra-polish"
     CALCULATE_MCC = True
 
 
 class taiwan(Classification):
-    DATASET_PATH = "daishen/cra-taiwan"
+    DATASET_PATH = "chancefocus/cra-taiwan"
     CALCULATE_MCC = True
 
 
 class portoseguro(Classification):
-    DATASET_PATH = "daishen/cra-portoseguro"
+    DATASET_PATH = "chancefocus/cra-portoseguro"
     CALCULATE_MCC = True
 
 
-class travelinsurance(Classification):
-    DATASET_PATH = "daishen/cra-travelinsurance"
+class travelinsurace(Classification):
+    DATASET_PATH = "chancefocus/cra-travelinsurace"
     CALCULATE_MCC = True
 
 

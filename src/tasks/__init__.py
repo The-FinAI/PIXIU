@@ -41,7 +41,7 @@ TASK_REGISTRY = {
     "flare_cra_polish": flare.polish,
     "flare_cra_taiwan": flare.taiwan,
     "flare_cra_portoseguro": flare.portoseguro,
-    "flare_cra_travelinsurance": flare.travelinsurance,
+    "flare_cra_travelinsurace": flare.travelinsurace,
     "flare_sm_bigdata": flare.StockMovementBigData,
     "flare_sm_acl": flare.StockMovementACL,
     "flare_sm_cikm": flare.StockMovementCIKM,
