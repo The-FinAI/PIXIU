@@ -7,9 +7,10 @@ import numpy as np
 from .utils import process_text
 from .zhutils import process_zhtext
 from seqeval.metrics import f1_score as entity_score
-from sklearn.metrics import f1_score, matthews_corrcoef
+from sklearn.metrics import f1_score, matthews_corrcoef, mean_squared_error
 from bart_score import BARTScorer
 import evaluate
+import re
 
 _CITATION = """
 @misc{xie2023pixiu,
@@ -955,7 +956,8 @@ class TSA(Task):
     VERSION = 1
     DATASET_PATH = "chancefocus/flare-tsa"
     DATASET_NAME = None
-    
+    EVAL_LAST_TURN = True
+
     def reformulate_turn_req(self, req, turn_request, turn):
         return req
 
