@@ -771,12 +771,13 @@ class LongFormFactuality(Task):
         return {
             "factscore": self.factscore,
         }
-    
+
+
 class FINTERM(LongFormFactuality):
     DATASET_PATH = "PIXIU-fin/en-finterm"
 
-class ACRONYM(LongFormFactuality):
-    DATASET_PATH = "PIXIU-fin/en-finterm"
+class ACRONYM(QA):
+    DATASET_PATH = "PIXIU-fin/en-acronym"
 
 class FPB(Classification):
     DATASET_PATH = "chancefocus/flare-fpb"
