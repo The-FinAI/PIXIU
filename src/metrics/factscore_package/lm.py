@@ -5,7 +5,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndB
 from torch import cuda, bfloat16
 import json
 from huggingface_hub import login
-login(token="")
 
     
 class LM():

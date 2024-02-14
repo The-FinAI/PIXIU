@@ -775,6 +775,9 @@ class LongFormFactuality(Task):
 class FINTERM(LongFormFactuality):
     DATASET_PATH = "PIXIU-fin/en-finterm"
 
+class ACRONYM(LongFormFactuality):
+    DATASET_PATH = "PIXIU-fin/en-finterm"
+
 class FPB(Classification):
     DATASET_PATH = "chancefocus/flare-fpb"
 

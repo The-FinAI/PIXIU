@@ -16,12 +16,11 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndB
 from torch import cuda, bfloat16
 import json
 from huggingface_hub import login
-login(token="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")
 from transformers import AutoModelForCausalLM
 from transformers import LlamaTokenizer
 
-from factscore.utils import convert_model_to_int8_on_gpu
-from factscore.lm import LM
+from utils import convert_model_to_int8_on_gpu
+from lm import LM
 
 class CLM(LM):
     def __init__(self, model_name, model_dir, cache_file=None):
