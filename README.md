@@ -158,6 +158,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 git clone https://github.com/chancefocus/PIXIU.git --recursive
 cd PIXIU
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 cd PIXIU/src/financial-evaluation
 pip install -e .[multilingual]
 ```

@@ -710,7 +710,7 @@ class LongFormFactuality(Task):
         return False
 
     def has_test_docs(self):
-        return False
+        return True
 
     def training_docs(self):
         return self.dataset["train"]
@@ -754,14 +754,17 @@ class LongFormFactuality(Task):
 
     def factscore(self, items):
         golds, texts, preds = zip(*items)
-
+        texts = list(texts)
+        preds = list(preds)
+        
         fs = FactScorer("retrieval+ChatGPT", openai_key=os.environ["OPENAI_API_KEY"])
 
-        fs.register_knowledge_source("finterms", data_path="./src/metrics/factscore_package/.cache/fin_terms.jsonl", db_path="./src/metrics/factscore_package/.cache/fin_terms.db")
+        fs.register_knowledge_source("finterms", data_path="./src/metrics/factscore_package/.cache/finterms.jsonl", db_path="./src/metrics/factscore_package/.cache/finterms.db")
 
         # now, when you compute a score, specify knowledge source to use
         try:
             out = fs.get_score(texts, preds, knowledge_source="finterms")
+
         except:
             out = fs.get_score(texts, preds, knowledge_source="finterms")
 

@@ -291,13 +291,13 @@ if __name__ == '__main__':
                         default="api.key")
     parser.add_argument('--data_dir',
                         type=str,
-                        default=".cache/factscore/")
+                        default="./src/metrics/factscore_package/.cache/")
     parser.add_argument('--model_dir',
                         type=str,
-                        default=".cache/factscore/")
+                        default="./src/metrics/factscore_package/.cache/")
     parser.add_argument('--cache_dir',
                         type=str,
-                        default=".cache/factscore/")
+                        default="./src/metrics/factscore_package/.cache/")
     parser.add_argument('--knowledge_source',
                         type=str,
                         default=None)

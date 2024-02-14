@@ -10,23 +10,22 @@ import logging
 
 class OpenAIModel(LM):
 
-    def __init__(self, model_name, cache_file=None, key_path="api.key"):
+    def __init__(self, model_name, cache_file=None, key=""):
         self.model_name = model_name
-        self.key_path = key_path
         self.temp = 0.7
         self.save_interval = 100
-        self.client = None
-
+        self.client = OpenAI(api_key=key.strip())
         super().__init__(cache_file)
 
     def load_model(self):
+        pass
         # load api key
-        key_path = self.key_path
-        assert os.path.exists(key_path), f"Please place your OpenAI APT Key in {key_path}."
-        with open(key_path, 'r') as f:
-            api_key = f.readline()
-        self.client = OpenAI(api_key=api_key.strip())
-        self.model = self.model_name
+        #key_path = self.key_path
+        #assert os.path.exists(key_path), f"Please place your OpenAI APT Key in {key_path}."
+        #with open(key_path, 'r') as f:
+            #api_key = f.readline()
+        #self.client = OpenAI(api_key=api_key.strip())
+        #self.model = self.model_name
 
     def _generate(self, prompt, max_sequence_length=2048, max_output_length=128):
         if self.add_n % self.save_interval == 0:
