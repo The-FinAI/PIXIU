@@ -10,7 +10,7 @@ from seqeval.metrics import f1_score as entity_score
 from sklearn.metrics import f1_score, matthews_corrcoef
 from bart_score import BARTScorer
 import evaluate
-from factscore.factscorer import FactScorer
+from ..metrics.factscore_package.factscorer import FactScorer
 import os
 
 _CITATION = """
@@ -695,8 +695,6 @@ class QA(Task):
             "acc": mean,
         }
 
-<<<<<<< HEAD
-=======
 class LongFormFactuality(Task):
     VERSION = 1
     DATASET_NAME = None
@@ -759,10 +757,14 @@ class LongFormFactuality(Task):
 
         fs = FactScorer("retrieval+ChatGPT", openai_key=os.environ["OPENAI_API_KEY"])
 
-        fs.register_knowledge_source("finterms", data_path="./src/doc/finterms.jsonl", db_path="./src/doc/finterms.db")
+        fs.register_knowledge_source("finterms", data_path="./src/metrics/factscore_package/.cache/fin_terms.jsonl", db_path="./src/metrics/factscore_package/.cache/fin_terms.db")
 
         # now, when you compute a score, specify knowledge source to use
-        out = fs.get_score(texts, preds, knowledge_source="finterms")
+        try:
+            out = fs.get_score(texts, preds, knowledge_source="finterms")
+        except:
+            out = fs.get_score(texts, preds, knowledge_source="finterms")
+
         return out["score"] # FActScore
 
     def aggregation(self):
@@ -773,7 +775,6 @@ class LongFormFactuality(Task):
 class FINTERM(LongFormFactuality):
     DATASET_PATH = "PIXIU-fin/en-finterm"
 
->>>>>>> 50243e290ac0eb8dd01f984e1918db2bcdadf9e5
 class FPB(Classification):
     DATASET_PATH = "chancefocus/flare-fpb"
 

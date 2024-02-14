@@ -50,6 +50,8 @@ TASK_REGISTRY = {
     "flare_zh_cikm": flare.ZHCIKM,
     "flare_zh_finqa": flare.ZHFinQAE,
     "flare_zh_convfinqa": flare.ZHConvFinQA,
+    "flare_en_fintern": flare.FINTERM,
+
     **flare.SM_TASKS,
 }
 
