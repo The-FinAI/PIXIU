@@ -7,8 +7,8 @@ import os
 import numpy as np
 import logging
 
-os.environ["http_proxy"] = "http://localhost:27890"
-os.environ["https_proxy"] = "http://localhost:27890"
+#os.environ["http_proxy"] = "http://localhost:27890"
+#os.environ["https_proxy"] = "http://localhost:27890"
 
 class OpenAIModel(LM):
 
