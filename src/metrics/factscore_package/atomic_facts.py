@@ -23,7 +23,7 @@ class AtomicFactGenerator(object):
         self.is_bio = True
         self.demon_path = os.path.join(demon_dir, "demons.json" if self.is_bio else "demons_complex.json")
 
-        self.openai_lm = OpenAIModel("InstructGPT", cache_file=gpt3_cache_file, key_path=key_path)
+        self.openai_lm = OpenAIModel("InstructGPT", cache_file=gpt3_cache_file, key=key_path)
 
         # get the demos
         with open(self.demon_path, 'r') as f:

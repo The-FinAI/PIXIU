@@ -52,11 +52,11 @@ class FactScorer(object):
         elif "ChatGPT" in model_name:
             self.lm = OpenAIModel("ChatGPT",
                                   cache_file=os.path.join(cache_dir, "ChatGPT.pkl"),
-                                  key_path=openai_key)
+                                  key=openai_key)
         elif "GPT4" in model_name:
             self.lm = OpenAIModel("GPT4",
                                   cache_file=os.path.join(cache_dir, "GPT4.pkl"),
-                                  key_path=openai_key)
+                                  key=openai_key)
         else:
             self.lm = None
 

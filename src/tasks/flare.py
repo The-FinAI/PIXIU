@@ -756,19 +756,26 @@ class LongFormFactuality(Task):
         golds, texts, preds = zip(*items)
         texts = list(texts)
         preds = list(preds)
-        
+
         fs = FactScorer("retrieval+ChatGPT", openai_key=os.environ["OPENAI_API_KEY"])
 
         fs.register_knowledge_source("finterms", data_path="./src/metrics/factscore_package/.cache/finterms.jsonl", db_path="./src/metrics/factscore_package/.cache/finterms.db")
 
         # now, when you compute a score, specify knowledge source to use
+        score = 0
+        num_facts = 0
         try:
-            out = fs.get_score(texts, preds, knowledge_source="finterms")
-
+            for i in range(len(texts)):
+                out = fs.get_score([texts[i]], [preds[i]], knowledge_source="finterms")
+                score += out["score"] * out["num_facts_per_response"]
+                num_facts += out["num_facts_per_response"]
         except:
-            out = fs.get_score(texts, preds, knowledge_source="finterms")
+            for i in range(len(texts)):
+                out = fs.get_score([texts[i]], [preds[i]], knowledge_source="finterms")
+                score += out["score"] * out["num_facts_per_response"]
+                num_facts += out["num_facts_per_response"]
 
-        return out["score"] # FActScore
+        return score/num_facts # FActScore
 
     def aggregation(self):
         return {
