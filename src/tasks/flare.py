@@ -1197,7 +1197,7 @@ class LongFormFactuality(Task):
         
         fs = FactScorer("retrieval+ChatGPT", openai_key=os.environ["OPENAI_API_KEY"])
 
-        fs.register_knowledge_source("finterms", data_path="./src/metrics/factscore_package/.cache/finterms.jsonl", db_path="./src/metrics/factscore_package/.cache/fin_terms.db")
+        fs.register_knowledge_source("finterms", data_path="./src/factscore_package/.cache/finterms.jsonl", db_path="./src/factscore_package/.cache/fin_terms.db")
 
         score = 0
         num_facts = 0
