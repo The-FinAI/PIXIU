@@ -1195,18 +1195,6 @@ class LongFormFactuality(Task):
         texts = list(texts)
         preds = list(preds)
         
-        #print("num_texts: " + str(len(texts)))
-        #print("num_preds: " + str(len(preds)))
-        #length = 0
-        #for i in texts:
-        #    length = length + len(i)
-        #print("len_texts: " + str(length))
-        #for i in preds:
-        #    length = length + len(i)
-        #print("len_preds: " + str(length))
-        #print("texts_example: " + texts[0])
-        #print("preds_example: " + preds[0])
-
         fs = FactScorer("retrieval+ChatGPT", openai_key=os.environ["OPENAI_API_KEY"])
 
         fs.register_knowledge_source("finterms", data_path="./src/metrics/factscore_package/.cache/finterms.jsonl", db_path="./src/metrics/factscore_package/.cache/fin_terms.db")
@@ -1240,10 +1228,10 @@ class LongFormFactuality(Task):
 
 
 class FINTERM(LongFormFactuality):
-    DATASET_PATH = "/data/chenzhengyu/my_belle/PIXIU-fin/en-finterm"
+    DATASET_PATH = "PIXIU-fin/en-finterm"
 
 class ACRONYM(QA):
-    DATASET_PATH = "/data/chenzhengyu/my_belle/PIXIU-fin/en-acronym"
+    DATASET_PATH = "PIXIU-fin/en-acronym"
 
 
 
