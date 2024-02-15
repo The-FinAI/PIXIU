@@ -277,12 +277,15 @@ def evaluate(
                 turn = doc.get("turn", 0)
                 turn_requests[(diag_id, turn)] = (task_name, doc, doc_id, req)
                 requests_origin[req.request_type].append((i, task_name, doc, doc_id, diag_id, turn))
+                
+                #print("req: " + str(req.args))
 
                 if write_out:
                     prompt_details[-1][f"prompt_{i}"] = "".join(
                         (map(lambda x: "".join(x), req.args))
                     )
-
+            
+            #print("request:" + request[])
         if write_out:
             write_out_info[task_name] = prompt_details
 
@@ -357,6 +360,9 @@ t in range(turn)], turn)
 
         task = task_dict[task_name]
         doc = docs[(task_name, doc_id)]
+        print("doc: "+ str(doc))
+        print("requests: "+ str(requests))
+
 
         metrics = task.process_results(doc, requests)
         for metric, value in metrics.items():

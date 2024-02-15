@@ -5,10 +5,10 @@ export CUDA_VISIBLE_DEVICES="0"
 
 python src/eval.py \
     --model hf-causal-vllm \
-    --tasks flare_fpb \
-    --model_args use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False,max_gen_toks=1024,dtype=float16 \
+    --tasks flare_en_fintern \
+    --model_args use_accelerate=True,pretrained=llama-2-7b-chat-hf,tokenizer=llama-2-7b-chat-hf,use_fast=False,max_gen_toks=1024,dtype=float16 \
     --no_cache \
-    --batch_size 200 \
+    --batch_size 2 \
     --model_prompt 'finma_prompt' \
     --num_fewshot 0 \
     --write_out 

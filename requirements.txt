@@ -8,3 +8,5 @@ pandas
 seqeval
 numpy
 evaluate
+rank_bm25
+spacy
