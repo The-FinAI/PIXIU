@@ -1,200 +1,83 @@
 <p align="center" width="100%">
 <img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="100%" height="100%">
 </p>
-
 <div>
 <div align="left">
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
-    <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
-    <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
-    <a target='_blank'>Ruoyu Xiang<sup>6</sup></a>&emsp;
-    <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
-    <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
-    <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
-    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>5</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,7</sup></a>
+    <a target='_blank'>Weiguang Han<sup>2</sup></span>&emsp;
+    <a target='_blank'>Zhengyu Chen<sup>2</sup></span>&emsp;
+    <a target='_blank'>Ruoyu Xiang<sup>1</sup></a>&emsp;
+    <a target='_blank'>Xiao Zhang<sup>1</sup></a>&emsp;
+    <a target='_blank'>Yueru He<sup>1</sup></a>&emsp;
+    <a target='_blank'>Mengxi Xiao<sup>2</sup></a>&emsp;
+    <a target='_blank'>Dong Li<sup>2</sup></a>&emsp;
+    <a target='_blank'>Yongfu Dai<sup>7</sup></a>&emsp;
+    <a target='_blank'>Duanyu Feng<sup>7</sup></a>&emsp;
+    <a target='_blank'>Yijing Xu<sup>1</sup></a>&emsp;
+    <a target='_blank'>Haoqiang Kang<sup>5</sup></a>&emsp;
+    <a target='_blank'>Ziyan Kuang<sup>12</sup></a>&emsp;
+    <a target='_blank'>Chenhan Yuan<sup>3</sup></a>&emsp;
+    <a target='_blank'>Kailai Yang<sup>3</sup></a>&emsp;
+    <a target='_blank'>Zheheng Luo<sup>3</sup></a>&emsp;
+    <a target='_blank'>Tianlin Zhang<sup>3</sup></a>&emsp;
+    <a target='_blank'>Zhiwei Liu<sup>3</sup></a>&emsp;
+    <a target='_blank'>Guojun Xiong<sup>10</sup></a>&emsp;
+    <a target='_blank'>Zhiyang Deng<sup>9</sup></a>&emsp;
+    <a target='_blank'>Yuechen Jiang<sup>9</sup></a>&emsp;
+    <a target='_blank'>Zhiyuan Yao<sup>9</sup></a>&emsp;
+    <a target='_blank'>Haohang Li<sup>9</sup></a>&emsp;
+    <a target='_blank'>Yangyang Yu<sup>9</sup></a>&emsp;
+    <a target='_blank'>Gang Hu<sup>8</sup></a>&emsp;
+    <a target='_blank'>Jiajia Huang<sup>11</sup></a>&emsp;
+    <a target='_blank'>Xiao-Yang Liu<sup>5</sup></a>&emsp;
+    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>4</sup></a>&emsp;
+    <a target='_blank'>Benyou Wang<sup>6</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>13</sup></a>&emsp;
+    <a target='_blank'>Hao Wang<sup>7</sup></a>&emsp;
+    <a target='_blank'>Min Peng<sup>2*</sup></a>&emsp;
+    <a target='_blank'>Sophia Ananiadou<sup>3</sup></a>&emsp;
+    <a href='' target='_blank'>Jimin Huang<sup>1</sup></a>
 </div>
-<div>
+<br />
+
 <div align="left">
-    <sup>1</sup>Universidad de Wuhany&emsp;
-    <sup>2</sup>Universidad Sun Yat-sen&emsp;
-    <sup>3</sup>Universidad de Sichuan&emsp;
-    <sup>4</sup>Universidad Southwest Jiaotong&emsp;
-    <sup>5</sup>Universidad de Florida&emsp;
-    <sup>6</sup>New York Universidad&emsp;
-  <sup>7</sup>ChanceFocus AMC.
+    <sup>1</sup>The Fin AI&emsp;
+    <sup>2</sup>Wuhan University&emsp;
+    <sup>3</sup>The University of Manchester&emsp;
+    <sup>4</sup>University of Florida&emsp;
+    <sup>5</sup>Columbia University&emsp;
+    <sup>6</sup>The Chinese University of Hong Kong, Shenzhen&emsp;
+    <sup>7</sup>Sichuan University&emsp;
+    <sup>8</sup>Yunnan University&emsp;
+    <sup>9</sup>Stevens Institute of Technology&emsp;
+    <sup>10</sup>Stony Brook University&emsp;
+    <sup>11</sup>Nanjin Audit University&emsp;
+    <sup>12</sup>Jiangxi Normal University&emsp;
+    <sup>13</sup>Southwest Jiaotong University
 </div>
+<br />
+
 <div align="left">
-    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/C1XnZNK1/Sun-Yat-sen-University-Logo.png' alt='Sun Yat-Sen University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/vTHJdYxN/NYU-Logo.png' alt='New York University' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/NjKhDkGY/DFAF986-CCD6529-E52-D7830-F180-D-C37-C7-DEE-4340.png' alt='Sichuan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/xTsgsrqN/logo11.png' alt='ChanceFocus AMC Logo' height='100px'>
+    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='50px'>&emsp;
+    <img src='https://assets.manchester.ac.uk/corporate/images/design/logo-university-of-manchester.png' alt='Manchester University Logo' height='50px'>&emsp;
+    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='50px'>&emsp;
+    <img src='https://admissions.ucr.edu/sites/default/files/styles/form_preview/public/2020-07/ucr-education-logo-columbia-university.png?itok=-0FD6Ma2' alt='Columbia University Logo' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeMTMkJVT6g36_LN-8qJ4nMvgT3vM5spUHV3ITRYbym1CEg4Af5Shlp5jX2sWtDFtTK9I&usqp=CAU' alt='HK University (shenzhen) Logo' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToJAAiyqxfFuwro5N9Um9TB5LDkiJNKF3hMMQp3pfC0A&s' alt='Sichuan University' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbx3AQWiMhxwOvFb7r1PH-h_i5-b3H9xsGVKnkQwbFlA&s' alt='Yunnan University' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS_o8HItSOTkg5M75N59D6V5u9qg7QYfBa_ITxdfEfwQ&s' alt='Stevens Insititute of Technology' height='50px'>&emsp;
+    <img src='https://www.stonybrook.edu/sbu-brand/_images/2015/10/logo_stacked_vert.jpg' alt='Stony Brook University' height='50px'>&emsp;
+    <img src='https://upload.wikimedia.org/wikipedia/en/9/9c/Nanjing_Audit_University_logo.png' alt='Nanjing Audit University' height='50px'>&emsp;
+    <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Jiangxi_Normal_University.svg/1200px-Jiangxi_Normal_University.svg.png' alt='Jiangxi Normal University' height='50px'>&emsp;
+    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='50px'>&emsp;
 </div>
-
-
-
-
 -----------------
 
 ![](https://img.shields.io/badge/pixiu-v0.1-gold)
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
-
-**Disclaimer**
-
-This repository and its contents are provided for **academic and educational purposes only**. None of the material constitutes financial, legal, or investment advice. No warranties, express or implied, are offered regarding the accuracy, completeness, or utility of the content. The authors and contributors are not responsible for any errors, omissions, or any consequences arising from the use of the information herein. Users should exercise their own judgment and consult professionals before making any financial, legal, or investment decisions. The use of the software and information contained in this repository is entirely at the user's own risk.
-
-**By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
-
-
-
-**Checkpoints:** 
-
-- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
-
-**Languages**
-
-- [English](README.md)
-- [Spainish](README.es.md)
-
-**Evaluations** (More details on FLARE section):
-
-- [FLARE (flare-es-financees)](https://huggingface.co/datasets/ChanceFocus/flare-es-financees)
-- [FLARE (flare-es-tsa)](https://huggingface.co/datasets/ChanceFocus/flare-es-tsa)
-- [FLARE (flare-es-fns)](https://huggingface.co/datasets/ChanceFocus/flare-es-fns)
-- [FLARE (flare-es-efpa)](https://huggingface.co/datasets/ChanceFocus/flare-es-efpa)
-- [FLARE (flare-es-efp)](https://huggingface.co/datasets/ChanceFocus/flare-es-efp)
-- [FLARE (flare-es-multifin)](https://huggingface.co/datasets/ChanceFocus/flare-es-multifin)
-
-
-## Overview
-
-**FLARE_ES** is a cornerstone initiative focusing on the Spanish financial domain, FLARE_ES aims to bolster the progress, refinement, and assessment of Large Language Models (LLMs) tailored specifically for Spanish financial contexts. As a vital segment of the broader PIXIU endeavor, FLARE_ES stands as a testament to the commitment in harnessing the capabilities of LLMs, ensuring that financial professionals and enthusiasts in the Spanish-speaking world have top-tier linguistic tools at their disposal.
-
-### Key Features
-
-- **Open resources**: PIXIU openly provides the financial LLM, instruction tuning data, and datasets included in the evaluation benchmark to encourage open research and transparency.
-- **Multi-task**: The instruction tuning data and benchmark in PIXIU cover a diverse set of financial tasks, including four financial NLP tasks and one financial prediction task.
-- **Multi-modality**: PIXIU's instruction tuning data and benchmark consist of multi-modality financial data, including time series data from the stock movement prediction task. It covers various types of financial texts, including reports, news articles, tweets, and regulatory filings.
-- **Diversity**: Unlike previous benchmarks focusing mainly on financial NLP tasks, PIXIU's evaluation benchmark includes critical financial prediction tasks aligned with real-world scenarios, making it more challenging.
-
----
-
-## FLARE_ES: Financial Language Understanding and Prediction Evaluation Benchmark
-
-In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, lince-zero et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction.
-
-### Tasks
-
-| Data                  | Task                             | Raw    | Data Types                       | Modalities        | License         | Paper |
-| --------------------- | -------------------------------- | ------ | -------------------------------- | ----------------- | --------------- | ----- |
-| MultiFin              | news headline classification     | 230    | news headlines                   | text              | CC BY 4.0       | [1]   |
-| FNS                   | question answering               | 50     | earnings reports                 | text              | Public          | [2]   |
-| TSA                   | sentiment analysis               | 3,829  | news headlines                   | text              | CC BY 4.0       | [3]   |
-| Financees             | sentiment analysis               | 6,539  | news headlines                   | text              | Public          | [4]   |
-| EFP                   | question answering               | 37     | business assessment questions    | text              | Public          |       |
-| EFPA                  | question answering               | 228    | business assessment questions    | text              | Public          |       |
-
-
-1. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. MultiFin: A Dataset for Multilingual Financial NLP. In Findings of the Association for Computational Linguistics: EACL 2023, 894–909. Association for Computational Linguistics, Dubrovnik, Croatia.
-2. [FNS 2023. FNP 2023.](http://wp.lancs.ac.uk/cfie/fns2023/).
-3. Pan R, García-Díaz JA, Garcia-Sanchez F, and Valencia-García R. 2023. Evaluation of transformer models for financial targeted sentiment analysis in Spanish. In PeerJ Computer Science, 9:e1377. https://doi.org/10.7717/peerj-cs.1377.
-4. CodaLab. 2023. [Competition](https://codalab.lisn.upsaclay.fr/competitions/10052)
-
-### Evaluation
-
-#### Preparation
-##### Locally install
-```bash
-git clone https://github.com/chancefocus/PIXIU.git --recursive
-cd PIXIU
-pip install -r requirements.txt
-cd PIXIU/src/financial-evaluation
-pip install -e .[multilingual]
-```
-##### Docker image
-```bash
-sudo bash scripts/docker_run.sh
-```
-Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:latest`
-
-```bash
-docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
-    --network host \
-    --env https_proxy=$https_proxy \
-    --env http_proxy=$http_proxy \
-    --env all_proxy=$all_proxy \
-    --env HF_HOME=$hf_home \
-    -it [--rm] \
-    --name pixiu \
-    -v $pixiu_path:$pixiu_path \
-    -v $hf_home:$hf_home \
-    -v $ssh_pub_key:/root/.ssh/authorized_keys \
-    -w $workdir \
-    $docker_user/pixiu:$tag \
-    [--sshd_port 2201 --cmd "echo 'Hello, world!' && /bin/bash"]
-```
-Arguments explain:
-- `[]` means ignoreable arguments
-- `HF_HOME`: huggingface cache dir
-- `sshd_port`: sshd port of the container, you can run `ssh -i private_key -p $sshd_port root@$ip` to connect to the container, default to 22001
-- `--rm`: remove the container when exit container (ie.`CTRL + D`)
-
-#### Automated Task Assessment
-Before evaluation, please download [BART checkpoint](https://drive.google.com/u/0/uc?id=1_7JfF7KOInb7ZrxKHIigTMR4ChVET01m&export=download) to `src/metrics/BARTScore/bart_score.pth`.
-
-For automated evaluation, please follow these instructions:
-
-1. Huggingface Transformer
-
-   To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7b-full), use this command:
-
-```bash
-python eval.py \
-    --model "hf-causal-llama" \
-    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
-    --tasks "flare_ner,flare_sm_acl,flare_fpb"
-```
-
-More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-evaluation-harness) documentation.
-
-2. Commercial APIs
-
-
-Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
-
-```bash
-export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
-python eval.py \
-    --model gpt-4 \
-    --tasks flare_ner,flare_sm_acl,flare_fpb
-```
-
-
-## License
-
-PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) file.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
-
-
-
------------------
-
-![](https://img.shields.io/badge/pixiu-v0.1-gold)
-![](https://black.readthedocs.io/en/stable/_static/license.svg)
-[![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
-
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
 
 **Descargo de responsabilidad**
 
@@ -214,18 +97,18 @@ Este repositorio y su contenido se proporcionan **únicamente con fines académi
 - [Inglés](README.md)
 - [Español](README.es.md)
 
-**Evaluaciones** (más detalles en la sección FLARE):
+**Evaluaciones** (más detalles en la sección FinBen):
 
-- [FLARE (flare-es-financees)](https://huggingface.co/datasets/ChanceFocus/flare-es-financees)
-- [FLARE (flare-es-tsa)](https://huggingface.co/datasets/ChanceFocus/flare-es-tsa)
-- [FLARE (flare-es-fns)](https://huggingface.co/datasets/ChanceFocus/flare-es-fns)
-- [FLARE (flare-es-efpa)](https://huggingface.co/datasets/ChanceFocus/flare-es-efpa)
-- [FLARE (flare-es-efp)](https://huggingface.co/datasets/ChanceFocus/flare-es-efp)
-- [FLARE (flare-es-multifin)](https://huggingface.co/datasets/ChanceFocus/flare-es-multifin)
+- [FinBen (FinBen-es-financees)](https://huggingface.co/datasets/ChanceFocus/flare-es-financees)
+- [FinBen (FinBen-es-tsa)](https://huggingface.co/datasets/ChanceFocus/flare-es-tsa)
+- [FinBen (FinBen-es-fns)](https://huggingface.co/datasets/ChanceFocus/flare-es-fns)
+- [FinBen (FinBen-es-efpa)](https://huggingface.co/datasets/ChanceFocus/flare-es-efpa)
+- [FinBen (FinBen-es-efp)](https://huggingface.co/datasets/ChanceFocus/flare-es-efp)
+- [FinBen (FinBen-es-multifin)](https://huggingface.co/datasets/ChanceFocus/flare-es-multifin)
 
 ## Descripción general
 
-**FLARE_ES** es una iniciativa fundamental enfocada en el dominio financiero español. FLARE_ES busca reforzar el progreso, perfeccionamiento y evaluación de Modelos de Lenguaje a Gran Escala (MLGs) diseñados específicamente para contextos financieros españoles. Como un segmento vital del esfuerzo más amplio de PIXIU, FLARE_ES se erige como un testimonio del compromiso por aprovechar las capacidades de los MLGs, asegurando que los profesionales y entusiastas financieros del mundo hispanohablante tengan a su disposición herramientas lingüísticas de primera categoría.
+**FinBen_ES** es una iniciativa fundamental enfocada en el dominio financiero español. FinBen_ES busca reforzar el progreso, perfeccionamiento y evaluación de Modelos de Lenguaje a Gran Escala (MLGs) diseñados específicamente para contextos financieros españoles. Como un segmento vital del esfuerzo más amplio de PIXIU, FinBen_ES se erige como un testimonio del compromiso por aprovechar las capacidades de los MLGs, asegurando que los profesionales y entusiastas financieros del mundo hispanohablante tengan a su disposición herramientas lingüísticas de primera categoría.
 
 ### Características clave
 
@@ -236,7 +119,7 @@ Este repositorio y su contenido se proporcionan **únicamente con fines académi
 
 ---
 
-## FLARE_ES: Conjunto de evaluación de comprensión y predicción del lenguaje financiero
+## FinBen_ES: Conjunto de evaluación de comprensión y predicción del lenguaje financiero
 
 En esta sección, proporcionamos un análisis de rendimiento detallado de FinMA en comparación con otros modelos líderes, incluyendo ChatGPT, GPT-4, lince-zero et al. Para este análisis, hemos elegido una gama de tareas y métricas que abarcan varios aspectos del Procesamiento del Lenguaje Natural financiero y de la predicción financiera.
 
@@ -335,5 +218,5 @@ PIXIU tiene licencia [MIT]. Para más detalles, consulte el archivo [MIT](LICENS
 
 ## Historial de estrellas
 
-[![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=The-FinAI/PIXIU&type=Date)](https://star-history.com/#The-FinAI/PIXIU&Date)
 
