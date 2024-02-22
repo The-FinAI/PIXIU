@@ -38,8 +38,7 @@
     <a target='_blank'>Sophia Ananiadou<sup>3</sup></a>&emsp;
     <a href='' target='_blank'>Jimin Huang<sup>1</sup></a>
 </div>
-<hr style="border: 0.1px solid #fff"/>
-
+<br />
 
 <div>
 <div align="left">
