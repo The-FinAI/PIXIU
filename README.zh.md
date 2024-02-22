@@ -1,242 +1,72 @@
 <p align="center" width="100%">
 <img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="100%" height="100%">
 </p>
-
 <div>
 <div align="left">
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
-    <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
-    <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
-    <a target='_blank'>Ruoyu Xiang<sup>7</sup></a>&emsp;
-    <a target='_blank'>Gang Hu<sup>5</sup></a>&emsp;
-    <a target='_blank'>Ke Qin<sup>5</sup></a>&emsp;
-    <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
-    <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
-    <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
-    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>6</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,8</sup></a>
+    <a target='_blank'>Weiguang Han<sup>2</sup></span>&emsp;
+    <a target='_blank'>Zhengyu Chen<sup>2</sup></span>&emsp;
+    <a target='_blank'>Ruoyu Xiang<sup>1</sup></a>&emsp;
+    <a target='_blank'>Xiao Zhang<sup>1</sup></a>&emsp;
+    <a target='_blank'>Yueru He<sup>1</sup></a>&emsp;
+    <a target='_blank'>Mengxi Xiao<sup>2</sup></a>&emsp;
+    <a target='_blank'>Dong Li<sup>2</sup></a>&emsp;
+    <a target='_blank'>Yongfu Dai<sup>7</sup></a>&emsp;
+    <a target='_blank'>Duanyu Feng<sup>7</sup></a>&emsp;
+    <a target='_blank'>Yijing Xu<sup>1</sup></a>&emsp;
+    <a target='_blank'>Haoqiang Kang<sup>5</sup></a>&emsp;
+    <a target='_blank'>Ziyan Kuang<sup>12</sup></a>&emsp;
+    <a target='_blank'>Chenhan Yuan<sup>3</sup></a>&emsp;
+    <a target='_blank'>Kailai Yang<sup>3</sup></a>&emsp;
+    <a target='_blank'>Zheheng Luo<sup>3</sup></a>&emsp;
+    <a target='_blank'>Tianlin Zhang<sup>3</sup></a>&emsp;
+    <a target='_blank'>Zhiwei Liu<sup>3</sup></a>&emsp;
+    <a target='_blank'>Guojun Xiong<sup>10</sup></a>&emsp;
+    <a target='_blank'>Zhiyang Deng<sup>9</sup></a>&emsp;
+    <a target='_blank'>Yuechen Jiang<sup>9</sup></a>&emsp;
+    <a target='_blank'>Zhiyuan Yao<sup>9</sup></a>&emsp;
+    <a target='_blank'>Haohang Li<sup>9</sup></a>&emsp;
+    <a target='_blank'>Yangyang Yu<sup>9</sup></a>&emsp;
+    <a target='_blank'>Gang Hu<sup>8</sup></a>&emsp;
+    <a target='_blank'>Jiajia Huang<sup>11</sup></a>&emsp;
+    <a target='_blank'>Xiao-Yang Liu<sup>5</sup></a>&emsp;
+    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>4</sup></a>&emsp;
+    <a target='_blank'>Benyou Wang<sup>6</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>13</sup></a>&emsp;
+    <a target='_blank'>Hao Wang<sup>7</sup></a>&emsp;
+    <a target='_blank'>Min Peng<sup>2*</sup></a>&emsp;
+    <a target='_blank'>Sophia Ananiadou<sup>3</sup></a>&emsp;
+    <a href='' target='_blank'>Jimin Huang<sup>1</sup></a>
 </div>
 <div>
 <div align="left">
-    <sup>1</sup>Wuhan University&emsp;
-    <sup>2</sup>Sun Yat-Sen University&emsp;
-    <sup>3</sup>Sichuan University&emsp;
-    <sup>4</sup>Southwest Jiaotong University&emsp;
-    <sup>5</sup>Yunan University&emsp;
-    <sup>6</sup>University of Florida&emsp;
-    <sup>7</sup>New York University&emsp;
-  <sup>8</sup>ChanceFocus AMC.
+    <sup>1</sup>The Fin AI&emsp;
+    <sup>2</sup>Wuhan University&emsp;
+    <sup>3</sup>The University of Manchester&emsp;
+    <sup>4</sup>University of Florida&emsp;
+    <sup>5</sup>Columbia University&emsp;
+    <sup>6</sup>The Chinese University of Hong Kong, Shenzhen&emsp;
+    <sup>7</sup>Sichuan University&emsp;
+    <sup>8</sup>Yunnan University&emsp;
+    <sup>9</sup>Stevens Institute of Technology&emsp;
+    <sup>10</sup>Stony Brook University&emsp;
+    <sup>11</sup>Nanjin Audit University&emsp;
+    <sup>12</sup>Jiangxi Normal University&emsp;
+    <sup>13</sup>Southwest Jiaotong University
 </div>
 <div align="left">
-    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/C1XnZNK1/Sun-Yat-sen-University-Logo.png' alt='Sun Yat-Sen University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/DfB8jxV1/ynu.png' alt='Yunnan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/vTHJdYxN/NYU-Logo.png' alt='New York University' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/NjKhDkGY/DFAF986-CCD6529-E52-D7830-F180-D-C37-C7-DEE-4340.png' alt='Sichuan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/xTsgsrqN/logo11.png' alt='ChanceFocus AMC Logo' height='100px'>
-</div>
-
-
-
-
------------------
-
-![](https://img.shields.io/badge/pixiu-v0.1-gold)
-![](https://black.readthedocs.io/en/stable/_static/license.svg)
-[![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
-
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
-
-**Disclaimer**
-
-This repository and its contents are provided for **academic and educational purposes only**. None of the material constitutes financial, legal, or investment advice. No warranties, express or implied, are offered regarding the accuracy, completeness, or utility of the content. The authors and contributors are not responsible for any errors, omissions, or any consequences arising from the use of the information herein. Users should exercise their own judgment and consult professionals before making any financial, legal, or investment decisions. The use of the software and information contained in this repository is entirely at the user's own risk.
-
-**By using or accessing the information in this repository, you agree to indemnify, defend, and hold harmless the authors, contributors, and any affiliated organizations or persons from any and all claims or damages.**
-
-
-
-**Checkpoints:** 
-
-- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
-
-**Languages**
-
-- [English](README.md)
-- [Chinese](README.zh.md)
-
-**Evaluations** (More details on FLARE section):
-
-- [FLARE (flare-zh-afqmc)](https://huggingface.co/datasets/ChanceFocus/flare-zh-afqmc)
-- [FLARE (flare-zh-stocka)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stocka)
-- [FLARE (flare-zh-corpus)](https://huggingface.co/datasets/ChanceFocus/flare-zh-corpus)
-- [FLARE (flare-zh-fineval)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fineval)
-- [FLARE (flare-zh-fe)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fe)
-- [FLARE (flare-zh-nl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl)
-- [FLARE (flare-zh-nl2)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl2)
-- [FLARE (flare-zh-nsp)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nsp)
-- [FLARE (flare-zh-re)](https://huggingface.co/datasets/ChanceFocus/flare-zh-re)
-- [FLARE (flare-zh-stockb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stockb)
-- [FLARE (flare-zh-qa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-qa)
-- [FLARE (flare-zh-na)](https://huggingface.co/datasets/ChanceFocus/flare-zh-na)
-- [FLARE (flare-zh-19ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-19ccks)
-- [FLARE (flare-zh-20ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-20ccks)
-- [FLARE (flare-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
-- [FLARE (flare-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
-- [FLARE (flare-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
-- [FLARE (flare-zh-fpb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fpb)
-- [FLARE (flare-zh-fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fiqasa)
-- [FLARE (flare-zh-headlines)](https://huggingface.co/datasets/ChanceFocus/flare-zh-headlines)
-- [FLARE (flare-zh-bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-zh-bigdata)
-- [FLARE (flare-zh-acl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-acl)
-- [FLARE (flare-zh-cikm)](https://huggingface.co/datasets/ChanceFocus/flare-zh-cikm)
-- [FLARE (flare-zh-finqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-finqa)
-- [FLARE (flare-zh-convfinqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-convfinqa)
-
-
-## Overview
-
-**FLARE_ZH** is a cornerstone initiative focusing on the Chinese financial domain, FLARE_ZH aims to bolster the progress, refinement, and assessment of Large Language Models (LLMs) tailored specifically for Chinese financial contexts. As a vital segment of the broader PIXIU endeavor, FLARE_ZH stands as a testament to the commitment in harnessing the capabilities of LLMs, ensuring that financial professionals and enthusiasts in the Chinese-speaking world have top-tier linguistic tools at their disposal.
-
-### Key Features
-
-- **Open resources**: PIXIU openly provides the financial LLM, instruction tuning data, and datasets included in the evaluation benchmark to encourage open research and transparency.
-- **Multi-task**: The instruction tuning data and benchmark in PIXIU cover a diverse set of financial tasks.
-- **Multi-modality**: PIXIU's instruction tuning data and benchmark consist of multi-modality financial data, including time series data from the stock movement prediction task. It covers various types of financial texts, including reports, news articles, tweets, and regulatory filings.
-- **Diversity**: Unlike previous benchmarks focusing mainly on financial NLP tasks, PIXIU's evaluation benchmark includes critical financial prediction tasks aligned with real-world scenarios, making it more challenging.
-
----
-
-## FLARE_ZH: Financial Language Understanding and Prediction Evaluation Benchmark
-
-In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, lince-zero et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction.
-
-### Tasks
-
-| Data                 | Task                            | Raw     | Data Types                       | Modalities        | License          | Paper |
-| -------------------- | ------------------------------- | ------- | -------------------------------- | ----------------- | ---------------- | ----- |
-| AFQMC                | semantic matching               | 38,650  | question data, chat              | text              | Apache-2.0       | [1]   |
-| corpus               | semantic matching               | 120,000 | question data, chat              | text              | Public           | [2]   |
-| stockA               | stock classification            | 14,769  | news, historical prices          | text, time series | Public           | [3]   |
-| Fineval              | multiple-choice                 | 1,115   | financial exam                   | text              | Apache-2.0       | [4]   |
-| NL                   | news classification             | 7,955   | news articles                    | text              | Public           | [5]   |
-| NL2                  | news classification             | 7,955   | news articles                    | text              | Public           | [5]   |
-| NSP                  | negative news judgment          | 4,499   | news, social media text          | text              | Public           | [5]   |
-| RE                   | relationship identification     | 14,973  | news, entity pair                | text              | Public           | [5]   |
-| FE                   | sentiment analysis              | 18,177  | financial social media text      | text              | Public           | [5]   |
-| stockB               | sentiment analysis              | 9,812   | financial social media text      | text              | Apache-2.0       | [6]   |
-| QA                   | question answering              | 22,375  | financial news announcements     | text，table       | Public           | [5]   |
-| NA                   | text summarization              | 32,400  | news articles, announcements     | text              | Public           | [5]   |
-| 19CCKS               | event subject extraction        | 156,834 | financial social media text      | text              | CC BY-SA 4.0     | [7]   |
-| 20CCKS               | event subject extraction        | 372,810 | news、reports                    | text              | CC BY-SA 4.0     | [8]   |
-| 21CCKS               | event causality extraction      | 8,000   | news、reports                    | text              | CC BY-SA 4.0     | [9]   |
-| 22CCKS               | event subject extraction        | 109,555 | news、reports                    | text              | CC BY-SA 4.0     | [10]  |
-| NER                  | named entity recognition        | 1,685   | financial reports                | text              | Public           | [11]  |
-| FPB                  | sentiment analysis              | 4,845   | news                             | text              | MIT license      | [12]  |
-| FIQASA               | sentiment analysis              | 1,173   | news headlines, tweets           | text              | MIT license      | [12]  |
-| Headlines            | news headline classification    | 11,412  | news headlines                   | text              | MIT license      | [12]  |
-| BigData              | stock movement prediction       | 7,164   | tweets, historical prices        | text, time series | MIT license      | [12]  |
-| ACL                  | stock movement prediction       | 27,053  | tweets, historical prices        | text, time series | MIT license      | [12]  |
-| CIKM                 | stock movement prediction       | 4,967   | tweets, historical prices        | text, time series | MIT license      | [12]  |
-| FinQA                | question answering              | 14,900  | earnings reports                 | text, table       | MIT license      | [12]  |
-| ConvFinQA            | multi-turn question answering   | 48,364  | earnings reports                 | text, table       | MIT license      | [12]  |
-
-
-1. Xu L, Hu H, Zhang X, et al. CLUE: A Chinese language understanding evaluation benchmark[J]. arXiv preprint arXiv:2004.05986, 2020.
-2. Jing Chen, Qingcai Chen, Xin Liu, Haijun Yang, Daohe Lu, and Buzhou Tang. 2018. The BQ Corpus: A Large-scale Domain-specific Chinese Corpus For Sentence Semantic Equivalence Identification. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing, pages 4946–4951, Brussels, Belgium. Association for Computational Linguistics.
-3. Jinan Zou, Haiyao Cao, Lingqiao Liu, Yuhao Lin, Ehsan Abbasnejad, and Javen Qinfeng Shi. 2022. Astock: A New Dataset and Automated Stock Trading based on Stock-specific News Analyzing Model. In Proceedings of the Fourth Workshop on Financial Technology and Natural Language Processing (FinNLP), pages 178–186, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics.
-4. Zhang L, Cai W, Liu Z, et al. FinEval: A Chinese Financial Domain Knowledge Evaluation Benchmark for Large Language Models[J]. arxiv preprint arxiv:2308.09975, 2023.
-5. Lu D, Liang J, Xu Y, et al. BBT-Fin: Comprehensive Construction of Chinese Financial Domain Pre-trained Language Model, Corpus and Benchmark[J]. arxiv preprint arxiv:2302.09432, 2023.
-6. https://huggingface.co/datasets/kuroneko5943/stock11
-7. https://www.biendata.xyz/competition/ccks_2019_4/
-8. https://www.biendata.xyz/competition/ccks_2020_4_1/
-9. https://www.biendata.xyz/competition/ccks_2021_task6_2/
-10. https://www.biendata.xyz/competition/ccks2022_eventext/
-11. Jia C, Shi Y, Yang Q, et al. Entity enhanced BERT pre-training for Chinese NER[C]//Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020: 6384-6396.
-12. Xie Q, Han W, Zhang X, et al. PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance[J]. arXiv preprint arXiv:2306.05443, 2023.
-
-### Evaluation
-
-#### Preparation
-##### Locally install
-```bash
-git clone https://github.com/chancefocus/PIXIU.git --recursive
-cd PIXIU
-pip install -r requirements.txt
-cd PIXIU/src/financial-evaluation
-pip install -e .[multilingual]
-```
-##### Docker image
-```bash
-sudo bash scripts/docker_run.sh
-```
-Above command starts a docker container, you can modify `docker_run.sh` to fit your environment. We provide pre-built image by running `sudo docker pull tothemoon/pixiu:latest`
-
-```bash
-docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
-    --network host \
-    --env https_proxy=$https_proxy \
-    --env http_proxy=$http_proxy \
-    --env all_proxy=$all_proxy \
-    --env HF_HOME=$hf_home \
-    -it [--rm] \
-    --name pixiu \
-    -v $pixiu_path:$pixiu_path \
-    -v $hf_home:$hf_home \
-    -v $ssh_pub_key:/root/.ssh/authorized_keys \
-    -w $workdir \
-    $docker_user/pixiu:$tag \
-    [--sshd_port 2201 --cmd "echo 'Hello, world!' && /bin/bash"]
-```
-Arguments explain:
-- `[]` means ignoreable arguments
-- `HF_HOME`: huggingface cache dir
-- `sshd_port`: sshd port of the container, you can run `ssh -i private_key -p $sshd_port root@$ip` to connect to the container, default to 22001
-- `--rm`: remove the container when exit container (ie.`CTRL + D`)
-
-#### Automated Task Assessment
-Before evaluation, please download [BART checkpoint](https://drive.google.com/u/0/uc?id=1_7JfF7KOInb7ZrxKHIigTMR4ChVET01m&export=download) to `src/metrics/BARTScore/bart_score.pth`.
-
-For automated evaluation, please follow these instructions:
-
-1. Huggingface Transformer
-
-   To evaluate a model hosted on the HuggingFace Hub (for instance, finma-7b-full), use this command:
-
-```bash
-python eval.py \
-    --model "hf-causal-llama" \
-    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
-    --tasks "flare_ner,flare_sm_acl,flare_fpb"
-```
-
-More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-evaluation-harness) documentation.
-
-2. Commercial APIs
-
-
-Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
-
-```bash
-export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
-python eval.py \
-    --model gpt-4 \
-    --tasks flare_ner,flare_sm_acl,flare_fpb
-```
-
-
-## License
-
-PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) file.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
-
-
+    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='50px'>&emsp;
+    <img src='https://assets.manchester.ac.uk/corporate/images/design/logo-university-of-manchester.png' alt='Manchester University Logo' height='50px'>&emsp;
+    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='50px'>&emsp;
+    <img src='https://admissions.ucr.edu/sites/default/files/styles/form_preview/public/2020-07/ucr-education-logo-columbia-university.png?itok=-0FD6Ma2' alt='Columbia University Logo' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeMTMkJVT6g36_LN-8qJ4nMvgT3vM5spUHV3ITRYbym1CEg4Af5Shlp5jX2sWtDFtTK9I&usqp=CAU' alt='HK University (shenzhen) Logo' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToJAAiyqxfFuwro5N9Um9TB5LDkiJNKF3hMMQp3pfC0A&s' alt='Sichuan University' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbx3AQWiMhxwOvFb7r1PH-h_i5-b3H9xsGVKnkQwbFlA&s' alt='Yunnan University' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS_o8HItSOTkg5M75N59D6V5u9qg7QYfBa_ITxdfEfwQ&s' alt='Stevens Insititute of Technology' height='50px'>&emsp;
+    <img src='https://www.stonybrook.edu/sbu-brand/_images/2015/10/logo_stacked_vert.jpg' alt='Stony Brook University' height='50px'>&emsp;
+    <img src='https://upload.wikimedia.org/wikipedia/en/9/9c/Nanjing_Audit_University_logo.png' alt='Nanjing Audit University' height='50px'>&emsp;
+    <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Jiangxi_Normal_University.svg/1200px-Jiangxi_Normal_University.svg.png' alt='Jiangxi Normal University' height='50px'>&emsp;jim,yuanl
+    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='50px'>&emsp;</div>
 
 -----------------
 
@@ -244,7 +74,7 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)
 
 **免责声明**
 
@@ -264,37 +94,37 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 - [英文](README.md)
 - [中文](README.zh.md)
 
-**评估** (更多详情，请参阅FLARE部分):
+**评估** (更多详情，请参阅FinBen部分):
 
-- [FLARE (flare-zh-afqmc)](https://huggingface.co/datasets/ChanceFocus/flare-zh-afqmc)
-- [FLARE (flare-zh-stocka)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stocka)
-- [FLARE (flare-zh-corpus)](https://huggingface.co/datasets/ChanceFocus/flare-zh-corpus)
-- [FLARE (flare-zh-fineval)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fineval)
-- [FLARE (flare-zh-fe)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fe)
-- [FLARE (flare-zh-nl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl)
-- [FLARE (flare-zh-nl2)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl2)
-- [FLARE (flare-zh-nsp)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nsp)
-- [FLARE (flare-zh-re)](https://huggingface.co/datasets/ChanceFocus/flare-zh-re)
-- [FLARE (flare-zh-stockb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stockb)
-- [FLARE (flare-zh-qa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-qa)
-- [FLARE (flare-zh-na)](https://huggingface.co/datasets/ChanceFocus/flare-zh-na)
-- [FLARE (flare-zh-19ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-19ccks)
-- [FLARE (flare-zh-20ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-20ccks)
-- [FLARE (flare-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
-- [FLARE (flare-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
-- [FLARE (flare-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
-- [FLARE (flare-zh-fpb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fpb)
-- [FLARE (flare-zh-fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fiqasa)
-- [FLARE (flare-zh-headlines)](https://huggingface.co/datasets/ChanceFocus/flare-zh-headlines)
-- [FLARE (flare-zh-bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-zh-bigdata)
-- [FLARE (flare-zh-acl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-acl)
-- [FLARE (flare-zh-cikm)](https://huggingface.co/datasets/ChanceFocus/flare-zh-cikm)
-- [FLARE (flare-zh-finqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-finqa)
-- [FLARE (flare-zh-convfinqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-convfinqa)
+- [FinBen (FinBen-zh-afqmc)](https://huggingface.co/datasets/ChanceFocus/flare-zh-afqmc)
+- [FinBen (FinBen-zh-stocka)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stocka)
+- [FinBen (FinBen-zh-corpus)](https://huggingface.co/datasets/ChanceFocus/flare-zh-corpus)
+- [FinBen (FinBen-zh-fineval)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fineval)
+- [FinBen (FinBen-zh-fe)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fe)
+- [FinBen (FinBen-zh-nl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl)
+- [FinBen (FinBen-zh-nl2)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl2)
+- [FinBen (FinBen-zh-nsp)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nsp)
+- [FinBen (FinBen-zh-re)](https://huggingface.co/datasets/ChanceFocus/flare-zh-re)
+- [FinBen (FinBen-zh-stockb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stockb)
+- [FinBen (FinBen-zh-qa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-qa)
+- [FinBen (FinBen-zh-na)](https://huggingface.co/datasets/ChanceFocus/flare-zh-na)
+- [FinBen (FinBen-zh-19ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-19ccks)
+- [FinBen (FinBen-zh-20ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-20ccks)
+- [FinBen (FinBen-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
+- [FinBen (FinBen-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
+- [FinBen (FinBen-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
+- [FinBen (FinBen-zh-fpb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fpb)
+- [FinBen (FinBen-zh-fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fiqasa)
+- [FinBen (FinBen-zh-headlines)](https://huggingface.co/datasets/ChanceFocus/flare-zh-headlines)
+- [FinBen (FinBen-zh-bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-zh-bigdata)
+- [FinBen (FinBen-zh-acl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-acl)
+- [FinBen (FinBen-zh-cikm)](https://huggingface.co/datasets/ChanceFocus/flare-zh-cikm)
+- [FinBen (FinBen-zh-finqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-finqa)
+- [FinBen (FinBen-zh-convfinqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-convfinqa)
 
 ## 概述
 
-**FLARE_ZH** 是一项专注于中文金融领域的基石计划，旨在促进专为中文金融环境定制的大型语言模型（LLMs）的进展、完善和评估。FLARE_ZH 是 PIXIU 更大范围工作的一个重要部分，证明了我们在利用 LLMs 能力方面的承诺，确保中文世界的金融专业人士和爱好者拥有顶级的语言工具。
+**FinBen_ZH** 是一项专注于中文金融领域的基石计划，旨在促进专为中文金融环境定制的大型语言模型（LLMs）的进展、完善和评估。FinBen_ZH 是 PIXIU 更大范围工作的一个重要部分，证明了我们在利用 LLMs 能力方面的承诺，确保中文世界的金融专业人士和爱好者拥有顶级的语言工具。
 
 ### 主要特征
 
@@ -305,7 +135,7 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 
 ---
 
-## FLARE_ZH: 金融语言理解和预测评估基准
+## FinBen_ZH: 金融语言理解和预测评估基准
 
 在本节中，我们将提供 FinMA 与其他领先模型（包括 ChatGPT、GPT-4、ince-zero 等）相比的详细性能分析。为了进行分析，我们选择了一系列任务和指标，涵盖了金融自然语言处理和金融预测的各个方面。
 
@@ -424,6 +254,31 @@ python eval.py \
 
 ---
 
+## 引用
+
+如果您在项目中使用了PIXIU，请引用我们的文章。
+
+```
+@misc{xie2023pixiu,
+      title={PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance}, 
+      author={Qianqian Xie and Weiguang Han and Xiao Zhang and Yanzhao Lai and Min Peng and Alejandro Lopez-Lira and Jimin Huang},
+      year={2023},
+      eprint={2306.05443},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+
+@misc{xie2024FinBen,
+      title={The FinBen: An Holistic Financial Benchmark for Large Language Models}, 
+      author={Qianqian Xie and Weiguang Han and Zhengyu Chen and Ruoyu Xiang and Xiao Zhang and Yueru He and Mengxi Xiao and Dong Li and Yongfu Dai and Duanyu Feng and Yijing Xu and Haoqiang Kang and Ziyan Kuang and Chenhan Yuan and Kailai Yang and Zheheng Luo and Tianlin Zhang and Zhiwei Liu and Guojun Xiong and Zhiyang Deng and Yuechen Jiang and Zhiyuan Yao and Haohang Li and Yangyang Yu and Gang Hu and Jiajia Huang and Xiao-Yang Liu and Alejandro Lopez-Lira and Benyou Wang and Yanzhao Lai and Hao Wang and Min Peng and Sophia Ananiadou and Jimin Huang},
+      year={2024},
+      eprint={2402.12659},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+
 
 ## 许可证
 
@@ -431,5 +286,5 @@ PIXIU 采用 [MIT] 许可。有关详细信息，请参阅 [MIT](LICENSE) 文件
 
 ## 星标历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
+![Star History Chart](https://api.star-history.com/svg?repos=The-FinAI/PIXIU&type=Date)
 

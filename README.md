@@ -1,45 +1,72 @@
 <p align="center" width="100%">
 <img src="https://i.postimg.cc/xTpWgq3L/pixiu-logo.png"  width="100%" height="100%">
 </p>
-
 <div>
 <div align="left">
     <a target='_blank'>Qianqian Xie<sup>1</sup></span>&emsp;
-    <a target='_blank'>Weiguang Han<sup>1</sup></span>&emsp;
-    <a target='_blank'>Xiao Zhang<sup>2</sup></a>&emsp;
-    <a target='_blank'>Ruoyu Xiang<sup>7</sup></a>&emsp;
-    <a target='_blank'>Gang Hu<sup>5</sup></a>&emsp;
-    <a target='_blank'>Ke Qin<sup>5</sup></a>&emsp;
-    <a target='_blank'>Duanyu Feng<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yongfu Dai<sup>3</sup></a>&emsp;
-    <a target='_blank'>Hao Wang<sup>3</sup></a>&emsp;
-    <a target='_blank'>Yanzhao Lai<sup>4</sup></a>&emsp;
-    <a target='_blank'>Min Peng<sup>1</sup></a>&emsp;
-    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>6</sup></a>&emsp;
-    <a href='https://jimin.chancefocus.com/' target='_blank'>Jimin Huang*<sup>,8</sup></a>
+    <a target='_blank'>Weiguang Han<sup>2</sup></span>&emsp;
+    <a target='_blank'>Zhengyu Chen<sup>2</sup></span>&emsp;
+    <a target='_blank'>Ruoyu Xiang<sup>1</sup></a>&emsp;
+    <a target='_blank'>Xiao Zhang<sup>1</sup></a>&emsp;
+    <a target='_blank'>Yueru He<sup>1</sup></a>&emsp;
+    <a target='_blank'>Mengxi Xiao<sup>2</sup></a>&emsp;
+    <a target='_blank'>Dong Li<sup>2</sup></a>&emsp;
+    <a target='_blank'>Yongfu Dai<sup>7</sup></a>&emsp;
+    <a target='_blank'>Duanyu Feng<sup>7</sup></a>&emsp;
+    <a target='_blank'>Yijing Xu<sup>1</sup></a>&emsp;
+    <a target='_blank'>Haoqiang Kang<sup>5</sup></a>&emsp;
+    <a target='_blank'>Ziyan Kuang<sup>12</sup></a>&emsp;
+    <a target='_blank'>Chenhan Yuan<sup>3</sup></a>&emsp;
+    <a target='_blank'>Kailai Yang<sup>3</sup></a>&emsp;
+    <a target='_blank'>Zheheng Luo<sup>3</sup></a>&emsp;
+    <a target='_blank'>Tianlin Zhang<sup>3</sup></a>&emsp;
+    <a target='_blank'>Zhiwei Liu<sup>3</sup></a>&emsp;
+    <a target='_blank'>Guojun Xiong<sup>10</sup></a>&emsp;
+    <a target='_blank'>Zhiyang Deng<sup>9</sup></a>&emsp;
+    <a target='_blank'>Yuechen Jiang<sup>9</sup></a>&emsp;
+    <a target='_blank'>Zhiyuan Yao<sup>9</sup></a>&emsp;
+    <a target='_blank'>Haohang Li<sup>9</sup></a>&emsp;
+    <a target='_blank'>Yangyang Yu<sup>9</sup></a>&emsp;
+    <a target='_blank'>Gang Hu<sup>8</sup></a>&emsp;
+    <a target='_blank'>Jiajia Huang<sup>11</sup></a>&emsp;
+    <a target='_blank'>Xiao-Yang Liu<sup>5</sup></a>&emsp;
+    <a href='https://warrington.ufl.edu/directory/person/12693/' target='_blank'>Alejandro Lopez-Lira<sup>4</sup></a>&emsp;
+    <a target='_blank'>Benyou Wang<sup>6</sup></a>&emsp;
+    <a target='_blank'>Yanzhao Lai<sup>13</sup></a>&emsp;
+    <a target='_blank'>Hao Wang<sup>7</sup></a>&emsp;
+    <a target='_blank'>Min Peng<sup>2*</sup></a>&emsp;
+    <a target='_blank'>Sophia Ananiadou<sup>3</sup></a>&emsp;
+    <a href='' target='_blank'>Jimin Huang<sup>1</sup></a>
 </div>
 <div>
 <div align="left">
-    <sup>1</sup>Wuhan University&emsp;
-    <sup>2</sup>Sun Yat-Sen University&emsp;
-    <sup>3</sup>Sichuan University&emsp;
-    <sup>4</sup>Southwest Jiaotong University&emsp;
-    <sup>5</sup>Yunan University&emsp;
-    <sup>6</sup>University of Florida&emsp;
-    <sup>7</sup>New York University&emsp;
-  <sup>8</sup>ChanceFocus AMC.
+    <sup>1</sup>The Fin AI&emsp;
+    <sup>2</sup>Wuhan University&emsp;
+    <sup>3</sup>The University of Manchester&emsp;
+    <sup>4</sup>University of Florida&emsp;
+    <sup>5</sup>Columbia University&emsp;
+    <sup>6</sup>The Chinese University of Hong Kong, Shenzhen&emsp;
+    <sup>7</sup>Sichuan University&emsp;
+    <sup>8</sup>Yunnan University&emsp;
+    <sup>9</sup>Stevens Institute of Technology&emsp;
+    <sup>10</sup>Stony Brook University&emsp;
+    <sup>11</sup>Nanjin Audit University&emsp;
+    <sup>12</sup>Jiangxi Normal University&emsp;
+    <sup>13</sup>Southwest Jiaotong University
 </div>
 <div align="left">
-    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/C1XnZNK1/Sun-Yat-sen-University-Logo.png' alt='Sun Yat-Sen University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/DfB8jxV1/ynu.png' alt='Yunnan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/vTHJdYxN/NYU-Logo.png' alt='New York University' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/NjKhDkGY/DFAF986-CCD6529-E52-D7830-F180-D-C37-C7-DEE-4340.png' alt='Sichuan University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='100px'>&emsp;
-    <img src='https://i.postimg.cc/xTsgsrqN/logo11.png' alt='ChanceFocus AMC Logo' height='100px'>
-</div>
-
+    <img src='https://i.postimg.cc/CLtkBwz7/57-EDDD9-FB0-DF712-F3-AB627163-C2-1-EF15655-13-FCA.png' alt='Wuhan University Logo' height='50px'>&emsp;
+    <img src='https://assets.manchester.ac.uk/corporate/images/design/logo-university-of-manchester.png' alt='Manchester University Logo' height='50px'>&emsp;
+    <img src='https://i.postimg.cc/XY1s2RHD/University-of-Florida-Logo-1536x864.jpg' alt='University of Florida Logo' height='50px'>&emsp;
+    <img src='https://admissions.ucr.edu/sites/default/files/styles/form_preview/public/2020-07/ucr-education-logo-columbia-university.png?itok=-0FD6Ma2' alt='Columbia University Logo' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeMTMkJVT6g36_LN-8qJ4nMvgT3vM5spUHV3ITRYbym1CEg4Af5Shlp5jX2sWtDFtTK9I&usqp=CAU' alt='HK University (shenzhen) Logo' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToJAAiyqxfFuwro5N9Um9TB5LDkiJNKF3hMMQp3pfC0A&s' alt='Sichuan University' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbx3AQWiMhxwOvFb7r1PH-h_i5-b3H9xsGVKnkQwbFlA&s' alt='Yunnan University' height='50px'>&emsp;
+    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS_o8HItSOTkg5M75N59D6V5u9qg7QYfBa_ITxdfEfwQ&s' alt='Stevens Insititute of Technology' height='50px'>&emsp;
+    <img src='https://www.stonybrook.edu/sbu-brand/_images/2015/10/logo_stacked_vert.jpg' alt='Stony Brook University' height='50px'>&emsp;
+    <img src='https://upload.wikimedia.org/wikipedia/en/9/9c/Nanjing_Audit_University_logo.png' alt='Nanjing Audit University' height='50px'>&emsp;
+    <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Jiangxi_Normal_University.svg/1200px-Jiangxi_Normal_University.svg.png' alt='Jiangxi Normal University' height='50px'>&emsp;jim,yuanl
+    <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='50px'>&emsp;</div>
 
 
 
@@ -49,7 +76,7 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FLARE Leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)
 
 **Disclaimer**
 
@@ -63,7 +90,11 @@ This repository and its contents are provided for **academic and educational pur
 
 **📢 Update (Date: 10-08-2023)**
 
-🌏 We're proud to share that the enhanced versions of FLARE, which now support both Chinese and Spanish!
+🌏 We're proud to share that the enhanced versions of FinBen, which now support both Chinese and Spanish!
+
+**📢 Update (Date: 02-20-2024)**
+
+🌏 We're delighted to share that our paper, "The FinBen: An Holistic Financial Benchmark for Large Language Models", is now available at [FinBen](https://arxiv.org/abs/2402.12659).
 
 **Checkpoints:** 
 
@@ -78,65 +109,65 @@ This repository and its contents are provided for **academic and educational pur
 
 **Evaluations**:
 
-- [English Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-english-6529286a147d9119a64689c0) (More details on FLARE section)
+- [English Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-english-6529286a147d9119a64689c0) (More details on FinBen section)
 - [Spanish Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-spanish-652929c34f8fe1bea9cd5a66)
 - [Chinese Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evalution-datasets-chinese-65292963a8cd8847517204a2)
 
 > Sentiment Analysis
 
-- [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
-- [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
-- [FOMC (flare_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [SemEval-2017 Task5 (flare_tsa)](https://huggingface.co/datasets/ChanceFocus/flare-tsa)
+- [FPB (FinBen_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
+- [FIQASA (FinBen_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
+- [FOMC (FinBen_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
+- [SemEval-2017 Task5 (FinBen_tsa)](https://huggingface.co/datasets/ChanceFocus/flare-tsa)
 
 > Classification
 
-- [Headlines (flare_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
-- [FinArg ECC Task1 (flare_finarg_ecc_auc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-auc)
-- [FinArg ECC Task2 (flare_finarg_ecc_arc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-arc)
-- [CFA (flare_cfa)](https://huggingface.co/datasets/ChanceFocus/flare-cfa)
-- [MultiFin EN (flare_multifin_en)](https://huggingface.co/datasets/ChanceFocus/flare-multifin-en)
-- [M&A (flare_ma)](https://huggingface.co/datasets/ChanceFocus/flare-ma)
-- [MLESG EN (flare_mlesg)](https://huggingface.co/datasets/ChanceFocus/flare-mlesg)
+- [Headlines (FinBen_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
+- [FinArg ECC Task1 (FinBen_finarg_ecc_auc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-auc)
+- [FinArg ECC Task2 (FinBen_finarg_ecc_arc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-arc)
+- [CFA (FinBen_cfa)](https://huggingface.co/datasets/ChanceFocus/flare-cfa)
+- [MultiFin EN (FinBen_multifin_en)](https://huggingface.co/datasets/ChanceFocus/flare-multifin-en)
+- [M&A (FinBen_ma)](https://huggingface.co/datasets/ChanceFocus/flare-ma)
+- [MLESG EN (FinBen_mlesg)](https://huggingface.co/datasets/ChanceFocus/flare-mlesg)
 
 > Knowledge Extraction
 
-- [NER (flare_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
+- [NER (FinBen_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
 
-- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
-- [FinRED (flare_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)
-- [FinCausal20 Task1 (flare_causal20_sc)](https://huggingface.co/datasets/ChanceFocus/flare-causal20_sc)
-- [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)
+- [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
+- [FinRED (FinBen_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)
+- [FinCausal20 Task1 (FinBen_causal20_sc)](https://huggingface.co/datasets/ChanceFocus/flare-causal20_sc)
+- [FinCausal20 Task2 (FinBen_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)
 
 > Number Understanding
 
-- [FinQA (flare_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
-- [TATQA (flare_tatqa)](https://huggingface.co/datasets/ChanceFocus/flare-tatqa)
-- [FNXL (flare_fnxl)](https://huggingface.co/datasets/ChanceFocus/flare-fnxl)
-- [FSRL (flare_fsrl)](https://huggingface.co/datasets/ChanceFocus/flare-fsrl)
+- [FinQA (FinBen_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
+- [TATQA (FinBen_tatqa)](https://huggingface.co/datasets/ChanceFocus/flare-tatqa)
+- [FNXL (FinBen_fnxl)](https://huggingface.co/datasets/ChanceFocus/flare-fnxl)
+- [FSRL (FinBen_fsrl)](https://huggingface.co/datasets/ChanceFocus/flare-fsrl)
 
 > Text Summarization
 
-- [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
-- [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
+- [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
+- [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
 
 > Credit Scoring
 
-- [German (flare_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
-- [Australian (flare_australian)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
-- [Lendingclub (flare_cra_lendingclub)](https://huggingface.co/datasets/daishen/cra-lendingclub)
-- [Credit Card Fraud (flare_cra_ccf)](https://huggingface.co/datasets/daishen/cra-ccf)
-- [ccFraud (flare_cra_ccfraud)](https://huggingface.co/datasets/daishen/cra-ccfraud)
-- [Polish (flare_cra_polish)](https://huggingface.co/datasets/daishen/cra-polish)
-- [Taiwan Economic Journal (flare_cra_taiwan)](https://huggingface.co/datasets/daishen/cra-taiwan)
-- [PortoSeguro (flare_cra_portoseguro)](https://huggingface.co/datasets/daishen/cra-portoseguro)
-- [Travle Insurance (flare_cra_travelinsurance)](https://huggingface.co/datasets/daishen/cra-travelinsurance) 
+- [German (FinBen_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
+- [Australian (FinBen_australian)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
+- [Lendingclub (FinBen_cra_lendingclub)](https://huggingface.co/datasets/daishen/cra-lendingclub)
+- [Credit Card Fraud (FinBen_cra_ccf)](https://huggingface.co/datasets/daishen/cra-ccf)
+- [ccFraud (FinBen_cra_ccfraud)](https://huggingface.co/datasets/daishen/cra-ccfraud)
+- [Polish (FinBen_cra_polish)](https://huggingface.co/datasets/daishen/cra-polish)
+- [Taiwan Economic Journal (FinBen_cra_taiwan)](https://huggingface.co/datasets/daishen/cra-taiwan)
+- [PortoSeguro (FinBen_cra_portoseguro)](https://huggingface.co/datasets/daishen/cra-portoseguro)
+- [Travle Insurance (FinBen_cra_travelinsurance)](https://huggingface.co/datasets/daishen/cra-travelinsurance) 
 
 > Forecasting
 
-- [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
-- [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
-- [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
+- [BigData22 for Stock Movement (FinBen_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
+- [ACL18 for Stock Movement (FinBen_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
+- [CIKM18 for Stock Movement (FinBen_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
 
 ## Overview
 
@@ -146,7 +177,7 @@ Welcome to the **PIXIU** project! This project is designed to support the develo
 
 The repository is organized into several key components, each serving a unique purpose in the financial NLP pipeline:
 
-- **FLARE**: Our Financial Language Understanding and Prediction Evaluation Benchmark. FLARE serves as the evaluation suite for financial LLMs, with a focus on understanding and prediction tasks across various financial contexts.
+- **FinBen**: Our Financial Language Understanding and Prediction Evaluation Benchmark. FinBen serves as the evaluation suite for financial LLMs, with a focus on understanding and prediction tasks across various financial contexts.
 - **FIT**: Our Financial Instruction Dataset. FIT is a multi-task and multi-modal instruction dataset specifically tailored for financial tasks. It serves as the training ground for fine-tuning LLMs for these tasks.
 
 - **FinMA**: Our Financial Large Language Model (LLM). FinMA is the core of our project, providing the learning and prediction power for our financial tasks.
@@ -161,9 +192,9 @@ The repository is organized into several key components, each serving a unique p
 
 ---
 
-## FLARE 2.0: Financial Language Understanding and Prediction Evaluation Benchmark
+## FinBen 2.0: Financial Language Understanding and Prediction Evaluation Benchmark
 
-In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FLARE can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/FLARE)!
+In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FinBen can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)!
 
 ### Tasks
 
@@ -326,7 +357,7 @@ python data/*/evaluate.py
 
 ### Create new tasks
 
-Creating a new task for FLARE involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new task using the FLARE framework.
+Creating a new task for FinBen involves creating a Huggingface dataset and implementing the task in a Python file. This guide walks you through each step of setting up a new task using the FinBen framework.
 
 #### Creating your dataset in Huggingface
 
@@ -347,22 +378,22 @@ In this format:
 
 For **Multi-turn** tasks (such as )
 
-For **Classification** tasks (such as [FPB (flare_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)), additional keys should be defined:
+For **Classification** tasks (such as [FPB (FinBen_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)), additional keys should be defined:
 
 - `choices`: Set of labels
 - `gold`: Index of the correct label in choices (Start from 0)
 
-For **Sequential Labeling** tasks (such as [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)), additional keys should be defined:
+For **Sequential Labeling** tasks (such as [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)), additional keys should be defined:
 
 - `label`: List of token labels
 
 - `token`: List of tokens
 
-For **Extractive Summarization** tasks (such as [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
+For **Extractive Summarization** tasks (such as [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
 
 - `label`: List of sentence labels
 
-For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)), no additional keys should be defined
+For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)), no additional keys should be defined
 
 #### Implementing the task
 
@@ -370,10 +401,10 @@ Once your dataset is ready, you can start implementing your task. Your task shou
 
 To cater to a range of tasks, we offer several specialized base classes, including `Classification`, `SequentialLabeling`, `RelationExtraction`, `ExtractiveSummarization`, `AbstractiveSummarization` and `QA`.
 
-For instance, if you are embarking on a classification task, you can directly leverage our `Classification` base class. This class allows for efficient and intuitive task creation. To better demonstrate this, let's delve into an example of crafting a task named FLARE-FPB using the `Classification` base class:
+For instance, if you are embarking on a classification task, you can directly leverage our `Classification` base class. This class allows for efficient and intuitive task creation. To better demonstrate this, let's delve into an example of crafting a task named FinBen-FPB using the `Classification` base class:
 
 ```python
-class FlareFPB(Classification):
+class flareFPB(Classification):
     DATASET_PATH = "flare-fpb"
 ```
 
@@ -513,6 +544,15 @@ If you use PIXIU in your work, please cite our paper.
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
+
+@misc{xie2024FinBen,
+      title={The FinBen: An Holistic Financial Benchmark for Large Language Models}, 
+      author={Qianqian Xie and Weiguang Han and Zhengyu Chen and Ruoyu Xiang and Xiao Zhang and Yueru He and Mengxi Xiao and Dong Li and Yongfu Dai and Duanyu Feng and Yijing Xu and Haoqiang Kang and Ziyan Kuang and Chenhan Yuan and Kailai Yang and Zheheng Luo and Tianlin Zhang and Zhiwei Liu and Guojun Xiong and Zhiyang Deng and Yuechen Jiang and Zhiyuan Yao and Haohang Li and Yangyang Yu and Gang Hu and Jiajia Huang and Xiao-Yang Liu and Alejandro Lopez-Lira and Benyou Wang and Yanzhao Lai and Hao Wang and Min Peng and Sophia Ananiadou and Jimin Huang},
+      year={2024},
+      eprint={2402.12659},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
 
 ## License
@@ -521,5 +561,5 @@ PIXIU is licensed under [MIT]. For more details, please see the [MIT](LICENSE) f
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=chancefocus/pixiu&type=Date)](https://star-history.com/#chancefocus/pixiu&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=The-FinAI/PIXIU&type=Date)](https://star-history.com/#The-FinAI/PIXIU&Date)
 
