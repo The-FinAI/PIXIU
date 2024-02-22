@@ -38,9 +38,7 @@
     <a target='_blank'>Sophia Ananiadou<sup>3</sup></a>&emsp;
     <a href='' target='_blank'>Jimin Huang<sup>1</sup></a>
 </div>
-
-
-
+<hr />
 <div>
 <div align="left">
     <sup>1</sup>The Fin AI&emsp;
@@ -70,6 +68,7 @@
     <img src='https://upload.wikimedia.org/wikipedia/en/9/9c/Nanjing_Audit_University_logo.png' alt='Nanjing Audit University' height='50px'>&emsp;
     <img src='https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Jiangxi_Normal_University.svg/1200px-Jiangxi_Normal_University.svg.png' alt='Jiangxi Normal University' height='50px'>&emsp;
     <img src='https://i.postimg.cc/k5WpYj0r/SWJTULogo.png' alt='Southwest Jiaotong University Logo' height='50px'>&emsp;</div>
+
 
 
 -----------------
