@@ -47,6 +47,10 @@ TASK_REGISTRY = {
     "flare_sm_cikm": flare.StockMovementCIKM,
     "flare_en_fintern": flare.FINTERM,
     "flare_en_acronym": flare.ACRONYM,
+    "flare_mt_idiom": flare.MT_idiom,
+    "flare_mt_stencepair": flare.MT_stencepair,
+    "flare_mt_tense": flare.MT_tense,
+    "flare_mt_zpt": flare.MT_zpt,
     **flare.SM_TASKS,
 }
 
