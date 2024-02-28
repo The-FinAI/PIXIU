@@ -45,7 +45,7 @@ TASK_REGISTRY = {
     "flare_sm_bigdata": flare.StockMovementBigData,
     "flare_sm_acl": flare.StockMovementACL,
     "flare_sm_cikm": flare.StockMovementCIKM,
-    "flare_en_fintern": flare.FINTERM,
+    "flare_en_finterm": flare.FINTERM,
     "flare_en_acronym": flare.ACRONYM,
     "flare_mt_idiom": flare.MT_idiom,
     "flare_mt_stencepair": flare.MT_stencepair,
