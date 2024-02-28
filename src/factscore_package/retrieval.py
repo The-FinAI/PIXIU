@@ -44,7 +44,7 @@ class DocDB(object):
 
     def build_db(self, db_path, data_path):
         from transformers import RobertaTokenizer
-        tokenizer = RobertaTokenizer.from_pretrained("/data/chenzhengyu/my_belle/base_models/PIXIU2/roberta-large")
+        tokenizer = RobertaTokenizer.from_pretrained("roberta-large")
 
         titles = set()
         output_lines = []
