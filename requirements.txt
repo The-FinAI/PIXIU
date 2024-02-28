@@ -8,5 +8,9 @@ pandas
 seqeval
 numpy
 evaluate
+openai
 rank_bm25
 spacy
+sentence_transformers
+src/factscore_package/en_core_web_sm-3.7.1.tar.gz
+vllm==0.2.7

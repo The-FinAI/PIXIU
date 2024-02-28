@@ -2,7 +2,7 @@
 FLARE
 """
 from lm_eval.base import Task, rf
-from lm_eval.metrics import mean
+from lm_eval.metrics import mean, bleu, chrf, ter
 import numpy as np
 from .utils import process_text
 from .zhutils import process_zhtext
@@ -13,6 +13,7 @@ import evaluate
 import re
 from factscore_package.factscorer import FactScorer
 import os
+#from comet import download_model, load_from_checkpoint
 
 _CITATION = """
 @misc{xie2023pixiu,
