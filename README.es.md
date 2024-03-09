@@ -99,12 +99,12 @@ Este repositorio y su contenido se proporcionan **únicamente con fines académi
 
 **Evaluaciones** (más detalles en la sección FinBen):
 
-- [FinBen (FinBen-es-financees)](https://huggingface.co/datasets/ChanceFocus/flare-es-financees)
-- [FinBen (FinBen-es-tsa)](https://huggingface.co/datasets/ChanceFocus/flare-es-tsa)
-- [FinBen (FinBen-es-fns)](https://huggingface.co/datasets/ChanceFocus/flare-es-fns)
-- [FinBen (FinBen-es-efpa)](https://huggingface.co/datasets/ChanceFocus/flare-es-efpa)
-- [FinBen (FinBen-es-efp)](https://huggingface.co/datasets/ChanceFocus/flare-es-efp)
-- [FinBen (FinBen-es-multifin)](https://huggingface.co/datasets/ChanceFocus/flare-es-multifin)
+- [flare (flare-es-financees)](https://huggingface.co/datasets/TheFinAI/flare-es-financees)
+- [flare (flare-es-tsa)](https://huggingface.co/datasets/TheFinAI/flare-es-tsa)
+- [flare (flare-es-fns)](https://huggingface.co/datasets/TheFinAI/flare-es-fns)
+- [flare (flare-es-efpa)](https://huggingface.co/datasets/TheFinAI/flare-es-efpa)
+- [flare (flare-es-efp)](https://huggingface.co/datasets/TheFinAI/flare-es-efp)
+- [flare (flare-es-multifin)](https://huggingface.co/datasets/TheFinAI/flare-es-multifin)
 
 ## Descripción general
 
@@ -145,7 +145,7 @@ En esta sección, proporcionamos un análisis de rendimiento detallado de FinMA 
 #### Preparación
 ##### Instalación local
 ```bash
-git clone https://github.com/chancefocus/PIXIU.git --recursive
+git clone https://github.com/TheFinAI/PIXIU.git --recursive
 cd PIXIU
 pip install -r requirements.txt
 cd PIXIU/src/financial-evaluation

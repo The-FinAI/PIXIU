@@ -111,65 +111,64 @@ This repository and its contents are provided for **academic and educational pur
 
 **Evaluations**:
 
-- [English Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-english-6529286a147d9119a64689c0) (More details on FinBen section)
-- [Spanish Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-spanish-652929c34f8fe1bea9cd5a66)
-- [Chinese Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evalution-datasets-chinese-65292963a8cd8847517204a2)
+- [English Evaluation Datasets](https://huggingface.co/collections/TheFinAI/english-evaluation-dataset-658f515911f68f12ea193194) (More details on FinBen section)
+- [Spanish Evaluation Datasets](https://huggingface.co/collections/TheFinAI/spanish-evaluation-datasets-65e5855900680b19bc83e03d)
+- [Chinese Evaluation Datasets](https://huggingface.co/collections/TheFinAI/chinese-evaluation-datasets-65e5851af7daaa71c1c59902)
 
 > Sentiment Analysis
 
-- [FPB (FinBen_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
-- [FIQASA (FinBen_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
-- [FOMC (FinBen_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [SemEval-2017 Task5 (FinBen_tsa)](https://huggingface.co/datasets/ChanceFocus/flare-tsa)
+- [FPB (en_fpb)](https://huggingface.co/datasets/TheFinAI/en-fpb)
+- [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/TheFinAI/en-fpb)
+- [FOMC (flare_fomc)](https://huggingface.co/datasets/TheFinAI/flare-fomc)
+- [SemEval-2017 Task5 (flare_tsa)](https://huggingface.co/datasets/TheFinAI/flare-tsa)
 
 > Classification
 
-- [Headlines (FinBen_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
-- [FinArg ECC Task1 (FinBen_finarg_ecc_auc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-auc)
-- [FinArg ECC Task2 (FinBen_finarg_ecc_arc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-arc)
-- [CFA (FinBen_cfa)](https://huggingface.co/datasets/ChanceFocus/flare-cfa)
-- [MultiFin EN (FinBen_multifin_en)](https://huggingface.co/datasets/ChanceFocus/flare-multifin-en)
-- [M&A (FinBen_ma)](https://huggingface.co/datasets/ChanceFocus/flare-ma)
-- [MLESG EN (FinBen_mlesg)](https://huggingface.co/datasets/ChanceFocus/flare-mlesg)
+- [Headlines (flare_headlines)](https://huggingface.co/datasets/TheFinAI/flare-headlines)
+- [FinArg ECC Task1 (flare_finarg_ecc_auc)](https://huggingface.co/datasets/TheFinAI/flare-finarg-ecc-auc)
+- [FinArg ECC Task2 (flare_finarg_ecc_arc)](https://huggingface.co/datasets/TheFinAI/flare-finarg-ecc-arc)
+- [CFA (flare_cfa)](https://huggingface.co/datasets/TheFinAI/flare-finarg-ecc-arc)
+- [MultiFin EN (flare_multifin_en)](https://huggingface.co/datasets/TheFinAI/flare-multifin-en)
+- [M&A (flare_ma)](https://huggingface.co/datasets/TheFinAI/flare-ma)
+- [MLESG EN (flare_mlesg)](https://huggingface.co/datasets/TheFinAI/flare-mlesg)
 
 > Knowledge Extraction
 
-- [NER (FinBen_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
-
-- [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
-- [FinRED (FinBen_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)
-- [FinCausal20 Task1 (FinBen_causal20_sc)](https://huggingface.co/datasets/ChanceFocus/flare-causal20_sc)
-- [FinCausal20 Task2 (FinBen_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)
+- [NER (flare_ner)](https://huggingface.co/datasets/TheFinAI/flare-ner)
+- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/TheFinAI/flare-finer-ord)
+- [FinRED (flare_finred)](https://huggingface.co/datasets/TheFinAI/flare-finred)
+- [FinCausal20 Task1 (flare_causal20_sc)](https://huggingface.co/datasets/TheFinAI/flare-causal20-sc)
+- [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/TheFinAI/flare-cd)
 
 > Number Understanding
 
-- [FinQA (FinBen_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
-- [TATQA (FinBen_tatqa)](https://huggingface.co/datasets/ChanceFocus/flare-tatqa)
-- [FNXL (FinBen_fnxl)](https://huggingface.co/datasets/ChanceFocus/flare-fnxl)
-- [FSRL (FinBen_fsrl)](https://huggingface.co/datasets/ChanceFocus/flare-fsrl)
+- [FinQA (flare_finqa)](https://huggingface.co/datasets/TheFinAI/flare-finqa)
+- [TATQA (flare_tatqa)](https://huggingface.co/datasets/TheFinAI/flare-tatqa)
+- [FNXL (flare_fnxl)](https://huggingface.co/datasets/TheFinAI/flare-fnxl)
+- [FSRL (flare_fsrl)](https://huggingface.co/datasets/TheFinAI/flare-fsrl)
 
 > Text Summarization
 
-- [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
-- [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
+- [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/TheFinAI/flare-ectsum)
+- [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/TheFinAI/flare-edtsum)
 
 > Credit Scoring
 
-- [German (FinBen_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
-- [Australian (FinBen_australian)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
-- [Lendingclub (FinBen_cra_lendingclub)](https://huggingface.co/datasets/daishen/cra-lendingclub)
-- [Credit Card Fraud (FinBen_cra_ccf)](https://huggingface.co/datasets/daishen/cra-ccf)
-- [ccFraud (FinBen_cra_ccfraud)](https://huggingface.co/datasets/daishen/cra-ccfraud)
-- [Polish (FinBen_cra_polish)](https://huggingface.co/datasets/daishen/cra-polish)
-- [Taiwan Economic Journal (FinBen_cra_taiwan)](https://huggingface.co/datasets/daishen/cra-taiwan)
-- [PortoSeguro (FinBen_cra_portoseguro)](https://huggingface.co/datasets/daishen/cra-portoseguro)
-- [Travle Insurance (FinBen_cra_travelinsurance)](https://huggingface.co/datasets/daishen/cra-travelinsurance) 
+- [German (flare_german)](https://huggingface.co/datasets/TheFinAI/flare-german)
+- [Australian (flare_australian)](https://huggingface.co/datasets/TheFinAI/flare-australian)
+- [Lendingclub (flare_cra_lendingclub)](https://huggingface.co/datasets/daishen/cra-lendingclub)
+- [Credit Card Fraud (flare_cra_ccf)](https://huggingface.co/datasets/daishen/cra-ccf)
+- [ccFraud (flare_cra_ccfraud)](https://huggingface.co/datasets/daishen/cra-ccfraud)
+- [Polish (flare_cra_polish)](https://huggingface.co/datasets/daishen/cra-polish)
+- [Taiwan Economic Journal (flare_cra_taiwan)](https://huggingface.co/datasets/daishen/cra-taiwan)
+- [PortoSeguro (flare_cra_portoseguro)](https://huggingface.co/datasets/daishen/cra-portoseguro)
+- [Travle Insurance (flare_cra_travelinsurance)](https://huggingface.co/datasets/daishen/cra-travelinsurance) 
 
 > Forecasting
 
-- [BigData22 for Stock Movement (FinBen_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
-- [ACL18 for Stock Movement (FinBen_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
-- [CIKM18 for Stock Movement (FinBen_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
+- [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/TheFinAI/flare-sm-bigdata)
+- [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/TheFinAI/flare-sm-acl)
+- [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/TheFinAI/flare-sm-cikm)
 
 ## Overview
 
@@ -196,7 +195,7 @@ The repository is organized into several key components, each serving a unique p
 
 ## FinBen 2.0: Financial Language Understanding and Prediction Evaluation Benchmark
 
-In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FinBen can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)!
+In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FinBen can be found on our [leaderboard](https://huggingface.co/spaces/TheFinAI/flare)!
 
 ### Tasks
 
@@ -275,9 +274,10 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 ### Evaluation
 
 #### Preparation
+
 ##### Locally install
 ```bash
-git clone https://github.com/chancefocus/PIXIU.git --recursive
+git clone https://github.com/The-FinAI/PIXIU.git --recursive
 cd PIXIU
 pip install -r requirements.txt
 cd PIXIU/src/financial-evaluation
