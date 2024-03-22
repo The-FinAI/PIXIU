@@ -78,7 +78,7 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/TheFinAI/flare)
 
 **免责声明**
 
@@ -91,40 +91,60 @@
 
 **检查点:** 
 
-- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
+- [FinMA v0.1 (Full 7B version)](https://huggingface.co/TheFinAI/finma-7b-full)
 
 **语言**
 
 - [英文](README.md)
 - [中文](README.zh.md)
+- [西班牙语](README.es.md)
+
+**论文**
+
+- [PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance](https://arxiv.org/abs/2306.05443)
+- [The FinBen: An Holistic Financial Benchmark for Large Language Models](https://arxiv.org/abs/2402.12659)
+- [No Language is an Island: Unifying Chinese and English in Financial Large Language Models, Instruction Data, and Benchmarks](https://arxiv.org/abs/2403.06249)
+- [Dólares or Dollars? Unraveling the Bilingual Prowess of Financial LLMs Between Spanish and English](https://arxiv.org/abs/2402.07405)
 
 **评估** (更多详情，请参阅FinBen部分):
 
-- [FinBen (FinBen-zh-afqmc)](https://huggingface.co/datasets/ChanceFocus/flare-zh-afqmc)
-- [FinBen (FinBen-zh-stocka)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stocka)
-- [FinBen (FinBen-zh-corpus)](https://huggingface.co/datasets/ChanceFocus/flare-zh-corpus)
-- [FinBen (FinBen-zh-fineval)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fineval)
-- [FinBen (FinBen-zh-fe)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fe)
-- [FinBen (FinBen-zh-nl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl)
-- [FinBen (FinBen-zh-nl2)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nl2)
-- [FinBen (FinBen-zh-nsp)](https://huggingface.co/datasets/ChanceFocus/flare-zh-nsp)
-- [FinBen (FinBen-zh-re)](https://huggingface.co/datasets/ChanceFocus/flare-zh-re)
-- [FinBen (FinBen-zh-stockb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-stockb)
-- [FinBen (FinBen-zh-qa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-qa)
-- [FinBen (FinBen-zh-na)](https://huggingface.co/datasets/ChanceFocus/flare-zh-na)
-- [FinBen (FinBen-zh-19ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-19ccks)
-- [FinBen (FinBen-zh-20ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-20ccks)
-- [FinBen (FinBen-zh-21ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-21ccks)
-- [FinBen (FinBen-zh-22ccks)](https://huggingface.co/datasets/ChanceFocus/flare-zh-22ccks)
-- [FinBen (FinBen-zh-ner)](https://huggingface.co/datasets/ChanceFocus/flare-zh-ner)
-- [FinBen (FinBen-zh-fpb)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fpb)
-- [FinBen (FinBen-zh-fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-fiqasa)
-- [FinBen (FinBen-zh-headlines)](https://huggingface.co/datasets/ChanceFocus/flare-zh-headlines)
-- [FinBen (FinBen-zh-bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-zh-bigdata)
-- [FinBen (FinBen-zh-acl)](https://huggingface.co/datasets/ChanceFocus/flare-zh-acl)
-- [FinBen (FinBen-zh-cikm)](https://huggingface.co/datasets/ChanceFocus/flare-zh-cikm)
-- [FinBen (FinBen-zh-finqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-finqa)
-- [FinBen (FinBen-zh-convfinqa)](https://huggingface.co/datasets/ChanceFocus/flare-zh-convfinqa)
+- [flare (flare-zh-afqmc)](https://huggingface.co/datasets/TheFinAI/flare-zh-afqmc)
+
+- [flare (flare-zh-stocka)](https://huggingface.co/datasets/TheFinAI/flare-zh-stocka)
+
+- [flare (flare-zh-corpus)](https://huggingface.co/datasets/TheFinAI/flare-zh-corpus)
+
+- [flare (flare-zh-fineval)](https://huggingface.co/datasets/TheFinAI/flare-zh-fineval)
+
+- [flare (flare-zh-fe)](https://huggingface.co/datasets/TheFinAI/flare-zh-fe)
+
+- [flare (flare-zh-nl)](https://huggingface.co/datasets/TheFinAI/flare-zh-nl)
+
+- [flare (flare-zh-nl2)](https://huggingface.co/datasets/TheFinAI/flare-zh-nl2)
+
+- [flare (flare-zh-nsp)](https://huggingface.co/datasets/TheFinAI/flare-zh-nsp)
+
+- [flare (flare-zh-re)](https://huggingface.co/datasets/TheFinAI/flare-zh-re)
+
+- [flare (flare-zh-stockb)](https://huggingface.co/datasets/TheFinAI/flare-zh-stockb)
+
+- [flare (flare-zh-qa)](https://huggingface.co/datasets/TheFinAI/flare-zh-qa)
+
+- [flare (flare-zh-na)](https://huggingface.co/datasets/TheFinAI/flare-zh-na)
+
+- [flare (flare-zh-19ccks)](https://huggingface.co/datasets/TheFinAI/flare-zh-19ccks)
+
+- [flare (flare-zh-20ccks)](https://huggingface.co/datasets/TheFinAI/flare-zh-20ccks)
+
+- [flare (flare-zh-21ccks)](https://huggingface.co/datasets/TheFinAI/flare-zh-21ccks)
+
+- [flare (flare-zh-22ccks)](https://huggingface.co/datasets/TheFinAI/flare-zh-22ccks)
+
+- [flare (flare-zh-ner)](https://huggingface.co/datasets/TheFinAI/flare-zh-ner)
+
+- [flare (flare-zh-fpb)](https://huggingface.co/datasets/TheFinAI/flare-zh-fpb)
+
+  
 
 ## 概述
 
@@ -192,7 +212,7 @@
 #### 准备工作
 ##### 本地安装
 ```bash
-git clone https://github.com/chancefocus/PIXIU.git --recursive
+git clone https://github.com/TheFinAI/PIXIU.git --recursive
 cd PIXIU
 pip install -r requirements.txt
 cd PIXIU/src/financial-evaluation
@@ -238,7 +258,7 @@ docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
 ```bash
 python eval.py \
     --model "hf-causal-llama" \
-    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
+    --model_args "use_accelerate=True,pretrained=TheFinAI/finma-7b-full,tokenizer=TheFinAI/finma-7b-full,use_fast=False" \
     --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```
 

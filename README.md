@@ -78,7 +78,7 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/TheFinAI/flare)
 
 **Disclaimer**
 
@@ -100,8 +100,8 @@ This repository and its contents are provided for **academic and educational pur
 
 **Checkpoints:** 
 
-- [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
-- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
+- [FinMA v0.1 (NLP 7B version)](https://huggingface.co/TheFinAI/finma-7b-nlp)
+- [FinMA v0.1 (Full 7B version)](https://huggingface.co/TheFinAI/finma-7b-full)
 
 **Languages**
 
@@ -109,67 +109,73 @@ This repository and its contents are provided for **academic and educational pur
 - [Spainish](README.es.md)
 - [Chinese](README.zh.md)
 
+**Papers**
+
+- [PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance](https://arxiv.org/abs/2306.05443)
+- [The FinBen: An Holistic Financial Benchmark for Large Language Models](https://arxiv.org/abs/2402.12659)
+- [No Language is an Island: Unifying Chinese and English in Financial Large Language Models, Instruction Data, and Benchmarks](https://arxiv.org/abs/2403.06249)
+- [Dólares or Dollars? Unraveling the Bilingual Prowess of Financial LLMs Between Spanish and English](https://arxiv.org/abs/2402.07405)
+
 **Evaluations**:
 
-- [English Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-english-6529286a147d9119a64689c0) (More details on FinBen section)
-- [Spanish Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evaluation-datasets-spanish-652929c34f8fe1bea9cd5a66)
-- [Chinese Evaluation Datasets](https://huggingface.co/collections/ChanceFocus/flare-evalution-datasets-chinese-65292963a8cd8847517204a2)
+- [English Evaluation Datasets](https://huggingface.co/collections/TheFinAI/english-evaluation-dataset-658f515911f68f12ea193194) (More details on FinBen section)
+- [Spanish Evaluation Datasets](https://huggingface.co/collections/TheFinAI/spanish-evaluation-datasets-65e5855900680b19bc83e03d)
+- [Chinese Evaluation Datasets](https://huggingface.co/collections/TheFinAI/chinese-evaluation-datasets-65e5851af7daaa71c1c59902)
 
 > Sentiment Analysis
 
-- [FPB (FinBen_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)
-- [FIQASA (FinBen_fiqasa)](https://huggingface.co/datasets/ChanceFocus/flare-fiqasa)
-- [FOMC (FinBen_fomc)](https://huggingface.co/datasets/ChanceFocus/flare-fomc)
-- [SemEval-2017 Task5 (FinBen_tsa)](https://huggingface.co/datasets/ChanceFocus/flare-tsa)
+- [FPB (en_fpb)](https://huggingface.co/datasets/TheFinAI/en-fpb)
+- [FIQASA (flare_fiqasa)](https://huggingface.co/datasets/TheFinAI/en-fpb)
+- [FOMC (flare_fomc)](https://huggingface.co/datasets/TheFinAI/flare-fomc)
+- [SemEval-2017 Task5 (flare_tsa)](https://huggingface.co/datasets/TheFinAI/flare-tsa)
 
 > Classification
 
-- [Headlines (FinBen_headlines)](https://huggingface.co/datasets/ChanceFocus/flare-headlines)
-- [FinArg ECC Task1 (FinBen_finarg_ecc_auc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-auc)
-- [FinArg ECC Task2 (FinBen_finarg_ecc_arc)](https://huggingface.co/datasets/ChanceFocus/flare-finarg-ecc-arc)
-- [CFA (FinBen_cfa)](https://huggingface.co/datasets/ChanceFocus/flare-cfa)
-- [MultiFin EN (FinBen_multifin_en)](https://huggingface.co/datasets/ChanceFocus/flare-multifin-en)
-- [M&A (FinBen_ma)](https://huggingface.co/datasets/ChanceFocus/flare-ma)
-- [MLESG EN (FinBen_mlesg)](https://huggingface.co/datasets/ChanceFocus/flare-mlesg)
+- [Headlines (flare_headlines)](https://huggingface.co/datasets/TheFinAI/flare-headlines)
+- [FinArg ECC Task1 (flare_finarg_ecc_auc)](https://huggingface.co/datasets/TheFinAI/flare-finarg-ecc-auc)
+- [FinArg ECC Task2 (flare_finarg_ecc_arc)](https://huggingface.co/datasets/TheFinAI/flare-finarg-ecc-arc)
+- [CFA (flare_cfa)](https://huggingface.co/datasets/TheFinAI/flare-finarg-ecc-arc)
+- [MultiFin EN (flare_multifin_en)](https://huggingface.co/datasets/TheFinAI/flare-multifin-en)
+- [M&A (flare_ma)](https://huggingface.co/datasets/TheFinAI/flare-ma)
+- [MLESG EN (flare_mlesg)](https://huggingface.co/datasets/TheFinAI/flare-mlesg)
 
 > Knowledge Extraction
 
-- [NER (FinBen_ner)](https://huggingface.co/datasets/ChanceFocus/flare-ner)
-
-- [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)
-- [FinRED (FinBen_finred)](https://huggingface.co/datasets/ChanceFocus/flare-finred)
-- [FinCausal20 Task1 (FinBen_causal20_sc)](https://huggingface.co/datasets/ChanceFocus/flare-causal20_sc)
-- [FinCausal20 Task2 (FinBen_cd)](https://huggingface.co/datasets/ChanceFocus/flare-cd)
+- [NER (flare_ner)](https://huggingface.co/datasets/TheFinAI/flare-ner)
+- [Finer Ord (flare_finer_ord)](https://huggingface.co/datasets/TheFinAI/flare-finer-ord)
+- [FinRED (flare_finred)](https://huggingface.co/datasets/TheFinAI/flare-finred)
+- [FinCausal20 Task1 (flare_causal20_sc)](https://huggingface.co/datasets/TheFinAI/flare-causal20-sc)
+- [FinCausal20 Task2 (flare_cd)](https://huggingface.co/datasets/TheFinAI/flare-cd)
 
 > Number Understanding
 
-- [FinQA (FinBen_finqa)](https://huggingface.co/datasets/ChanceFocus/flare-finqa)
-- [TATQA (FinBen_tatqa)](https://huggingface.co/datasets/ChanceFocus/flare-tatqa)
-- [FNXL (FinBen_fnxl)](https://huggingface.co/datasets/ChanceFocus/flare-fnxl)
-- [FSRL (FinBen_fsrl)](https://huggingface.co/datasets/ChanceFocus/flare-fsrl)
+- [FinQA (flare_finqa)](https://huggingface.co/datasets/TheFinAI/flare-finqa)
+- [TATQA (flare_tatqa)](https://huggingface.co/datasets/TheFinAI/flare-tatqa)
+- [FNXL (flare_fnxl)](https://huggingface.co/datasets/TheFinAI/flare-fnxl)
+- [FSRL (flare_fsrl)](https://huggingface.co/datasets/TheFinAI/flare-fsrl)
 
 > Text Summarization
 
-- [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)
-- [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)
+- [ECTSUM (flare_ectsum)](https://huggingface.co/datasets/TheFinAI/flare-ectsum)
+- [EDTSUM (flare_edtsum)](https://huggingface.co/datasets/TheFinAI/flare-edtsum)
 
 > Credit Scoring
 
-- [German (FinBen_german)](https://huggingface.co/datasets/ChanceFocus/flare-german)
-- [Australian (FinBen_australian)](https://huggingface.co/datasets/ChanceFocus/flare-australian)
-- [Lendingclub (FinBen_cra_lendingclub)](https://huggingface.co/datasets/daishen/cra-lendingclub)
-- [Credit Card Fraud (FinBen_cra_ccf)](https://huggingface.co/datasets/daishen/cra-ccf)
-- [ccFraud (FinBen_cra_ccfraud)](https://huggingface.co/datasets/daishen/cra-ccfraud)
-- [Polish (FinBen_cra_polish)](https://huggingface.co/datasets/daishen/cra-polish)
-- [Taiwan Economic Journal (FinBen_cra_taiwan)](https://huggingface.co/datasets/daishen/cra-taiwan)
-- [PortoSeguro (FinBen_cra_portoseguro)](https://huggingface.co/datasets/daishen/cra-portoseguro)
-- [Travle Insurance (FinBen_cra_travelinsurance)](https://huggingface.co/datasets/daishen/cra-travelinsurance) 
+- [German (flare_german)](https://huggingface.co/datasets/TheFinAI/flare-german)
+- [Australian (flare_australian)](https://huggingface.co/datasets/TheFinAI/flare-australian)
+- [Lendingclub (flare_cra_lendingclub)](https://huggingface.co/datasets/daishen/cra-lendingclub)
+- [Credit Card Fraud (flare_cra_ccf)](https://huggingface.co/datasets/daishen/cra-ccf)
+- [ccFraud (flare_cra_ccfraud)](https://huggingface.co/datasets/daishen/cra-ccfraud)
+- [Polish (flare_cra_polish)](https://huggingface.co/datasets/daishen/cra-polish)
+- [Taiwan Economic Journal (flare_cra_taiwan)](https://huggingface.co/datasets/daishen/cra-taiwan)
+- [PortoSeguro (flare_cra_portoseguro)](https://huggingface.co/datasets/daishen/cra-portoseguro)
+- [Travle Insurance (flare_cra_travelinsurance)](https://huggingface.co/datasets/daishen/cra-travelinsurance) 
 
 > Forecasting
 
-- [BigData22 for Stock Movement (FinBen_sm_bigdata)](https://huggingface.co/datasets/ChanceFocus/flare-sm-bigdata)
-- [ACL18 for Stock Movement (FinBen_sm_acl)](https://huggingface.co/datasets/ChanceFocus/flare-sm-acl)
-- [CIKM18 for Stock Movement (FinBen_sm_cikm)](https://huggingface.co/datasets/ChanceFocus/flare-sm-cikm)
+- [BigData22 for Stock Movement (flare_sm_bigdata)](https://huggingface.co/datasets/TheFinAI/flare-sm-bigdata)
+- [ACL18 for Stock Movement (flare_sm_acl)](https://huggingface.co/datasets/TheFinAI/flare-sm-acl)
+- [CIKM18 for Stock Movement (flare_sm_cikm)](https://huggingface.co/datasets/TheFinAI/flare-sm-cikm)
 
 ## Overview
 
@@ -196,7 +202,7 @@ The repository is organized into several key components, each serving a unique p
 
 ## FinBen 2.0: Financial Language Understanding and Prediction Evaluation Benchmark
 
-In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FinBen can be found on our [leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)!
+In this section, we provide a detailed performance analysis of FinMA compared to other leading models, including ChatGPT, GPT-4, and BloombergGPT et al. For this analysis, we've chosen a range of tasks and metrics that span various aspects of financial Natural Language Processing and financial prediction. All model results of FinBen can be found on our [leaderboard](https://huggingface.co/spaces/TheFinAI/flare)!
 
 ### Tasks
 
@@ -244,7 +250,6 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 4. Keith Cortis, André Freitas, Tobias Daudert, Manuela Huerlimann, Manel Zarrouk, Siegfried Handschuh, and Brian Davis. 2017. [SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News](https://aclanthology.org/S17-2089). In *Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017)*, pages 519–535, Vancouver, Canada. Association for Computational Linguistics.
 5. Ankur Sinha and Tanmay Khandait. 2021. Impact of news on the commodity market: Dataset and results. In Advances in Information and Communication: Proceedings of the 2021 Future of Information and Communication Conference (FICC), Volume 2. Springer, 589–601
 6. Chung-Chi Chen, Chin-Yi Lin, Hen-Hsen Huang, Hsin-Hsi Chen, Hiroya Takamura, Yu-Lieh Huang, and Alaa Alhamzeh. 2023. Fine-grained Argument Understanding in Financial Analysis. In *Proceedings of the Seventeenth NTCIR conference (NTCIR-17)*.
-7.
 8. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. [MultiFin: A Dataset for Multilingual Financial NLP](https://aclanthology.org/2023.findings-eacl.66). In *Findings of the Association for Computational Linguistics: EACL 2023*, pages 894–909, Dubrovnik, Croatia. Association for Computational Linguistics.
 9. Yang, L., Kenny, E.M., Ng, T.L., Yang, Y., Smyth, B., & Dong, R. (2020). Generating Plausible Counterfactual Explanations for Deep Transformers in Financial Text Classification. *International Conference on Computational Linguistics*.
 10. Chung-Chi Chen, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023. Multi-lingual esg issue identification. In *Proceedings of the Fifth Workshop on Financial Tech- nology and Natural Language Processing (FinNLP) and the Second Multimodal AI For Financial Fore- casting (Muffin)*.
@@ -275,9 +280,10 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 ### Evaluation
 
 #### Preparation
+
 ##### Locally install
 ```bash
-git clone https://github.com/chancefocus/PIXIU.git --recursive
+git clone https://github.com/The-FinAI/PIXIU.git --recursive
 cd PIXIU
 pip install -r requirements.txt
 cd PIXIU/src/financial-evaluation
@@ -323,7 +329,7 @@ For automated evaluation, please follow these instructions:
 ```bash
 python eval.py \
     --model "hf-causal-llama" \
-    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
+    --model_args "use_accelerate=True,pretrained=TheFinAI/finma-7b-full,tokenizer=TheFinAI/finma-7b-full,use_fast=False" \
     --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```
 
@@ -380,22 +386,22 @@ In this format:
 
 For **Multi-turn** tasks (such as )
 
-For **Classification** tasks (such as [FPB (FinBen_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)), additional keys should be defined:
+For **Classification** tasks (such as [FPB (FinBen_fpb)](https://huggingface.co/datasets/TheFinAI/flare-fpb)), additional keys should be defined:
 
 - `choices`: Set of labels
 - `gold`: Index of the correct label in choices (Start from 0)
 
-For **Sequential Labeling** tasks (such as [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)), additional keys should be defined:
+For **Sequential Labeling** tasks (such as [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/TheFinAI/flare-finer-ord)), additional keys should be defined:
 
 - `label`: List of token labels
 
 - `token`: List of tokens
 
-For **Extractive Summarization** tasks (such as [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
+For **Extractive Summarization** tasks (such as [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/TheFinAI/flare-ectsum)), additional keys should be defined:
 
 - `label`: List of sentence labels
 
-For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)), no additional keys should be defined
+For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/TheFinAI/flare-edtsum)), no additional keys should be defined
 
 #### Implementing the task
 
@@ -524,7 +530,7 @@ The first turn in the "conversations" list should always be from "human", and co
 
 We are pleased to introduce the first version of FinMA, including three models FinMA-7B, FinMA-7B-full, FinMA-30B, fine-tuned on LLaMA 7B and LLaMA-30B. FinMA-7B and FinMA-30B are trained with the NLP instruction data, while FinMA-7B-full is trained with the full instruction data from FIT covering both NLP and prediction tasks. 
 
-FinMA v0.1 is now available on [Huggingface](https://huggingface.co/ChanceFocus/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
+FinMA v0.1 is now available on [Huggingface](https://huggingface.co/TheFinAI/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
 
 ### How to fine-tune a new large language model using PIXIU based on FIT?
 
