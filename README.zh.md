@@ -78,7 +78,7 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/TheFinAI/flare)
 
 **免责声明**
 
@@ -91,12 +91,20 @@
 
 **检查点:** 
 
-- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
+- [FinMA v0.1 (Full 7B version)](https://huggingface.co/TheFinAI/finma-7b-full)
 
 **语言**
 
 - [英文](README.md)
 - [中文](README.zh.md)
+- [西班牙语](README.es.md)
+
+**论文**
+
+- [PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance](https://arxiv.org/abs/2306.05443)
+- [The FinBen: An Holistic Financial Benchmark for Large Language Models](https://arxiv.org/abs/2402.12659)
+- [No Language is an Island: Unifying Chinese and English in Financial Large Language Models, Instruction Data, and Benchmarks](https://arxiv.org/abs/2403.06249)
+- [Dólares or Dollars? Unraveling the Bilingual Prowess of Financial LLMs Between Spanish and English](https://arxiv.org/abs/2402.07405)
 
 **评估** (更多详情，请参阅FinBen部分):
 
@@ -250,7 +258,7 @@ docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
 ```bash
 python eval.py \
     --model "hf-causal-llama" \
-    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
+    --model_args "use_accelerate=True,pretrained=TheFinAI/finma-7b-full,tokenizer=TheFinAI/finma-7b-full,use_fast=False" \
     --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```
 

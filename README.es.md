@@ -97,6 +97,13 @@ Este repositorio y su contenido se proporcionan **únicamente con fines académi
 - [Inglés](README.md)
 - [Español](README.es.md)
 
+**documento**
+
+- [PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance](https://arxiv.org/abs/2306.05443)
+- [The FinBen: An Holistic Financial Benchmark for Large Language Models](https://arxiv.org/abs/2402.12659)
+- [No Language is an Island: Unifying Chinese and English in Financial Large Language Models, Instruction Data, and Benchmarks](https://arxiv.org/abs/2403.06249)
+- [Dólares or Dollars? Unraveling the Bilingual Prowess of Financial LLMs Between Spanish and English](https://arxiv.org/abs/2402.07405)
+
 **Evaluaciones** (más detalles en la sección FinBen):
 
 - [flare (flare-es-financees)](https://huggingface.co/datasets/TheFinAI/flare-es-financees)

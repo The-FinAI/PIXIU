@@ -78,7 +78,7 @@
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
 
-[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/ChanceFocus/flare)
+[Pixiu Paper](https://arxiv.org/abs/2306.05443) | [FinBen Leaderboard](https://huggingface.co/spaces/TheFinAI/flare)
 
 **Disclaimer**
 
@@ -100,14 +100,21 @@ This repository and its contents are provided for **academic and educational pur
 
 **Checkpoints:** 
 
-- [FinMA v0.1 (NLP 7B version)](https://huggingface.co/ChanceFocus/finma-7b-nlp)
-- [FinMA v0.1 (Full 7B version)](https://huggingface.co/ChanceFocus/finma-7b-full)
+- [FinMA v0.1 (NLP 7B version)](https://huggingface.co/TheFinAI/finma-7b-nlp)
+- [FinMA v0.1 (Full 7B version)](https://huggingface.co/TheFinAI/finma-7b-full)
 
 **Languages**
 
 - [English](README.md)
 - [Spainish](README.es.md)
 - [Chinese](README.zh.md)
+
+**Papers**
+
+- [PIXIU: A Comprehensive Benchmark, Instruction Dataset and Large Language Model for Finance](https://arxiv.org/abs/2306.05443)
+- [The FinBen: An Holistic Financial Benchmark for Large Language Models](https://arxiv.org/abs/2402.12659)
+- [No Language is an Island: Unifying Chinese and English in Financial Large Language Models, Instruction Data, and Benchmarks](https://arxiv.org/abs/2403.06249)
+- [Dólares or Dollars? Unraveling the Bilingual Prowess of Financial LLMs Between Spanish and English](https://arxiv.org/abs/2402.07405)
 
 **Evaluations**:
 
@@ -243,7 +250,6 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 4. Keith Cortis, André Freitas, Tobias Daudert, Manuela Huerlimann, Manel Zarrouk, Siegfried Handschuh, and Brian Davis. 2017. [SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News](https://aclanthology.org/S17-2089). In *Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017)*, pages 519–535, Vancouver, Canada. Association for Computational Linguistics.
 5. Ankur Sinha and Tanmay Khandait. 2021. Impact of news on the commodity market: Dataset and results. In Advances in Information and Communication: Proceedings of the 2021 Future of Information and Communication Conference (FICC), Volume 2. Springer, 589–601
 6. Chung-Chi Chen, Chin-Yi Lin, Hen-Hsen Huang, Hsin-Hsi Chen, Hiroya Takamura, Yu-Lieh Huang, and Alaa Alhamzeh. 2023. Fine-grained Argument Understanding in Financial Analysis. In *Proceedings of the Seventeenth NTCIR conference (NTCIR-17)*.
-7.
 8. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. [MultiFin: A Dataset for Multilingual Financial NLP](https://aclanthology.org/2023.findings-eacl.66). In *Findings of the Association for Computational Linguistics: EACL 2023*, pages 894–909, Dubrovnik, Croatia. Association for Computational Linguistics.
 9. Yang, L., Kenny, E.M., Ng, T.L., Yang, Y., Smyth, B., & Dong, R. (2020). Generating Plausible Counterfactual Explanations for Deep Transformers in Financial Text Classification. *International Conference on Computational Linguistics*.
 10. Chung-Chi Chen, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023. Multi-lingual esg issue identification. In *Proceedings of the Fifth Workshop on Financial Tech- nology and Natural Language Processing (FinNLP) and the Second Multimodal AI For Financial Fore- casting (Muffin)*.
@@ -323,7 +329,7 @@ For automated evaluation, please follow these instructions:
 ```bash
 python eval.py \
     --model "hf-causal-llama" \
-    --model_args "use_accelerate=True,pretrained=chancefocus/finma-7b-full,tokenizer=chancefocus/finma-7b-full,use_fast=False" \
+    --model_args "use_accelerate=True,pretrained=TheFinAI/finma-7b-full,tokenizer=TheFinAI/finma-7b-full,use_fast=False" \
     --tasks "flare_ner,flare_sm_acl,flare_fpb"
 ```
 
@@ -380,22 +386,22 @@ In this format:
 
 For **Multi-turn** tasks (such as )
 
-For **Classification** tasks (such as [FPB (FinBen_fpb)](https://huggingface.co/datasets/ChanceFocus/flare-fpb)), additional keys should be defined:
+For **Classification** tasks (such as [FPB (FinBen_fpb)](https://huggingface.co/datasets/TheFinAI/flare-fpb)), additional keys should be defined:
 
 - `choices`: Set of labels
 - `gold`: Index of the correct label in choices (Start from 0)
 
-For **Sequential Labeling** tasks (such as [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/ChanceFocus/flare-finer-ord)), additional keys should be defined:
+For **Sequential Labeling** tasks (such as [Finer Ord (FinBen_finer_ord)](https://huggingface.co/datasets/TheFinAI/flare-finer-ord)), additional keys should be defined:
 
 - `label`: List of token labels
 
 - `token`: List of tokens
 
-For **Extractive Summarization** tasks (such as [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/ChanceFocus/flare-ectsum)), additional keys should be defined:
+For **Extractive Summarization** tasks (such as [ECTSUM (FinBen_ectsum)](https://huggingface.co/datasets/TheFinAI/flare-ectsum)), additional keys should be defined:
 
 - `label`: List of sentence labels
 
-For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/ChanceFocus/flare-edtsum)), no additional keys should be defined
+For **abstractive Summarization** and **Question Answering** tasks (such as [EDTSUM (FinBen_edtsum)](https://huggingface.co/datasets/TheFinAI/flare-edtsum)), no additional keys should be defined
 
 #### Implementing the task
 
@@ -524,7 +530,7 @@ The first turn in the "conversations" list should always be from "human", and co
 
 We are pleased to introduce the first version of FinMA, including three models FinMA-7B, FinMA-7B-full, FinMA-30B, fine-tuned on LLaMA 7B and LLaMA-30B. FinMA-7B and FinMA-30B are trained with the NLP instruction data, while FinMA-7B-full is trained with the full instruction data from FIT covering both NLP and prediction tasks. 
 
-FinMA v0.1 is now available on [Huggingface](https://huggingface.co/ChanceFocus/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
+FinMA v0.1 is now available on [Huggingface](https://huggingface.co/TheFinAI/finma-7b-nlp) for public use. We look forward to the valuable contributions that this initial version will make to the financial NLP field and encourage users to apply it to various financial tasks and scenarios. We also invite feedback and shared experiences to help improve future versions.
 
 ### How to fine-tune a new large language model using PIXIU based on FIT?
 
