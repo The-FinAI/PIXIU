@@ -286,7 +286,7 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 git clone https://github.com/The-FinAI/PIXIU.git --recursive
 cd PIXIU
 pip install -r requirements.txt
-cd PIXIU/src/financial-evaluation
+cd src/financial-evaluation
 pip install -e .[multilingual]
 ```
 ##### Docker image
