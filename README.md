@@ -538,6 +538,63 @@ Coming soon.
 
 ---
 
+## FinMem: A Performance-Enhanced LLM Trading Agent
+
+FinMem is a novel LLM-based agent framework devised for financial decision-making, encompasses three core modules: Profiling, to outline the agent's characteristics; Memory, with layered processing, to aid the agent in assimilating realistic hierarchical financial data; and Decision-making, to convert insights gained from memories into investment decisions. Currently, FinMem can trade single stocks with high returns after a simple mode warm-up. Below is a quick start for a dockerized version framework, with TSLA as sample input.
+
+Step 1: Set environmental variables
+in `.env` add HUGGINGFACE TOKEN and OPENAI API KEY as needed.
+```bash
+OPENAI_API_KEY = "<Your OpenAI Key>"
+HF_TOKEN = "<Your HF token>"
+```
+
+Step 2: Set endpoint URL in `config.toml`
+Use endpoint URL to deploy models based on the model of choice (OPENAI, Gemini, open source models on HuggingFace, etc.). For open-source models on HuggingFace, one choice for generating TGI endpoints is through RunPod. 
+```bash
+[chat]
+model = "tgi"
+end_point = "<set the your endpoint address>"
+tokenization_model_name = "<model name>"
+...
+```
+
+Step 3: Build Docker Image and Container
+```bash
+docker build -t test-finmem .devcontainer/. 
+```
+start container:
+```bash
+docker run -it --rm -v $(pwd):/finmem test-finmem bash
+```
+
+Step 4: Start Simulation!
+```bash
+ Usage: run.py sim [OPTIONS]                                                                                                                
+                                                                                                                                            
+ Start Simulation                                                                                                                           
+                                                                                                                                            
+╭─ Options ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --market-data-path    -mdp      TEXT  The environment data pickle path [default: data/06_input/subset_symbols.pkl]                       │
+│ --start-time          -st       TEXT  The training or test start time [default: 2022-06-30 For Ticker 'TSLA']                                                               │
+│ --end-time            -et       TEXT  The training or test end time [default: 2022-10-11]                                                                 │
+│ --run-model           -rm       TEXT  Run mode: train or test [default: train]                                                           │
+│ --config-path         -cp       TEXT  config file path [default: config/config.toml]                                                     │
+│ --checkpoint-path     -ckp      TEXT  The checkpoint save path [default: data/10_checkpoint_test]                                             │
+│ --result-path         -rp       TEXT  The result save path [default: data/11_train_result]                                               │
+│ --trained-agent-path  -tap      TEXT  Only used in test mode, the path of trained agent [default: None. Can be changed to data/05_train_model_output OR data/06_train_checkpoint]                                  │
+│ --help                                Show this message and exit.                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+                              
+```
+Example Usage:
+```bash
+python run.py sim --market-data-path data/03_model_input/tsla.pkl --start-time 2022-06-30 --end-time 2022-10-11 --run-model train --config-path config/tsla_tgi_config.toml --checkpoint-path data/06_train_checkpoint --result-path data/05_train_model_output
+```
+
+There are also checkpoint functionalities. For more details please visit [FinMem Repository](https://github.com/pipiku915/FinMem-LLM-StockTrading) directly. 
+
+---
 
 ## Citation
 

@@ -4,3 +4,6 @@
 [submodule "src/metrics/BARTScore"]
 	path = src/metrics/BARTScore
 	url = https://github.com/neulab/BARTScore.git
+[submodule "FinMem-LLM-StockTrading"]
+	path = FinMem-LLM-StockTrading
+	url = https://github.com/pipiku915/FinMem-LLM-StockTrading.git
