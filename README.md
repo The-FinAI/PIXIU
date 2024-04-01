@@ -210,8 +210,8 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | --------------------- | -------------------------------- | ------ | ------------------------- | ----------------- | --------------- | ----- |
 | FPB                   | sentiment analysis               | 4,845  | news                      | text              | CC BY-SA 3.0    | [1]   |
 | FiQA-SA               | sentiment analysis               | 1,173  | news headlines, tweets    | text              | Public          | [2]   |
+| TSA | sentiment analysis | 561 | news headlines | text | CC BY-NC-SA 4.0 | [4] |
 | FOMC                  | hawkish-dovish classification    | 496    | FOMC transcripts          | text              | CC BY-NC 4.0    | [3]   |
-| TSA                   | sentiment analysis               | 561    | news headlines            | text              | CC BY-NC-SA 4.0 | [4]   |
 | Headlines             | news headline classification     | 11,412 | news headlines            | text              | CC BY-SA 3.0    | [5]   |
 | FinArg-ECC-Task1      | argument unit classification     | 969    | earnings conference call  | text              | CC BY-NC-SA 4.0 | [6]   |
 | FinArg-ECC-Task2      | argument relation classification | 690    | earnings conference call  | text              | CC BY-NC-SA 4.0 | [6]   |
@@ -232,11 +232,11 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 | EDTSUM                | text summarization               | 2000   | news articles             | text              | Public          | [20]  |
 | German                | credit scoring                   | 1000   | credit records            | table             | CC BY 4.0       | [21]  |
 | Australian            | credit scoring                   | 690    | credit records            | table             | CC BY 4.0       | [22]  |
+| Lending Club | credit scoring | 1,3453 | financial information | table | CC0 1.0 | [27] |
 | BigData22             | stock movement prediction        | 7,164  | tweets, historical prices | text, time series | Public          | [23]  |
 | ACL18                 | stock movement prediction        | 27,053 | tweets, historical prices | text, time series | MIT License     | [24]  |
 | CIKM18                | stock movement prediction        | 4,967  | tweets, historical prices | text, time series | Public          | [25]  |
 | ConvFinQA             | multi-turn question answering    | 1,490  | earnings reports          | text, table       | MIT License     | [26]  |
-| Lending Club          | credit scoring                   | 1,3453 | financial information     | table             | CC0 1.0         | [27]  |
 | Credit Card Fraud     | Fraud Detection                  | 11,392 | financial information     | table             | (DbCL) v1.0     | [28]  |
 | ccFraud               | Fraud Detection                  | 10,485 | financial information     | table             | Public          | [29]  |
 | Polish                | Financial Distress Identification| 8,681  | financial status features | table             | CC BY 4.0       | [30]  |
@@ -249,9 +249,9 @@ In this section, we provide a detailed performance analysis of FinMA compared to
 3. Agam Shah, Suvan Paturi, and Sudheer Chava. 2023. [Trillion Dollar Words: A New Financial Dataset, Task & Market Analysis](https://aclanthology.org/2023.acl-long.368). In *Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pages 6664–6679, Toronto, Canada. Association for Computational Linguistics.
 4. Keith Cortis, André Freitas, Tobias Daudert, Manuela Huerlimann, Manel Zarrouk, Siegfried Handschuh, and Brian Davis. 2017. [SemEval-2017 Task 5: Fine-Grained Sentiment Analysis on Financial Microblogs and News](https://aclanthology.org/S17-2089). In *Proceedings of the 11th International Workshop on Semantic Evaluation (SemEval-2017)*, pages 519–535, Vancouver, Canada. Association for Computational Linguistics.
 5. Ankur Sinha and Tanmay Khandait. 2021. Impact of news on the commodity market: Dataset and results. In Advances in Information and Communication: Proceedings of the 2021 Future of Information and Communication Conference (FICC), Volume 2. Springer, 589–601
-6. Chung-Chi Chen, Chin-Yi Lin, Hen-Hsen Huang, Hsin-Hsi Chen, Hiroya Takamura, Yu-Lieh Huang, and Alaa Alhamzeh. 2023. Fine-grained Argument Understanding in Financial Analysis. In *Proceedings of the Seventeenth NTCIR conference (NTCIR-17)*.
+6. Chen C C, Lin C Y, Chiu C J, et al. [Overview of the NTCIR-17 FinArg-1 Task: Fine-grained argument understanding in financial analysis](https://research.nii.ac.jp/ntcir/workshop/OnlineProceedings17/pdf/ntcir/01-NTCIR17-OV-FINARG-ChenC.pdf)[C]//Proceedings of the 17th NTCIR Conference on Evaluation of Information Access Technologies, Tokyo, Japan. 2023.
 8. Rasmus Jørgensen, Oliver Brandt, Mareike Hartmann, Xiang Dai, Christian Igel, and Desmond Elliott. 2023. [MultiFin: A Dataset for Multilingual Financial NLP](https://aclanthology.org/2023.findings-eacl.66). In *Findings of the Association for Computational Linguistics: EACL 2023*, pages 894–909, Dubrovnik, Croatia. Association for Computational Linguistics.
-9. Yang, L., Kenny, E.M., Ng, T.L., Yang, Y., Smyth, B., & Dong, R. (2020). Generating Plausible Counterfactual Explanations for Deep Transformers in Financial Text Classification. *International Conference on Computational Linguistics*.
+9. Yang, L., Kenny, E.M., Ng, T.L., Yang, Y., Smyth, B., & Dong, R. (2020). [Generating Plausible Counterfactual Explanations for Deep Transformers in Financial Text Classification.](https://arxiv.org/abs/2010.12512) *International Conference on Computational Linguistics*.
 10. Chung-Chi Chen, Yu-Min Tseng, Juyeon Kang, Anaïs Lhuissier, Min-Yuh Day, Teng-Tsai Tu, and Hsin-Hsi Chen. 2023. Multi-lingual esg issue identification. In *Proceedings of the Fifth Workshop on Financial Tech- nology and Natural Language Processing (FinNLP) and the Second Multimodal AI For Financial Fore- casting (Muffin)*.
 11. Julio Cesar Salinas Alvarado, Karin Verspoor, and Timothy Baldwin. 2015. Domain adaption of named entity recognition to support credit risk assessment. In Proceedings of the Australasian Language Technology Association Workshop 2015. 84–90.
 12. Shah A, Vithani R, Gullapalli A, et al. Finer: Financial named entity recognition dataset and weak-supervision model[J]. arXiv preprint arXiv:2302.11157, 2023.
