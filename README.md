@@ -74,10 +74,6 @@
 
 -----------------
 
-**📢 Update (Date: 05-02-2024)**
-
-🌏 We're pleased to invite you to attend the IJCAI2024-challenge, "Financial Challenges in Large Language Models - FinLLM", the starter-kit is available at [Starter-kit](README.ijcai_challenge.md).
-
 ![](https://img.shields.io/badge/pixiu-v0.1-gold)
 ![](https://black.readthedocs.io/en/stable/_static/license.svg)
 [![Discord](https://img.shields.io/discord/1146837080798933112)](https://discord.gg/HRWpUmKB)
@@ -101,6 +97,10 @@ This repository and its contents are provided for **academic and educational pur
 **📢 Update (Date: 02-20-2024)**
 
 🌏 We're delighted to share that our paper, "The FinBen: An Holistic Financial Benchmark for Large Language Models", is now available at [FinBen](https://arxiv.org/abs/2402.12659).
+
+**📢 Update (Date: 05-02-2024)**
+
+🌏 We're pleased to invite you to attend the IJCAI2024-challenge, "Financial Challenges in Large Language Models - FinLLM", the starter-kit is available at [Starter-kit](README.ijcai_challenge.md).
 
 **Checkpoints:** 
 
