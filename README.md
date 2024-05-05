@@ -98,6 +98,10 @@ This repository and its contents are provided for **academic and educational pur
 
 🌏 We're delighted to share that our paper, "The FinBen: An Holistic Financial Benchmark for Large Language Models", is now available at [FinBen](https://arxiv.org/abs/2402.12659).
 
+**📢 Update (Date: 05-02-2024)**
+
+🌏 We're pleased to invite you to attend the IJCAI2024-challenge, "Financial Challenges in Large Language Models - FinLLM", the starter-kit is available at [Starter-kit](README.ijcai_challenge.md).
+
 **Checkpoints:** 
 
 - [FinMA v0.1 (NLP 7B version)](https://huggingface.co/TheFinAI/finma-7b-nlp)
