@@ -11,11 +11,11 @@ We're pleased to invite you to attend the IJCAI2024-challenge, ["Financial Chall
 
 ## Task 1 Financial Classification Starter Kit
 ### Introduction
-This task focuses on argument unit classification to test the capabilities of LLMs to identify and categorize texts as premises or claims. Participants receive a financial text and two options, followingly design the prompt query template, and then classify the text as a claim or premise.
+This task focuses on argument unit classification to test the capabilities of LLMs to identify and categorize texts as premises or claims. Participants receive a financial text and two options, following design the prompt query template, and then classify the text as a claim or premise.
 
 We provide 7.75k training data and 969 test data to categorize sentences as claims or premises. 
 
-We use the following prompt template to ask and ask the question in this task.
+We use the following prompt template to ask and answer the question in this task.
 
 Instruction: [task prompt] Text: [input text] Response: [output]
 
@@ -26,7 +26,7 @@ We use two metrics to evaluate classification capability, like F1 and Accuracy.
 We use F1 score as the final ranking metrics.
 
 ### Evaluation
-You can follow the instructions in the [script](https://github.com/The-FinAI/PIXIU/blob/main/notebooks/Finarg-ecc-auc%2BEdtsum_evaluation_sample.ipynb) to do evaluations on Task 1: financial classification.
+You can follow the instructions in the [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ogcCmhMc5lPhUamCk6512H3PJwPEaBZN?usp=sharing) to do evaluations on Task 1: financial classification.
 
 ### Dataset Example
 | id |	query |	answer |	text	| choices	| gold |
@@ -38,11 +38,11 @@ You can follow the instructions in the [script](https://github.com/The-FinAI/PIX
 
 ## Task 2 Financial Text Summarization Starter Kit
 ### Introduction
-This task is designed to test the capabilities of LLMs to generate coherent summaries [3]. Participants need to summarize a corresponding concise text according to the given financial news text, following the designed prompt template of query. 
+This task is designed to test the capabilities of LLMs to generate coherent summaries. Participants need to summarize a corresponding concise text according to the given financial news text, following the designed prompt template of query. 
 
-We provide 8k training data and 2k test data for abstracting financial news articles into concise summaries.  
+We provide 8k training data and 2k test data for abstract financial news articles into concise summaries.  
 
-We use the following prompt template to ask and ask the question in this task.
+We use the following prompt template to ask and answer the question in this task.
 
 Instruction: [task prompt] Context: [input context] Response: [output]
 
@@ -53,7 +53,7 @@ We utilize three metrics, such as ROUGE (1, 2, and L) and BERTScore, to evaluate
 We use ROUGE -1 score as the final ranking metrics.
 
 ### Evaluation
-You can follow the instructions in the [script](https://github.com/The-FinAI/PIXIU/blob/main/notebooks/Finarg-ecc-auc%2BEdtsum_evaluation_sample.ipynb) to do evaluations on Task 2: financial text summarization.
+You can follow the instructions in the [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ogcCmhMc5lPhUamCk6512H3PJwPEaBZN?usp=sharing) to do evaluations on Task 2: financial text summarization.
 
 ### Dataset Example
 | id |	query |	answer | text |
@@ -66,9 +66,9 @@ You can follow the instructions in the [script](https://github.com/The-FinAI/PIX
 ### Introduction
 This task aims to evaluate LLMs’ ability to make sophisticated decisions in trading activities, which is currently restricted by human’s limited ability to process large volumes of data rapidly. Participants receive a combination of open-source data for stocks and an ETF. The system should output one of the three trading decisions (“buy”, “sell”, “hold”) with reasonings. 
 
-We provide 291 data to evaluate LLMs on sophisticated stock Decisions. 
+We provide 291 data to evaluate LLMs on sophisticated stock decisions. 
 
-We use the following prompt template to ask and ask the question in this task.
+We use the following prompt template to ask and answer the question in this task.
 
 Instruction: [task prompt] Context: [input context] Response: [output]
 
@@ -97,7 +97,7 @@ You can follow the [instructions](https://github.com/The-FinAI/PIXIU?tab=readme-
 
 
 ## Fine-tune
-We recommand you to use [AutoTrain-Advanced](https://github.com/huggingface/autotrain-advanced.git) to train your models.
+We recommend you to use [AutoTrain-Advanced](https://github.com/huggingface/autotrain-advanced.git) to train your models.
 
 ## Model Cheating Detection
 To measure the risk of data leakage from the test set used in the training of a model, the Model Cheating, we have developed a new metric called the Data Leakage Test (DLT), building on existing research.
