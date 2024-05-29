@@ -943,6 +943,10 @@ class EDTSUM(AbstractiveSummarization):
     DATASET_PATH = "chancefocus/flare-edtsum"
 
 
+class EDTSUM_test(AbstractiveSummarization):
+    DATASET_PATH = "TheFinAI/flare-edtsum_test"
+
+
 class ConvFinQA(QA):
     DATASET_PATH = "chancefocus/flare-convfinqa"
 
@@ -1055,6 +1059,10 @@ class FINARGECCARC(Classification):
 
 class FINARGECCAUC(Classification):
     DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+
+
+class FINARGECCAUC_test(Classification):
+    DATASET_PATH = "TheFinAI/flare-finarg-ecc-auc_test"
 
 
 class MLESG(Classification):
