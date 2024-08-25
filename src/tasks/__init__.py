@@ -7,6 +7,12 @@ import lm_eval.base
 from . import flare
 
 TASK_REGISTRY = {
+    "flare_es_financees": flare.ESFINANCEES,
+    "flare_es_multifin": flare.ESMultiFin,
+    "flare_es_efp": flare.ESEFP,
+    "flare_es_efpa": flare.ESEFPA,
+    "flare_es_fns": flare.ESFNS,
+    "flare_es_tsa": flare.ESTSA,
     "flare_fpb": flare.FPB,
     "flare_fiqasa": flare.FIQASA,
     "flare_ner": flare.NER,
