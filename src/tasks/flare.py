@@ -1399,3 +1399,21 @@ class ZHFinQAE(QA):
 
 class ZHConvFinQA(ConvFinQA):
     DATASET_PATH = "ChanceFocus/flare-zh-convfinqa"
+
+class ESMultiFin(Classification):
+    DATASET_PATH = "chancefocus/flare-es-multifin"
+
+class ESEFP(Classification):
+    DATASET_PATH = "chancefocus/flare-es-efp"
+
+class ESEFPA(Classification):
+    DATASET_PATH = "chancefocus/flare-es-efpa"
+
+class ESTSA(Classification):
+    DATASET_PATH = "chancefocus/flare-es-tsa"
+
+class ESFINANCEES(Classification):
+    DATASET_PATH = "chancefocus/flare-es-financees"
+
+class ESFNS(AbstractiveSummarization):
+    DATASET_PATH = "chancefocus/flare-es-fns"
