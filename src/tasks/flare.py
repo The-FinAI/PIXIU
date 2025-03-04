@@ -307,7 +307,7 @@ class AbstractiveSummarization(Task):
             "rouge2": (doc["answer"], results[0]),
             "rougeL": (doc["answer"], results[0]),
             "bert_score_f1": (doc["answer"], results[0]),
-            "bart_score": (doc["answer"], results[0]),
+            # "bart_score": (doc["answer"], results[0]),
         }
 
     def higher_is_better(self):
@@ -316,7 +316,7 @@ class AbstractiveSummarization(Task):
             "rouge2": True,
             "rougeL": True,
             "bert_score_f1": True,
-            "bart_score": True,
+            # "bart_score": True,
         }
 
     def construct_requests(self, doc, ctx):
@@ -428,7 +428,7 @@ class ExtractiveSummarization(Task):
             "rouge2": (doc["label"], doc["text"], results[0]),
             "rougeL": (doc["label"], doc["text"], results[0]),
             "bert_score_f1": (doc["label"], doc["text"], results[0]),
-            "bart_score": (doc["label"], doc["text"], results[0]),
+            # "bart_score": (doc["label"], doc["text"], results[0]),
         }
 
     def higher_is_better(self):
@@ -437,7 +437,7 @@ class ExtractiveSummarization(Task):
             "rouge2": True,
             "rougeL": True,
             "bert_score_f1": True,
-            "bart_score": True,
+            # "bart_score": True,
         }
 
     def construct_requests(self, doc, ctx):
