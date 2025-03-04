@@ -707,16 +707,16 @@ class QA(Task):
 
 
 class FPB(Classification):
-    DATASET_PATH = "chancefocus/flare-fpb"
+    DATASET_PATH = "TheFinAI/flare-fpb"
 
 
 class FIQASA(Classification):
-    DATASET_PATH = "chancefocus/flare-fiqasa"
+    DATASET_PATH = "TheFinAI/flare-fiqasa"
 
 
 class NER(Task):
     VERSION = 1
-    DATASET_PATH = "chancefocus/flare-ner"
+    DATASET_PATH = "TheFinAI/flare-ner"
     DATASET_NAME = None
     EVAL_LAST_TURN = True
 
@@ -792,7 +792,7 @@ class NER(Task):
 
 
 class FinQA(QA):
-    DATASET_PATH = "chancefocus/flare-finqa"
+    DATASET_PATH = "TheFinAI/flare-finqa"
 
 
 class StockMovement(Classification):
@@ -840,15 +840,15 @@ class StockMovement(Classification):
 
 
 class StockMovementBigData(StockMovement):
-    DATASET_PATH = "chancefocus/flare-sm-bigdata"
+    DATASET_PATH = "TheFinAI/flare-sm-bigdata"
 
 
 class StockMovementACL(StockMovement):
-    DATASET_PATH = "chancefocus/flare-sm-acl"
+    DATASET_PATH = "TheFinAI/flare-sm-acl"
 
 
 class StockMovementCIKM(StockMovement):
-    DATASET_PATH = "chancefocus/flare-sm-cikm"
+    DATASET_PATH = "TheFinAI/flare-sm-cikm"
 
 
 SM_TASKS = {
@@ -859,7 +859,7 @@ SM_TASKS = {
 
 
 class Headlines(Classification):
-    DATASET_PATH = "chancefocus/flare-headlines"
+    DATASET_PATH = "TheFinAI/flare-headlines"
 
     def process_results(self, doc, results):
         gold = doc["gold"]
@@ -909,7 +909,7 @@ class Headlines(Classification):
 
 
 class FinerOrd(SequentialLabeling):
-    DATASET_PATH = "chancefocus/flare-finer-ord"
+    DATASET_PATH = "TheFinAI/finben-finer-ord"
     LMAP = {
         "O": 0,
         "B-PER": 1,
@@ -922,11 +922,11 @@ class FinerOrd(SequentialLabeling):
 
 
 class FOMC(Classification):
-    DATASET_PATH = "chancefocus/flare-fomc"
+    DATASET_PATH = "TheFinAI/finben-fomc"
 
 
 class German(StockMovement):
-    DATASET_PATH = "chancefocus/flare-german"
+    DATASET_PATH = "TheFinAI/flare-german"
     CHOICE_DICT = {
         "good": ["yes", "positive"],
         "bad": ["no", "negative", "neutral"],
@@ -944,11 +944,11 @@ class Australian(StockMovement):
 
 
 class ECTSUM(ExtractiveSummarization):
-    DATASET_PATH = "chancefocus/flare-ectsum"
+    DATASET_PATH = "TheFinAI/flare-ectsum"
 
 
 class EDTSUM(AbstractiveSummarization):
-    DATASET_PATH = "chancefocus/flare-edtsum"
+    DATASET_PATH = "TheFinAI/flare-edtsum"
 
 
 class EDTSUM_test(AbstractiveSummarization):
@@ -956,7 +956,7 @@ class EDTSUM_test(AbstractiveSummarization):
 
 
 class ConvFinQA(QA):
-    DATASET_PATH = "chancefocus/flare-convfinqa"
+    DATASET_PATH = "TheFinAI/flare-convfinqa"
 
     def reformulate_turn_req(self, req, turn_request, turn):
         if turn == 0:
@@ -969,7 +969,7 @@ class ConvFinQA(QA):
 
 class TSA(Task):
     VERSION = 1
-    DATASET_PATH = "chancefocus/flare-tsa"
+    DATASET_PATH = "TheFinAI/flare-tsa"
     DATASET_NAME = None
     EVAL_LAST_TURN = True
 
@@ -1058,16 +1058,16 @@ class TSA(Task):
 
 
 class CFA(Classification):
-    DATASET_PATH = "chancefocus/flare-cfa"
+    DATASET_PATH = "TheFinAI/flare-cfa"
     LOWER_CASE = False
 
 
 class FINARGECCARC(Classification):
-    DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
+    DATASET_PATH = "TheFinAI/flare-finarg-ecc-arc"
 
 
 class FINARGECCAUC(Classification):
-    DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+    DATASET_PATH = "TheFinAI/flare-finarg-ecc-auc"
 
 
 class FINARGECCAUC_test(Classification):
@@ -1075,79 +1075,79 @@ class FINARGECCAUC_test(Classification):
 
 
 class MLESG(Classification):
-    DATASET_PATH = "chancefocus/flare-mlesg"
+    DATASET_PATH = "TheFinAI/flare-mlesg"
 
 
 class FSRL(SequentialLabeling):
-    DATASET_PATH = "chancefocus/flare-fsrl"
+    DATASET_PATH = "TheFinAI/flare-fsrl"
     LMAP = {key: index for index, key in enumerate(['O', 'I-QUANT', 'B-QUANT', 'I-TIME', 'B-TIME', 'I-MANNER', 'B-MANNER', 'I-THEME', 'B-THEME', 'I-VALUE', 'B-VALUE', 'I-WHOLE', 'B-WHOLE', 'I-LOCATION', 'B-LOCATION', 'I-AGENT', 'B-AGENT', 'I-CAUSE', 'B-CAUSE', 'I-SOURCE', 'B-SOURCE', 'I-REF_TIME', 'B-REF_TIME', 'I-CONDITION', 'B-CONDITION'])}
 
 class CFA(Classification):
-    DATASET_PATH = "chancefocus/flare-cfa"
+    DATASET_PATH = "TheFinAI/flare-cfa"
 
 class FinargECCAUC(Classification):
-    DATASET_PATH = "chancefocus/flare-finarg-ecc-auc"
+    DATASET_PATH = "TheFinAI/flare-finarg-ecc-auc"
 
 class FinargECCARC(Classification):
-    DATASET_PATH = "chancefocus/flare-finarg-ecc-arc"
+    DATASET_PATH = "TheFinAI/flare-finarg-ecc-arc"
 
 class CD(SequentialLabeling):
-    DATASET_PATH = "chancefocus/flare-cd"
+    DATASET_PATH = "TheFinAI/flare-cd"
     LMAP = {key: index for index, key in enumerate(['O', 'I-CAUSE', 'B-CAUSE', 'I-EFFECT', 'B-EFFECT'])}
 
 class MultiFinEN(Classification):
-    DATASET_PATH = "chancefocus/flare-multifin-en"
+    DATASET_PATH = "TheFinAI/flare-multifin-en"
 
 class MA(Classification):
-    DATASET_PATH = "chancefocus/flare-ma"
+    DATASET_PATH = "TheFinAI/flare-ma"
 
 class Causal20SC(Classification):
-    DATASET_PATH = "chancefocus/flare-causal20-sc"
+    DATASET_PATH = "TheFinAI/flare-causal20-sc"
 
 class FNXL(SequentialLabeling):
-    DATASET_PATH = "chancefocus/flare-fnxl"
+    DATASET_PATH = "TheFinAI/flare-fnxl"
     LMAP = {'B-BusinessCombinationContingentConsiderationArrangementsRangeOfOutcomesValueHigh': 140, 'B-VariableInterestEntityOwnershipPercentage': 646, 'B-GainLossOnDispositionOfAssets1': 119, 'B-IndefiniteLivedIntangibleAssetsExcludingGoodwill': 46, 'B-MarketingAndAdvertisingExpense': 269, 'B-ReportingUnitPercentageOfFairValueInExcessOfCarryingAmount': 142, 'B-CapitalizedComputerSoftwareNet': 91, 'B-BusinessCombinationConsiderationTransferredEquityInterestsIssuedAndIssuable': 183, 'B-LitigationSettlementExpense': 115, 'B-DefinedBenefitPlanExpectedAmortizationOfGainLossNextFiscalYear': 639, 'B-DeferredCompensationArrangementWithIndividualCompensationExpense': 15, 'B-ReclassificationFromAociCurrentPeriodTax': 152, 'B-OtherComprehensiveIncomeLossBeforeReclassificationsTax': 694, 'B-PreferredStockDividendsPerShareDeclared': 236, 'B-CapitalExpendituresIncurredButNotYetPaid': 344, 'B-DeferredCompensationArrangementWithIndividualContributionsByEmployer': 560, 'B-SeveranceCosts1': 311, 'B-InterestExpense': 784, 'B-SaleOfStockConsiderationReceivedOnTransaction': 76, 'B-LineOfCreditFacilityInterestRateAtPeriodEnd': 822, 'B-SharesIssuedPricePerShare': 137, 'B-EquityMethodInvestmentDifferenceBetweenCarryingAmountAndUnderlyingEquity': 63, 'B-EquitySecuritiesFvNi': 30, 'B-RightOfUseAssetObtainedInExchangeForOperatingLeaseLiability': 118, 'B-DefinedBenefitPlanFundedStatusOfPlan': 547, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardPurchasePriceOfCommonStockPercent': 323, 'B-TaxCutsAndJobsActOf2017IncomeTaxExpenseBenefit': 256, 'B-LongtermDebtWeightedAverageInterestRate': 364, 'B-ImpairmentOfIntangibleAssetsFinitelived': 71, 'B-ProceedsFromLinesOfCredit': 496, 'B-LongTermPurchaseCommitmentAmount': 701, 'B-DebtInstrumentFairValue': 335, 'B-RestructuringAndRelatedCostCostIncurredToDate1': 52, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriod': 581, 'B-FiniteLivedIntangibleAssetsAccumulatedAmortization': 143, 'B-StockRepurchasedAndRetiredDuringPeriodValue': 330, 'B-BusinessCombinationProFormaInformationRevenueOfAcquireeSinceAcquisitionDateActual': 77, 'B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1': 361, 'B-BusinessAcquisitionPurchasePriceAllocationGoodwillExpectedTaxDeductibleAmount': 550, 'B-OperatingLossCarryforwardsValuationAllowance': 173, 'B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued': 32, 'B-DefinedContributionPlanMaximumAnnualContributionsPerEmployeePercent': 45, 'B-ContractWithCustomerLiabilityCurrent': 2, 'B-IncomeLossFromContinuingOperationsBeforeIncomeTaxesForeign': 474, 'B-FiniteLivedIntangibleAssetsAmortizationExpenseYearThree': 1306, 'B-DefinedBenefitPlanUltimateHealthCareCostTrendRate1': 62, 'B-DefinedBenefitPlanRecognizedNetGainLossDueToSettlements1': 317, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesExpense': 448, 'B-ForeignCurrencyTransactionGainLossRealized': 132, 'B-DeferredTaxAssetsOperatingLossCarryforwardsSubjectToExpiration': 262, 'B-RetainedEarningsAccumulatedDeficit': 174, 'B-ProceedsFromIssuanceOfCommonStock': 209, 'B-EmployeeServiceShareBasedCompensationAllocationOfRecognizedPeriodCostsCapitalizedAmount': 29, 'B-OtherComprehensiveIncomeLossPensionAndOtherPostretirementBenefitPlansTax': 284, 'B-InventoryWriteDown': 465, 'B-RestructuringReserve': 234, 'B-LitigationSettlementAmountAwardedToOtherParty': 42, 'B-DerivativeGainLossOnDerivativeNet': 87, 'B-SharebasedCompensationArrangementBySharebasedPaymentAwardEquityInstrumentsOtherThanOptionsAggregateIntrinsicValueVested': 241, 'B-DerivativeFixedInterestRate': 589, 'B-CashAndCashEquivalentsAtCarryingValue': 257, 'B-ContractWithCustomerAssetNet': 245, 'B-RestructuringAndRelatedCostExpectedCost1': 107, 'B-IncomeTaxHolidayAggregateDollarAmount': 347, 'B-OperatingLeaseCost': 248, 'B-AllowanceForDoubtfulAccountsReceivable': 146, 'B-RepaymentsOfDebt': 416, 'B-InterestPaid': 110, 'B-DeferredFinanceCostsNet': 28, 'B-IncomeTaxExaminationPenaltiesAndInterestAccrued': 271, 'B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber': 92, 'B-CapitalizedContractCostNet': 155, 'B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption': 17, 'B-IncomeTaxesPaid': 495, 'B-EquityMethodInvestmentOtherThanTemporaryImpairment': 22, 'B-InterestPaidNet': 225, 'B-EquitySecuritiesWithoutReadilyDeterminableFairValueAmount': 175, 'B-ImpairmentOfLongLivedAssetsHeldForUse': 313, 'B-GoodwillAcquiredDuringPeriod': 156, 'B-DecreaseInUnrecognizedTaxBenefitsIsReasonablyPossible': 363, 'B-RestructuringAndRelatedCostIncurredCost': 75, 'B-StockRepurchasedDuringPeriodValue': 254, 'B-IncomeTaxExaminationPenaltiesAndInterestExpense': 525, 'B-ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill': 55, 'B-PreferredStockLiquidationPreference': 157, 'B-ImpairmentOfIntangibleAssetsExcludingGoodwill': 158, 'B-IncomeTaxesPaidNet': 456, 'B-DefinedContributionPlanEmployerMatchingContributionPercent': 332, 'B-CostOfGoodsAndServicesSold': 274, 'B-DepreciationDepletionAndAmortization': 338, 'B-InterestExpenseDebt': 191, 'B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage': 442, 'B-DisposalGroupIncludingDiscontinuedOperationConsideration': 6, 'B-UnrecognizedTaxBenefitsInterestOnIncomeTaxesAccrued': 14, 'B-SaleOfStockPricePerShare': 278, 'B-DefinedContributionPlanEmployerMatchingContributionPercentOfMatch': 267, 'B-FinitelivedIntangibleAssetsAcquired1': 202, 'B-PaymentsForRepurchaseOfCommonStock': 486, 'B-BusinessCombinationContingentConsiderationLiability': 103, 'B-RelatedPartyTransactionAmountsOfTransaction': 180, 'O': 0}
 
 class TATQA(QA):
-    DATASET_PATH = "chancefocus/flare-tatqa"
+    DATASET_PATH = "TheFinAI/flare-tatqa"
 
 
 class FinRED(RelationExtraction):
-    DATASET_PATH = "chancefocus/flare-finred"
+    DATASET_PATH = "TheFinAI/flare-finred"
 
 
 class lendingclub(Classification):
-    DATASET_PATH = "daishen/cra-lendingclub"
+    DATASET_PATH = "TheFinAI/cra-lendingclub"
     CALCULATE_MCC = True
 
 
 class ccf(Classification):
-    DATASET_PATH = "daishen/cra-ccf"
+    DATASET_PATH = "TheFinAI/cra-ccf"
     CALCULATE_MCC = True
 
 
 class ccfraud(Classification):
-    DATASET_PATH = "daishen/cra-ccfraud"
+    DATASET_PATH = "TheFinAI/cra-ccfraud"
     CALCULATE_MCC = True
 
 
 class polish(Classification):
-    DATASET_PATH = "daishen/cra-polish"
+    DATASET_PATH = "TheFinAI/cra-polish"
     CALCULATE_MCC = True
 
 
 class taiwan(Classification):
-    DATASET_PATH = "chancefocus/cra-taiwan"
+    DATASET_PATH = "TheFinAI/cra-taiwan"
     CALCULATE_MCC = True
 
 
 class portoseguro(Classification):
-    DATASET_PATH = "chancefocus/cra-portoseguro"
+    DATASET_PATH = "TheFinAI/cra-portoseguro"
     CALCULATE_MCC = True
 
 
 class travelinsurace(Classification):
-    DATASET_PATH = "chancefocus/cra-travelinsurace"
+    DATASET_PATH = "TheFinAI/cra-travelinsurace"
     CALCULATE_MCC = True
 
 
@@ -1246,64 +1246,64 @@ class LongFormFactuality(Task):
 
 
 class FINTERM(LongFormFactuality):
-    DATASET_PATH = "PIXIU-fin/en-finterm"
+    DATASET_PATH = "TheFinAI/en-finterm"
 
 class ACRONYM(QA):
-    DATASET_PATH = "PIXIU-fin/en-acronym"
+    DATASET_PATH = "TheFinAI/en-acronym"
 
 
 
 
 
 class ZHFinFE(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-fe"
+    DATASET_PATH = "TheFinAI/flare-zh-fe"
 
 
 class ZHFinNL(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-nl"
+    DATASET_PATH = "TheFinAI/flare-zh-nl"
 
 
 class ZHFinNL2(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-nl2"
+    DATASET_PATH = "TheFinAI/flare-zh-nl2"
 
 
 class ZHFinNSP(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-nsp"
+    DATASET_PATH = "TheFinAI/flare-zh-nsp"
 
 
 class ZHFinRE(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-re"
+    DATASET_PATH = "TheFinAI/flare-zh-re"
 
 
 class ZHAFQMC(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-afqmc"
+    DATASET_PATH = "TheFinAI/flare-zh-afqmc"
 
 
 class ZHAstock(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-stocka"
+    DATASET_PATH = "TheFinAI/flare-zh-stocka"
 
 
 class ZHBQcourse(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-corpus"
+    DATASET_PATH = "TheFinAI/flare-zh-corpus"
 
 
 class ZHFinEval(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-fineval"
+    DATASET_PATH = "TheFinAI/flare-zh-fineval"
 
 
 class ZHstock11(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-stockb"
+    DATASET_PATH = "TheFinAI/flare-zh-stockb"
 
 class ZHFinQA(QA):
-    DATASET_PATH = "ChanceFocus/flare-zh-qa"
+    DATASET_PATH = "TheFinAI/flare-zh-qa"
 
 
 class ZHFinNA(AbstractiveSummarization):
-    DATASET_PATH = "ChanceFocus/flare-zh-na"
+    DATASET_PATH = "TheFinAI/flare-zh-na"
 
 
 class ZH21CCKS(RelationExtraction):
-    DATASET_PATH = "ChanceFocus/flare-zh-21ccks"
+    DATASET_PATH = "TheFinAI/flare-zh-21ccks"
 
     def process_results(self, doc, results):
         return {
@@ -1338,7 +1338,7 @@ class ZH21CCKS(RelationExtraction):
 
 class ZH19CCKS(RelationExtraction):
     VERSION = 1
-    DATASET_PATH = "ChanceFocus/flare-zh-19ccks"
+    DATASET_PATH = "TheFinAI/flare-zh-19ccks"
 
     def process_results(self, doc, results):
         return {
@@ -1349,15 +1349,15 @@ class ZH19CCKS(RelationExtraction):
 
 
 class ZH20CCKS(ZH19CCKS):
-    DATASET_PATH = "ChanceFocus/flare-zh-20ccks"
+    DATASET_PATH = "TheFinAI/flare-zh-20ccks"
 
 
 class ZH22CCKS(ZH19CCKS):
-    DATASET_PATH = "ChanceFocus/flare-zh-22ccks"
+    DATASET_PATH = "TheFinAI/flare-zh-22ccks"
 
 
 class ZHNER(NER):
-    DATASET_PATH = "ChanceFocus/flare-zh-ner"
+    DATASET_PATH = "TheFinAI/flare-zh-ner"
 
     def process_results(self, doc, results):
         text = ' '.join(doc["text"])
@@ -1367,15 +1367,15 @@ class ZHNER(NER):
 
 
 class ZHFPB(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-fpb"
+    DATASET_PATH = "TheFinAI/flare-zh-fpb"
 
 
 class ZHFIQASA(Classification):
-    DATASET_PATH = "ChanceFocus/flare-zh-fiqasa"
+    DATASET_PATH = "TheFinAI/flare-zh-fiqasa"
 
 
 class ZHHeadlines(Headlines):
-    DATASET_PATH = "ChanceFocus/flare-zh-headlines"
+    DATASET_PATH = "TheFinAI/flare-zh-headlines"
 
     def process_results(self, doc, results):
         gold = doc["gold"]
@@ -1386,7 +1386,7 @@ class ZHHeadlines(Headlines):
 
 
 class ZHBigData(StockMovement):
-    DATASET_PATH = "ChanceFocus/flare-zh-bigdata"
+    DATASET_PATH = "TheFinAI/flare-zh-bigdata"
     CHOICE_DICT = {
         "上涨": ["是", "正面", "积极", "肯定的"],
         "下跌": ["否", "负面", "消极"],
@@ -1395,34 +1395,34 @@ class ZHBigData(StockMovement):
 
 
 class ZHACL(ZHBigData):
-    DATASET_PATH = "ChanceFocus/flare-zh-acl"
+    DATASET_PATH = "TheFinAI/flare-zh-acl"
 
 
 class ZHCIKM(ZHBigData):
-    DATASET_PATH = "ChanceFocus/flare-zh-cikm"
+    DATASET_PATH = "TheFinAI/flare-zh-cikm"
 
 
 class ZHFinQAE(QA):
-    DATASET_PATH = "ChanceFocus/flare-zh-finqa"
+    DATASET_PATH = "TheFinAI/flare-zh-finqa"
 
 
 class ZHConvFinQA(ConvFinQA):
-    DATASET_PATH = "ChanceFocus/flare-zh-convfinqa"
+    DATASET_PATH = "TheFinAI/flare-zh-convfinqa"
 
 class ESMultiFin(Classification):
-    DATASET_PATH = "chancefocus/flare-es-multifin"
+    DATASET_PATH = "TheFinAI/flare-es-multifin"
 
 class ESEFP(Classification):
-    DATASET_PATH = "chancefocus/flare-es-efp"
+    DATASET_PATH = "TheFinAI/flare-es-efp"
 
 class ESEFPA(Classification):
-    DATASET_PATH = "chancefocus/flare-es-efpa"
+    DATASET_PATH = "TheFinAI/flare-es-efpa"
 
 class ESTSA(Classification):
-    DATASET_PATH = "chancefocus/flare-es-tsa"
+    DATASET_PATH = "TheFinAI/flare-es-tsa"
 
 class ESFINANCEES(Classification):
-    DATASET_PATH = "chancefocus/flare-es-financees"
+    DATASET_PATH = "TheFinAI/flare-es-financees"
 
 class ESFNS(AbstractiveSummarization):
-    DATASET_PATH = "chancefocus/flare-es-fns"
+    DATASET_PATH = "TheFinAI/flare-es-fns"
