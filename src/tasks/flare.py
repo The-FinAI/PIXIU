@@ -385,7 +385,7 @@ class AbstractiveSummarization(Task):
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
             "bert_score_f1": self.bert_score_f1,
-            "bart_score": self.bart_score,
+            # "bart_score": self.bart_score,
         }
 
 
@@ -528,7 +528,7 @@ class ExtractiveSummarization(Task):
             "rouge2": self.rouge2,
             "rougeL": self.rougeL,
             "bert_score_f1": self.bert_score_f1,
-            "bart_score": self.bart_score,
+            # "bart_score": self.bart_score,
         }
 
 
