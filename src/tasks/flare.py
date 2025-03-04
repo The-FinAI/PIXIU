@@ -514,7 +514,11 @@ class ExtractiveSummarization(Task):
         preds = self.get_sum([val.split("\n") for val in preds], texts)
 
         bart_scorer = BARTScorer(device="cuda:0", checkpoint="facebook/bart-large-cnn")
-        bart_scorer.load(path="src/metrics/BARTScore/bart_score.pth")
+        checkpoint_path = os.path.join(
+            os.path.dirname(__file__),  # /content/PIXIU/src/tasks
+            "../metrics/BARTScore/bart_score.pth"
+        )
+        bart_scorer.load(path=checkpoint_path)
         res = bart_scorer.score(srcs=preds, tgts=golds, batch_size=8)
         return sum(res) / len(res)
 
