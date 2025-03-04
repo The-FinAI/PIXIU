@@ -1036,7 +1036,8 @@ class TSA(Task):
                 continue
             fgolds.append(gold)
             fpreds.append(max(min(pred, 1.0), -1.0))
-        rmse = mean_squared_error(fgolds, fpreds, squared=True)
+        mse = mean_squared_error(fgolds, fpreds)  # older versions only return MSE
+        rmse = np.sqrt(mse)
 
         return rmse
 
