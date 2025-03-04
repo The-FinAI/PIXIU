@@ -927,7 +927,7 @@ class German(StockMovement):
 
 
 class Australian(StockMovement):
-    DATASET_PATH = "chancefocus/flare-australian"
+    DATASET_PATH = "TheFinAI/flare-australian"
     CHOICE_DICT = {
         "good": ["yes", "positive"],
         "bad": ["no", "negative", "neutral"],
@@ -1108,22 +1108,22 @@ class FinRED(RelationExtraction):
 
 
 class lendingclub(Classification):
-    DATASET_PATH = "chancefocus/cra-lendingclub"
+    DATASET_PATH = "daishen/cra-lendingclub"
     CALCULATE_MCC = True
 
 
 class ccf(Classification):
-    DATASET_PATH = "chancefocus/cra-ccf"
+    DATASET_PATH = "daishen/cra-ccf"
     CALCULATE_MCC = True
 
 
 class ccfraud(Classification):
-    DATASET_PATH = "chancefocus/cra-ccfraud"
+    DATASET_PATH = "daishen/cra-ccfraud"
     CALCULATE_MCC = True
 
 
 class polish(Classification):
-    DATASET_PATH = "chancefocus/cra-polish"
+    DATASET_PATH = "daishen/cra-polish"
     CALCULATE_MCC = True
 
 
