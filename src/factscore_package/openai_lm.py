@@ -7,16 +7,17 @@ import os
 import numpy as np
 import logging
 
-#os.environ["http_proxy"] = "http://localhost:27890"
-#os.environ["https_proxy"] = "http://localhost:27890"
 
 class OpenAIModel(LM):
 
-    def __init__(self, model_name, cache_file=None, key=""):
+    def __init__(self, model_name, cache_file=None, key="", api_base=None):
         self.model_name = model_name
         self.temp = 0.7
         self.save_interval = 100
-        self.client = OpenAI(api_key=key.strip())
+        client_kwargs = {"api_key": key.strip()}
+        if api_base:
+            client_kwargs["base_url"] = api_base
+        self.client = OpenAI(**client_kwargs)
         super().__init__(cache_file)
 
     def load_model(self):
