@@ -28,7 +28,7 @@ async def single_chat(client, **kwargs):
 
 
 async def oa_completion(**kwargs):
-    """Query OpenAI API for completion.
+    """Query OpenAI-compatible API for completion.
 
     Retry with back-off until they respond
     """
@@ -50,6 +50,10 @@ async def oa_completion(**kwargs):
 class ChatLM(BaseLM):
     REQ_CHUNK_SIZE = 20
 
+    # Default API configuration (OpenAI)
+    API_BASE_URL = "https://api.openai.com/v1/chat/completions"
+    API_KEY_ENV = "OPENAI_API_SECRET_KEY"
+
     def __init__(self, model, truncate=False):
         """
 
@@ -59,12 +63,9 @@ class ChatLM(BaseLM):
         """
         super().__init__()
 
-        import openai
-
         self.model = model
         self.truncate = truncate
-        # Read from environment variable OPENAI_API_SECRET_KEY
-        api_key = os.environ["OPENAI_API_SECRET_KEY"]
+        api_key = os.environ[self.API_KEY_ENV]
         self.tokenizer = transformers.GPT2TokenizerFast.from_pretrained("gpt2")
         self.headers = {
             "Content-Type": "application/json",
@@ -136,12 +137,12 @@ class ChatLM(BaseLM):
                 inps.append(context[0])
 
             responses = asyncio.run(oa_completion(
-                url="https://api.openai.com/v1/chat/completions",
+                url=self.API_BASE_URL,
                 headers=self.headers,
                 model=self.model,
                 messages=[{"role": "user", "content": inp} for inp in inps],
                 max_tokens=self.max_gen_toks,
-                temperature=0.0,
+                temperature=self._get_temperature(0.0),
                 # stop=until,
             ))
 
@@ -154,6 +155,10 @@ class ChatLM(BaseLM):
                 res.append(s)
 
         return re_ord.get_original(res)
+
+    def _get_temperature(self, temperature):
+        """Return a valid temperature value for this provider."""
+        return temperature
 
     def _model_call(self, inps):
         # Isn't used because we override _loglikelihood_tokens

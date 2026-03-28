@@ -11,6 +11,7 @@ import lm_eval.base
 
 from model_prompt import MODEL_PROMPT_MAP
 from chatlm import ChatLM
+from minimax_lm import MiniMaxLM, MINIMAX_MODELS
 import tasks as ta
 
 @positional_deprecated
@@ -74,7 +75,9 @@ def simple_evaluate(
     if isinstance(model, str):
         if model_args is None:
             model_args = ""
-        if model[:3] != "gpt":
+        if model in MINIMAX_MODELS:
+            lm = MiniMaxLM(model)
+        elif model[:3] != "gpt":
             lm = lm_eval.models.get_model(model).create_from_arg_string(
                 model_args, {"batch_size": batch_size, "max_batch_size": max_batch_size, "device": device}
             )

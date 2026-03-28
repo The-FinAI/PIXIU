@@ -367,10 +367,23 @@ More details can be found in the [lm_eval](https://github.com/EleutherAI/lm-eval
 
 Please note, for tasks such as NER, the automated evaluation is based on a specific pattern. This might fail to extract relevant information in zero-shot settings, resulting in relatively lower performance compared to previous human-annotated results.
 
+**OpenAI**
+
 ```bash
 export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
 python eval.py \
     --model gpt-4 \
+    --tasks flare_ner,flare_sm_acl,flare_fpb
+```
+
+**MiniMax**
+
+[MiniMax](https://www.minimaxi.com/) provides large language models (M2.7, M2.5) with 204K context windows via an OpenAI-compatible API. Supported models: `MiniMax-M2.7`, `MiniMax-M2.7-highspeed`, `MiniMax-M2.5`, `MiniMax-M2.5-highspeed`.
+
+```bash
+export MINIMAX_API_KEY=YOUR_MINIMAX_KEY_HERE
+python eval.py \
+    --model MiniMax-M2.7 \
     --tasks flare_ner,flare_sm_acl,flare_fpb
 ```
 
