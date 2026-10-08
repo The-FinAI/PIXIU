@@ -29,7 +29,7 @@ class LM():
         #)
 
         # begin initializing HF items, you need an access token
-        #hf_auth = "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"
+        #hf_auth = os.environ.get("HF_TOKEN")
         #model_config = AutoConfig.from_pretrained(
            # model_id,
             #use_auth_token=hf_auth
